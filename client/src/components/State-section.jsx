@@ -4,7 +4,8 @@ export default function StateSection() {
   return (
     <>
     
-    <section className="p-16 bg-[#000000]">
+   <section className="md:py-10 border   px-4 sm:py-16 sm:px-8 bg-[#000000]">
+
   <div className="container mx-auto px-8 text-center">
     {/* Heading with Divider */}
     <div className="flex items-center justify-center gap-4">

@@ -4,10 +4,10 @@ export default function Features() {
     return (
         <div className="max-w-screen-xl mx-auto py-8 px-4 lg:py-16 lg:px-6 text-[#EAEAEA] ">
             <div className="text-center mb-10">
-                <h2 className="text-4xl tracking-tight font-bold  text-[#E82561] ">
+                <h2 className="text-3xl md:text-4xl tracking-tight font-bold  text-[#E82561] ">
                     Industries <span className="text-[#EAEAEA]">We Serve</span>
                 </h2>
-                <p className="mt-4 text-4xl text-[#CFFFE2]">
+                <p className="mt-4 text-2xl md:text-4xl text-[#CFFFE2]">
 
                     <span className="text-[#EAEAEA]">From startups to established brands,</span>
                     we fuel growth in:</p>
@@ -17,9 +17,9 @@ export default function Features() {
                 {/* Image section */}
                 <div className="mr-0 md:mr-8 mb-6 md:mb-0">
                     <img
-                        className="w-1/2 md:w-full mx-auto"
+                        className="w-2/3 md:w-full mx-auto"
                         src="https://landinglabs.in/wp-content/uploads/2025/07/POSTER-LL.png.webp"
-                        alt="can_help_banner"
+                        alt="image"
                     />
                 </div>
 

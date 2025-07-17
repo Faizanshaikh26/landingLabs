@@ -3,10 +3,10 @@ import logo from "./assets/images/landingLabs-logo.webp";
 
 export default function Footer() {
   return (
-    <div className='text-[#EAEAEA]'>
+    <div>
       
       <footer className="  border-t text-[#EAEAEA]">
-        <div className="mx-auto w-full px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full px-4 md:py-16 sm:px-6 lg:px-8">
           <div className="lg:flex lg:items-start lg:gap-8">
             <div className="text-teal-600 dark:text-[#EAEAEA]">
               

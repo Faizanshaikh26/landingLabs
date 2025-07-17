@@ -45,10 +45,10 @@ export default function ServicesSnapshot() {
     <div className="p-8">
       {/* Header Section */}
       <section className="text-center max-w-lg mx-auto py-8 px-4">
-        <h1 className="text-3xl sm:text-4xl font-semibold text-[#EAEAEA]">
+        <h1 className="text-2xl md:text-4xl font-semibold text-[#EAEAEA]">
          Services <span className="text-orange-500">Snapshot</span>
         </h1>
-        <p className="mt-4 text-4xl text-[#CFFFE2]">
+        <p className="mt-4 md:text-4xl text-3xl text-[#CFFFE2]">
           What We Build  <span className="text-[#EAEAEA]">in the Lab:</span> 
         </p>
       </section>

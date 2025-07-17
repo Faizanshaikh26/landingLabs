@@ -6,6 +6,7 @@ import Banner from './components/Banner'
 import ServicesSnapshot from './components/Services'
 import Features from './components/Features'
 import Portfolio from './components/Portfolio'
+import Testimonies from './components/Testonomials'
 
 
 export default function Home() {
@@ -25,6 +26,8 @@ export default function Home() {
 
       <Features />
 
+
+<Testimonies/>
 
       <Banner />
       <Portfolio />

@@ -2,13 +2,13 @@ import React from 'react';
 
 export default function Portfolio() {
     return (
-        <div className="min-h-screen py-6 sm:py-8 lg:py-12">
+        <div className="min-h-[90vh] md:min-h-screen  sm:py-8 lg:py-12">
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                 <div className="text-center mb-10">
-                    <h2 className="text-4xl tracking-tight font-bold  text-[#E82561] ">
+                    <h2 className=" text-3xl md:text-4xl tracking-tight font-bold  text-[#E82561] ">
                         Our <span className="text-[#EAEAEA]">Portfolio</span>
                     </h2>
-                    <p className="mt-4 text-2xl text-[#CFFFE2]">
+                    <p className="mt-4  md:text-2xl text-[#CFFFE2]">
                         A full-service digital growth lab for startups, creators,
                         <span className="text-[#EAEAEA]">and challenger brands who want to win.</span>
                     </p>
