@@ -111,7 +111,7 @@ import {
   X,
 } from "lucide-react";
 import { useState, useEffect } from "react";
-import logo from "../../public/images/landingLabs-logo.webp";
+import logo from "../assets/images/landingLabs-logo.webp";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

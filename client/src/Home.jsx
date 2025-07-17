@@ -3,21 +3,35 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import StateSection from './components/State-section'
 import Banner from './components/Banner'
+import ServicesSnapshot from './components/Services'
+import Features from './components/Features'
+import Portfolio from './components/Portfolio'
+
 
 export default function Home() {
   return (
-    <div  className=''>
-        
-        <Navbar/>
+    <div className='space-y-20 px-4 sm:px-6 lg:px-8'>
 
-        <Hero/>
-       
+      <Navbar />
 
+      <Hero />
 
 
-       <StateSection/>
 
-       <Banner/> 
+
+      <StateSection />
+
+      <ServicesSnapshot />
+
+      <Features />
+
+
+      <Banner />
+      <Portfolio />
+
+ 
+
+
     </div>
   )
 }

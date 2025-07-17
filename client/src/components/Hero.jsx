@@ -1,9 +1,9 @@
 import React from "react";
-import heroVideo from "../../public/videos/hero-video.mp4"; 
+import heroVideo from "../assets//videos/hero-video.mp4"; 
 
 export default function Hero() {
   return (
-    <div className="relative w-full h-screen overflow-hidden md:text-red-500 md:pt-60">
+    <div className="relative w-full h-screen overflow-hidden  md:pt-60">
    
       <video
         className="absolute inset-0 w-full h-full object-cover"

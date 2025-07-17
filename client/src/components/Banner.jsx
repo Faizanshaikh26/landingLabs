@@ -1,5 +1,5 @@
 import React from "react";
-import bannerImg from "../../public/images/banner-image.jpg";
+import bannerImg from "../assets/images/banner-image.jpg"
 
 export default function Banner() {
   return (
