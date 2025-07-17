@@ -3,12 +3,12 @@ import logo from "./assets/images/landingLabs-logo.webp";
 
 export default function Footer() {
   return (
-    <div>
+    <div className='text-[#EAEAEA]'>
       
-      <footer className="  border-t">
+      <footer className="  border-t text-[#EAEAEA]">
         <div className="mx-auto w-full px-4 py-16 sm:px-6 lg:px-8">
           <div className="lg:flex lg:items-start lg:gap-8">
-            <div className="text-teal-600 dark:text-teal-300">
+            <div className="text-teal-600 dark:text-[#EAEAEA]">
               
             </div>
       
@@ -24,7 +24,7 @@ export default function Footer() {
                               
                            
       
-                  <p className="mt-4 text-gray-500 dark:text-gray-400">
+                  <p className="mt-4 text-gray-500 dark:text-[#EAEAEA]">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non cupiditate quae nam
                     molestias.
                   </p>
@@ -285,25 +285,25 @@ export default function Footer() {
       
           <div className="mt-8 border-t border-gray-100 pt-8 dark:border-gray-800">
             <div className="sm:flex sm:justify-between">
-              <p className="text-[17px] text-gray-500 dark:text-gray-400">
+              <p className="text-[17px] text-gray-500 dark:text-[#EAEAEA]">
                 Copyright © 2025 Landing Labs
               </p>
       
               <ul className="mt-8 flex flex-wrap justify-start gap-4 text-[17px] sm:mt-0 lg:justify-end">
                 <li>
-                  <a href="#" className="text-gray-500 transition hover:opacity-75 dark:text-gray-400">
+                  <a href="#" className="text-gray-500 transition hover:opacity-75 dark:text-[#EAEAEA]">
                     Terms & Conditions
                   </a>
                 </li>
       
                 <li>
-                  <a href="#" className="text-gray-500 transition hover:opacity-75 dark:text-gray-400">
+                  <a href="#" className="text-gray-500 transition hover:opacity-75 dark:text-[#EAEAEA]">
                     Privacy Policy
                   </a>
                 </li>
       
                 <li>
-                  <a href="#" className="text-gray-500 transition hover:opacity-75 dark:text-gray-400">
+                  <a href="#" className="text-gray-500 transition hover:opacity-75 dark:text-[#EAEAEA]">
                     Cookies
                   </a>
                 </li>
