@@ -77,6 +77,7 @@ export default function StateSection() {
         />
       </div>
     </div>
+    
   </div>
 </section>
 
@@ -84,3 +85,89 @@ export default function StateSection() {
     </>
   )
 }
+
+
+
+
+// import zelcConsultaation from '../assets/images/zelc-consultaation.png'
+// import techmark from '../assets/images/tech-mark.webp'
+// import networkgs from '../assets/images/network-gs.webp'
+// import kohinoorCP from '../assets/images/kohinoor-CP.webp'
+
+// export default function StateSection() {
+
+//   const data=[{
+//     id:1,
+//     imgUrl:zelcConsultaation
+//   },{
+//     id:2,
+//     imgUrl:techmark
+//   },{
+//     id:3,
+//     imgUrl:networkgs
+//   },
+//   {
+//     id:4,
+//     imgUrl:kohinoorCP
+//   },
+
+// ]
+//   return (
+//     <>
+    
+//    <section className="md:py-10 border   px-4 sm:py-16 sm:px-8 bg-[#000000]">
+
+//   <div className="container mx-auto px-8 text-center">
+//     {/* Heading with Divider */}
+//     <div className="flex items-center justify-center gap-4">
+//       <span className="flex-grow h-px bg-gray-600"></span>
+//       <h2 className="text-xl font-semibold text-white">
+//         Trusted by Startups & Enterprises to{" "}
+//         <span className="text-orange-500 font-bold">Build Digital Products</span>
+//       </h2>
+//       <span className="flex-grow h-px bg-gray-600"></span>
+//     </div>
+
+//     {/* Stats Section */}
+//     <div className="mt-12 flex flex-wrap justify-center gap-16">
+//       <div className="text-center">
+//         <h3 className="text-4xl font-extrabold text-[#CFFFE2]">100+</h3>
+//         <p className="mt-2 text-base text-[#CFFFE2]">Projects Delivered</p>
+//       </div>
+//       <div className="text-center">
+//         <h3 className="text-4xl font-extrabold text-[#CFFFE2]">50+</h3>
+//         <p className="mt-2 text-base text-[#CFFFE2]">Satisfied Clients</p>
+//       </div>
+//       <div className="text-center">
+//         <h3 className="text-4xl font-extrabold text-[#CFFFE2]">20+</h3>
+//         <p className="mt-2 text-base text-[#CFFFE2]">Industries Served</p>
+//       </div>
+//       <div className="text-center">
+//         <h3 className="text-4xl font-extrabold text-[#CFFFE2]">5+</h3>
+//         <p className="mt-2 text-base text-[#CFFFE2]">Years of Experience</p>
+//       </div>
+//     </div>
+
+//     {/* Moving Brand Logos */}
+// {/* Moving Brand Logos */}
+// <div className="mt-16 overflow-hidden relative">
+//   <div className="flex gap-12 animate-marquee whitespace-nowrap">
+//     {data.map((item) => (
+//       <img
+//         key={item.id}
+//         src={item.imgUrl}
+//         alt="img"
+//         className="h-20 opacity-90" //
+//       />
+//     ))}
+//   </div>
+// </div>
+
+
+//   </div>
+// </section>
+
+
+//     </>
+//   )
+// }

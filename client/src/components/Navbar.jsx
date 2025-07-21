@@ -112,6 +112,7 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import logo from "../assets/images/landingLabs-logo.webp";
+import {Link} from 'react-router-dom'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -155,10 +156,15 @@ export default function Navbar() {
       </span>
     </div>
     <div className="flex items-center space-x-4">
-      <Facebook className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" />
-      <Instagram className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" />
-      <Linkedin className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" />
-      <Youtube className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" />
+      <a href="https://www.facebook.com/share/16wqfNsNHL/"> <Facebook className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" /></a>
+     
+
+     <a href="https://www.instagram.com/landinglabs_?igsh=Njc1YjZvdjc1Y2J1"> <Instagram className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" /></a>
+     <a href="https://www.linkedin.com/company/landing-labs/">   <Linkedin className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" /></a>
+     <a href="">  <Youtube className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" /></a>
+     
+   
+    
     </div>
   </div>
 )}
@@ -168,23 +174,24 @@ export default function Navbar() {
           <div className="flex items-center justify-between px-6 transition-all duration-300">
             {/* Logo */}
             <div className={`transition-all ${isScrolled ? "w-28" : "w-36"}`}>
-              <img src={logo} alt="Landing Labs Logo" className="w-full" />
+              <Link to='/'><img src={logo} alt="Landing Labs Logo" className="w-full" /></Link>
+              
             </div>
 
             {/* Nav Links */}
             <div className="hidden lg:flex items-center space-x-8 text-sm font-medium">
-              <a href="#" className="hover:text-orange-500 transition-colors">
+              <Link to='/' className="hover:text-orange-500 transition-colors">
                 Home
-              </a>
+              </Link>
               <div className="relative group">
                 <button className="flex items-center space-x-1 hover:text-orange-500 transition-colors">
                   <span>Services</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
               </div>
-              <a href="#" className="hover:text-orange-500 transition-colors">
-                About
-              </a>
+             
+
+              <Link to='/about-us'  className="hover:text-orange-500 transition-colors">  About</Link>
               <a href="#" className="hover:text-orange-500 transition-colors">
                 Industries
               </a>
@@ -228,16 +235,16 @@ export default function Navbar() {
               <div>+91 738 739 2708</div>
               <div>Office 610, Suratwala Mark Plaza, Hinjewadi, 411057</div>
             </div>
-            <a href="#" className="text-lg hover:text-orange-500">
+            <Link to="/" className="text-lg hover:text-orange-500">
               Home
-            </a>
+            </Link>
             <button className="flex items-center justify-between text-lg hover:text-orange-500">
               <span>Services</span>
               <ChevronDown className="w-4 h-4" />
             </button>
-            <a href="#" className="text-lg hover:text-orange-500">
+            <Link to="/about-us" className="text-lg hover:text-orange-500">
               About
-            </a>
+            </Link>
             <a href="#" className="text-lg hover:text-orange-500">
               Industries
             </a>
@@ -245,10 +252,15 @@ export default function Navbar() {
               Contact
             </a>
             <div className="flex items-center space-x-4 pt-4 border-t border-gray-800">
-              <Facebook className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
-              <Instagram className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
-              <Linkedin className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
-              <Youtube className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
+
+              <a href="https://www.facebook.com/share/16wqfNsNHL/"> <Facebook className="w-5 h-5 hover:text-orange-500 cursor-pointer" /></a>
+              <a href="https://www.instagram.com/landinglabs_?igsh=Njc1YjZvdjc1Y2J1">       <Instagram className="w-5 h-5 hover:text-orange-500 cursor-pointer" /></a>
+              <a href="https://www.linkedin.com/company/landing-labs/">  <Linkedin className="w-5 h-5 hover:text-orange-500 cursor-pointer" /></a>
+              <a href="">      <Youtube className="w-5 h-5 hover:text-orange-500 cursor-pointer" /></a>
+             
+       
+            
+        
             </div>
           </div>
 

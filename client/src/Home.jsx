@@ -7,6 +7,7 @@ import ServicesSnapshot from './components/Services'
 import Features from './components/Features'
 import Portfolio from './components/Portfolio'
 import Testimonies from './components/Testonomials'
+import Footer from './Footer'
 
 
 export default function Home() {
@@ -33,6 +34,8 @@ export default function Home() {
       <Portfolio />
 
  
+
+  <Footer/>
 
 
     </div>
