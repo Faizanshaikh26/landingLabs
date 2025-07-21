@@ -38,7 +38,7 @@ export default function StateSection() {
     </div>
 
     {/* Moving Brand Logos */}
-    <div className="mt-16 overflow-hidden relative">
+    <div className="mt-16 pb-3.5 overflow-hidden relative">
       <div className="flex gap-12 animate-marquee whitespace-nowrap">
         <img
           src="https://a.storyblok.com/f/298810/79x20/4f5ce2a824/ahrefs-logo.svg"

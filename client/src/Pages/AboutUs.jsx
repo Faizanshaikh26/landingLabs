@@ -32,7 +32,7 @@ export default function AboutUs() {
         <>
             <Navbar />
 
-            <div className="py-32 text-[#EAEAEA]">
+            <div className="py-14 md:py-32 text-[#EAEAEA]">
 
                 <div className="bg-black text-white py-16 px-6 md:px-12">
                     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -123,19 +123,22 @@ export default function AboutUs() {
                     </div>
 
                     <div className="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100 mt-20 text-center border-t border-gray-700 pt-16">
-                        <div className="mb-12 space-y-5 md:mb-16 md:text-center">
+                        <div className="mb-12 space-y-5 py-4 md:mb-16 md:text-center">
                             <h1 className="mb-5 text-3xl font-semibold text-white md:text-center md:text-5xl">
                                 Trusted by the <span className="text-[#E82561]">Best in the Industry</span>
                             </h1>
                             <p className="mt-4 md:text-2xl text-[#CFFFE2]">
                                 <span className="text-[#E82561]">Our partners</span> are leaders, innovators, and game-changers who trust us to deliver excellence — every single time.
                             </p>
-                        </div>
-                    </div>
 
-                    <div className="py-10">
+                              <div className="py-10">
                         <StateSection />
                     </div>
+                        </div>
+                        
+                    </div>
+
+                  
 
                     <div className="relative max-w-7xl mx-auto px-6 py-16 rounded-md border border-gray-200 shadow-sm overflow-hidden">
                         <div
@@ -176,18 +179,18 @@ export default function AboutUs() {
 
                         <div className="bg-[#100604] text-white max-w-7xl mx-auto px-6 py-16 rounded-md">
                             <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
-                               <div className="flex flex-col md:flex-row gap-6 w-full justify-center md:justify-start">
-  <img
-    src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.png.webp"
-    alt="Creative Agency"
-    className="w-full max-w-[260px] object-contain"
-  />
-  <img
-    src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.-1.png.webp"
-    alt="Landing Labs"
-    className="w-full max-w-[260px] object-contain"
-  />
-</div>
+                                <div className="flex flex-col md:flex-row gap-6 w-full justify-center md:justify-start">
+                                    <img
+                                        src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.png.webp"
+                                        alt="Creative Agency"
+                                        className="w-full max-w-[260px] object-contain"
+                                    />
+                                    <img
+                                        src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.-1.png.webp"
+                                        alt="Landing Labs"
+                                        className="w-full max-w-[260px] object-contain"
+                                    />
+                                </div>
 
                                 <div className="w-full">
                                     <p className="text-orange-500 font-semibold text-lg mb-2">2023 – 2025</p>
