@@ -111,7 +111,7 @@ import {
   X,
 } from "lucide-react";
 import { useState, useEffect } from "react";
-import logo from "../assets/images/landingLabs-logo.webp";
+import logo from "../assets/images/Og-Logo.png";
 import {Link} from 'react-router-dom'
 
 export default function Navbar() {
@@ -139,7 +139,7 @@ export default function Navbar() {
       {/* Navbar Container with scroll logic */}
       <div
         className={`transition-all duration-500 ease-in-out ${isScrolled ? scrollDirection
-            ? "backdrop-blur-md bg-gray-900/70 py-2 shadow-md" : "backdrop-blur-md bg-gray-950/70 py-2 shadow-md"
+            ? "backdrop-blur-md bg-gray-950/70 py-2 shadow-md" : "backdrop-blur-md bg-gray-950/70 py-2 shadow-md"
             : "bg-transparent py-5"
           }`}
       >
@@ -192,20 +192,22 @@ export default function Navbar() {
              
 
               <Link to='/about-us'  className="hover:text-orange-500 transition-colors">  About</Link>
-              <a href="#" className="hover:text-orange-500 transition-colors">
-                Industries
-              </a>
-              <a href="#" className="hover:text-orange-500 transition-colors">
+              <Link to="/carrer" className="hover:text-orange-500 transition-colors">
+                Carrer
+              </Link>
+              <Link to="/contact-us" className="hover:text-orange-500 transition-colors">
                 Contact
-              </a>
+              </Link>
             </div>
 
             {/* CTA & Mobile Button */}
            <div className="flex items-center space-x-4">
   {/* Hide this button on mobile */}
-  <button className="hidden lg:inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md font-medium">
+
+  <Link to='/contact-us'> <button className="hidden lg:inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md font-medium">
     BOOK A CALL
-  </button>
+  </button></Link>
+ 
 
   {/* Always show Menu on mobile */}
   <button
@@ -248,9 +250,9 @@ export default function Navbar() {
             <a href="#" className="text-lg hover:text-orange-500">
               Industries
             </a>
-            <a href="#" className="text-lg hover:text-orange-500">
+            <Link to="/contact-us" className="text-lg hover:text-orange-500">
               Contact
-            </a>
+            </Link>
             <div className="flex items-center space-x-4 pt-4 border-t border-gray-800">
 
               <a href="https://www.facebook.com/share/16wqfNsNHL/"> <Facebook className="w-5 h-5 hover:text-orange-500 cursor-pointer" /></a>

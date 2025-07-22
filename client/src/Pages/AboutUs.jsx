@@ -41,12 +41,14 @@ export default function AboutUs() {
                             <h2 className="text-3xl md:text-4xl font-bold mb-6">
                                 Turning Ideas Into Impact
                             </h2>
-                            <p className="text-gray-200 mb-4">
-                                At <span className="font-semibold text-white">Landing Labs</span>, we don’t just build brands — we engineer digital success.
-                                As a full-stack digital transformation agency, we specialize in
-                                <span className="font-semibold text-white"> Digital Marketing, AI Solutions, Web & App Development,</span> and
-                                <span className="font-semibold text-white"> Creative Design</span> — all under one roof.
-                            </p>
+                            <div className="mb-6">
+                                <p className="text-gray-200 leading-relaxed max-w-3xl text-lg mx-auto">
+                                    At <span className="font-semibold text-white">Landing Labs</span>, we don’t just build brands — we engineer digital success. 
+                                    As a full-stack digital transformation agency, we specialize in 
+                                    <span className="font-semibold text-white"> Digital Marketing, AI Solutions, Web & App Development,</span> and 
+                                    <span className="font-semibold text-white"> Creative Design</span> — all under one roof.
+                                </p>
+                            </div>
                             <p className="text-gray-300 mb-4">
                                 We blend creative thinking, deep technical expertise, and marketing intelligence to offer:
                             </p>
@@ -122,7 +124,7 @@ export default function AboutUs() {
                         </div>
                     </div>
 
-                    <div className="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100 mt-20 text-center border-t border-gray-700 pt-16">
+                    <div className="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100 mt-20 text-center border-t border-gray-700 pt-16 ">
                         <div className="mb-12 space-y-5 py-4 md:mb-16 md:text-center">
                             <h1 className="mb-5 text-3xl font-semibold text-white md:text-center md:text-5xl">
                                 Trusted by the <span className="text-[#E82561]">Best in the Industry</span>
@@ -131,14 +133,11 @@ export default function AboutUs() {
                                 <span className="text-[#E82561]">Our partners</span> are leaders, innovators, and game-changers who trust us to deliver excellence — every single time.
                             </p>
 
-                              <div className="py-10">
-                        <StateSection />
-                    </div>
+                            <div className="py-10">
+                                <StateSection />
+                            </div>
                         </div>
-                        
                     </div>
-
-                  
 
                     <div className="relative max-w-7xl mx-auto px-6 py-16 rounded-md border border-gray-200 shadow-sm overflow-hidden">
                         <div

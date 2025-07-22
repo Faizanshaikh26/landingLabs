@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "./assets/images/landingLabs-logo.webp";
+import logo from "./assets/images/Og-Logo.png";
 
 export default function Footer() {
   return (
