@@ -184,10 +184,11 @@ export default function Navbar() {
                 Home
               </Link>
               <div className="relative group">
-                <button className="flex items-center space-x-1 hover:text-orange-500 transition-colors">
+                <Link to='/services'> <button className="flex items-center space-x-1 hover:text-orange-500 transition-colors">
                   <span>Services</span>
                   <ChevronDown className="w-4 h-4" />
-                </button>
+                </button></Link>
+               
               </div>
              
 
@@ -241,15 +242,17 @@ export default function Navbar() {
               Home
             </Link>
             <button className="flex items-center justify-between text-lg hover:text-orange-500">
-              <span>Services</span>
+
+              <Link to="/services"> <span>Services</span></Link>
+             
               <ChevronDown className="w-4 h-4" />
             </button>
             <Link to="/about-us" className="text-lg hover:text-orange-500">
               About
             </Link>
-            <a href="#" className="text-lg hover:text-orange-500">
-              Industries
-            </a>
+            <Link to='/carrer' className="text-lg hover:text-orange-500">
+              Carrer
+            </Link>
             <Link to="/contact-us" className="text-lg hover:text-orange-500">
               Contact
             </Link>
