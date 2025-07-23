@@ -20,3 +20,33 @@
 .animate-marquee {
   animation: marquee 20s linear infinite;
 }
+
+/* Add this for 3D flip support */
+.rotate-y-180 {
+  transform: rotateY(360deg);
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.5s ease-out forwards;
+}
