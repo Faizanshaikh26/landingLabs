@@ -6,7 +6,7 @@ import CustomCursor from "./components/custome-cursor"
 import ContactUs from "./Pages/ContactUs"
 import Carrer from "./Pages/Carrer"
 import Service from "./Pages/Services/service-mainPage"
-import SEO from "./Pages/Services/details/SEO.JSX"
+
 import WebDevelopment from "./Pages/Services/details/Web-development"
 import SocialMediaMarketing from "./Pages/Services/details/SocialMediaMarketing"
 import PPCAds from "./Pages/Services/details/PPCAds"
@@ -16,6 +16,7 @@ import GraphicDesign from "./Pages/Services/details/GraphicDesign"
 import InfluencerMarketing from "./Pages/Services/details/InfluencerMarketing"
 import ContentMarketing from "./Pages/Services/details/ContentMarketing"
 import ScrollToTop from "./components/ScrollToTop"
+import SEO from "./Pages/Services/details/SEO.jsx"
 
 
 
