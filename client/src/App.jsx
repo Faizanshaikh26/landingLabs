@@ -67,7 +67,7 @@ import Home from "./Home"
 import AboutUs from "./Pages/AboutUs"
 import CustomCursor from "./components/custome-cursor"
 import ContactUs from "./Pages/ContactUs"
-import Carrer from "./Pages/Carrer"
+import Carrer from "./Pages/Career.jsx"
 import Service from "./Pages/Services/service-mainPage"
 
 import WebDevelopment from "./Pages/Services/details/Web-development"
@@ -81,18 +81,17 @@ import ContentMarketing from "./Pages/Services/details/ContentMarketing"
 import SEO from "./Pages/Services/details/SEO.jsx"
 
 import ScrollToTop from "./components/ScrollToTop"
-import Aos from 'aos'
-import 'aos/dist/aos.css'
+
 
 import { AnimatePresence, motion } from "framer-motion"
-import { useEffect } from "react"
+
+import Career from "./Pages/Career.jsx"
+import Pricing from "./Pages/Pricing.jsx"
 
 function App() {
   const location = useLocation()
 
-  useEffect(() => {
-    Aos.init({ duration: 1000 })
-  }, [])
+
 
   return (
     <div className="min-h-screen bg-[#000000]">
@@ -104,8 +103,9 @@ function App() {
           <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
           <Route path="/about-us" element={<PageWrapper><AboutUs /></PageWrapper>} />
           <Route path="/contact-us" element={<PageWrapper><ContactUs /></PageWrapper>} />
-          <Route path="/carrer" element={<PageWrapper><Carrer /></PageWrapper>} />
+          <Route path="/career" element={<PageWrapper><Carrer /></PageWrapper>} />
           <Route path="/services" element={<PageWrapper><Service /></PageWrapper>} />
+          <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
 
           {/* Service Details */}
           <Route path="/services/search-engine-optimization" element={<PageWrapper><SEO /></PageWrapper>} />

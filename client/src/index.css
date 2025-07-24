@@ -1,9 +1,6 @@
 @import "tailwindcss";
 
 
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 
@@ -50,3 +47,13 @@
 .animate-slideIn {
   animation: slideIn 0.5s ease-out forwards;
 }
+
+.glass-text {
+  /* background: rgba(255, 255, 255, 0.1); */
+  backdrop-filter: blur(8x);
+  -webkit-backdrop-filter: blur(8px);
+  
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  color: #fff;
+}
+

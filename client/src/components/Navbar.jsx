@@ -152,7 +152,7 @@ export default function Navbar() {
               <div className="flex items-center space-x-8 mx-6 py-2">
                 <span>+91 738 739 2708</span>
                 <span className="ml-64">
-                  Office 610, Suratwala Mark Plaza, Hinjewadi, 411057
+                  Office 610, Suratwala Mark Plazzo, Hinjewadi, 411057
                 </span>
               </div>
               <div className="flex items-center space-x-4">
@@ -161,7 +161,7 @@ export default function Navbar() {
 
                 <a href="https://www.instagram.com/landinglabs_?igsh=Njc1YjZvdjc1Y2J1"> <Instagram className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" /></a>
                 <a href="https://www.linkedin.com/company/landing-labs/">   <Linkedin className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" /></a>
-                <a href="">  <Youtube className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" /></a>
+                <a href="https://www.youtube.com/@landinglabs">  <Youtube className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" /></a>
 
 
 
@@ -193,11 +193,14 @@ export default function Navbar() {
 
 
               <Link to='/about-us' className="hover:text-orange-500 transition-colors">  About</Link>
-              <Link to="/carrer" className="hover:text-orange-500 transition-colors">
-                Carrer
+              <Link to="/career " className="hover:text-orange-500 transition-colors">
+                Career
               </Link>
               <Link to="/contact-us" className="hover:text-orange-500 transition-colors">
                 Contact
+              </Link>
+              <Link to="/pricing" className="hover:text-orange-500 transition-colors">
+                Pricing
               </Link>
             </div>
 
@@ -250,8 +253,8 @@ export default function Navbar() {
             <Link to="/about-us" className="text-lg hover:text-orange-500">
               About
             </Link>
-            <Link to='/carrer' className="text-lg hover:text-orange-500">
-              Carrer
+            <Link to="/career "className="text-lg hover:text-orange-500">
+              Career
             </Link>
             <Link to="/contact-us" className="text-lg hover:text-orange-500">
               Contact
@@ -261,7 +264,7 @@ export default function Navbar() {
               <a href="https://www.facebook.com/share/16wqfNsNHL/"> <Facebook className="w-5 h-5 hover:text-orange-500 cursor-pointer" /></a>
               <a href="https://www.instagram.com/landinglabs_?igsh=Njc1YjZvdjc1Y2J1">       <Instagram className="w-5 h-5 hover:text-orange-500 cursor-pointer" /></a>
               <a href="https://www.linkedin.com/company/landing-labs/">  <Linkedin className="w-5 h-5 hover:text-orange-500 cursor-pointer" /></a>
-              <a href="">      <Youtube className="w-5 h-5 hover:text-orange-500 cursor-pointer" /></a>
+              <a href="https://www.youtube.com/@landinglabs">      <Youtube className="w-5 h-5 hover:text-orange-500 cursor-pointer" /></a>
               +
 
 
