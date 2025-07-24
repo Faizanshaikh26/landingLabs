@@ -1,3 +1,4 @@
+import { Star } from 'lucide-react';
 import React from 'react'
 
 export default function ServiceBanner() {
@@ -56,7 +57,9 @@ export default function ServiceBanner() {
             {services.map((service, index) => (
               <div key={`duplicate-${index}`} className="flex items-center text-white text-xl md:text-2xl font-medium">
                 <span className="px-8">{service}</span>
-                <span className="text-blue-400 text-3xl">+</span>
+                <span className="text-blue-400 text-3xl">
+                    <Star/>
+                </span>
               </div>
             ))}
           </div>

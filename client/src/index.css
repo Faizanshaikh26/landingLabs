@@ -32,7 +32,7 @@
   100% { transform: rotate(360deg); }
 }
 .animate-spin-slow {
-  animation: spin 8s linear infinite;
+  animation: spin 18s linear infinite;
 }
 
 
