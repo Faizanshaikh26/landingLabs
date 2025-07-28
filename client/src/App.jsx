@@ -87,6 +87,8 @@ import { AnimatePresence, motion } from "framer-motion"
 
 import Career from "./Pages/Career.jsx"
 import Pricing from "./Pages/Pricing.jsx"
+import CareerForm from "./Pages/test-car.jsx"
+import PricingPage from "./Pages/dum.jsx"
 
 function App() {
   const location = useLocation()
@@ -106,6 +108,9 @@ function App() {
           <Route path="/career" element={<PageWrapper><Carrer /></PageWrapper>} />
           <Route path="/services" element={<PageWrapper><Service /></PageWrapper>} />
           <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
+          <Route path="/try" element={<PageWrapper><CareerForm /></PageWrapper>} />
+          <Route path="/dum" element={<PricingPage/>} />
+
 
           {/* Service Details */}
           <Route path="/services/search-engine-optimization" element={<PageWrapper><SEO /></PageWrapper>} />

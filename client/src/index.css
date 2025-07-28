@@ -44,6 +44,40 @@
   }
 }
 
+
+
+
+@keyframes move-to-bottom {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes move-to-top {
+  0% {
+    transform: translateY(0);
+   
+  }
+  100% {
+    transform: translateY(-100%);  
+  }
+}
+
+.move-to-bottom {
+  animation: move-to-bottom 20s infinite;
+}
+
+.move-to-top {
+  animation: move-to-top 10s linear infinite;
+}
+
+
+
+
+
 .animate-slideIn {
   animation: slideIn 0.5s ease-out forwards;
 }
