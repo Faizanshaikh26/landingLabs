@@ -1,19 +1,33 @@
 "use client"
 
+import { motion, useAnimation, useInView } from "framer-motion"
+  
 import { useEffect, useRef, useState } from "react"
 
 export default function PricingPage() {
 const [billingCycle, setBillingCycle] = useState("yearly")
   const containerRef = useRef(null)
   const lastY = useRef(0)
-
   const topLayerRef = useRef(null)
   const bottomLayerRef = useRef(null)
-
   const [shrinkHeader, setShrinkHeader] = useState(false)
+
+  
+  
 
   useEffect(() => {
     const container = containerRef.current
+    let scrollTimeout
+
+    const clearAnimations = () => {
+      topLayerRef.current?.classList.remove("move-to-top", "move-to-bottom", "paused-animation")
+      bottomLayerRef.current?.classList.remove("move-to-top", "move-to-bottom", "paused-animation")
+    }
+
+    const pauseAnimations = () => {
+      topLayerRef.current?.classList.add("paused-animation")
+      bottomLayerRef.current?.classList.add("paused-animation")
+    }
 
     const handleScrollGesture = (e) => {
       let clientY = 0
@@ -25,20 +39,23 @@ const [billingCycle, setBillingCycle] = useState("yearly")
         lastY.current = e.touches[0].clientY
       }
 
-      // Remove previous animations
-      topLayerRef.current?.classList.remove("move-to-top", "move-to-bottom")
-      bottomLayerRef.current?.classList.remove("move-to-top", "move-to-bottom")
+      clearAnimations()
 
       if (clientY > 5) {
-  setShrinkHeader(true)
-  topLayerRef.current?.classList.add("move-to-bottom")
-  bottomLayerRef.current?.classList.add("move-to-bottom")
-} else if (clientY < -5) {
-  setShrinkHeader(false)
-  topLayerRef.current?.classList.add("move-to-top")
-  bottomLayerRef.current?.classList.add("move-to-top")
-}
+        setShrinkHeader(true)
+        topLayerRef.current?.classList.add("move-to-bottom")
+        bottomLayerRef.current?.classList.add("move-to-bottom")
+      } else if (clientY < -5) {
+        setShrinkHeader(false)
+        topLayerRef.current?.classList.add("move-to-top")
+        bottomLayerRef.current?.classList.add("move-to-top")
+      }
 
+      // Pause animation after 1 second of inactivity
+      if (scrollTimeout) clearTimeout(scrollTimeout)
+      scrollTimeout = setTimeout(() => {
+        pauseAnimations()
+      }, 1000)
     }
 
     if (container) {
@@ -51,13 +68,14 @@ const [billingCycle, setBillingCycle] = useState("yearly")
         container.removeEventListener("wheel", handleScrollGesture)
         container.removeEventListener("touchmove", handleScrollGesture)
       }
+      clearTimeout(scrollTimeout)
     }
   }, [])
 
 
 
-  console.log(shrinkHeader)
 
+  
   const pricingPlans = [
     {
       name: "Launch",
@@ -279,7 +297,7 @@ const [billingCycle, setBillingCycle] = useState("yearly")
 ]
 
 
-  
+
  
 
   return (
@@ -289,11 +307,11 @@ const [billingCycle, setBillingCycle] = useState("yearly")
     >
       {/* Animated Background Layers */}
       <div
-  ref={topLayerRef}
-  className={`pointer-events-none absolute top-0 left-0 w-full transition-all duration-700 ease-in-out opacity-10 z-0 ${
-    shrinkHeader ? "h-32" : "h-full"
-  }`}
->
+        ref={topLayerRef}
+        className={`pointer-events-none absolute top-0 left-0 w-full transition-all duration-700 ease-in-out opacity-10 z-0 ${
+          shrinkHeader ? "h-32" : "h-full"
+        }`}
+      >
         <div className="w-full h-full bg-gradient-to-b from-blue-800 via-purple-900 to-black" />
       </div>
 
@@ -333,15 +351,16 @@ const [billingCycle, setBillingCycle] = useState("yearly")
             </button>
           </div>
         </div>
+        
 
         {/* Pricing Table */}
-        <div className="bg-[#0d0d0d] text-white max-w-7xl mx-auto mt-16 rounded-lg overflow-x-auto">
-          <div className="grid grid-cols-5 text-center text-white border border-gray-700 z-30">
+        <div className="bg-[#0d0d0d] text-white max-w-7xl mx-auto mt-16 rounded-lg overflow-x-auto ">
+          <div className={`grid grid-cols-5 text-center text-white border border-gray-700 z-30  ${shrinkHeader ? 'z-40  sticky' :'move-to'} `} >
             <div className="bg-[#121212] p-6 text-left border-r border-gray-700 font-semibold">
               Plans
             </div>
             {pricingPlans.map((plan, index) => (
-              <div key={index} className={`p-6 border-r border-gray-700 space-y-2   ${shrinkHeader ? 'z-40 overflow' :'move-to'} `}   >
+              <div key={index} className={`p-6 border-r border-gray-700 space-y-2   ${shrinkHeader ? 'z-40  overflow  bg-[#121212]' :'move-to'} `}   >
                 <h3 className="text-lg font-semibold">{plan.name}</h3>
                 <p className="text-sm text-gray-400">{plan.description}</p>
                 <div className="mt-2">

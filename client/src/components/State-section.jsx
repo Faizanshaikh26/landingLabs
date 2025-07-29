@@ -176,6 +176,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+import Aaradhya from '../assets/images/Aaradhya.Logo TP.png'
+import Crunchy from '../assets/images/Crunchy.Logo TP.png'
+import EzeDesign from '../assets/images/Eze Design.Logo TP.png'
+import Ezepune from '../assets/images/Ezepune.Logo TP.png'
+import Kiara from '../assets/images/Kiara.Logo TP.png'
+import Kohinoor from '../assets/images/Kohinoor.Logo TP.png'
+import MadakeJewellers from '../assets/images/Madake Jewellers.Logo TP.png'
+import MrMS from '../assets/images/Mr& MS.Logo TP.png'
+import NikolEV from '../assets/images/NikolEV.Logo TP.png'
+import Sidenest from '../assets/images/Sidenest.Logo TP.png'
+import SuncityVilla from '../assets/images/Suncity Villa.Logo TP.png'
+import Techmark from '../assets/images/Techmark.Logo TP.png'
+import Zelc from '../assets/images/Zelc.Logo TP.png'
+
+
+
 export default function StateSection() {
   const stats = [
     { label: 'Projects Delivered', value: '100+' },
@@ -185,13 +201,16 @@ export default function StateSection() {
   ];
 
   const logos = [
-    "https://a.storyblok.com/f/298810/79x20/4f5ce2a824/ahrefs-logo.svg",
-    "https://a.storyblok.com/f/298810/128x20/9e2e70ccb8/instacart-logo.svg",
-    "https://a.storyblok.com/f/298810/99x16/364e2223b5/groupon-logo.svg",
-    "https://a.storyblok.com/f/298810/143x16/1474e3dbaa/century21-logo.svg",
-    "https://a.storyblok.com/f/298810/166x20/495b032848/cleardesk-logo.svg",
-    "https://a.storyblok.com/f/298810/107x20/9859e82bee/oneims-logo.svg",
-    "https://a.storyblok.com/f/298810/33x20/742b4a9222/ring-logo.svg",
+    // "https://a.storyblok.com/f/298810/79x20/4f5ce2a824/ahrefs-logo.svg",
+    // "https://a.storyblok.com/f/298810/128x20/9e2e70ccb8/instacart-logo.svg",
+    // "https://a.storyblok.com/f/298810/99x16/364e2223b5/groupon-logo.svg",
+    // "https://a.storyblok.com/f/298810/143x16/1474e3dbaa/century21-logo.svg",
+    // "https://a.storyblok.com/f/298810/166x20/495b032848/cleardesk-logo.svg",
+    // "https://a.storyblok.com/f/298810/107x20/9859e82bee/oneims-logo.svg",
+    // "https://a.storyblok.com/f/298810/33x20/742b4a9222/ring-logo.svg",
+    Aaradhya,
+    Crunchy,EzeDesign,Ezepune,Kiara,Kohinoor,MadakeJewellers,MrMS,NikolEV,Sidenest,SuncityVilla,Techmark,Zelc
+  
   ];
 
   const logoMotion = {
@@ -240,20 +259,21 @@ export default function StateSection() {
 
         {/* Animated Logo Marquee Section */}
         <motion.div
-          className="mt-16 pb-4 overflow-hidden relative"
-          {...logoMotion}
-        >
-          <div className="marquee flex gap-12 whitespace-nowrap">
-            {[...logos, ...logos].map((src, index) => (
-              <motion.img
-                key={index}
-                src={src}
-                alt={`Logo ${index}`}
-                className="h-6 opacity-80 hover:scale-110 transition-transform duration-300"
-              />
-            ))}
-          </div>
-        </motion.div>
+  className="mt-16 pb-4 overflow-hidden relative"
+  {...logoMotion}
+>
+  <div className="marquee flex gap-12 whitespace-nowrap">
+    {[...logos, ...logos].map((src, index) => (
+      <motion.img
+        key={index}
+        src={src}
+        alt={`Logo ${index}`}
+        className="h-[90px] w-auto opacity-80 hover:scale-125 transition-transform duration-300"
+      />
+    ))}
+  </div>
+</motion.div>
+
       </div>
 
       {/* CSS for Infinite Marquee */}

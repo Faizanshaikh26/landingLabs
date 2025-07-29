@@ -4,7 +4,7 @@
 //     return (
 //         <div className="max-w-screen-xl mx-auto py-8 px-4 lg:py-16 lg:px-6 text-[#EAEAEA] ">
 //             <div className="text-center mb-10">
-//                 <h2 className="text-3xl md:text-4xl tracking-tight font-bold  text-[#E82561] ">
+//                 <h2 className="text-3xl md:text-4xl tracking-tight font-bold  text-orange-500 ">
 //                     Industries <span className="text-[#EAEAEA]">We Serve</span>
 //                 </h2>
 //                 <p className="mt-4 text-2xl md:text-4xl text-[#CFFFE2]">
@@ -27,7 +27,7 @@
 //                 <div className="flex-1 flex flex-col sm:flex-row flex-wrap -mb-4 -mx-2">
 //                     {/* Tech & SaaS */}
 //                     <div className="w-full sm:w-1/2 mb-4 px-2">
-//                         <div className="h-full py-4 px-6 border border-[#E82561] border-t-0 border-l-0 rounded-br-xl">
+//                         <div className="h-full py-4 px-6 border border-orange-500 border-t-0 border-l-0 rounded-br-xl">
 //                             <h3 className="text-2xl font-bold mb-6">Tech & SaaS</h3>
 //                             <p className="text-sm">
 //                                 From MVP to scale-up, we craft launch strategies, product
@@ -38,7 +38,7 @@
 
 //                     {/* E‑commerce */}
 //                     <div className="w-full sm:w-1/2 mb-4 px-2">
-//                         <div className="h-full py-4 px-6 border border-[#E82561]  border-t-0 border-l-0 rounded-br-xl">
+//                         <div className="h-full py-4 px-6 border border-orange-500  border-t-0 border-l-0 rounded-br-xl">
 //                             <h3 className="text-2xl font-bold mb-6">E‑commerce</h3>
 //                             <p className="text-sm">
 //                                 We build fast-loading stores, conversion funnels, and marketing
@@ -49,7 +49,7 @@
 
 //                     {/* Personal Brands */}
 //                     <div className="w-full sm:w-1/2 mb-4 px-2">
-//                         <div className="h-full py-4 px-6 border border-[#E82561]  border-t-0 border-l-0 rounded-br-xl">
+//                         <div className="h-full py-4 px-6 border border-orange-500  border-t-0 border-l-0 rounded-br-xl">
 //                             <h3 className="text-2xl font-bold mb-6">Personal Brands</h3>
 //                             <p className="text-sm">
 //                                 We package your personality into a high-converting brand—from
@@ -60,7 +60,7 @@
 
 //                     {/* Healthcare & Wellness */}
 //                     <div className="w-full sm:w-1/2 mb-4 px-2">
-//                         <div className="h-full py-4 px-6 border border-[#E82561]  border-t-0 border-l-0 rounded-br-xl">
+//                         <div className="h-full py-4 px-6 border border-orange-500  border-t-0 border-l-0 rounded-br-xl">
 //                             <h3 className="text-2xl font-bold mb-6">Healthcare & Wellness</h3>
 //                             <p className="text-sm">
 //                                 Helping clinics, coaches, and wellness brands connect with
@@ -71,7 +71,7 @@
 
 //                     {/* E-Learning Platform */}
 //                     <div className="w-full sm:w-1/2 mb-4 px-2">
-//                         <div className="h-full py-4 px-6 border border-[#E82561]  border-t-0 border-l-0 rounded-br-xl">
+//                         <div className="h-full py-4 px-6 border border-orange-500  border-t-0 border-l-0 rounded-br-xl">
 //                             <h3 className="text-2xl font-bold mb-6">E-Learning Platform</h3>
 //                             <p className="text-sm">
 //                                 Building digital classrooms, course platforms, and lead gen
@@ -82,10 +82,10 @@
 
 //                     {/* Service-Based */}
 //                     <div className="w-full sm:w-1/2 mb-4 px-2">
-//                         <div className="h-full py-4 px-6 border border-[#E82561]  border-t-0 border-l-0 rounded-br-xl">
+//                         <div className="h-full py-4 px-6 border border-orange-500  border-t-0 border-l-0 rounded-br-xl">
 //                             <h3 className="text-2xl font-bold mb-6">Service-Based</h3>
 //                             <p className="text-sm">
-//                                 From real estate to consulting, we help service border-[#E82561]
+//                                 From real estate to consulting, we help service border-orange-500
 //                                 with premium web presence and local SEO.
 //                             </p>
 //                         </div>
@@ -146,7 +146,7 @@ export default function Features() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
             >
-                <h2 className="text-3xl md:text-4xl tracking-tight font-bold text-[#E82561]">
+                <h2 className="text-3xl md:text-4xl tracking-tight font-bold text-orange-500">
                     Industries <span className="text-[#EAEAEA]">We Serve</span>
                 </h2>
                 <p className="mt-4 text-2xl md:text-4xl text-[#CFFFE2]">
@@ -186,7 +186,7 @@ export default function Features() {
                             viewport={{ once: true, amount: 0.3 }}
                             whileHover={{ scale: 1.03 }}
                         >
-                            <div className="h-full py-4 px-6 border border-[#E82561] border-t-0 border-l-0 rounded-br-xl transition duration-300 hover:shadow-lg hover:border-[#ff457e]">
+                            <div className="h-full py-4 px-6 border border-orange-500 border-t-0 border-l-0 rounded-br-xl transition duration-300 hover:shadow-lg hover:border-orange-400">
                                 <h3 className="text-2xl font-bold mb-6">{item.title}</h3>
                                 <p className="text-sm">{item.description}</p>
                             </div>

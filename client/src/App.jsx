@@ -89,6 +89,8 @@ import Career from "./Pages/Career.jsx"
 import Pricing from "./Pages/Pricing.jsx"
 import CareerForm from "./Pages/test-car.jsx"
 import PricingPage from "./Pages/dum.jsx"
+import LadderDesign from "./components/dum.jsx"
+import { AutoPopupDialog } from "./components/AutoDialog.jsx"
 
 function App() {
   const location = useLocation()
@@ -96,9 +98,10 @@ function App() {
 
 
   return (
-    <div className="min-h-screen bg-[#000000]">
+    <div className="min-h-screen bg-[#000000]  font-poppins">
       <ScrollToTop />
       <CustomCursor />
+      <AutoPopupDialog/>
 
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
@@ -110,6 +113,7 @@ function App() {
           <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
           <Route path="/try" element={<PageWrapper><CareerForm /></PageWrapper>} />
           <Route path="/dum" element={<PricingPage/>} />
+          <Route path="/LadderDesign" element={<LadderDesign/>} />
 
 
           {/* Service Details */}

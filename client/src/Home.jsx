@@ -8,6 +8,8 @@ import Features from './components/Features'
 import Portfolio from './components/Portfolio'
 import Testimonies from './components/Testonomials'
 import Footer from './Footer'
+import { Industries } from './components/Industries'
+import Process from './components/Process'
 
 
 export default function Home() {
@@ -30,10 +32,14 @@ export default function Home() {
 
 <Testimonies/>
 
-      <Banner />
+     
+      <Process/>
       <Portfolio />
 
  
+ <Industries/>
+
+  <Banner />
 
   <Footer/>
 

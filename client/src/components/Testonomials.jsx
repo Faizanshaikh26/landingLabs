@@ -61,10 +61,10 @@
 //                 Words from Others
 //               </div>
 //               <h1 className="mb-5 text-3xl font-semibold text-white md:text-center md:text-5xl">
-//                 It's not just  <span className="text-[#E82561]">us.</span> 
+//                 It's not just  <span className="text-orange-500">us.</span> 
 //               </h1>
 //                 <p className="mt-4  md:text-2xl text-[#CFFFE2]">
-//                  <span className="text-[#E82561]"> Here's what </span> others have to say about us.
+//                  <span className="text-orange-500"> Here's what </span> others have to say about us.
 //               </p>
 //             </div>
 //           </div>
@@ -194,10 +194,10 @@
 //             Words from Others
 //           </div>
 //           <h1 className="text-3xl font-semibold text-white md:text-5xl">
-//             It's not just <span className="text-[#E82561]">us.</span>
+//             It's not just <span className="text-orange-500">us.</span>
 //           </h1>
 //           <p className="mt-4 text-xl md:text-2xl text-[#CFFFE2]">
-//             <span className="text-[#E82561]">Here's what</span> others have to say about us.
+//             <span className="text-orange-500">Here's what</span> others have to say about us.
 //           </p>
 //         </motion.div>
 
@@ -229,11 +229,11 @@
 //                 target="_blank"
 //                 rel="noopener noreferrer"
 //               >
-//                 <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5 hover:ring-[#E82561] transition duration-300">
+//                 <div className="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5 hover:ring-orange-500 transition duration-300">
 //                   <div className="flex items-center space-x-4">
 //                     <img
 //                       src={item.imageUrl}
-//                       className="w-12 h-12 bg-center bg-cover border-2 border-[#E82561] rounded-full"
+//                       className="w-12 h-12 bg-center bg-cover border-2 border-orange-500 rounded-full"
 //                       alt={item.name}
 //                     />
 //                     <div>
@@ -333,10 +333,10 @@ export default function Testimonials() {
             Words from Others
           </div>
           <h1 className="text-3xl font-semibold text-white md:text-5xl">
-            It's not just <span className="text-[#E82561]">us.</span>
+            It's not just <span className="text-orange-500">us.</span>
           </h1>
           <p className="mt-4 text-xl md:text-2xl text-[#CFFFE2]">
-            <span className="text-[#E82561]">Here's what</span> others have to say about us.
+            <span className="text-orange-500">Here's what</span> others have to say about us.
           </p>
         </motion.div>
 
@@ -370,7 +370,7 @@ export default function Testimonials() {
             <div className="flex items-center space-x-5">
               <img
                 src={item.imageUrl}
-                className="w-14 h-14 bg-center bg-cover border-2 border-[#E82561] rounded-full"
+                className="w-14 h-14 bg-center bg-cover border-2 border-orange-500 rounded-full"
                 alt={item.name}
               />
               <div>
@@ -391,7 +391,7 @@ export default function Testimonials() {
   <style jsx>{`
     .swiper-button-next,
     .swiper-button-prev {
-      color: #E82561;
+      color: #EC780C;
       top: 35%;
       width: 2.25rem;
       height: 2.25rem;
@@ -410,7 +410,7 @@ export default function Testimonials() {
       opacity: 0.5;
     }
     .swiper-pagination-bullet-active {
-      background: #E82561;
+      background: #EC780C;
       opacity: 1;
     }
   `}</style>
