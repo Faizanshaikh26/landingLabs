@@ -2,8 +2,36 @@
 
 
 import { useState, useEffect } from "react"
+import Aaradhya from '../assets/images/Aaradhya.Logo TP.png'
+import Crunchy from '../assets/images/Crunchy.Logo TP.png'
+import EzeDesign from '../assets/images/Eze Design.Logo TP.png'
+import Ezepune from '../assets/images/Ezepune.Logo TP.png'
+import Kiara from '../assets/images/Kiara.Logo TP.png'
+import Kohinoor from '../assets/images/Kohinoor.Logo TP.png'
+import MadakeJewellers from '../assets/images/Madake Jewellers.Logo TP.png'
+import MrMS from '../assets/images/Mr& MS.Logo TP.png'
+import NikolEV from '../assets/images/NikolEV.Logo TP.png'
+import Sidenest from '../assets/images/Sidenest.Logo TP.png'
+import SuncityVilla from '../assets/images/Suncity Villa.Logo TP.png'
+import Techmark from '../assets/images/Techmark.Logo TP.png'
+import Zelc from '../assets/images/Zelc.Logo TP.png'
+
 
 export function AutoPopupDialog() {
+
+
+
+
+
+
+  const logos = [
+    
+      Aaradhya,
+      Crunchy,EzeDesign,Ezepune,Kiara,Kohinoor,MadakeJewellers,MrMS,NikolEV,Sidenest,SuncityVilla,Techmark,Zelc
+    
+    ];
+
+
   const [isOpen, setIsOpen] = useState(false)
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false)
   const [formData, setFormData] = useState({
@@ -47,7 +75,7 @@ export function AutoPopupDialog() {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center pt-20">
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black bg-opacity-50" onClick={() => setIsOpen(false)} />
 
@@ -97,7 +125,19 @@ export function AutoPopupDialog() {
                 <div className="text-3xl font-bold">20+</div>
                 <div className="text-blue-200 text-sm">Global Offices</div>
               </div>
+
+
+              
             </div>
+            <div className="pt-2 border-t border-gray-200">
+  <div className="grid grid-cols-3 gap-4 items-center opacity-80">
+    {logos.map((logo, index) => (
+      <div key={index} className="flex items-center justify-center p-2">
+        <img src={logo} alt={`logo-${index}`} className="max-h-12 object-contain" />
+      </div>
+    ))}
+  </div>
+</div>
           </div>
 
           {/* Right side - Form */}
@@ -192,32 +232,10 @@ export function AutoPopupDialog() {
                 </button>
               </form>
 
+              
               {/* Brand logos */}
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <div className="grid grid-cols-3 gap-4 items-center opacity-60">
-                  <div className="text-center">
-                    <div className="font-bold text-2xl">✓</div>
-                    <div className="text-xs text-gray-600">Nike</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="font-bold text-2xl">UA</div>
-                    <div className="text-xs text-gray-600">Under Armour</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="font-bold text-lg">dropkick</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="font-bold text-lg">FOX</div>
-                    <div className="text-xs text-gray-600">SPORTS</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="font-bold text-sm">COLE HAAN</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="font-bold text-lg text-red-600">Enn's</div>
-                  </div>
-                </div>
-              </div>
+
+
             </div>
           </div>
         </div>

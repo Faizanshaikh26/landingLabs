@@ -82,33 +82,42 @@
 
 
 import React from "react";
-import { ArrowDown } from "lucide-react"
-
+import { motion } from "framer-motion";
+import { ArrowDown } from "lucide-react";
 
 export default function Process() {
   const steps = [
     {
+      id: 1,
       title: "ENGAGEMENT",
       description: "Agile video production and brand-first creative that cuts past noise",
     },
     {
+      id: 2,
       title: "TRAFFIC",
       description: "Multichannel prospecting & retargeting of top-performing user segments",
     },
     {
+      id: 3,
       title: "CONVERSION",
       description: "Landing pages to on-site messaging and design optimization",
     },
     {
+      id: 4,
       title: "RETENTION",
       description: "Content strategy and creative testing of email sequences",
     },
   ];
 
   return (
-    <div className=" text-white">
+    <div className="text-white">
       {/* Partnership Section */}
-      <section className="px-4 py-20">
+      <motion.section
+        className="px-4 py-20"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white">
             Partnership isn’t just a promise —{" "}
@@ -119,14 +128,17 @@ export default function Process() {
             long-term success for your business.
           </p>
         </div>
-      </section>
+      </motion.section>
 
-
-        <div className="max-w-4xl mx-auto">
-        
-
+      <div className="max-w-4xl mx-auto">
         {/* Process Image */}
-        <div className="mb-12 flex justify-center">
+        <motion.div
+          className="mb-12 flex justify-center"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <div className="relative">
             <img
               src="https://cdn.pixabay.com/photo/2015/09/09/19/56/office-932926_1280.jpg"
@@ -135,7 +147,7 @@ export default function Process() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-lg"></div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Process Steps */}
         <div className="relative">
@@ -143,7 +155,14 @@ export default function Process() {
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500 to-orange-300"></div>
 
           {steps.map((step, index) => (
-            <div key={step.id} className="relative mb-8 last:mb-0">
+            <motion.div
+              key={step.id}
+              className="relative mb-8 last:mb-0"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              viewport={{ once: true }}
+            >
               {/* Step Number */}
               <div className="absolute left-5 z-10 bg-black rounded-full w-8 h-8 flex items-center justify-center shadow-lg border-2 border-orange-500">
                 <span className="text-sm font-bold text-white">{step.id}</span>
@@ -151,7 +170,7 @@ export default function Process() {
 
               {/* Step Content */}
               <div className="ml-16">
-                <div className="bg-gray-900 border-gray-700 transition-all duration-300 hover:shadow-xl  ">
+                <div className="bg-gray-900 border-gray-700 transition-all duration-300 hover:shadow-xl">
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
                     <p className="text-gray-300 leading-relaxed">{step.description}</p>
@@ -165,29 +184,34 @@ export default function Process() {
                   <ArrowDown className="w-4 h-4 text-orange-500" />
                 </div>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Call to Action */}
-        <div className="mt-12 text-center">
+        <motion.div
+          className="mt-12 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <div className="bg-gray-900 rounded-lg shadow-xl p-8 border border-gray-700">
             <h3 className="text-2xl font-semibold text-white mb-3">Ready to Grow Your Business?</h3>
             <p className="text-gray-300 mb-6 text-lg">
               Let's implement this proven process to drive real results for your brand
             </p>
-            <button className="bg-orange-500 hover:bg-orange-600 text-black px-8 py-3 rounded-lg font-bold transition-all duration-300 text-lg shadow-lg hover:shadow-xl hover:shadow-orange-500/30 transform hover:scale-105">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-orange-500 hover:bg-orange-600 text-black px-8 py-3 rounded-lg font-bold transition-all duration-300 text-lg shadow-lg hover:shadow-xl hover:shadow-orange-500/30"
+            >
               Get Started Today
-            </button>
+            </motion.button>
           </div>
-        </div>
+        </motion.div>
       </div>
-
-
-
-
-
-     
     </div>
   );
 }
+
