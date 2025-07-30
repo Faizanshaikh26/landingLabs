@@ -1,229 +1,81 @@
-// import React from 'react'
-
-// export default function StateSection() {
-//   return (
-//     <>
-
-//    <section className="md:py-10 border   px-4 sm:py-16 sm:px-8 bg-[#000000]">
-
-//   <div className="container mx-auto px-8 text-center">
-//     {/* Heading with Divider */}
-//     <div className="flex items-center justify-center gap-4">
-//       <span className="flex-grow h-px bg-gray-600"></span>
-//       <h2 className="text-xl font-semibold text-white">
-//         Trusted by Startups & Enterprises to{" "}
-//         <span className="text-orange-500 font-bold">Build Digital Products</span>
-//       </h2>
-//       <span className="flex-grow h-px bg-gray-600"></span>
-//     </div>
-
-//     {/* Stats Section */}
-//     <div className="mt-12 flex flex-wrap justify-center gap-16">
-//       <div className="text-center">
-//         <h3 className="text-4xl font-extrabold text-[#CFFFE2]">100+</h3>
-//         <p className="mt-2 text-base text-[#CFFFE2]">Projects Delivered</p>
-//       </div>
-//       <div className="text-center">
-//         <h3 className="text-4xl font-extrabold text-[#CFFFE2]">50+</h3>
-//         <p className="mt-2 text-base text-[#CFFFE2]">Satisfied Clients</p>
-//       </div>
-//       <div className="text-center">
-//         <h3 className="text-4xl font-extrabold text-[#CFFFE2]">20+</h3>
-//         <p className="mt-2 text-base text-[#CFFFE2]">Industries Served</p>
-//       </div>
-//       <div className="text-center">
-//         <h3 className="text-4xl font-extrabold text-[#CFFFE2]">5+</h3>
-//         <p className="mt-2 text-base text-[#CFFFE2]">Years of Experience</p>
-//       </div>
-//     </div>
-
-//     {/* Moving Brand Logos */}
-//     <div className="mt-16 pb-3.5 overflow-hidden relative">
-//       <div className="flex gap-12 animate-marquee whitespace-nowrap">
-//         <img
-//           src="https://a.storyblok.com/f/298810/79x20/4f5ce2a824/ahrefs-logo.svg"
-//           alt="Ahrefs"
-//           className="h-6 opacity-80"
-//         />
-//         <img
-//           src="https://a.storyblok.com/f/298810/128x20/9e2e70ccb8/instacart-logo.svg"
-//           alt="Instacart"
-//           className="h-6 opacity-80"
-//         />
-//         <img
-//           src="https://a.storyblok.com/f/298810/99x16/364e2223b5/groupon-logo.svg"
-//           alt="Groupon"
-//           className="h-6 opacity-80"
-//         />
-//         <img
-//           src="https://a.storyblok.com/f/298810/143x16/1474e3dbaa/century21-logo.svg"
-//           alt="Century 21"
-//           className="h-6 opacity-80"
-//         />
-//         <img
-//           src="https://a.storyblok.com/f/298810/166x20/495b032848/cleardesk-logo.svg"
-//           alt="ClearDesk"
-//           className="h-6 opacity-80"
-//         />
-//         <img
-//           src="https://a.storyblok.com/f/298810/107x20/9859e82bee/oneims-logo.svg"
-//           alt="OneIMS"
-//           className="h-6 opacity-80"
-//         />
-//         <img
-//           src="https://a.storyblok.com/f/298810/33x20/742b4a9222/ring-logo.svg"
-//           alt="Ring"
-//           className="h-6 opacity-80"
-//         />
-//       </div>
-//     </div>
-
-//   </div>
-// </section>
-
-
-//     </>
-//   )
-// }
-
-
-
-
-// import zelcConsultaation from '../assets/images/zelc-consultaation.png'
-// import techmark from '../assets/images/tech-mark.webp'
-// import networkgs from '../assets/images/network-gs.webp'
-// import kohinoorCP from '../assets/images/kohinoor-CP.webp'
-
-// export default function StateSection() {
-
-//   const data=[{
-//     id:1,
-//     imgUrl:zelcConsultaation
-//   },{
-//     id:2,
-//     imgUrl:techmark
-//   },{
-//     id:3,
-//     imgUrl:networkgs
-//   },
-//   {
-//     id:4,
-//     imgUrl:kohinoorCP
-//   },
-
-// ]
-//   return (
-//     <>
-
-//    <section className="md:py-10 border   px-4 sm:py-16 sm:px-8 bg-[#000000]">
-
-//   <div className="container mx-auto px-8 text-center">
-//     {/* Heading with Divider */}
-//     <div className="flex items-center justify-center gap-4">
-//       <span className="flex-grow h-px bg-gray-600"></span>
-//       <h2 className="text-xl font-semibold text-white">
-//         Trusted by Startups & Enterprises to{" "}
-//         <span className="text-orange-500 font-bold">Build Digital Products</span>
-//       </h2>
-//       <span className="flex-grow h-px bg-gray-600"></span>
-//     </div>
-
-//     {/* Stats Section */}
-//     <div className="mt-12 flex flex-wrap justify-center gap-16">
-//       <div className="text-center">
-//         <h3 className="text-4xl font-extrabold text-[#CFFFE2]">100+</h3>
-//         <p className="mt-2 text-base text-[#CFFFE2]">Projects Delivered</p>
-//       </div>
-//       <div className="text-center">
-//         <h3 className="text-4xl font-extrabold text-[#CFFFE2]">50+</h3>
-//         <p className="mt-2 text-base text-[#CFFFE2]">Satisfied Clients</p>
-//       </div>
-//       <div className="text-center">
-//         <h3 className="text-4xl font-extrabold text-[#CFFFE2]">20+</h3>
-//         <p className="mt-2 text-base text-[#CFFFE2]">Industries Served</p>
-//       </div>
-//       <div className="text-center">
-//         <h3 className="text-4xl font-extrabold text-[#CFFFE2]">5+</h3>
-//         <p className="mt-2 text-base text-[#CFFFE2]">Years of Experience</p>
-//       </div>
-//     </div>
-
-//     {/* Moving Brand Logos */}
-// {/* Moving Brand Logos */}
-// <div className="mt-16 overflow-hidden relative">
-//   <div className="flex gap-12 animate-marquee whitespace-nowrap">
-//     {data.map((item) => (
-//       <img
-//         key={item.id}
-//         src={item.imgUrl}
-//         alt="img"
-//         className="h-20 opacity-90" //
-//       />
-//     ))}
-//   </div>
-// </div>
-
-
-//   </div>
-// </section>
-
-
-//     </>
-//   )
-// }
-
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import Aaradhya from '../assets/images/Aaradhya.Logo TP.png'
-import Crunchy from '../assets/images/Crunchy.Logo TP.png'
-import EzeDesign from '../assets/images/Eze Design.Logo TP.png'
-import Ezepune from '../assets/images/Ezepune.Logo TP.png'
-import Kiara from '../assets/images/Kiara.Logo TP.png'
-import Kohinoor from '../assets/images/Kohinoor.Logo TP.png'
-import MadakeJewellers from '../assets/images/Madake Jewellers.Logo TP.png'
-import MrMS from '../assets/images/Mr& MS.Logo TP.png'
-import NikolEV from '../assets/images/NikolEV.Logo TP.png'
-import Sidenest from '../assets/images/Sidenest.Logo TP.png'
-import SuncityVilla from '../assets/images/Suncity Villa.Logo TP.png'
-import Techmark from '../assets/images/Techmark.Logo TP.png'
-import Zelc from '../assets/images/Zelc.Logo TP.png'
+import Aaradhya from '../assets/images/Aaradhya.Logo TP.png';
+import Crunchy from '../assets/images/Crunchy.Logo TP.png';
+import EzeDesign from '../assets/images/Eze Design.Logo TP.png';
+import Ezepune from '../assets/images/Ezepune.Logo TP.png';
+import Kiara from '../assets/images/Kiara.Logo TP.png';
+import Kohinoor from '../assets/images/Kohinoor.Logo TP.png';
+import MadakeJewellers from '../assets/images/Madake Jewellers.Logo TP.png';
+import MrMS from '../assets/images/Mr& MS.Logo TP.png';
+import NikolEV from '../assets/images/NikolEV.Logo TP.png';
+import Sidenest from '../assets/images/Sidenest.Logo TP.png';
+import SuncityVilla from '../assets/images/Suncity Villa.Logo TP.png';
+import Techmark from '../assets/images/Techmark.Logo TP.png';
+import Zelc from '../assets/images/Zelc.Logo TP.png';
+
+const stats = [
+  { label: 'Projects Delivered', value: '100+' },
+  { label: 'Satisfied Clients', value: '50+' },
+  { label: 'Industries Served', value: '20+' },
+  { label: 'Years of Experience', value: '5+' },
+];
+
+const logos = [
+  Aaradhya, Crunchy, EzeDesign, Ezepune, Kiara, Kohinoor, MadakeJewellers,
+  MrMS, NikolEV, Sidenest, SuncityVilla, Techmark, Zelc
+];
+
+const LogoMarquee = ({ logos }) => (
+  <motion.div
+  className="relative mt-16 pb-4 overflow-hidden w-full"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.4 }}
+  viewport={{ once: true, amount: 0.3 }}
+>
+  {/* Left & Right Fades */}
+  <div className="absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+  <div className="absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+
+  {/* Marquee Track */}
+<div className="flex animate-marquee-track gap-6 sm:gap-10 md:gap-12 w-max">
+  {[...logos, ...logos].map((src, index) => (
+    <img
+      key={index}
+      src={src}
+      alt={`Logo ${index}`}
+      className="h-12 sm:h-16 md:h-20 lg:h-24 xl:h-28 w-auto max-w-[160px] object-contain opacity-80 hover:scale-110 transition-transform duration-300"
+    />
+  ))}
+</div>
 
 
+  <style jsx>{`
+    @keyframes marqueeTrack {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-marquee-track {
+      animation: marqueeTrack 40s linear infinite;
+    }
+  `}</style>
+</motion.div>
+
+
+);
 
 export default function StateSection() {
-  const stats = [
-    { label: 'Projects Delivered', value: '100+' },
-    { label: 'Satisfied Clients', value: '50+' },
-    { label: 'Industries Served', value: '20+' },
-    { label: 'Years of Experience', value: '5+' },
-  ];
-
-  const logos = [
-    // "https://a.storyblok.com/f/298810/79x20/4f5ce2a824/ahrefs-logo.svg",
-    // "https://a.storyblok.com/f/298810/128x20/9e2e70ccb8/instacart-logo.svg",
-    // "https://a.storyblok.com/f/298810/99x16/364e2223b5/groupon-logo.svg",
-    // "https://a.storyblok.com/f/298810/143x16/1474e3dbaa/century21-logo.svg",
-    // "https://a.storyblok.com/f/298810/166x20/495b032848/cleardesk-logo.svg",
-    // "https://a.storyblok.com/f/298810/107x20/9859e82bee/oneims-logo.svg",
-    // "https://a.storyblok.com/f/298810/33x20/742b4a9222/ring-logo.svg",
-    Aaradhya,
-    Crunchy, EzeDesign, Ezepune, Kiara, Kohinoor, MadakeJewellers, MrMS, NikolEV, Sidenest, SuncityVilla, Techmark, Zelc
-
-  ];
-
-  const logoMotion = {
-    initial: { opacity: 0, y: 40 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.4 },
-    viewport: { once: true, amount: 0.3 },
-  };
-
   return (
-    <section className="relative md:py-10  px-4 sm:py-16 sm:px-8 bg-[#000000] overflow-hidden">
+    <section className="relative md:py-10 border px-4 sm:py-16 sm:px-8 bg-[#000000] overflow-hidden">
       <div className="container mx-auto px-8 text-center">
-        {/* Heading with Divider */}
+        {/* Header */}
         <motion.div
           className="flex items-center justify-center gap-4"
           initial={{ opacity: 0, y: 40 }}
@@ -233,22 +85,14 @@ export default function StateSection() {
         >
           <span className="flex-grow h-px bg-gray-600"></span>
           <h2 className="text-xl font-semibold text-white">
-            Trusted by Startups & Enterprises to{" "}
+            Trusted by Startups & Enterprises to{' '}
             <span className="text-orange-500 font-bold">Build Digital Products</span>
           </h2>
           <span className="flex-grow h-px bg-gray-600"></span>
         </motion.div>
 
-       
-
-      </div>
-
-
-
-
- <div className="max-w-7xl mx-auto">
-
-  <div className="mt-12 flex flex-wrap justify-center gap-16">
+        {/* Stats */}
+        <div className="mt-12 flex flex-wrap justify-center gap-16">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -265,55 +109,9 @@ export default function StateSection() {
           ))}
         </div>
 
-        {/* Animated Logo Marquee Section */}
-        <motion.div
-          className="mt-16 pb-4 overflow-hidden relative w-full"
-          {...logoMotion}
-        >
-          <div className="marquee flex gap-3 lg:gap-12 whitespace-nowrap">
-            {[...logos, ...logos].map((src, index) => (
-  <motion.img
-    key={index}
-    src={src}
-    alt={`Logo ${index}`}
-    className="h-[60px] sm:h-[80px]  max-w-[60px]  lg:max-w-[190px] object-contain opacity-80 transition-transform duration-300"
-  />
-))}
-
-          </div>
-        </motion.div>
-
- </div>
-
-       
-      
-
-
-
-
-      {/* CSS for Infinite Marquee */}
-      <style jsx>{`
-        .marquee {
-          animation: scroll-left 10s linear infinite;
-        }
-
-        @media screen and (min-width: 480px) {
- .marquee {
-          .animation: scroll-left 10s linear infinite;
-        }
-}
-
-        
-
-        @keyframes scroll-left {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
+        {/* Logos */}
+        <LogoMarquee logos={logos} />
+      </div>
     </section>
   );
 }
