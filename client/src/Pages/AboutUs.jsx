@@ -382,10 +382,10 @@ export default function AboutUs() {
 
       <div className="py-14 md:py-32 text-[#EAEAEA]">
 
-        <div className="bg-black text-white py-16 px-6 md:px-12">
+        <div className="bg-b text-white py-16 px-6 md:px-12">
 
 
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 pb-30">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:pb-30">
             <div>
               <p className="text-orange-500 font-semibold mb-2">About Company</p>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -445,12 +445,12 @@ export default function AboutUs() {
 
         </div>
 
-        <div className="bg-black text-white py-16 px-6 md:px-12  ">
+        <div className="bg-black text-white lg:py-16 px-6 md:px-12  ">
           <div className="max-w-7xl mx-auto">
             {/* Header Section */}
-            <div className="flex  justify-between  mb-16 " >
+            <div className="lg:flex  justify-between  mb-16 " >
               <div className="lg:w-[30%] mb-8 lg:mb-0 flex-[70%">
-                <h1 className="text-5xl lg:text-3xl font-bold">
+                <h1 className="text-xl lg:text-3xl font-bold">
                   MEET THE BRAINS <br /> BEHIND
                   <br />BRANDS & BACKENDS
                 </h1>

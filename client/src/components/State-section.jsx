@@ -221,7 +221,7 @@ export default function StateSection() {
   };
 
   return (
-    <section className="relative md:py-10 border px-4 sm:py-16 sm:px-8 bg-[#000000] overflow-hidden">
+    <section className="relative md:py-10  px-4 sm:py-16 sm:px-8 bg-[#000000] overflow-hidden">
       <div className="container mx-auto px-8 text-center">
         {/* Heading with Divider */}
         <motion.div
@@ -268,7 +268,7 @@ export default function StateSection() {
         key={index}
         src={src}
         alt={`Logo ${index}`}
-        className="h-[90px] w-auto opacity-80 hover:scale-125 transition-transform duration-300"
+        className="h-[90px] w-auto opacity-80 transition-transform duration-300"
       />
     ))}
   </div>
@@ -279,7 +279,7 @@ export default function StateSection() {
       {/* CSS for Infinite Marquee */}
       <style jsx>{`
         .marquee {
-          animation: scroll-left 25s linear infinite;
+          animation: scroll-left 10s linear infinite;
         }
 
         @keyframes scroll-left {
