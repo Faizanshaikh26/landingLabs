@@ -40,14 +40,15 @@ const LogoMarquee = ({ logos }) => (
   <div className="absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
   {/* Marquee Track */}
-<div className="flex animate-marquee-track gap-6 sm:gap-10 md:gap-12 w-max">
+  <div className="flex animate-marquee-track gap-6 sm:gap-10 md:gap-12 w-max">
   {[...logos, ...logos].map((src, index) => (
     <img
-      key={index}
-      src={src}
-      alt={`Logo ${index}`}
-      className="h-12 sm:h-16 md:h-20 lg:h-24 xl:h-28 w-auto max-w-[160px] object-contain opacity-80 hover:scale-110 transition-transform duration-300"
-    />
+  key={index}
+  src={src}
+  alt={`Logo ${index}`}
+  className="h-14 sm:h-16 md:h-20 lg:h-24 xl:h-28 w-auto max-w-[160px] object-contain opacity-80 hover:scale-110 transition-transform duration-300"
+/>
+
   ))}
 </div>
 
