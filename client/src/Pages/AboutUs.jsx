@@ -312,7 +312,7 @@ export default function AboutUs() {
         initial="hidden"
         animate={controls}
         variants={{
-          hidden: { opacity: 0, x: 100 },
+          hidden: { opacity: 0, x: 10 },
           visible: { opacity: 1, x: 0 },
         }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -326,6 +326,43 @@ export default function AboutUs() {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
   };
+
+
+const ScrollFlipIn = ({ children, delay = 0 }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
+
+  useEffect(() => {
+    if (inView) controls.start('visible');
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      transition={{ duration: 0.7, delay, ease: 'easeOut' }}
+      variants={{
+        hidden: {
+          opacity: 0,
+          rotateX: -90,
+          scale: 0.9,
+          transformOrigin: 'bottom center',
+        },
+        visible: {
+          opacity: 1,
+          rotateX: 0,
+          scale: 1,
+        },
+      }}
+      style={{ perspective: 1000 }} 
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+
   const data = [
     {
       title: 'End-to-End Services',
@@ -382,7 +419,7 @@ export default function AboutUs() {
 
       <div className="py-14 md:py-32 text-[#EAEAEA]">
 
-        <div className="bg-b text-white py-16 px-6 md:px-12">
+        <div className=" text-white py-16 px-6 md:px-12">
 
 
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:pb-30">
@@ -638,10 +675,11 @@ export default function AboutUs() {
                     src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.-1.png.webp"
                     alt="Landing Labs"
                     className="w-full max-w-[260px] object-contain"
-                    initial={{ x: 100, opacity: 0 }}
+                    initial={{ x: 60, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
+                    
                   />
                 </div>
 

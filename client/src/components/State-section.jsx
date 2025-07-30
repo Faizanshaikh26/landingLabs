@@ -3,7 +3,7 @@
 // export default function StateSection() {
 //   return (
 //     <>
-    
+
 //    <section className="md:py-10 border   px-4 sm:py-16 sm:px-8 bg-[#000000]">
 
 //   <div className="container mx-auto px-8 text-center">
@@ -77,7 +77,7 @@
 //         />
 //       </div>
 //     </div>
-    
+
 //   </div>
 // </section>
 
@@ -114,7 +114,7 @@
 // ]
 //   return (
 //     <>
-    
+
 //    <section className="md:py-10 border   px-4 sm:py-16 sm:px-8 bg-[#000000]">
 
 //   <div className="container mx-auto px-8 text-center">
@@ -209,8 +209,8 @@ export default function StateSection() {
     // "https://a.storyblok.com/f/298810/107x20/9859e82bee/oneims-logo.svg",
     // "https://a.storyblok.com/f/298810/33x20/742b4a9222/ring-logo.svg",
     Aaradhya,
-    Crunchy,EzeDesign,Ezepune,Kiara,Kohinoor,MadakeJewellers,MrMS,NikolEV,Sidenest,SuncityVilla,Techmark,Zelc
-  
+    Crunchy, EzeDesign, Ezepune, Kiara, Kohinoor, MadakeJewellers, MrMS, NikolEV, Sidenest, SuncityVilla, Techmark, Zelc
+
   ];
 
   const logoMotion = {
@@ -239,8 +239,16 @@ export default function StateSection() {
           <span className="flex-grow h-px bg-gray-600"></span>
         </motion.div>
 
-        {/* Stats Section */}
-        <div className="mt-12 flex flex-wrap justify-center gap-16">
+       
+
+      </div>
+
+
+
+
+ <div className="max-w-7xl mx-auto">
+
+  <div className="mt-12 flex flex-wrap justify-center gap-16">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -259,28 +267,43 @@ export default function StateSection() {
 
         {/* Animated Logo Marquee Section */}
         <motion.div
-  className="mt-16 pb-4 overflow-hidden relative"
-  {...logoMotion}
->
-  <div className="marquee flex gap-12 whitespace-nowrap">
-    {[...logos, ...logos].map((src, index) => (
-      <motion.img
-        key={index}
-        src={src}
-        alt={`Logo ${index}`}
-        className="h-[90px] w-auto opacity-80 transition-transform duration-300"
-      />
-    ))}
-  </div>
-</motion.div>
+          className="mt-16 pb-4 overflow-hidden relative w-full"
+          {...logoMotion}
+        >
+          <div className="marquee flex gap-3 lg:gap-12 whitespace-nowrap">
+            {[...logos, ...logos].map((src, index) => (
+  <motion.img
+    key={index}
+    src={src}
+    alt={`Logo ${index}`}
+    className="h-[60px] sm:h-[80px]  max-w-[60px]  lg:max-w-[190px] object-contain opacity-80 transition-transform duration-300"
+  />
+))}
 
-      </div>
+          </div>
+        </motion.div>
+
+ </div>
+
+       
+      
+
+
+
 
       {/* CSS for Infinite Marquee */}
       <style jsx>{`
         .marquee {
           animation: scroll-left 10s linear infinite;
         }
+
+        @media screen and (min-width: 480px) {
+ .marquee {
+          .animation: scroll-left 10s linear infinite;
+        }
+}
+
+        
 
         @keyframes scroll-left {
           0% {
