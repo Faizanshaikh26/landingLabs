@@ -202,7 +202,7 @@ import hero from "../assets/images/hero-image-4.jpg"
 export default function HeroSection() {
   return (
    
-     <section className="bg-black text-white pt-20 lg:pt-48">
+     <section className="  text-white pt-20 lg:pt-48">
   {/* Headings */}
   <div className="text-center mt-10">
     <h4 className="text-md md:text-lg font-medium text-orange-500">
@@ -213,7 +213,7 @@ export default function HeroSection() {
     </h1>
   </div>
 
-  <div className="lg:max-w-7xl w-full mx-auto px-4 py-16 relative">
+  <div className="lg:max-w-7xl w-full mx-auto px-4 py-4 lg:py-16 relative">
     {/* Background Image */}
     <div
       className="relative w-full h-[400px] bg-cover bg-center rounded-3xl overflow-hidden"

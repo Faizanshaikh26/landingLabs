@@ -89,8 +89,8 @@ import Career from "./Pages/Career.jsx"
 import Pricing from "./Pages/Pricing.jsx"
 import CareerForm from "./Pages/test-car.jsx"
 import PricingPage from "./Pages/dum.jsx"
-import LadderDesign from "./components/dum.jsx"
 import { AutoPopupDialog } from "./components/AutoDialog.jsx"
+import Appointment from "./components/Appointment.jsx"
 
 function App() {
   const location = useLocation()
@@ -112,8 +112,9 @@ function App() {
           <Route path="/services" element={<PageWrapper><Service /></PageWrapper>} />
           <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
           <Route path="/try" element={<PageWrapper><CareerForm /></PageWrapper>} />
+          <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} />
           <Route path="/dum" element={<PricingPage/>} />
-          <Route path="/LadderDesign" element={<LadderDesign/>} />
+       
 
 
           {/* Service Details */}

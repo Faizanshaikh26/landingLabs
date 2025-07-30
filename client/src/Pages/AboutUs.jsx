@@ -477,9 +477,6 @@ const ScrollFlipIn = ({ children, delay = 0 }) => {
             </div>
           </div>
 
-
-
-
         </div>
 
         <div className="bg-black text-white lg:py-16 px-6 md:px-12  ">

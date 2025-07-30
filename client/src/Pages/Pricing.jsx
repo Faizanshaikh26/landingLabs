@@ -12,6 +12,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export default function Pricing() {
   const [openIndex, setOpenIndex] = useState(0)
@@ -145,7 +146,7 @@ export default function Pricing() {
       <section className="pt-40 pb-10 px-4 text-white bg-black">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">
               Simple and Affordable
               <br />
               Pricing Plans
@@ -214,7 +215,7 @@ export default function Pricing() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 bg-black text-white">
+      <section className=" py-10 md:py-20 px-4 bg-black text-white">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full border border-gray-700">
@@ -223,10 +224,10 @@ export default function Pricing() {
             </div>
           </div>
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
             <p className="text-gray-400 text-lg">
               Don't see the answer you're looking for?{" "}
-              <span className="text-blue-400 hover:text-blue-300 cursor-pointer">Get in touch.</span>
+<Link to="/contact-us"><span className="text-blue-400 hover:text-blue-300 cursor-pointer">Get in touch.</span></Link>               
             </p>
           </div>
 
@@ -265,7 +266,7 @@ export default function Pricing() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4 bg-black text-white">
+      <section className="py-10 md:py-20 px-4 bg-black text-white">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full border border-gray-700">
@@ -291,7 +292,7 @@ export default function Pricing() {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <div className="mb-6">
+                  <div className="mb-6   p-2 ">
                     <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 group-hover:bg-gray-700 transition-colors">
                       <Icon className="w-6 h-6 text-gray-300" />
                     </div>

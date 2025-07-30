@@ -74,7 +74,7 @@ const LogoMarquee = ({ logos }) => (
 
 export default function StateSection() {
   return (
-    <section className="relative md:py-10 border px-4 sm:py-16 sm:px-8 bg-[#000000] overflow-hidden">
+    <section className="relative lg:pb-10  px-4 sm:py-16 sm:px-8 overflow-hidden">
       <div className="container mx-auto px-8 text-center">
         {/* Header */}
         <motion.div
@@ -85,7 +85,7 @@ export default function StateSection() {
           viewport={{ once: true }}
         >
           <span className="flex-grow h-px bg-gray-600"></span>
-          <h2 className="text-xl font-semibold text-white">
+          <h2 className="lg:text-xl font-semibold text-white">
             Trusted by Startups & Enterprises to{' '}
             <span className="text-orange-500 font-bold">Build Digital Products</span>
           </h2>
@@ -93,7 +93,7 @@ export default function StateSection() {
         </motion.div>
 
         {/* Stats */}
-        <div className="mt-12 flex flex-wrap justify-center gap-16">
+        <div className="mt-12 flex flex-wrap justify-center gap-8 lg:gap-16">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -104,7 +104,7 @@ export default function StateSection() {
               viewport={{ once: true, amount: 0.3 }}
               whileHover={{ scale: 1.05 }}
             >
-              <h3 className="text-4xl font-extrabold text-[#CFFFE2]">{stat.value}</h3>
+              <h3 className="text-2xl lg:text-4xl font-extrabold text-[#CFFFE2]">{stat.value}</h3>
               <p className="mt-2 text-base text-[#CFFFE2]">{stat.label}</p>
             </motion.div>
           ))}

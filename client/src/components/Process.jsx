@@ -113,7 +113,7 @@ export default function Process() {
     <div className="text-white">
       {/* Partnership Section */}
       <motion.section
-        className="px-4 py-20"
+        className="px-4 py-8 md:py-20"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}

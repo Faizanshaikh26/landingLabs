@@ -137,7 +137,7 @@ export default function Features() {
     ];
 
     return (
-        <div className="max-w-screen-xl mx-auto py-8 px-4 lg:py-16 lg:px-6 text-[#EAEAEA]">
+        <div className="max-w-screen-xl mx-auto py-2 px-4 lg:py-16 lg:px-6 text-[#EAEAEA]">
             {/* Header Section */}
             <motion.div
                 className="text-center mb-10"
@@ -146,10 +146,10 @@ export default function Features() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
             >
-                <h2 className="text-3xl md:text-4xl tracking-tight font-bold text-orange-500">
+                <h2 className="text-2xl md:text-4xl tracking-tight font-bold text-orange-500">
                     Industries <span className="text-[#EAEAEA]">We Serve</span>
                 </h2>
-                <p className="mt-4 text-2xl md:text-4xl text-[#CFFFE2]">
+                <p className="mt-4 text-xl md:text-4xl text-[#CFFFE2]">
                     <span className="text-[#EAEAEA]">From startups to established brands,</span> we fuel growth in:
                 </p>
             </motion.div>

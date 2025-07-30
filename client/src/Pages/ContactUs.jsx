@@ -14,8 +14,46 @@ import {
 import Navbar from "../components/Navbar";
 import Footer from "../Footer";
 import GetInTouchImg from "../assets/images/getIn-Touch-banner.webp";
+import { useState } from "react";
+import axios from "axios";
+
 
 export default function ContactPage() {
+
+  const [formData, setFormData] = useState({
+  fullName: "",
+  phoneNumber: "",
+  email: "",
+  service: "",
+  serviceDescription: "",
+  message: "",
+});
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await axios.post("http://localhost:3000/api/contacts", formData);
+    if (res.data.success) {
+      alert("Message sent successfully!");
+      setFormData({
+        fullName: "",
+        phoneNumber: "",
+        email: "",
+        service: "",
+        serviceDescription: "",
+        message: "",
+      });
+    } else {
+      alert("Something went wrong.");
+    }
+  } catch (err) {
+    console.error("Error submitting contact form:", err);
+    alert("Submission failed. Please try again.");
+  }
+};
+
+
   const stats = [
     { icon: MessageSquare, value: "24/7", label: "Support Available" },
     { icon: Users, value: "10k+", label: "Happy Customers" },
@@ -155,56 +193,73 @@ export default function ContactPage() {
                 Any Question? <br /> Write Down And Send Us
               </h2>
 
-              <form className="space-y-4">
-                {["Enter your full name", "Phone number", "Your email", "Service Description"].map((placeholder, i) => (
-                  <motion.input
-                    key={i}
-                    type="text"
-                    placeholder={placeholder}
-                    className="w-full p-3 bg-transparent border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                    viewport={{ once: true }}
-                  />
-                ))}
+              <form className="space-y-4" onSubmit={handleSubmit}>
+  <input
+    type="text"
+    placeholder="Enter your full name"
+    className="w-full p-3 bg-transparent border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+    value={formData.fullName}
+    onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+    required
+  />
 
-                <select
-                  className="w-full p-3 bg-transparent border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
-                  defaultValue=""
-                >
-                  <option value="" disabled>
-                    Select a Service
-                  </option>
-                  <option value="web-design" className="text-black">
-                    Web Design
-                  </option>
-                  <option value="seo" className="text-black">
-                    SEO
-                  </option>
-                  <option value="digital-marketing" className="text-black">
-                    Digital Marketing
-                  </option>
-                  <option value="app-development" className="text-black">
-                    App Development
-                  </option>
-                </select>
+  <input
+    type="text"
+    placeholder="Phone number"
+    className="w-full p-3 bg-transparent border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+    value={formData.phoneNumber}
+    onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
+    required
+  />
 
-                <textarea
-                  placeholder="Message"
-                  rows={4}
-                  className="w-full p-3 bg-transparent border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
-                ></textarea>
+  <input
+    type="email"
+    placeholder="Your email"
+    className="w-full p-3 bg-transparent border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+    value={formData.email}
+    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+    required
+  />
 
-                <motion.button
-                  type="submit"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded transition duration-200"
-                >
-                  GET A FREE QUOTE
-                </motion.button>
-              </form>
+  <input
+    type="text"
+    placeholder="Service Description"
+    className="w-full p-3 bg-transparent border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+    value={formData.serviceDescription}
+    onChange={(e) => setFormData({ ...formData, serviceDescription: e.target.value })}
+  />
+
+  <select
+    className="w-full p-3 bg-transparent border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+    value={formData.service}
+    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+    required
+  >
+    <option value="" disabled>Select a Service</option>
+    <option value="web-design" className="text-black">Web Design</option>
+    <option value="seo" className="text-black">SEO</option>
+    <option value="digital-marketing" className="text-black">Digital Marketing</option>
+    <option value="app-development" className="text-black">App Development</option>
+  </select>
+
+  <textarea
+    placeholder="Message"
+    rows={4}
+    className="w-full p-3 bg-transparent border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+    value={formData.message}
+    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+  ></textarea>
+
+  <motion.button
+    type="submit"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded transition duration-200"
+  >
+    GET A FREE QUOTE
+  </motion.button>
+</form>
+
             </motion.div>
           </div>
         </motion.section>

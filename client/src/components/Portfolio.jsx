@@ -120,7 +120,7 @@ export default function Portfolio() {
     ];
 
     return (
-        <div className="min-h-[70vh] md:min-h-screen py-12  ">
+        <div className="min-h-[70vh] md:min-h-screen   ">
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                 {/* Header */}
                 <motion.div

@@ -11,6 +11,8 @@ import { useState, useEffect } from "react";
 import logo from "../assets/images/Og-Logo.png";
 import { NavLink } from "react-router-dom";
 
+import { AnimatePresence, motion } from "framer-motion";
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,6 +33,33 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", updateScroll);
   }, []);
 
+
+ const drawerVariants = {
+  hidden: { x: "100%" },
+  visible: {
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 200,
+      damping: 25,
+      when: "beforeChildren",
+      staggerChildren: 0.08,
+    },
+  },
+ exit: {
+    x: "100%",
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
+
+
+const itemVariants = {
+  hidden: { opacity: 0, x: 20 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
+};
   return (
     <div className="w-full text-[#EAEAEA] fixed top-0 z-50">
       {/* Navbar Container with scroll logic */}
@@ -169,115 +198,86 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
-      {isOpen && (
-        <div className="fixed inset-0 z-50 bg-black text-white p-6 transition-all duration-300">
-          <div className="flex justify-end">
-            <button onClick={() => setIsOpen(false)}>
-              <X className="w-6 h-6 text-white hover:text-orange-500" />
+  
+  <AnimatePresence>
+  {isOpen && (
+    <motion.div
+      key="mobile-drawer"
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      
+      variants={drawerVariants}
+      className="fixed inset-0 z-50 bg-black text-white p-6 transition-all duration-300"
+    >
+      <div className="flex justify-end">
+        <button onClick={() => setIsOpen(false)}>
+          <X className="w-6 h-6 text-white hover:text-orange-500" />
+        </button>
+      </div>
+
+      <motion.div className="mt-8 flex flex-col space-y-6">
+        <motion.div
+          variants={itemVariants}
+          className="space-y-2 text-sm border-b border-gray-800 pb-4"
+        >
+          <div>+91 738 739 2708</div>
+          <div>Office 610, Suratwala Mark Plaza, Hinjewadi, 411057</div>
+        </motion.div>
+
+        {[
+          { to: "/", label: "Home" },
+          { to: "/services", label: "Services" },
+          { to: "/about-us", label: "About" },
+          { to: "/career", label: "Career" },
+          { to: "/contact-us", label: "Contact" },
+          { to: "/pricing", label: "Pricing" },
+        ].map(({ to, label }) => (
+          <motion.div key={to} variants={itemVariants}>
+            <NavLink
+              to={to}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-orange-500 text-lg"
+                  : "hover:text-orange-500 text-lg"
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              {label}
+            </NavLink>
+          </motion.div>
+        ))}
+
+        <motion.div
+          variants={itemVariants}
+          className="flex items-center space-x-4 pt-4 border-t border-gray-800"
+        >
+          <a href="https://www.facebook.com/share/16wqfNsNHL/">
+            <Facebook className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
+          </a>
+          <a href="https://www.instagram.com/landinglabs_?igsh=Njc1YjZvdjc1Y2J1">
+            <Instagram className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
+          </a>
+          <a href="https://www.linkedin.com/company/landing-labs/">
+            <Linkedin className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
+          </a>
+          <a href="https://www.youtube.com/@landinglabs">
+            <Youtube className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
+          </a>
+        </motion.div>
+
+        <motion.div variants={itemVariants}>
+          <NavLink to="/contact-us">
+            <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md font-medium mt-4">
+              BOOK A CALL
             </button>
-          </div>
-          <div className="mt-8 flex flex-col space-y-6">
-            <div className="space-y-2 text-sm border-b border-gray-800 pb-4">
-              <div>+91 738 739 2708</div>
-              <div>Office 610, Suratwala Mark Plaza, Hinjewadi, 411057</div>
-            </div>
+          </NavLink>
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
 
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-orange-500 text-lg"
-                  : "hover:text-orange-500 text-lg"
-              }
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </NavLink>
-
-            <NavLink
-              to="/services"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-orange-500 text-lg"
-                  : "hover:text-orange-500 text-lg"
-              }
-              onClick={() => setIsOpen(false)}
-            >
-              Services
-            </NavLink>
-
-            <NavLink
-              to="/about-us"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-orange-500 text-lg"
-                  : "hover:text-orange-500 text-lg"
-              }
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </NavLink>
-
-            <NavLink
-              to="/career"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-orange-500 text-lg"
-                  : "hover:text-orange-500 text-lg"
-              }
-              onClick={() => setIsOpen(false)}
-            >
-              Career
-            </NavLink>
-
-            <NavLink
-              to="/contact-us"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-orange-500 text-lg"
-                  : "hover:text-orange-500 text-lg"
-              }
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </NavLink>
-
-            <NavLink
-              to="/pricing"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-orange-500 text-lg"
-                  : "hover:text-orange-500 text-lg"
-              }
-              onClick={() => setIsOpen(false)}
-            >
-              Pricing
-            </NavLink>
-
-            <div className="flex items-center space-x-4 pt-4 border-t border-gray-800">
-              <a href="https://www.facebook.com/share/16wqfNsNHL/">
-                <Facebook className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
-              </a>
-              <a href="https://www.instagram.com/landinglabs_?igsh=Njc1YjZvdjc1Y2J1">
-                <Instagram className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
-              </a>
-              <a href="https://www.linkedin.com/company/landing-labs/">
-                <Linkedin className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
-              </a>
-              <a href="https://www.youtube.com/@landinglabs">
-                <Youtube className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
-              </a>
-            </div>
-
-            <NavLink to="/contact-us">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md font-medium mt-4">
-                BOOK A CALL
-              </button>
-            </NavLink>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

@@ -75,7 +75,7 @@ export function AutoPopupDialog() {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 lg:flex items-center justify-center pt-20 hidden">
+    <div className="fixed inset-0 z-50 lg:flex items-center justify-center pt-30 hidden">
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black bg-opacity-50" onClick={() => setIsOpen(false)} />
 

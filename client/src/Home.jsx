@@ -31,11 +31,11 @@ export default function Home() {
 
       <Features />
 
+      <Process/>
 
 <Testimonies/>
 
      
-      <Process/>
       <Portfolio />
 
  
