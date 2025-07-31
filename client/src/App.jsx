@@ -1,141 +1,76 @@
-// import { Route, Routes } from "react-router-dom"
-// import Footer from "./Footer"
-// import Home from "./Home"
-// import AboutUs from "./Pages/AboutUs"
-// import CustomCursor from "./components/custome-cursor"
-// import ContactUs from "./Pages/ContactUs"
-// import Carrer from "./Pages/Carrer"
-// import Service from "./Pages/Services/service-mainPage"
-
-// import WebDevelopment from "./Pages/Services/details/Web-development"
-// import SocialMediaMarketing from "./Pages/Services/details/SocialMediaMarketing"
-// import PPCAds from "./Pages/Services/details/PPCAds"
-// import AppDevelopment from "./Pages/Services/details/App-development"
-// import UIUXDesign from "./Pages/Services/details/UIUXDesign"
-// import GraphicDesign from "./Pages/Services/details/GraphicDesign"
-// import InfluencerMarketing from "./Pages/Services/details/InfluencerMarketing"
-// import ContentMarketing from "./Pages/Services/details/ContentMarketing"
-// import ScrollToTop from "./components/ScrollToTop"
-// import SEO from "./Pages/Services/details/SEO.jsx"
-
-
-
-
-
-
-// function App() {
-
- 
- 
-
-//   return (
-//    <div className="min-h-screen  bg-[#000000]">
-
-// <ScrollToTop/>
-//     <CustomCursor/>
-//   <Routes>
-
-
-//     <Route path="/" element={ <Home/>}/>
-//     <Route path="/about-us" element={<AboutUs/>}/>
-//     <Route path="/contact-us" element={<ContactUs/>}/>
-//     <Route path="/carrer" element={<Carrer/>}/>
-//     <Route path="/services" element={<Service/>}/>
-   
-//     <Route path="/services/search-engine-optimization" element={<SEO/>}/>
-//     <Route path="/services/web-development" element={<WebDevelopment/>}/>
-//     <Route path="/services/social-media-marketing" element={<SocialMediaMarketing/>}/>
-//     <Route path="/services/ppc-ads" element={<PPCAds/>}/>
-//     <Route path="/services/app-development" element={<AppDevelopment/>}/>
-//     <Route path="/services/ui-ux-design" element={<UIUXDesign/>}/>
-//     <Route path="/services/graphic-design" element={<GraphicDesign/>}/>
-//     <Route path="/services/influencer-marketing" element={<InfluencerMarketing/>}/>
-//     <Route path="/services/content-marketing" element={<ContentMarketing/>}/>
-
-//   </Routes>
-
-//    </div>
-//   )
-// }
-
-// export default App
-
-
 import { Route, Routes, useLocation } from "react-router-dom"
-import Footer from "./Footer"
-import Home from "./Home"
-import AboutUs from "./Pages/AboutUs"
-import CustomCursor from "./components/custome-cursor"
-import ContactUs from "./Pages/ContactUs"
-import Carrer from "./Pages/Career.jsx"
-import Service from "./Pages/Services/service-mainPage"
-
-import WebDevelopment from "./Pages/Services/details/Web-development"
-import SocialMediaMarketing from "./Pages/Services/details/SocialMediaMarketing"
-import PPCAds from "./Pages/Services/details/PPCAds"
-import AppDevelopment from "./Pages/Services/details/App-development"
-import UIUXDesign from "./Pages/Services/details/UIUXDesign"
-import GraphicDesign from "./Pages/Services/details/GraphicDesign"
-import InfluencerMarketing from "./Pages/Services/details/InfluencerMarketing"
-import ContentMarketing from "./Pages/Services/details/ContentMarketing"
-import SEO from "./Pages/Services/details/SEO.jsx"
-
-import ScrollToTop from "./components/ScrollToTop"
-
-
+import { lazy, Suspense } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 
-import Career from "./Pages/Career.jsx"
-import Pricing from "./Pages/Pricing.jsx"
-import CareerForm from "./Pages/test-car.jsx"
-import PricingPage from "./Pages/dum.jsx"
+// Static Components (not lazy)
+import ScrollToTop from "./components/ScrollToTop"
+import CustomCursor from "./components/custome-cursor"
 import { AutoPopupDialog } from "./components/AutoDialog.jsx"
-import Appointment from "./components/Appointment.jsx"
+
+// Lazy-loaded pages
+const Home = lazy(() => import("./Home"))
+const AboutUs = lazy(() => import("./Pages/AboutUs"))
+const ContactUs = lazy(() => import("./Pages/ContactUs"))
+const Carrer = lazy(() => import("./Pages/Career.jsx"))
+const Service = lazy(() => import("./Pages/Services/service-mainPage"))
+const WebDevelopment = lazy(() => import("./Pages/Services/details/Web-development"))
+const SocialMediaMarketing = lazy(() => import("./Pages/Services/details/SocialMediaMarketing"))
+const PPCAds = lazy(() => import("./Pages/Services/details/PPCAds"))
+const AppDevelopment = lazy(() => import("./Pages/Services/details/App-development"))
+const UIUXDesign = lazy(() => import("./Pages/Services/details/UIUXDesign"))
+const GraphicDesign = lazy(() => import("./Pages/Services/details/GraphicDesign"))
+const InfluencerMarketing = lazy(() => import("./Pages/Services/details/InfluencerMarketing"))
+const ContentMarketing = lazy(() => import("./Pages/Services/details/ContentMarketing"))
+const SEO = lazy(() => import("./Pages/Services/details/SEO.jsx"))
+const Pricing = lazy(() => import("./Pages/Pricing.jsx"))
+const CareerForm = lazy(() => import("./Pages/test-car.jsx"))
+const PricingPage = lazy(() => import("./Pages/dum.jsx"))
+const Appointment = lazy(() => import("./components/Appointment.jsx"))
 
 function App() {
   const location = useLocation()
 
-
-
   return (
-    <div className="min-h-screen bg-[#000000]  font-poppins">
+    <div className="min-h-screen bg-[#000000] font-poppins">
       <ScrollToTop />
       <CustomCursor />
-      <AutoPopupDialog/>
+      <AutoPopupDialog />
 
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
-          <Route path="/about-us" element={<PageWrapper><AboutUs /></PageWrapper>} />
-          <Route path="/contact-us" element={<PageWrapper><ContactUs /></PageWrapper>} />
-          <Route path="/career" element={<PageWrapper><Carrer /></PageWrapper>} />
-          <Route path="/services" element={<PageWrapper><Service /></PageWrapper>} />
-          <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
-          <Route path="/try" element={<PageWrapper><CareerForm /></PageWrapper>} />
-          <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} />
-          <Route path="/dum" element={<PricingPage/>} />
-       
+      {/* Lazy loading fallback and animation wrapper */}
+      <Suspense fallback={<div className="text-white text-center py-20">Loading...</div>}>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            {/* Main Pages */}
+            <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+            <Route path="/about-us" element={<PageWrapper><AboutUs /></PageWrapper>} />
+            <Route path="/contact-us" element={<PageWrapper><ContactUs /></PageWrapper>} />
+            <Route path="/career" element={<PageWrapper><Carrer /></PageWrapper>} />
+            <Route path="/services" element={<PageWrapper><Service /></PageWrapper>} />
+            <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
+            <Route path="/try" element={<PageWrapper><CareerForm /></PageWrapper>} />
+            <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} />
+            <Route path="/dum" element={<PricingPage />} />
 
-
-          {/* Service Details */}
-          <Route path="/services/search-engine-optimization" element={<PageWrapper><SEO /></PageWrapper>} />
-          <Route path="/services/web-development" element={<PageWrapper><WebDevelopment /></PageWrapper>} />
-          <Route path="/services/social-media-marketing" element={<PageWrapper><SocialMediaMarketing /></PageWrapper>} />
-          <Route path="/services/ppc-ads" element={<PageWrapper><PPCAds /></PageWrapper>} />
-          <Route path="/services/app-development" element={<PageWrapper><AppDevelopment /></PageWrapper>} />
-          <Route path="/services/ui-ux-design" element={<PageWrapper><UIUXDesign /></PageWrapper>} />
-          <Route path="/services/graphic-design" element={<PageWrapper><GraphicDesign /></PageWrapper>} />
-          <Route path="/services/influencer-marketing" element={<PageWrapper><InfluencerMarketing /></PageWrapper>} />
-          <Route path="/services/content-marketing" element={<PageWrapper><ContentMarketing /></PageWrapper>} />
-        </Routes>
-      </AnimatePresence>
+            {/* Service Detail Pages */}
+            <Route path="/services/search-engine-optimization" element={<PageWrapper><SEO /></PageWrapper>} />
+            <Route path="/services/web-development" element={<PageWrapper><WebDevelopment /></PageWrapper>} />
+            <Route path="/services/social-media-marketing" element={<PageWrapper><SocialMediaMarketing /></PageWrapper>} />
+            <Route path="/services/ppc-ads" element={<PageWrapper><PPCAds /></PageWrapper>} />
+            <Route path="/services/app-development" element={<PageWrapper><AppDevelopment /></PageWrapper>} />
+            <Route path="/services/ui-ux-design" element={<PageWrapper><UIUXDesign /></PageWrapper>} />
+            <Route path="/services/graphic-design" element={<PageWrapper><GraphicDesign /></PageWrapper>} />
+            <Route path="/services/influencer-marketing" element={<PageWrapper><InfluencerMarketing /></PageWrapper>} />
+            <Route path="/services/content-marketing" element={<PageWrapper><ContentMarketing /></PageWrapper>} />
+          </Routes>
+        </AnimatePresence>
+      </Suspense>
     </div>
   )
 }
 
 export default App
 
-
+// Animation wrapper for each page
 function PageWrapper({ children }) {
   return (
     <motion.div

@@ -43,10 +43,10 @@ const LogoMarquee = ({ logos }) => (
   <div className="flex animate-marquee-track gap-6 sm:gap-10 md:gap-12 w-max">
   {[...logos, ...logos].map((src, index) => (
     <img
-  key={index}
+            key={index}
   src={src}
   alt={`Logo ${index}`}
-  className="h-14 sm:h-16 md:h-20 lg:h-24 xl:h-28 w-auto max-w-[160px] object-contain opacity-80 hover:scale-110 transition-transform duration-300  "
+  className="h-14 sm:h-16 md:h-20 lg:h-24 xl:h-28 w-auto max-w-[160px] object-contain opacity-80 hover:scale-110 transition-transform duration-300  2"
 />
 
   ))}
@@ -93,7 +93,7 @@ export default function StateSection() {
         </motion.div>
 
         {/* Stats */}
-        <div className="mt-12 flex flex-wrap justify-center gap-8 lg:gap-16">
+        <div className="mt-12 flex flex-wrap  justify-center gap-8 lg:gap-16">
           {stats.map((stat, index) => (
             <motion.div
               key={index}

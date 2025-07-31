@@ -268,7 +268,7 @@ const handleSubmit = async (e) => {
         <section className="bg-black text-white py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6 text-center text-orange-500">Our Location</h2>
-            <div className="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
+            <div className="w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <iframe
                 title="Our Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6844.389343535898!2d73.74328612704322!3d18.589892071999216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b960040a8f1d%3A0x442ddcbba499eb66!2sSuratwala%20Mark%20Plaza%2C%20Hinjawadi%2C%20Pimpri-Chinchwad%2C%20Maharashtra%20411057%2C%20India!5e1!3m2!1sen!2sus!4v1753161809370!5m2!1sen!2sus"
