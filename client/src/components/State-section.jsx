@@ -46,7 +46,7 @@ const LogoMarquee = ({ logos }) => (
   key={index}
   src={src}
   alt={`Logo ${index}`}
-  className="h-14 sm:h-16 md:h-20 lg:h-24 xl:h-28 w-auto max-w-[160px] object-contain opacity-80 hover:scale-110 transition-transform duration-300"
+  className="h-14 sm:h-16 md:h-20 lg:h-24 xl:h-28 w-auto max-w-[160px] object-contain opacity-80 hover:scale-110 transition-transform duration-300  "
 />
 
   ))}
