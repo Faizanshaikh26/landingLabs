@@ -156,61 +156,61 @@ export default function Pricing() {
             </p>
           </div>
 
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {plans.map((plan, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: index * 0.2 }}
-          className="bg-gray-800 border border-gray-700 rounded-lg p-6 relative"
-        >
-          {plan.popular && (
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-              <span className="bg-gray-600 text-white px-4 py-1 rounded-full text-sm font-medium">
-                Most Popular
-              </span>
-            </div>
-          )}
-          <div className="mb-6">
-            <h3 className="text-xl font-semibold text-white mb-4">{plan.name}</h3>
-            <div className="mb-4">
-              <span className="text-4xl font-bold text-white">{plan.price}</span>
-              <span className="text-gray-400 text-lg">{plan.period}</span>
-            </div>
-            <p className="text-gray-400 text-sm leading-relaxed">{plan.description}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {plans.map((plan, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.2 }}
+                className="bg-gray-800 border border-gray-700 rounded-lg p-6 relative"
+              >
+                {plan.popular && (
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-gray-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+                <div className="mb-6">
+                  <h3 className="text-xl font-semibold text-white mb-4">{plan.name}</h3>
+                  <div className="mb-4">
+                    <span className="text-4xl font-bold text-white">{plan.price}</span>
+                    <span className="text-gray-400 text-lg">{plan.period}</span>
+                  </div>
+                  <p className="text-gray-400 text-sm leading-relaxed">{plan.description}</p>
+                </div>
+                <button
+                  className={`w-full py-3 px-4 rounded-lg font-medium text-sm mb-8 transition-colors ${plan.buttonStyle}`}
+                >
+                  {plan.buttonText}
+                </button>
+                <div>
+                  <h4 className="text-gray-400 text-xs font-semibold tracking-wider uppercase mb-4">
+                    FEATURES
+                  </h4>
+                  <ul className="space-y-3">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start">
+                        <svg
+                          className="w-4 h-4 text-green-500 mr-3 mt-0.5 flex-shrink-0"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        <span className="text-gray-300 text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
           </div>
-          <button
-            className={`w-full py-3 px-4 rounded-lg font-medium text-sm mb-8 transition-colors ${plan.buttonStyle}`}
-          >
-            {plan.buttonText}
-          </button>
-          <div>
-            <h4 className="text-gray-400 text-xs font-semibold tracking-wider uppercase mb-4">
-              FEATURES
-            </h4>
-            <ul className="space-y-3">
-              {plan.features.map((feature, featureIndex) => (
-                <li key={featureIndex} className="flex items-start">
-                  <svg
-                    className="w-4 h-4 text-green-500 mr-3 mt-0.5 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-gray-300 text-sm">{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
-      ))}
-    </div>
         </div>
       </section>
 
@@ -224,10 +224,10 @@ export default function Pricing() {
             </div>
           </div>
           <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+            <h1 className="text-2xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
             <p className="text-gray-400 text-lg">
               Don't see the answer you're looking for?{" "}
-<Link to="/contact-us"><span className="text-blue-400 hover:text-blue-300 cursor-pointer">Get in touch.</span></Link>               
+              <Link to="/contact-us"><span className="text-blue-400 hover:text-blue-300 cursor-pointer">Get in touch.</span></Link>
             </p>
           </div>
 
@@ -243,9 +243,9 @@ export default function Pricing() {
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-750 transition-colors"
+                  className="w-full px-2 md:px-6 py-3 md:py-5 text-left flex items-center justify-between hover:bg-gray-750 transition-colors"
                 >
-                  <span className="text-lg font-medium text-white pr-4">{faq.question}</span>
+                  <span className="md:text-lg font-medium text-white pr-4">{faq.question}</span>
                   {openIndex === index ? (
                     <ChevronUp className="w-5 h-5 text-gray-400 flex-shrink-0" />
                   ) : (
@@ -274,13 +274,13 @@ export default function Pricing() {
               <span className="text-sm font-medium text-gray-300">Best Tools</span>
             </div>
           </div>
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">What's included</h1>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-sm max-w-2xl mx-auto">
               Get 100+ features out of the box with the world's leading customer insights hub
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-2">
             {features.map((feature, index) => {
               const Icon = feature.icon
               return (
@@ -292,12 +292,12 @@ export default function Pricing() {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <div className="mb-6   p-2 ">
-                    <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 group-hover:bg-gray-700 transition-colors">
-                      <Icon className="w-6 h-6 text-gray-300" />
+                  <div className="mb-6  md:p-2 ">
+                    <div className="w-9 md:w-12 h-9 md:h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 group-hover:bg-gray-700 transition-colors">
+                      <Icon className="w-4 h-4 md:w-6 md:h-6 text-gray-300" />
                     </div>
-                    <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                    <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+                    <h3 className="text-lg md:text-xl font-semibold text-white mb-2 md:mb-3">{feature.title}</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
                   </div>
                 </motion.div>
               )
