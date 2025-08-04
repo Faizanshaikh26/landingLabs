@@ -8,7 +8,7 @@ import {
   X,
 } from "lucide-react";
 import { useState, useEffect } from "react";
-import logo from "../assets/images/Og-Logo.png";
+import logo from "../assets/images/Logo- landing labs-black.png";
 import { NavLink } from "react-router-dom";
 
 import { AnimatePresence, motion } from "framer-motion";
@@ -61,15 +61,15 @@ const itemVariants = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
 };
   return (
-    <div className="w-full text-[#EAEAEA] fixed top-0 z-50">
+    <div className="w-full text-primaryText fixed top-0 z-50">
       {/* Navbar Container with scroll logic */}
       <div
         className={`transition-all duration-500 ease-in-out ${
           isScrolled
             ? scrollDirection
-              ? "backdrop-blur-md bg-gray-950/70 py-2 shadow-md"
+              ? "backdrop-blur-md bg-gray-950/70 text-white py-2 shadow-md"
               : "backdrop-blur-md bg-gray-950/70 py-2 shadow-md"
-            : "bg-transparent py-5"
+            : "bg-transparent py-5 "
         }`}
       >
         <div className="max-w-7xl mx-auto px-4">
@@ -84,16 +84,16 @@ const itemVariants = {
               </div>
               <div className="flex items-center space-x-4">
                 <a href="https://www.facebook.com/share/16wqfNsNHL/">
-                  <Facebook className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" />
+                  <Facebook className="w-4 h-4 hover:text-accentHover cursor-pointer transition-colors" />
                 </a>
                 <a href="https://www.instagram.com/landinglabs_?igsh=Njc1YjZvdjc1Y2J1">
-                  <Instagram className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" />
+                  <Instagram className="w-4 h-4 hover:text-accentHover cursor-pointer transition-colors" />
                 </a>
                 <a href="https://www.linkedin.com/company/landing-labs/">
-                  <Linkedin className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" />
+                  <Linkedin className="w-4 h-4 hover:text-accentHover cursor-pointer transition-colors" />
                 </a>
                 <a href="https://www.youtube.com/@landinglabs">
-                  <Youtube className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" />
+                  <Youtube className="w-4 h-4 hover:text-accentHover cursor-pointer transition-colors" />
                 </a>
               </div>
             </div>
@@ -114,8 +114,8 @@ const itemVariants = {
                 to="/"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-orange-500 font-medium"
-                    : "hover:text-orange-500 transition-colors"
+                    ? "text-accent font-medium"
+                    : "text-accentHover transition-colors"
                 }
               >
                 Home
@@ -125,8 +125,8 @@ const itemVariants = {
                 to="/services"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-orange-500 font-medium"
-                    : "hover:text-orange-500 transition-colors"
+                    ? "text-primaryText font-medium"
+                    : "hover:text-accentHover transition-colors"
                 }
               >
                 <span className="flex items-center space-x-1">
@@ -139,8 +139,8 @@ const itemVariants = {
                 to="/about-us"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-orange-500 font-medium"
-                    : "hover:text-orange-500 transition-colors"
+                    ? "text-primaryText font-medium"
+                    : "hover:text-accentHover transition-colors"
                 }
               >
                 About
@@ -150,8 +150,8 @@ const itemVariants = {
                 to="/career"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-orange-500 font-medium"
-                    : "hover:text-orange-500 transition-colors"
+                    ? "text-primaryText font-medium"
+                    : "hover:text-accentHover transition-colors"
                 }
               >
                 Career
@@ -161,8 +161,8 @@ const itemVariants = {
                 to="/contact-us"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-orange-500 font-medium"
-                    : "hover:text-orange-500 transition-colors"
+                    ? "text-primaryText font-medium"
+                    : "hover:text-accentHover transition-colors"
                 }
               >
                 Contact
@@ -172,8 +172,8 @@ const itemVariants = {
                 to="/pricing"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-orange-500 font-medium"
-                    : "hover:text-orange-500 transition-colors"
+                    ? "text-primaryText font-medium"
+                    : "hover:text-accentHover transition-colors"
                 }
               >
                 Pricing
@@ -188,7 +188,7 @@ const itemVariants = {
                 </button>
               </NavLink>
               <button
-                className="lg:hidden text-white"
+                className="lg:hidden text-secondaryText"
                 onClick={() => setIsOpen(true)}
               >
                 <Menu className="h-6 w-6" />
@@ -212,7 +212,7 @@ const itemVariants = {
     >
       <div className="flex justify-end">
         <button onClick={() => setIsOpen(false)}>
-          <X className="w-6 h-6 text-white hover:text-orange-500" />
+          <X className="w-6 h-6 text-white hover:text-accentHover" />
         </button>
       </div>
 
@@ -238,8 +238,8 @@ const itemVariants = {
               to={to}
               className={({ isActive }) =>
                 isActive
-                  ? "text-orange-500 text-lg"
-                  : "hover:text-orange-500 text-lg"
+                  ? "text-primaryText text-lg"
+                  : "hover:text-accentHover text-lg"
               }
               onClick={() => setIsOpen(false)}
             >
@@ -253,16 +253,16 @@ const itemVariants = {
           className="flex items-center space-x-4 pt-4 border-t border-gray-800"
         >
           <a href="https://www.facebook.com/share/16wqfNsNHL/">
-            <Facebook className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
+            <Facebook className="w-5 h-5 hover:text-accentHover cursor-pointer" />
           </a>
           <a href="https://www.instagram.com/landinglabs_?igsh=Njc1YjZvdjc1Y2J1">
-            <Instagram className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
+            <Instagram className="w-5 h-5 hover:text-accentHover cursor-pointer" />
           </a>
           <a href="https://www.linkedin.com/company/landing-labs/">
-            <Linkedin className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
+            <Linkedin className="w-5 h-5 hover:text-accentHover cursor-pointer" />
           </a>
           <a href="https://www.youtube.com/@landinglabs">
-            <Youtube className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
+            <Youtube className="w-5 h-5 hover:text-accentHover cursor-pointer" />
           </a>
         </motion.div>
 
