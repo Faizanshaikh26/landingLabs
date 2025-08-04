@@ -30,7 +30,7 @@ const logos = [
 
 const LogoMarquee = ({ logos, direction = "left" }) => (
   <motion.div
-    className="relative   overflow-hidden w-full bg-black"
+    className="relative   overflow-hidden w-full "
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.4 }}
