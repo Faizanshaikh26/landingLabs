@@ -130,12 +130,12 @@ export default function Portfolio() {
                     transition={{ duration: 0.6, ease: 'easeOut' }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#E82561]">
-                        Our <span className="text-[#EAEAEA]">Portfolio</span>
+                    <h2 className="text-3xl md:text-4xl font-bold text-accent">
+                        Our <span className="text-secondaryText">Portfolio</span>
                     </h2>
-                    <p className="mt-4 md:text-2xl text-[#CFFFE2]">
+                    <p className="mt-4 md:text-2xl text-primaryText">
                         A full-service digital growth lab for startups, creators,
-                        <span className="text-[#EAEAEA]"> and challenger brands who want to win.</span>
+                        <span className="text-secondaryText"> and challenger brands who want to win.</span>
                     </p>
                 </motion.div>
 

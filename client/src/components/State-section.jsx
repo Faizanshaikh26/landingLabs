@@ -36,8 +36,8 @@ const LogoMarquee = ({ logos }) => (
   viewport={{ once: true, amount: 0.3 }}
 >
   {/* Left & Right Fades */}
-  <div className="absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-  <div className="absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+  {/* <div className="absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+  <div className="absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" /> */}
 
   {/* Marquee Track */}
   <div className="flex animate-marquee-track gap-6 sm:gap-10 md:gap-12 w-max">
@@ -85,9 +85,9 @@ export default function StateSection() {
           viewport={{ once: true }}
         >
           <span className="flex-grow h-px bg-gray-600"></span>
-          <h2 className="lg:text-xl font-semibold text-white">
+          <h2 className="lg:text-xl font-semibold text-primaryText">
             Trusted by Startups & Enterprises to{' '}
-            <span className="text-orange-500 font-bold">Build Digital Products</span>
+            <span className="text-accent font-bold">Build Digital Products</span>
           </h2>
           <span className="flex-grow h-px bg-gray-600"></span>
         </motion.div>
@@ -104,8 +104,8 @@ export default function StateSection() {
               viewport={{ once: true, amount: 0.3 }}
               whileHover={{ scale: 1.05 }}
             >
-              <h3 className="text-2xl lg:text-4xl font-extrabold text-[#CFFFE2]">{stat.value}</h3>
-              <p className="mt-2 text-base text-[#CFFFE2]">{stat.label}</p>
+              <h3 className="text-2xl lg:text-4xl font-extrabold text-secondaryText">{stat.value}</h3>
+              <p className="mt-2 text-base text-secondaryText">{stat.label}</p>
             </motion.div>
           ))}
         </div>

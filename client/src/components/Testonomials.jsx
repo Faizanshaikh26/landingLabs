@@ -329,13 +329,13 @@ export default function Testimonials() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="inline-block px-3 py-1 text-sm font-semibold text-indigo-100 rounded-lg bg-[#202c47] bg-opacity-60 hover:bg-opacity-40 transition">
+          <div className="inline-block px-3 py-1 text-sm font-semibold text-primaryText rounded-lg bg-primaryCardBg bg-opacity-60 hover:bg-opacity-40 transition">
             Words from Others
           </div>
-          <h1 className="text-3xl font-semibold text-white md:text-5xl">
+          <h1 className="text-3xl font-semibold text-primaryText md:text-5xl">
             It's not just <span className="text-orange-500">us.</span>
           </h1>
-          <p className="mt-4 text-xl md:text-2xl text-[#CFFFE2]">
+          <p className="mt-4 text-xl md:text-2xl text-secondaryText">
             <span className="text-orange-500">Here's what</span> others have to say about us.
           </p>
         </motion.div>
