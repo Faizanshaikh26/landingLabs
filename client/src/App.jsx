@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import ScrollToTop from "./components/ScrollToTop"
 import CustomCursor from "./components/custome-cursor"
 import { AutoPopupDialog } from "./components/AutoDialog.jsx"
+import NotFound from "./components/NotFound.jsx"
 
 // Lazy-loaded pages
 const Home = lazy(() => import("./Home"))
@@ -61,6 +62,7 @@ function App() {
             <Route path="/services/graphic-design" element={<PageWrapper><GraphicDesign /></PageWrapper>} />
             <Route path="/services/influencer-marketing" element={<PageWrapper><InfluencerMarketing /></PageWrapper>} />
             <Route path="/services/content-marketing" element={<PageWrapper><ContentMarketing /></PageWrapper>} />
+            <Route path="*" element={<NotFound/>} />
           </Routes>
         </AnimatePresence>
       </Suspense>
