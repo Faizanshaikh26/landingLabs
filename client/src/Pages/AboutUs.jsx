@@ -551,7 +551,7 @@ const ScrollFlipIn = ({ children, delay = 0 }) => {
         <div className="max-w-screen-xl mx-auto px-4 text-[#EAEAEA]">
 
           <ScrollFadeIn delay={0.2}>
-<div className="mt-20 text-center border-t border-slate-200 pt-16 bg-white text-slate-900">
+            <div className="mt-20 text-center border-t border-slate-200 pt-16 bg-white text-slate-900">
   <div className="mb-10 space-y-4">
     <span className="inline-block px-4 py-1 text-sm font-semibold text-white bg-orange-500 rounded-full">
       Why Choose Us
@@ -572,7 +572,7 @@ const ScrollFlipIn = ({ children, delay = 0 }) => {
           key={index}
           className="relative group rounded-xl overflow-hidden bg-slate-50 border border-slate-200 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]"
         >
-          <div className="absolute -inset-1 bg-gradient-to-r from-orange-300 to-yellow-300 opacity-10 blur group-hover:opacity-20 transition duration-300"></div>
+          <div className="absolute -inset-1 bg-blue-300 opacity-10 blur group-hover:opacity-20 transition duration-300"></div>
           <div className="relative p-6 z-10 flex flex-col items-start gap-4">
             <Icon className="w-10 h-10 text-orange-500 group-hover:text-orange-600 transition-colors" />
             <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
