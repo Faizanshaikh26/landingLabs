@@ -8,7 +8,8 @@ import {
   X,
 } from "lucide-react";
 import { useState, useEffect } from "react";
-import logo from "../assets/images/Logo- landing labs-black.png";
+import logoBlack from "../assets/images/Logo- landing labs-black.png";
+import logoWhite from "../assets/images/Og-Logo.png";
 import { NavLink } from "react-router-dom";
 
 import { AnimatePresence, motion } from "framer-motion";
@@ -104,7 +105,18 @@ const itemVariants = {
             {/* Logo */}
             <div className={`transition-all ${isScrolled ? "w-28" : "w-36"}`}>
               <NavLink to="/">
-                <img src={logo} alt="Landing Labs Logo" className="w-full" />
+
+              {
+          isScrolled
+            ? scrollDirection
+              ?  <img src={logoWhite} alt="Landing Labs Logo" className="w-full" />
+              : <img src={logoBlack} alt="Landing Labs Logo" className="w-full" />
+            : <img src={logoBlack} alt="Landing Labs Logo" className="w-full" />
+
+        }
+
+              
+               
               </NavLink>
             </div>
 
