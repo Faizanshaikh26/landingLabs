@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
@@ -33,7 +32,7 @@ export default function Career() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-white text-black">
         {/* Hero Section */}
         <div className="flex flex-col lg:flex-row min-h-screen">
           {/* Text */}
@@ -52,13 +51,13 @@ export default function Career() {
               >
                 Come join us!
               </motion.h1>
-              <p className="text-lg lg:text-xl text-gray-300 leading-relaxed">
+              <p className="text-lg lg:text-xl text-gray-700 leading-relaxed">
                 We're already heads down working hard, but would love to have your added expertise on the team.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-black hover:bg-gray-200 px-8 py-3 rounded-full font-medium text-base"
+                className="bg-black text-white hover:bg-gray-800 px-8 py-3 rounded-full font-medium text-base"
               >
                 See open roles
               </motion.button>
@@ -68,7 +67,6 @@ export default function Career() {
           {/* Image */}
           <motion.div
             className="flex-1 relative order-1 lg:order-2"
-         
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
@@ -98,34 +96,36 @@ export default function Career() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              <h2 className="text-3xl lg:text-4xl font-bold mb-2">Available positions</h2>
-              <p className="text-gray-400 text-lg">waiting to be filled</p>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-2 text-black">Available positions</h2>
+              <p className="text-gray-600 text-lg">waiting to be filled</p>
             </motion.div>
 
             {/* Cards Desktop */}
             <div className="hidden lg:block">
-              <div className="grid grid-cols-12 gap-4 pb-4 mb-8 border-b border-gray-700">
-                <div className="col-span-4 text-sm font-medium text-gray-400 uppercase">ROLE</div>
-                <div className="col-span-2 text-sm font-medium text-gray-400 uppercase">TEAM</div>
-                <div className="col-span-2 text-sm font-medium text-gray-400 uppercase">WORK TIME</div>
-                <div className="col-span-2 text-sm font-medium text-gray-400 uppercase">LOCATION</div>
+              <div className="grid grid-cols-12 gap-4 pb-4 mb-8 border-b border-gray-300">
+                <div className="col-span-4 text-sm font-medium text-gray-600 uppercase">ROLE</div>
+                <div className="col-span-2 text-sm font-medium text-gray-600 uppercase">TEAM</div>
+                <div className="col-span-2 text-sm font-medium text-gray-600 uppercase">WORK TIME</div>
+                <div className="col-span-2 text-sm font-medium text-gray-600 uppercase">LOCATION</div>
               </div>
               <div className="space-y-0">
                 {jobListings.map((job, i) => (
                   <motion.div
                     key={i}
-                    className="grid grid-cols-12 gap-4 py-6 border-b border-gray-800 hover:bg-gray-900/30 transition-colors"
+                    className="grid grid-cols-12 gap-4 py-6 border-b border-gray-200 hover:bg-gray-200 transition-colors"
                     initial={{ opacity: 0, rotateY: 15 }}
                     whileInView={{ opacity: 1, rotateY: 0 }}
                     transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
                     viewport={{ once: true }}
                   >
-                    <div className="col-span-4"><h3 className="text-lg font-medium text-white">{job.role}</h3></div>
-                    <div className="col-span-2 text-gray-300">{job.team}</div>
-                    <div className="col-span-2 text-gray-300">{job.workTime}</div>
-                    <div className="col-span-2 text-gray-300">{job.location}</div>
+                    <div className="col-span-4"><h3 className="text-lg font-medium text-black">{job.role}</h3></div>
+                    <div className="col-span-2 text-gray-700">{job.team}</div>
+                    <div className="col-span-2 text-gray-700">{job.workTime}</div>
+                    <div className="col-span-2 text-gray-700">{job.location}</div>
                     <div className="col-span-2 flex justify-end">
-                      <button className="bg-white text-black hover:bg-gray-200 px-6 py-2 rounded-full font-medium">Apply</button>
+                      <button className="bg-black text-white hover:bg-gray-800 px-6 py-2 rounded-full font-medium">
+                        Apply
+                      </button>
                     </div>
                   </motion.div>
                 ))}
@@ -137,19 +137,21 @@ export default function Career() {
               {jobListings.map((job, i) => (
                 <motion.div
                   key={i}
-                  className="bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:bg-gray-900/70 transition-colors"
+                  className="bg-gray-100 border border-gray-300 rounded-lg p-6 hover:bg-gray-200 transition-colors"
                   initial={{ opacity: 0, rotateY: 15 }}
                   whileInView={{ opacity: 1, rotateY: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
                   viewport={{ once: true }}
                 >
-                  <h3 className="text-xl font-medium text-white mb-4">{job.role}</h3>
-                  <div className="space-y-2 mb-6 text-gray-300">
+                  <h3 className="text-xl font-medium text-black mb-4">{job.role}</h3>
+                  <div className="space-y-2 mb-6 text-gray-700">
                     <p>{job.team}</p>
                     <p>{job.workTime}</p>
                     <p>{job.location}</p>
                   </div>
-                  <button className="bg-white text-black hover:bg-gray-200 px-6 py-2 rounded-full font-medium w-full">Apply</button>
+                  <button className="bg-black text-white hover:bg-gray-800 px-6 py-2 rounded-full font-medium w-full">
+                    Apply
+                  </button>
                 </motion.div>
               ))}
             </div>
@@ -166,8 +168,8 @@ export default function Career() {
         >
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-4">Questions?</h2>
-              <p className="text-xl text-gray-500">We're glad you asked...</p>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-black">Questions?</h2>
+              <p className="text-xl text-gray-600">We're glad you asked...</p>
             </div>
             <CustomAccordion items={faqItems} />
           </div>
@@ -182,21 +184,21 @@ export default function Career() {
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
         >
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-12 text-white">Our Hiring Process</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-12 text-black">Our Hiring Process</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {["Apply", "Screening", "Skill Test / Task Round", "Final Interview", "Offer Rollout", "Apply Now"].map((step, i) => (
                 <motion.div
                   key={step}
-                  className="border border-gray-700 rounded-lg p-8"
+                  className="border border-gray-300 rounded-lg p-8 bg-white shadow-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   whileHover={{ rotateX: 4, rotateY: -4, scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 150, damping: 10, duration: 0.4, delay: i * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="text-sm text-gray-400 mb-4">0{i + 1}</div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{step}</h3>
-                  <p className="text-gray-300">
+                  <div className="text-sm text-gray-500 mb-4">0{i + 1}</div>
+                  <h3 className="text-2xl font-bold text-black mb-4">{step}</h3>
+                  <p className="text-gray-700">
                     {step === "Apply"
                       ? "Submit resume + portfolio (if needed)"
                       : step === "Screening"
