@@ -89,7 +89,7 @@ const handleSubmit = async (e) => {
         className="min-h-screen text-white"
         style={{
           background:
-            "linear-gradient(135deg, hsla(0, 4%, 9%, 1) 9%, hsla(113, 73%, 4%, 1) 63%, hsla(177, 80%, 15%, 1) 100%)",
+            "bg-white bg-opacity-10 backdrop-blur-lg",
         }}
       >
         {/* Hero */}
@@ -104,14 +104,14 @@ const handleSubmit = async (e) => {
               Get In Touch
             </span>
             <motion.h1
-              className="text-4xl md:text-6xl font-bold my-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-orange-300"
+              className="text-4xl md:text-6xl font-bold my-6 bg-clip-text text-black"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.6 }}
             >
               Let's Start a Conversation
             </motion.h1>
-            <p className="text-orange-100 text-lg max-w-2xl mx-auto">
+            <p className="text-secondaryText text-lg max-w-2xl mx-auto">
               We're here to help and answer any question you might have.
             </p>
 
@@ -125,11 +125,11 @@ const handleSubmit = async (e) => {
                   transition={{ delay: index * 0.2, duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-12 h-12 mx-auto bg-white/30 rounded-full flex items-center justify-center mb-3 animate-bounce">
+                  <div className="w-12 h-12 mx-auto bg-orange-500 text-secondaryText rounded-full flex items-center justify-center mb-3 animate-bounce">
                     <stat.icon className="w-6 h-6" />
                   </div>
-                  <div className="text-2xl font-bold">{stat.value}</div>
-                  <div className="text-orange-200 text-sm">{stat.label}</div>
+                  <div className="text-2xl font-bold text-primaryText">{stat.value}</div>
+                  <div className="text-secondaryText text-sm">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -138,11 +138,11 @@ const handleSubmit = async (e) => {
 
         {/* Contact Cards */}
         <section className="px-4 max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 px-6 py-10 text-orange-200">
+          <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 px-6 py-10 text-secondaryText">
             {cards.map((card, index) => (
               <motion.div
                 key={index}
-                className="bg-[#0B0B0C] border border-gray-800 rounded-lg shadow p-6 flex-1 max-w-md"
+                className="bg-white border border-gray-800 rounded-lg shadow p-6 flex-1 max-w-md"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: index * 0.2, duration: 0.6 }}
@@ -164,7 +164,7 @@ const handleSubmit = async (e) => {
 
         {/* Contact Form */}
         <motion.section
-          className="bg-black text-white py-16 px-6"
+          className="bg-white text-primaryText py-16 px-6"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -197,7 +197,7 @@ const handleSubmit = async (e) => {
   <input
     type="text"
     placeholder="Enter your full name"
-    className="w-full p-3 bg-transparent border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+    className="w-full p-3 bg-transparent border border-gray-600 rounded text-black placeholder-gray-400 focus:outline-none focus:border-orange-500"
     value={formData.fullName}
     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
     required
@@ -206,7 +206,7 @@ const handleSubmit = async (e) => {
   <input
     type="text"
     placeholder="Phone number"
-    className="w-full p-3 bg-transparent border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+    className="w-full p-3 bg-transparent border border-gray-600 rounded text-black placeholder-gray-400 focus:outline-none focus:border-orange-500"
     value={formData.phoneNumber}
     onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
     required
@@ -215,7 +215,7 @@ const handleSubmit = async (e) => {
   <input
     type="email"
     placeholder="Your email"
-    className="w-full p-3 bg-transparent border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+    className="w-full p-3 bg-transparent border border-gray-600 rounded text-black placeholder-gray-400 focus:outline-none focus:border-orange-500"
     value={formData.email}
     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
     required
@@ -224,13 +224,13 @@ const handleSubmit = async (e) => {
   <input
     type="text"
     placeholder="Service Description"
-    className="w-full p-3 bg-transparent border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+    className="w-full p-3 bg-transparent border border-gray-600 rounded text-black placeholder-gray-400 focus:outline-none focus:border-orange-500"
     value={formData.serviceDescription}
     onChange={(e) => setFormData({ ...formData, serviceDescription: e.target.value })}
   />
 
   <select
-    className="w-full p-3 bg-transparent border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+    className="w-full p-3 bg-transparent border border-gray-600 rounded text-black placeholder-gray-400 focus:outline-none focus:border-orange-500"
     value={formData.service}
     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
     required
@@ -245,7 +245,7 @@ const handleSubmit = async (e) => {
   <textarea
     placeholder="Message"
     rows={4}
-    className="w-full p-3 bg-transparent border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+    className="w-full p-3 bg-transparent border border-gray-600 rounded text-black placeholder-gray-400 focus:outline-none focus:border-orange-500"
     value={formData.message}
     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
   ></textarea>
@@ -265,7 +265,7 @@ const handleSubmit = async (e) => {
         </motion.section>
 
         {/* Google Map */}
-        <section className="bg-black text-white py-16 px-6">
+        <section className="bg-white text-black py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6 text-center text-orange-500">Our Location</h2>
             <div className="w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">

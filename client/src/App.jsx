@@ -31,7 +31,7 @@ function App() {
   const location = useLocation()
 
   return (
-    <div className="min-h-screen bg-[#000000] font-poppins">
+    <div className="min-h-screen bg-[white] font-poppins">
       <ScrollToTop />
       <CustomCursor />
       <AutoPopupDialog />
