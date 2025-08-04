@@ -1,372 +1,324 @@
 // Pricing.jsx
-import React, { useState, useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./PricingTable.css";
+import { useState } from "react"
+import { motion } from "framer-motion"
+import Navbar from "../components/Navbar"
+import Footer from "../Footer"
+import {
+  Monitor,
+  TrendingUp,
+  FileText,
+  BarChart3,
+  User,
+  DollarSign,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react"
+import { Link } from "react-router-dom"
 
-gsap.registerPlugin(ScrollTrigger);
+import PricingTable from "./PricingTable"
 
-const plans = [
-  {
-    name: "Launch",
-    oldPrice: 129,
-    price: 89,
-    users: "—",
-    visits: "100,000",
-    landingPages: "50",
-    domains: "5",
-    integrations: "3",
-    workspaces: "3",
-    abTesting: false,
-    exportCsv: false,
-    freeCleaning: 0,
-    successManager: false,
-    customImpl: false,
-    importUrl: true,
-    downloadLandingPages: false,
-    support: "Email",
-    extraVisit: "$0.001/visit",
-    extraDomain: "$5/domain",
-    features: [
-      "Drag & Drop Builder",
-      "AI (Translation, Text & Image Generation, Background Removal)",
-      "Built-in Code Editor",
-      "100s Ready To Use Templates",
-      "Leads",
-      "Webhooks",
-      "Direct Leads Integrations",
-      "Import from ZIP",
-      "Import from (Adplexity, Anstrex)",
-      "SSL & CDN Hosting",
-      "File Manager",
-      "Images, Icons & Unsplash Gallery",
-      "Unsplash Images",
-      "Dynamic Text Replacement",
-      "Clicks Tracking",
-      "Advanced Analytics & Conversions Tracking",
-      "Conversions",
-    ],
-  },
-  {
-    name: "Grow",
-    oldPrice: 219,
-    price: 149,
-    users: "3",
-    visits: "500,000",
-    landingPages: "125",
-    domains: "15",
-    integrations: "15",
-    workspaces: "10",
-    abTesting: true,
-    exportCsv: true,
-    freeCleaning: 2,
-    successManager: false,
-    customImpl: false,
-    importUrl: true,
-    downloadLandingPages: true,
-    support: "Chat & Email",
-    extraVisit: "$0.0007/visit",
-    extraDomain: "$5/domain",
-    features: [
-      "Drag & Drop Builder",
-      "AI (Translation, Text & Image Generation, Background Removal)",
-      "Built-in Code Editor",
-      "100s Ready To Use Templates",
-      "Leads",
-      "Webhooks",
-      "Direct Leads Integrations",
-      "Import from ZIP",
-      "Import from (Adplexity, Anstrex)",
-      "SSL & CDN Hosting",
-      "File Manager",
-      "Images, Icons & Unsplash Gallery",
-      "Unsplash Images",
-      "Dynamic Text Replacement",
-      "Clicks Tracking",
-      "Advanced Analytics & Conversions Tracking",
-      "Conversions",
-    ],
-  },
-  {
-    name: "Scale",
-    oldPrice: 429,
-    price: 299,
-    users: "10",
-    visits: "2,000,000",
-    landingPages: "350",
-    domains: "50",
-    integrations: "50",
-    workspaces: "25",
-    abTesting: true,
-    exportCsv: true,
-    freeCleaning: 5,
-    successManager: true,
-    customImpl: false,
-    importUrl: true,
-    downloadLandingPages: true,
-    support: "Telegram & Chat",
-    extraVisit: "$0.0003/visit",
-    extraDomain: "$5/domain",
-    features: [
-      "Drag & Drop Builder",
-      "AI (Translation, Text & Image Generation, Background Removal)",
-      "Built-in Code Editor",
-      "100s Ready To Use Templates",
-      "Leads",
-      "Webhooks",
-      "Direct Leads Integrations",
-      "Import from ZIP",
-      "Import from (Adplexity, Anstrex)",
-      "SSL & CDN Hosting",
-      "File Manager",
-      "Images, Icons & Unsplash Gallery",
-      "Unsplash Images",
-      "Dynamic Text Replacement",
-      "Clicks Tracking",
-      "Advanced Analytics & Conversions Tracking",
-      "Conversions",
-    ],
-  },
-  {
-    name: "Enterprise",
-    oldPrice: 1199,
-    price: 799,
-    users: "30",
-    visits: "10,000,000",
-    landingPages: "1,000",
-    domains: "125",
-    integrations: "150",
-    workspaces: "100",
-    abTesting: true,
-    exportCsv: true,
-    freeCleaning: 10,
-    successManager: true,
-    customImpl: true,
-    importUrl: true,
-    downloadLandingPages: true,
-    support: "Slack & Video Call",
-    extraVisit: "$0.0001/visit",
-    extraDomain: "$5/domain",
-    features: [
-      "Drag & Drop Builder",
-      "AI (Translation, Text & Image Generation, Background Removal)",
-      "Built-in Code Editor",
-      "100s Ready To Use Templates",
-      "Leads",
-      "Webhooks",
-      "Direct Leads Integrations",
-      "Import from ZIP",
-      "Import from (Adplexity, Anstrex)",
-      "SSL & CDN Hosting",
-      "File Manager",
-      "Images, Icons & Unsplash Gallery",
-      "Unsplash Images",
-      "Dynamic Text Replacement",
-      "Clicks Tracking",
-      "Advanced Analytics & Conversions Tracking",
-      "Conversions",
-    ],
-  },
-];
+export default function Pricing() {
+  const [openIndex, setOpenIndex] = useState(0)
 
-const featureRows = [
-  { label: "Users", key: "users" },
-  { label: "Visits", key: "visits" },
-  { label: "Landing Pages", key: "landingPages" },
-  { label: "Custom Domains", key: "domains" },
-  { label: "Lead/Webhook Integrations", key: "integrations" },
-  { label: "Workspaces", key: "workspaces" },
-  { label: "Import from URL", key: "importUrl", type: "bool" },
-  { label: "Download Landing Pages", key: "downloadLandingPages", type: "bool" },
-  { label: "A/B Testing", key: "abTesting", type: "bool" },
-  { label: "Export Leads as CSV", key: "exportCsv", type: "bool" },
-  { label: "Free Cleaning Requests", key: "freeCleaning", type: "count" },
-  { label: "Dedicated Success Manager", key: "successManager", type: "bool" },
-  { label: "Custom Implementation", key: "customImpl", type: "bool" },
-  { label: "Support", key: "support" },
-  { label: "Extra Visits", key: "extraVisit" },
-  { label: "Extra Domain", key: "extraDomain" },
-];
+  const plans = [
+    {
+      name: "Starter",
+      price: "$0",
+      period: "/month",
+      description: "Perfect for small businesses getting started with online presence.",
+      popular: false,
+      buttonText: "Start for Free",
+      buttonStyle: "bg-gray-300 hover:bg-gray-400 text-black",
+      features: [
+        "Basic Website Audit",
+        "Social Media Setup",
+        "1 Free Design Mockup",
+        "Basic SEO Suggestions",
+        "Email Support",
+      ],
+    },
+    {
+      name: "Growth",
+      price: "$199",
+      period: "/month",
+      description: "Ideal for growing brands looking for consistent marketing efforts.",
+      popular: true,
+      buttonText: "Get Started with Growth",
+      buttonStyle: "bg-orange-400 hover:bg-orange-500 text-white",
+      features: [
+        "SEO Optimization",
+        "Content Marketing",
+        "Social Media Management",
+        "PPC Campaigns Setup",
+        "Dedicated Account Manager",
+      ],
+    },
+    {
+      name: "Enterprise",
+      price: "Custom",
+      period: "",
+      description: "Tailored services for enterprises and high-growth teams.",
+      popular: false,
+      buttonText: "Contact Sales",
+      buttonStyle: "bg-gray-300 hover:bg-gray-400 text-black",
+      features: [
+        "Custom Web/App Development",
+        "Influencer Campaigns",
+        "Full Funnel Strategy",
+        "Advanced Analytics & Reports",
+        "24/7 Priority Support",
+      ],
+    },
+  ]
 
-const getTickOrCross = (val) => (val ? "✔" : "✖");
+  const faqs = [
+    {
+      question: "What services are included in the Starter plan?",
+      answer:
+        "The Starter plan includes a website audit, basic SEO tips, social media setup guidance, and one design mockup to help you establish your brand online.",
+    },
+    {
+      question: "Do you provide custom website or app development?",
+      answer:
+        "Yes! Our Enterprise plan includes fully customized web and app development tailored to your business goals and technical needs.",
+    },
+    {
+      question: "How do your SEO services work?",
+      answer:
+        "We perform a comprehensive audit, optimize on-page content, improve technical SEO, and build high-quality backlinks to increase your search visibility.",
+    },
+    {
+      question: "Can you manage our social media accounts?",
+      answer:
+        "Absolutely. Our Growth and Enterprise plans offer complete social media management including content creation, posting, and community engagement.",
+    },
+    {
+      question: "What’s the process for running ad campaigns?",
+      answer:
+        "Our experts design, launch, and optimize paid ad campaigns (PPC, Meta, etc.) to generate leads and drive traffic that converts.",
+    },
+    {
+      question: "How do I choose the right plan?",
+      answer:
+        "If you're just starting out, go with Starter. Growth is for active brands aiming to scale. Enterprise is best for custom, high-volume needs.",
+    },
+  ]
 
-export default function PricingTable() {
-  const [hovered, setHovered] = useState(null);
-  const cardsRef = useRef([]);
-  const featuresRef = useRef([]);
-  const lightsRef = useRef([]);
+  const features = [
+    {
+      icon: Monitor,
+      title: "Real-Time Campaign Monitoring",
+      description: "Track SEO, ads, and engagement metrics from a unified dashboard.",
+    },
+    {
+      icon: BarChart3,
+      title: "Conversion-Focused Strategies",
+      description: "Our tactics are tailored to turn traffic into loyal customers.",
+    },
+    {
+      icon: FileText,
+      title: "Content Creation & Management",
+      description: "We deliver blogs, graphics, and creatives optimized for performance.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Growth-Driven SEO",
+      description: "From technical fixes to link building, we boost your organic reach.",
+    },
+    {
+      icon: User,
+      title: "Influencer Collaborations",
+      description: "Work with relevant creators to amplify your brand’s voice.",
+    },
+    {
+      icon: DollarSign,
+      title: "PPC & Ad Campaigns",
+      description: "Targeted campaigns on Google, Facebook, and more with strong ROI.",
+    },
+  ]
 
-  useEffect(() => {
-    cardsRef.current.forEach((card, i) => {
-      gsap.from(card, {
-        opacity: 1,
-        y: 20,
-        duration: 0.6,
-        delay: i * 0.15,
-        ease: "power3.out",
-        immediateRender: false,
-        scrollTrigger: {
-          trigger: card,
-          start: "top 90%",
-          toggleActions: "play none none reverse",
-        },
-      });
-    });
-    featuresRef.current.forEach((row, i) => {
-      gsap.from(row, {
-        opacity: 1,
-        y: 15,
-        duration: 0.45,
-        delay: 0.3 + i * 0.1,
-        ease: "power2.out",
-        immediateRender: false,
-        scrollTrigger: {
-          trigger: row,
-          start: "top 90%",
-          toggleActions: "play none none reverse",
-        },
-      });
-    });
-  }, []);
-
-  // Animate glowing lights around table border
-  useEffect(() => {
-    const table = document.querySelector(".plan-table-outer");
-    const wrapper = document.querySelector(".plan-table-light-outer");
-    if (!table || !wrapper || lightsRef.current.length === 0) return;
-
-    function animateLights() {
-      const tableBox = table.getBoundingClientRect();
-      const parentBox = wrapper.getBoundingClientRect();
-
-      const cx = tableBox.left - parentBox.left + tableBox.width / 2;
-      const cy = tableBox.top - parentBox.top + tableBox.height / 2;
-      const rx = tableBox.width / 2 + 32;
-      const ry = tableBox.height / 2 + 22;
-      const N = lightsRef.current.length;
-
-      lightsRef.current.forEach((el, i) => {
-        const duration = 9 + Math.random() * 4;
-        const delay = (duration / N) * i;
-
-        gsap.to(el, {
-          motionPath: {
-            path: Array.from({ length: 36 }, (_, step) => {
-              const t = (2 * Math.PI * (step / 36)) + ((i / N) * 2 * Math.PI);
-              return {
-                x: cx + rx * Math.cos(t) - 9,
-                y: cy + ry * Math.sin(t) - 9,
-              };
-            }),
-            autoRotate: false,
-          },
-          repeat: -1,
-          ease: "linear",
-          duration: duration,
-          delay: delay,
-          immediateRender: false,
-        });
-      });
-    }
-
-    animateLights();
-    window.addEventListener("resize", animateLights);
-    return () => window.removeEventListener("resize", animateLights);
-  }, []);
-
-  const handleCardHover = (idx, isEntering) => {
-    const el = cardsRef.current[idx];
-    if (!el) return;
-    gsap.to(el, {
-      scale: isEntering ? 1.03 : 1,
-      y: isEntering ? -8 : 0,
-      boxShadow: isEntering
-        ? "0 0 16px 3px #29ff98, 0 2px 10px 0 rgba(41,255,152,0.13)"
-        : "0 4px 32px 0 rgba(41,255,152,0.07)",
-      background: isEntering ? "#1c232d" : "#171a23",
-      duration: 0.3,
-      ease: "power2.out",
-      zIndex: isEntering ? 3 : 1,
-    });
-  };
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? -1 : index)
+  }
 
   return (
-    <div className="pricing-table-container">
-      <div className="plan-table-light-outer">
-        {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            ref={(el) => (lightsRef.current[i] = el)}
-            className="plan-light"
-          />
-        ))}
+    <>
+      <Navbar />
 
-        <div className="plan-table-outer">
-          {/* Header row */}
-          <div className="plan-table-header-row">
-            <div className="plan-table-first-col"></div>
-            {plans.map((plan, idx) => (
-              <div
-                key={plan.name}
-                className={`plan-table-header-col plan-card-animated ${
-                  hovered === idx ? "plan-hovered" : ""
-                }`}
-                ref={(el) => (cardsRef.current[idx] = el)}
-                onMouseEnter={() => {
-                  setHovered(idx);
-                  handleCardHover(idx, true);
-                }}
-                onMouseLeave={() => {
-                  handleCardHover(idx, false);
-                  setHovered(null);
-                }}
-              >
-                <div className="plan-name-main">{plan.name}</div>
-                <div className="plan-old-price-main">${plan.oldPrice}</div>
-                <div className="plan-price-main">${plan.price}</div>
-                <div className="plan-desc-main">
-                  {plan.name === "Launch" && "Essentials for solo marketers starting out with landing pages."}
-                  {plan.name === "Grow" && "Built for growing teams with tools for optimization."}
-                  {plan.name === "Scale" && "For teams that want to scale and drive more results."}
-                  {plan.name === "Enterprise" && "Enterprise level, high-volume and large-scale campaigns."}
-                </div>
-                <button className="trial-btn-main">Start 7 Days Free Trial</button>
-              </div>
-            ))}
+      {/* Pricing Section */}
+      <section className="pt-40 pb-10 px-4 text-gray-900 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4">
+              Simple and Affordable
+              <br />
+              Pricing Plans
+            </h1>
+            <p className="text-gray-700 text-lg">
+              Start tracking and improving your finance management
+            </p>
           </div>
 
-          {/* Feature rows */}
-          <div className="plan-table-feature-rows">
-            {featureRows.map((row, idx) => (
-              <div
-                key={row.key}
-                className={`plan-table-feature-row ${
-                  hovered !== null ? "feature-col-hovered" : ""
-                }`}
-                ref={(el) => (featuresRef.current[idx] = el)}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {plans.map((plan, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.2 }}
+                className="bg-gray-100 border border-gray-300 rounded-lg p-6 relative"
               >
-                <div className="plan-table-first-col">{row.label}</div>
-                {plans.map((plan) => {
-                  let val = plan[row.key];
-                  if (row.type === "bool")
-                    val = (
-                    <span className={`tick-cross ${val ? "tick" : "cross"}`}>
-                      {getTickOrCross(val)}
+                {plan.popular && (
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-gray-300 text-gray-900 px-4 py-1 rounded-full text-sm font-medium">
+                      Most Popular
                     </span>
-                  );
-
-                  if (row.type === "count" && val === 0) val = "—";
-                  return (
-                    <div key={plan.name} className="plan-table-plan-col">
-                      {val}
-                    </div>
-                  );
-                })}
-              </div>
+                  </div>
+                )}
+                <div className="mb-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{plan.name}</h3>
+                  <div className="mb-4">
+                    <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+                    <span className="text-gray-600 text-lg">{plan.period}</span>
+                  </div>
+                  <p className="text-gray-700 text-sm leading-relaxed">{plan.description}</p>
+                </div>
+                <button
+                  className={`w-full py-3 px-4 rounded-lg font-medium text-sm mb-8 transition-colors ${plan.buttonStyle}`}
+                >
+                  {plan.buttonText}
+                </button>
+                <div>
+                  <h4 className="text-gray-600 text-xs font-semibold tracking-wider uppercase mb-4">
+                    FEATURES
+                  </h4>
+                  <ul className="space-y-3">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start">
+                        <svg
+                          className="w-4 h-4 text-green-600 mr-3 mt-0.5 flex-shrink-0"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        <span className="text-gray-800 text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </div>
-    </div>
-  );
+      </section>
+
+      {/* Detailed Pricing Table Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <PricingTable />
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-10 md:py-20 px-4 bg-white text-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex justify-center mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-200 rounded-full border border-gray-300">
+              <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+              <span className="text-sm font-medium text-gray-700">FAQs</span>
+            </div>
+          </div>
+          <div className="text-center mb-12">
+            <h1 className="text-2xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+            <p className="text-gray-700 text-lg">
+              Don't see the answer you're looking for?{" "}
+              <Link to="/contact-us">
+                <span className="text-blue-600 hover:text-blue-700 cursor-pointer">Get in touch.</span>
+              </Link>
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gray-100 rounded-lg border border-gray-300 overflow-hidden"
+              >
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full px-2 md:px-6 py-3 md:py-5 text-left flex items-center justify-between hover:bg-gray-200 transition-colors"
+                >
+                  <span className="md:text-lg font-medium text-gray-900 pr-4">{faq.question}</span>
+                  {openIndex === index ? (
+                    <ChevronUp className="w-5 h-5 text-gray-600 flex-shrink-0" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-gray-600 flex-shrink-0" />
+                  )}
+                </button>
+                {openIndex === index && (
+                  <div className="px-6 pb-5">
+                    <div className="pt-2 border-t border-gray-300">
+                      <p className="text-gray-800 leading-relaxed mt-3">{faq.answer}</p>
+                    </div>
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-10 md:py-20 px-4 bg-white text-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex justify-center mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-200 rounded-full border border-gray-300">
+              <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+              <span className="text-sm font-medium text-gray-700">Best Tools</span>
+            </div>
+          </div>
+          <div className="text-center mb-8 md:mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">What's included</h1>
+            <p className="text-gray-700 text-sm max-w-2xl mx-auto">
+              Get 100+ features out of the box with the world's leading customer insights hub
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-2">
+            {features.map((feature, index) => {
+              const Icon = feature.icon
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group"
+                >
+                  <div className="mb-6 md:p-2 ">
+                    <div className="w-9 md:w-12 h-9 md:h-12 bg-gray-200 rounded-lg flex items-center justify-center mb-4 group-hover:bg-gray-300 transition-colors">
+                      <Icon className="w-4 h-4 md:w-6 md:h-6 text-gray-700" />
+                    </div>
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">{feature.title}</h3>
+                    <p className="text-gray-700 text-sm leading-relaxed">{feature.description}</p>
+                  </div>
+                </motion.div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  )
 }
