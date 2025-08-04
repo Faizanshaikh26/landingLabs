@@ -85,7 +85,7 @@ export function Industries() {
             id="industrySelect"
             value={activeIndex}
             onChange={(e) => setActiveIndex(Number(e.target.value))}
-            className="w-full border border-gray-600 bg-black text-primaryText px-4 py-2 rounded-md"
+            className="w-full border border-gray-600  text-primaryText px-4 py-2 rounded-md"
           >
             {industries.map((industry, index) => (
               <option key={industry.id} value={index}>
