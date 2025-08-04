@@ -9,6 +9,14 @@
   --font-doto: "Doto", sans-serif;
   --font-poppins: "Poppins", sans-serif;
   
+  --color-accent:#F97316;
+  --color-accentHover:#EA580C;
+  --color-primaryText:#0F172A;
+  --color-secondaryText:#475569;
+  
+add this to your index.css   --color-primaryCardBg:#FFFBED;
+  --color-primaryCardText:#112A46;
+  
 }
 
 

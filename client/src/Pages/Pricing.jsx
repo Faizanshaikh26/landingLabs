@@ -143,7 +143,7 @@ export default function Pricing() {
       <Navbar />
 
       {/* Pricing Section */}
-      <section className="pt-40 pb-10 px-4 text-white bg-black">
+      <section className="pt-40 pb-10 px-4 text-black bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-3xl md:text-5xl font-bold mb-4">
@@ -151,7 +151,7 @@ export default function Pricing() {
               <br />
               Pricing Plans
             </h1>
-            <p className="text-gray-400 text-lg">
+            <p className="text-gray-700 text-lg">
               Start tracking and improving your finance management
             </p>
           </div>
@@ -215,7 +215,7 @@ export default function Pricing() {
       </section>
 
       {/* FAQ Section */}
-      <section className=" py-10 md:py-20 px-4 bg-black text-white">
+      <section className=" py-10 md:py-20 px-4 bg-white text-white">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full border border-gray-700">
@@ -224,10 +224,10 @@ export default function Pricing() {
             </div>
           </div>
           <div className="text-center mb-12">
-            <h1 className="text-2xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
-            <p className="text-gray-400 text-lg">
+            <h1 className="text-2xl md:text-5xl font-bold mb-4 text-black">Frequently Asked Questions</h1>
+            <p className="text-gray-700 text-lg">
               Don't see the answer you're looking for?{" "}
-              <Link to="/contact-us"><span className="text-blue-400 hover:text-blue-300 cursor-pointer">Get in touch.</span></Link>
+              <Link to="/contact-us"><span className="text-blue-500 hover:text-blue-300 cursor-pointer">Get in touch.</span></Link>
             </p>
           </div>
 
@@ -265,8 +265,8 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-10 md:py-20 px-4 bg-black text-white">
+      {/* ✅ Features Section with updated styles */}
+      <section className="py-10 md:py-20 px-4 bg-white text-black">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full border border-gray-700">
@@ -275,8 +275,8 @@ export default function Pricing() {
             </div>
           </div>
           <div className="text-center mb-8 md:mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">What's included</h1>
-            <p className="text-gray-400 text-sm max-w-2xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">What's included</h1>
+            <p className="text-gray-700 text-sm max-w-2xl mx-auto">
               Get 100+ features out of the box with the world's leading customer insights hub
             </p>
           </div>
@@ -292,12 +292,16 @@ export default function Pricing() {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <div className="mb-6  md:p-2 ">
+                  <div className="mb-6 md:p-2">
                     <div className="w-9 md:w-12 h-9 md:h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 group-hover:bg-gray-700 transition-colors">
                       <Icon className="w-4 h-4 md:w-6 md:h-6 text-gray-300" />
                     </div>
-                    <h3 className="text-lg md:text-xl font-semibold text-white mb-2 md:mb-3">{feature.title}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+                    <h3 className="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3 primary">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed secondary">
+                      {feature.description}
+                    </p>
                   </div>
                 </motion.div>
               )
