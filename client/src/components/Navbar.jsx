@@ -62,13 +62,13 @@ const itemVariants = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
 };
   return (
-    <div className="w-full text-primaryText fixed top-0 z-50">
+    <div className="w-full text-primaryText fixed right-0 top-0 z-50">
       {/* Navbar Container with scroll logic */}
       <div
         className={`transition-all duration-500 ease-in-out ${
           isScrolled
             ? scrollDirection
-              ? "backdrop-blur-md bg-gray-950/70 text-white py-2 shadow-md"
+              ? "backdrop-blur-md bg-gray-950/70 text-white py-2 shadow-md "
               : "backdrop-blur-md bg-gray-950/70 py-2 shadow-md"
             : "bg-transparent py-5 "
         }`}
@@ -101,7 +101,7 @@ const itemVariants = {
           )}
 
           {/* Main Navbar */}
-          <div className="flex items-center justify-between px-6 transition-all duration-300">
+          <div className="flex items-center justify-between px-6 transition-all duration-300 ">
             {/* Logo */}
             <div className={`transition-all ${isScrolled ? "w-28" : "w-36"}`}>
               <NavLink to="/">
@@ -121,76 +121,78 @@ const itemVariants = {
             </div>
 
             {/* Nav Links */}
-            <div className="hidden lg:flex items-center space-x-8 text-sm font-medium">
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-accent font-medium"
-                    : "text-accentHover transition-colors"
-                }
-              >
-                Home
-              </NavLink>
+       <div className="hidden lg:flex items-center space-x-8 text-sm font-medium">
+  <NavLink
+    to="/"
+    className={({ isActive }) =>
+      isActive
+        ? "text-orange-500 font-semibold"
+        : "hover:text-accentHover cursor-pointer transition-colors"
+    }
+  >
+    Home
+  </NavLink>
 
-              <NavLink
-                to="/services"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-primaryText font-medium"
-                    : "hover:text-accentHover transition-colors"
-                }
-              >
-                <span className="flex items-center space-x-1">
-                  <span>Services</span>
-                  <ChevronDown className="w-4 h-4" />
-                </span>
-              </NavLink>
+  <NavLink
+    to="/services"
+    className={({ isActive }) =>
+      isActive
+        ? "text-orange-500 font-semibold"
+        : "hover:text-accentHover cursor-pointer transition-colors "
+    }
+  >
+    <span className="flex items-center space-x-1">
+      <span>Services</span>
+      <ChevronDown className="w-4 h-4" />
+    </span>
+  </NavLink>
 
-              <NavLink
-                to="/about-us"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-primaryText font-medium"
-                    : "hover:text-accentHover transition-colors"
-                }
-              >
-                About
-              </NavLink>
+  <NavLink
+    to="/about-us"
+    className={({ isActive }) =>
+      isActive
+        ? "text-orange-500 font-semibold"
+        : "hover:text-accentHover cursor-pointer transition-colors"
+    }
+  >
+    About
+  </NavLink>
 
-              <NavLink
-                to="/career"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-primaryText font-medium"
-                    : "hover:text-accentHover transition-colors"
-                }
-              >
-                Career
-              </NavLink>
+  <NavLink
+    to="/career"
+    className={({ isActive }) =>
+      isActive
+        ? "text-orange-500 font-semibold"
+        : "hover:text-accentHover cursor-pointer transition-colors"
+    }
+  >
+    Career
+  </NavLink>
 
-              <NavLink
-                to="/contact-us"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-primaryText font-medium"
-                    : "hover:text-accentHover transition-colors"
-                }
-              >
-                Contact
-              </NavLink>
+  <NavLink
+    to="/contact-us"
+    className={({ isActive }) =>
+      isActive
+        ? "text-orange-500 font-semibold"
+        : "hover:text-accentHover cursor-pointer transition-colors"
+    }
+  >
+    Contact
+  </NavLink>
 
-              <NavLink
-                to="/pricing"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-primaryText font-medium"
-                    : "hover:text-accentHover transition-colors"
-                }
-              >
-                Pricing
-              </NavLink>
-            </div>
+  <NavLink
+    to="/pricing"
+    className={({ isActive }) =>
+      isActive
+        ? "text-orange-500 font-semibold"
+        :"hover:text-accentHover cursor-pointer transition-colors"
+    }
+  >
+    Pricing
+  </NavLink>
+</div>
+
+
 
             {/* CTA & Mobile Menu */}
             <div className="flex items-center space-x-4">

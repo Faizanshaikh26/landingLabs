@@ -222,7 +222,7 @@ export default function HeroSection() {
       {/* Floating Text Box */}
      <div
   className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#111] 
-  p-3 w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[90%] 
+  p-3 w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[70%] 
   rounded-xl text-center shadow-md border border-gray-700 z-20
   [@media(max-width:350px)]:p-1"
 >

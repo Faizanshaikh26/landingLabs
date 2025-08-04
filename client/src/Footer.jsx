@@ -355,33 +355,32 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <div className="bg-black text-white">
+    <div className="bg-white text-primaryText ">
       {/* Top Header */}
       <header className="px-6 py-4">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between">
           {/* Logo */}
-        <div className="flex flex-col items-start mb-4 lg:mb-0 w-full lg:w-auto">
-  <div className="w-48 max-w-full">
-    <img
-      src={logo}
-      alt="Landing Labs Logo"
-      className="w-full h-auto object-contain"
-    />
-  </div>
-  <div className="mt-2 text-xs text-orange-500">
-    From Clicks to Code – We Power It All.
-  </div>
-</div>
-
+          <div className="flex flex-col items-start mb-4 lg:mb-0 w-full lg:w-auto">
+            <div className="w-48 max-w-full">
+              <img
+                src={logo}
+                alt="Landing Labs Logo"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <div className="mt-2 text-xs text-accent">
+              From Clicks to Code – We Power It All.
+            </div>
+          </div>
 
           {/* Nav */}
-          <nav className="hidden lg:flex items-center space-x-4 text-sm">
+          <nav className="hidden lg:flex items-center space-x-4 text-sm text-secondaryText">
             {navLinks.map((item, i) => (
               <span key={item.label} className="flex items-center space-x-2">
-                <a href={item.href} className="hover:text-orange-400 transition">
+                <a href={item.href} className="hover:text-accentHover transition">
                   {item.label}
                 </a>
-                {i < navLinks.length - 1 && <span className="text-gray-500">|</span>}
+                {i < navLinks.length - 1 && <span className="text-secondaryText">|</span>}
               </span>
             ))}
           </nav>
@@ -389,7 +388,7 @@ const Footer = () => {
       </header>
 
       {/* Divider */}
-      <div className="border-t border-gray-700 mx-6"></div>
+      <div className="border-t border-secondaryText/30 mx-6"></div>
 
       {/* Main Footer Body */}
       <main className="px-6 py-12">
@@ -397,10 +396,10 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-secondaryText">
               {services.map((item) => (
                 <li key={item}>
-                  <a href="#" className="hover:text-orange-400 transition">
+                  <a href="#" className="hover:text-accentHover transition">
                     {item}
                   </a>
                 </li>
@@ -411,10 +410,10 @@ const Footer = () => {
           {/* Industries */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Industries</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-secondaryText">
               {industries.map((item) => (
                 <li key={item}>
-                  <a href="#" className="hover:text-orange-400 transition">
+                  <a href="#" className="hover:text-accentHover transition">
                     {item}
                   </a>
                 </li>
@@ -425,10 +424,10 @@ const Footer = () => {
           {/* Company */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Company</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-secondaryText">
               {companyLinks.map((item) => (
                 <li key={item.label}>
-                  <a href={item.href} className="hover:text-orange-400 transition">
+                  <a href={item.href} className="hover:text-accentHover transition">
                     {item.label}
                   </a>
                 </li>
@@ -439,10 +438,10 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-secondaryText">
               {contactLinks.map((item) => (
                 <li key={item.label}>
-                  <a href={item.href} className="hover:text-orange-400 transition">
+                  <a href={item.href} className="hover:text-accentHover transition">
                     {item.label}
                   </a>
                 </li>
@@ -453,19 +452,21 @@ const Footer = () => {
       </main>
 
       {/* Bottom Footer */}
-      <footer className="bg-[#0d0d0d] px-6 py-8">
+      <footer className="bg-primaryCardBg px-6 py-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center">
-            <div className="text-sm text-gray-400 mb-4 lg:mb-0">
+            <div className="text-sm text-secondaryText mb-4 lg:mb-0">
               © 2025 Landing Labs 360 Pvt.
             </div>
-            <div className="flex flex-wrap items-center space-x-4 text-sm text-gray-400">
+            <div className="flex flex-wrap items-center space-x-4 text-sm text-secondaryText">
               {footerLinks.map((item, i) => (
                 <span key={item.label} className="flex items-center space-x-2">
-                  <a href={item.href} className="hover:text-orange-400 transition">
+                  <a href={item.href} className="hover:text-accentHover transition">
                     {item.label}
                   </a>
-                  {i < footerLinks.length - 1 && <span className="text-gray-500">|</span>}
+                  {i < footerLinks.length - 1 && (
+                    <span className="text-secondaryText">|</span>
+                  )}
                 </span>
               ))}
             </div>
@@ -475,6 +476,7 @@ const Footer = () => {
     </div>
   );
 };
+
 
 export default Footer;
 

@@ -8,11 +8,7 @@
   --font-righteous: "Righteous", sans-serif;
   --font-doto: "Doto", sans-serif;
   --font-poppins: "Poppins", sans-serif;
-  
-}
 
-
-@theme{
   --color-accent:#F97316;
   --color-accentHover:#EA580C;
   --color-primaryText:#0F172A;
@@ -21,6 +17,8 @@
   --color-primaryCardText:#112A46;
   
 }
+
+
 
 
 body{

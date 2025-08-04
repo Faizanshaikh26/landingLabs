@@ -33,10 +33,10 @@ export default function Home() {
 
       <Process/>
 
-<Testimonies/>
+{/* <Testimonies/> */}
 
      
-      <Portfolio />
+      {/* <Portfolio /> */}
 
  
  <Industries/>
