@@ -308,7 +308,7 @@
 // }
 
 
-import logo from "./assets/images/Og-Logo.png";
+import logo from "./assets/images/Logo- landing labs-black.png";
 
 const navLinks = [
   { label: "Case Studies", href: "#" },
