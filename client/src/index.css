@@ -8,25 +8,17 @@
   --font-righteous: "Righteous", sans-serif;
   --font-doto: "Doto", sans-serif;
   --font-poppins: "Poppins", sans-serif;
-  
   --color-accent:#F97316;
   --color-accentHover:#EA580C;
   --color-primaryText:#0F172A;
-  --color-secondaryText:#475569;
-  
-   --color-primaryCardBg:#FFFBED;
-  --color-primaryCardText:#112A46;
-  
+  --color-secondaryText:#252926;
+  --color-primaryCardBg:#FFFBED;
+   --color-primaryCardText:#112A46;
+
+
 }
 
 
-@theme{
-  --color-accent:#F97316;
-  --color-accentHover:#EA580C;
-  --color-primaryText:#0F172A;
-  --color-secondaryText:#475569;
-  
-}
 
 
 body{
@@ -162,4 +154,3 @@ body{
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
   color: #fff;
 }
-
