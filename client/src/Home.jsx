@@ -15,7 +15,7 @@ import Process from './components/Process'
 
 export default function Home() {
   return (
-    <div className='space-y-10 px-4 sm:px-6 lg:px-8 w-full'>
+    <div className='space-y-10  w-full'>
 
       <Navbar />
 
@@ -27,7 +27,8 @@ export default function Home() {
       <StateSection />
 
 
-      {/* <ServicesSnapshot /> */}
+
+      <ServicesSnapshot />
 
       {/* <Features /> */}
 
