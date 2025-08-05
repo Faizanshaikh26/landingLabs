@@ -1,56 +1,53 @@
-import { Route, Routes, useLocation } from "react-router-dom"
-import { lazy, Suspense } from "react"
-import { AnimatePresence, motion } from "framer-motion"
+import { Route, Routes, useLocation } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
-// Static Components (not lazy)
-import ScrollToTop from "./components/ScrollToTop"
-import CustomCursor from "./components/custome-cursor"
-import { AutoPopupDialog } from "./components/AutoDialog.jsx"
-import NotFound from "./components/NotFound.jsx"
+// Static Components
+import ScrollToTop from "./components/ScrollToTop";
+import CustomCursor from "./components/custome-cursor";
+import { AutoPopupDialog } from "./components/AutoDialog.jsx";
+import NotFound from "./components/NotFound.jsx";
 
 // Lazy-loaded pages
-const Home = lazy(() => import("./Home"))
-const AboutUs = lazy(() => import("./Pages/AboutUs"))
-const ContactUs = lazy(() => import("./Pages/ContactUs"))
-const Carrer = lazy(() => import("./Pages/Career.jsx"))
-const Service = lazy(() => import("./Pages/Services/service-mainPage"))
-const WebDevelopment = lazy(() => import("./Pages/Services/details/Web-development"))
-const SocialMediaMarketing = lazy(() => import("./Pages/Services/details/SocialMediaMarketing"))
-const PPCAds = lazy(() => import("./Pages/Services/details/PPCAds"))
-const AppDevelopment = lazy(() => import("./Pages/Services/details/App-development"))
-const UIUXDesign = lazy(() => import("./Pages/Services/details/UIUXDesign"))
-const GraphicDesign = lazy(() => import("./Pages/Services/details/GraphicDesign"))
-const InfluencerMarketing = lazy(() => import("./Pages/Services/details/InfluencerMarketing"))
-const ContentMarketing = lazy(() => import("./Pages/Services/details/ContentMarketing"))
-const SEO = lazy(() => import("./Pages/Services/details/SEO.jsx"))
-const Pricing = lazy(() => import("./Pages/Pricing.jsx"))
-const CareerForm = lazy(() => import("./Pages/test-car.jsx"))
-const PricingPage = lazy(() => import("./Pages/dum.jsx"))
-const Appointment = lazy(() => import("./components/Appointment.jsx"))
+const Home = lazy(() => import("./Home"));
+const AboutUs = lazy(() => import("./Pages/AboutUs"));
+const ContactUs = lazy(() => import("./Pages/ContactUs"));
+const Career = lazy(() => import("./Pages/Career.jsx"));
+const Service = lazy(() => import("./Pages/Services/service-mainPage"));
+const WebDevelopment = lazy(() => import("./Pages/Services/details/Web-development"));
+const SocialMediaMarketing = lazy(() => import("./Pages/Services/details/SocialMediaMarketing"));
+const PPCAds = lazy(() => import("./Pages/Services/details/PPCAds"));
+const AppDevelopment = lazy(() => import("./Pages/Services/details/App-development"));
+const UIUXDesign = lazy(() => import("./Pages/Services/details/UIUXDesign"));
+const GraphicDesign = lazy(() => import("./Pages/Services/details/GraphicDesign"));
+const InfluencerMarketing = lazy(() => import("./Pages/Services/details/InfluencerMarketing"));
+const ContentMarketing = lazy(() => import("./Pages/Services/details/ContentMarketing"));
+const SEO = lazy(() => import("./Pages/Services/details/SEO.jsx"));
+const Pricing = lazy(() => import("./Pages/Pricing.jsx"));
+const CareerForm = lazy(() => import("./Pages/test-car.jsx"));
+const Appointment = lazy(() => import("./components/Appointment.jsx"));
 
 function App() {
-  const location = useLocation()
+  const location = useLocation();
 
   return (
-    <div className="min-h-screen font-poppins   bg-white text-primaryText">
+    <div className="min-h-screen font-poppins bg-white text-primaryText">
       <ScrollToTop />
       <CustomCursor />
       <AutoPopupDialog />
 
-      {/* Lazy loading fallback and animation wrapper */}
-      <Suspense fallback={<div className="text-white text-center py-20">Loading...</div>}>
+      <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             {/* Main Pages */}
             <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
             <Route path="/about-us" element={<PageWrapper><AboutUs /></PageWrapper>} />
             <Route path="/contact-us" element={<PageWrapper><ContactUs /></PageWrapper>} />
-            <Route path="/career" element={<PageWrapper><Carrer /></PageWrapper>} />
+            <Route path="/career" element={<PageWrapper><Career /></PageWrapper>} />
             <Route path="/services" element={<PageWrapper><Service /></PageWrapper>} />
             <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
             <Route path="/try" element={<PageWrapper><CareerForm /></PageWrapper>} />
             <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} />
-            <Route path="/dum" element={<PricingPage />} />
 
             {/* Service Detail Pages */}
             <Route path="/services/search-engine-optimization" element={<PageWrapper><SEO /></PageWrapper>} />
@@ -62,17 +59,19 @@ function App() {
             <Route path="/services/graphic-design" element={<PageWrapper><GraphicDesign /></PageWrapper>} />
             <Route path="/services/influencer-marketing" element={<PageWrapper><InfluencerMarketing /></PageWrapper>} />
             <Route path="/services/content-marketing" element={<PageWrapper><ContentMarketing /></PageWrapper>} />
-            <Route path="*" element={<NotFound/>} />
+
+            {/* 404 */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
       </Suspense>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
 
-// Animation wrapper for each page
+// Animation wrapper for page transitions
 function PageWrapper({ children }) {
   return (
     <motion.div
@@ -83,5 +82,5 @@ function PageWrapper({ children }) {
     >
       {children}
     </motion.div>
-  )
+  );
 }
