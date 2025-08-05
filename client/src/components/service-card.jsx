@@ -1,3 +1,4 @@
+import { color } from "framer-motion";
 import React, { useState } from "react";
 
 export default function ServiceCard({
@@ -25,7 +26,8 @@ export default function ServiceCard({
       )
     `,
     borderRadius: "16px",
-    backgroundColor: isHovered ? "#ef4444" : "white", // red-500 on hover
+    backgroundColor: isHovered ? "#FFFBED" : "white", // red-500 on hover
+
   };
 
   return (
@@ -46,10 +48,10 @@ export default function ServiceCard({
 
       {/* Text Content */}
       <div>
-        <div className={`text-sm font-semibold mb-1 ${isHovered ? "text-white" : "text-gray-500"}`}>
+        <div className={`text-sm font-semibold mb-1 ${isHovered ? "text-primaryCardText" : "text-gray-500"}`}>
           {number}
         </div>
-        <div className={`text-2xl font-medium leading-snug ${isHovered ? "text-white" : "text-black"}`}>
+        <div className={`text-2xl font-medium leading-snug ${isHovered ? "text-primaryCardText" : "text-gray-500"}`}>
           {title}
         </div>
       </div>
