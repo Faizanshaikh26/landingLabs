@@ -202,7 +202,7 @@ import hero from "../assets/images/hero-image-4.jpg"
 export default function HeroSection() {
   return (
 
-    <section className="text-primaryText pt-20 lg:pt-32  ">
+    <section className="text-primaryText pt-20 lg:pt-32   ">
   {/* Headings */}
   <div className="text-center mt-10">
     <h4 className="text-md md:text-lg font-medium text-orange-500">

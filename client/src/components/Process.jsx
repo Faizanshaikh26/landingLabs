@@ -110,7 +110,7 @@ export default function Process() {
   ];
 
   return (
-    <div className="text-primaryText">
+    <div className="text-primaryText px-4 sm:px-6 lg:px-8 ">
       {/* Partnership Section */}
       <motion.section
         className="px-4 py-8 "

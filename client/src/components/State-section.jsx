@@ -1,19 +1,19 @@
 
 import { motion } from 'framer-motion';
 
-import Aaradhya from '../assets/images/Aaradhya.Logo TP.png';
+import Aaradhya from '../assets/images/Aaradhya.Logo TP-white.png';
 import Crunchy from '../assets/images/Crunchy.Logo TP.png';
 import EzeDesign from '../assets/images/Eze Design.Logo TP.png';
 import Ezepune from '../assets/images/Ezepune.Logo TP.png';
 import Kiara from '../assets/images/Kiara.Logo TP.png';
-import Kohinoor from '../assets/images/Kohinoor.Logo TP.png';
-import MadakeJewellers from '../assets/images/Madake Jewellers.Logo TP.png';
-import MrMS from '../assets/images/Mr& MS.Logo TP.png';
+import Kohinoor from '../assets/images/Kohinoor.Logo TP-white.png';
+import MadakeJewellers from '../assets/images/Madake Jewellers.Logo TP-white.png';
+import MrMS from '../assets/images/Mr& MS.Logo TP-white.png';
 import NikolEV from '../assets/images/NikolEV.Logo TP.png';
-import Sidenest from '../assets/images/Sidenest.Logo TP.png';
-import SuncityVilla from '../assets/images/Suncity Villa.Logo TP.png';
-import Techmark from '../assets/images/Techmark.Logo TP.png';
-import Zelc from '../assets/images/Zelc.Logo TP.png';
+import Sidenest from '../assets/images/Sidenest.Logo TP-white.png';
+import SuncityVilla from '../assets/images/Suncity Villa.Logo TP-white.png';
+import Techmark from '../assets/images/Techmark.Logo TP-white.png';
+import Zelc from '../assets/images/Zelc.Logo TP-white.png';
 
 const stats = [
   { label: 'Projects Delivered', value: '100+' },
@@ -30,7 +30,7 @@ const logos = [
 
 const LogoMarquee = ({ logos, direction = "left" }) => (
   <motion.div
-    className="relative   overflow-hidden w-full "
+    className="relative overflow-hidden w-full"
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.4 }}
@@ -38,7 +38,7 @@ const LogoMarquee = ({ logos, direction = "left" }) => (
   >
     {/* Marquee Track */}
     <div
-      className={`flex gap-6 sm:gap-10 md:gap-12 w-max ${
+      className={`flex gap-4 sm:gap-6 md:gap-8 w-max ${
         direction === "right" ? "animate-marquee-right" : "animate-marquee-left"
       }`}
     >
@@ -47,7 +47,7 @@ const LogoMarquee = ({ logos, direction = "left" }) => (
           key={index}
           src={src}
           alt={`Logo ${index}`}
-          className="h-14 sm:h-16 md:h-20 lg:h-24 xl:h-28 w-auto max-w-[160px] object-contain opacity-80 hover:scale-110 transition-transform duration-300"
+          className="h-14 sm:h-16 md:h-20 lg:h-28 xl:h-32 w-auto max-w-[200px] object-contain opacity-80 hover:scale-110 transition-transform duration-300"
         />
       ))}
     </div>

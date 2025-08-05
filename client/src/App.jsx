@@ -7,6 +7,7 @@ import ScrollToTop from "./components/ScrollToTop"
 import CustomCursor from "./components/custome-cursor"
 import { AutoPopupDialog } from "./components/AutoDialog.jsx"
 import NotFound from "./components/NotFound.jsx"
+import Portfolio from "./components/Portfolio.jsx"
 
 // Lazy-loaded pages
 const Home = lazy(() => import("./Home"))
@@ -50,6 +51,7 @@ function App() {
             <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
             <Route path="/try" element={<PageWrapper><CareerForm /></PageWrapper>} />
             <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} />
+            <Route path="/portfolio" element={<PageWrapper><Portfolio /></PageWrapper>} />
             <Route path="/dum" element={<PricingPage />} />
 
             {/* Service Detail Pages */}

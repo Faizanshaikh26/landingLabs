@@ -64,7 +64,7 @@ export function Industries() {
   };
 
   return (
-    <section className="w-full lg:mt-29 pb-10 lg:pb-32  text-primaryText">
+    <section className="w-full lg:mt-29 pb-10 lg:pb-32  px-4 sm:px-6 lg:px-8  text-primaryText">
       <motion.h2
         className="text-3xl md:text-4xl font-bold text-orange-500 text-center mb-16"
         initial={{ opacity: 0, y: 30 }}
