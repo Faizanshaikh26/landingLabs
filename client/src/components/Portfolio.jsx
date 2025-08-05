@@ -80,97 +80,210 @@
 //     );
 // }
 
-import React from 'react';
-import { motion } from 'framer-motion';
+// import React from 'react';
+// import { motion } from 'framer-motion';
 
-export default function Portfolio() {
-    const cardVariants = {
-        hidden: { opacity: 0, scale: 0.95, y: 30 },
-        visible: (i) => ({
-            opacity: 1,
-            scale: 1,
-            y: 0,
-            transition: {
-                delay: i * 0.15,
-                duration: 0.6,
-                ease: 'easeOut',
-            },
-        }),
-    };
+// export default function Portfolio() {
+//     const cardVariants = {
+//         hidden: { opacity: 0, scale: 0.95, y: 30 },
+//         visible: (i) => ({
+//             opacity: 1,
+//             scale: 1,
+//             y: 0,
+//             transition: {
+//                 delay: i * 0.15,
+//                 duration: 0.6,
+//                 ease: 'easeOut',
+//             },
+//         }),
+//     };
 
-    const items = [
-        {
-            label: 'VR',
-            image: 'https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-3.png.webp',
-        },
-        {
-            label: 'Tech',
-            image: 'https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-2.png.webp',
-            span: 'md:col-span-2',
-        },
-        {
-            label: 'Dev',
-            image: 'https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1.png.webp',
-            span: 'md:col-span-2',
-        },
-        {
-            label: 'Retro',
-            image: 'https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1024x1024.png.webp',
-        },
-    ];
+//     const items = [
+//         {
+//             label: 'VR',
+//             image: 'https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-3.png.webp',
+//         },
+//         {
+//             label: 'Tech',
+//             image: 'https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-2.png.webp',
+//             span: 'md:col-span-2',
+//         },
+//         {
+//             label: 'Dev',
+//             image: 'https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1.png.webp',
+//             span: 'md:col-span-2',
+//         },
+//         {
+//             label: 'Retro',
+//             image: 'https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1024x1024.png.webp',
+//         },
+//     ];
 
-    return (
-        <div className="min-h-[70vh] md:min-h-screen   ">
-            <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-                {/* Header */}
-                <motion.div
-                    className="text-center mb-12"
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: 'easeOut' }}
-                    viewport={{ once: true }}
-                >
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#E82561]">
-                        Our <span className="text-[#EAEAEA]">Portfolio</span>
-                    </h2>
-                    <p className="mt-4 md:text-2xl text-[#CFFFE2]">
-                        A full-service digital growth lab for startups, creators,
-                        <span className="text-[#EAEAEA]"> and challenger brands who want to win.</span>
-                    </p>
-                </motion.div>
+//     return (
+//         <div className="min-h-[70vh] md:min-h-screen   ">
+//             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
+//                 {/* Header */}
+//                 <motion.div
+//                     className="text-center mb-12"
+//                     initial={{ opacity: 0, y: 40 }}
+//                     whileInView={{ opacity: 1, y: 0 }}
+//                     transition={{ duration: 0.6, ease: 'easeOut' }}
+//                     viewport={{ once: true }}
+//                 >
+//                     <h2 className="text-3xl md:text-4xl font-bold text-[#E82561]">
+//                         Our <span className="text-[#EAEAEA]">Portfolio</span>
+//                     </h2>
+//                     <p className="mt-4 md:text-2xl text-[#CFFFE2]">
+//                         A full-service digital growth lab for startups, creators,
+//                         <span className="text-[#EAEAEA]"> and challenger brands who want to win.</span>
+//                     </p>
+//                 </motion.div>
 
-                {/* Grid */}
-                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-                    {items.map((item, i) => (
-                        <motion.a
-                            key={i}
-                            href="#"
-                            custom={i}
-                            variants={cardVariants}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            className={`group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80 ${item.span || ''}`}
-                        >
-                            <img
-                                src={item.image}
-                                alt={item.label}
-                                loading="lazy"
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
-                            />
-                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50 transition duration-300 group-hover:opacity-60" />
-                            <motion.span
-                                initial={{ opacity: 0, y: 10 }}
-                                whileHover={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="relative z-10 ml-4 mb-3 inline-block text-sm text-white md:text-lg"
-                            >
-                                {item.label}
-                            </motion.span>
-                        </motion.a>
-                    ))}
-                </div>
+//                 {/* Grid */}
+//                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+//                     {items.map((item, i) => (
+//                         <motion.a
+//                             key={i}
+//                             href="#"
+//                             custom={i}
+//                             variants={cardVariants}
+//                             initial="hidden"
+//                             whileInView="visible"
+//                             viewport={{ once: true }}
+//                             className={`group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80 ${item.span || ''}`}
+//                         >
+//                             <img
+//                                 src={item.image}
+//                                 alt={item.label}
+//                                 loading="lazy"
+//                                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+//                             />
+//                             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50 transition duration-300 group-hover:opacity-60" />
+//                             <motion.span
+//                                 initial={{ opacity: 0, y: 10 }}
+//                                 whileHover={{ opacity: 1, y: 0 }}
+//                                 transition={{ duration: 0.3 }}
+//                                 className="relative z-10 ml-4 mb-3 inline-block text-sm text-white md:text-lg"
+//                             >
+//                                 {item.label}
+//                             </motion.span>
+//                         </motion.a>
+//                     ))}
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// }
+
+import { useState } from 'react';
+import { FaPaintBrush, FaCode, FaMobileAlt, FaBullhorn, FaWhatsapp } from 'react-icons/fa';
+import { IoMdMail } from 'react-icons/io';
+import { BsFillTelephoneFill } from 'react-icons/bs';
+
+export default function PortfolioShowcase() {
+  const [activeTab, setActiveTab] = useState('Website');
+
+  const tabs = ['Website', 'Landing Page', 'Email', 'Creatives'];
+
+  return (
+    <div className="min-h-screen bg-black text-white p-8">
+      {/* Tabs */}
+      <div className="flex justify-center gap-4 mb-6">
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`px-6 py-2 border border-yellow-400 text-lg font-semibold ${
+              activeTab === tab ? 'bg-yellow-400 text-black' : ''
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+
+      {/* Grid with equal height cards */}
+      <div className="grid md:grid-cols-2 gap-5">
+        {[
+          {
+            title: 'Beetel',
+            image: 'https://tse3.mm.bing.net/th/id/OIP.4spHsN1O1hRm-INK_6zBQwHaHO?w=1349&h=1315&rs=1&pid=ImgDetMain&o=7&rm=3',
+            tags: [
+              { icon: FaPaintBrush, label: 'Art Direction' },
+              { icon: FaCode, label: 'Development' },
+              { icon: FaMobileAlt, label: 'UI/UX' },
+            ],
+          },
+          {
+            title: 'Elan',
+            image: 'https://static.vecteezy.com/system/resources/previews/000/457/092/original/landing-page-template-of-online-copyright-and-trademark-illustration-concept-isometric-flat-design-concept-of-web-page-design-for-website-and-mobile-website-vector-illustration.jpg',
+            tags: [
+              { icon: FaPaintBrush, label: 'Art Direction' },
+              { icon: FaBullhorn, label: 'Digital Marketing' },
+              { icon: FaCode, label: 'Development' },
+              { icon: FaMobileAlt, label: 'UI/UX' },
+            ],
+            showContacts: true,
+          },
+          {
+            title: 'AutumnLane',
+            image: 'https://i.ibb.co/WfxmYdH/autumnlane.png',
+            tags: [
+              { icon: FaBullhorn, label: 'Digital Marketing' },
+              { icon: FaPaintBrush, label: 'Art Direction' },
+              { icon: FaCode, label: 'Development' },
+              { icon: FaMobileAlt, label: 'UI/UX' },
+            ],
+          },
+          {
+            title: 'Style Union',
+            image: 'https://i.ibb.co/Xbgdjkt/styleunion.png',
+            tags: [
+              { icon: FaBullhorn, label: 'Digital Marketing' },
+              { icon: FaPaintBrush, label: 'Art Direction' },
+              { icon: FaMobileAlt, label: 'UI/UX' },
+              { icon: FaCode, label: 'Development' },
+            ],
+          },
+        ].map((card, index) => (
+          <div
+            key={index}
+            className="bg-black border border-yellow-500 p-4 flex flex-col justify-between h-[400px] relative"
+          >
+            <img
+              src={card.image}
+              alt={card.title}
+              className="w-full h-60 object-cover mb-4 rounded"
+            />
+
+            <h2 className="text-xl font-semibold mb-2">{card.title}</h2>
+        
+
+            <div className="flex flex-wrap gap-4 items-center text-sm">
+              {card.tags.map((tag, i) => (
+                <span key={i} className="flex items-center gap-1">
+                  <tag.icon className="text-yellow-400" /> {tag.label}
+                </span>
+              ))}
             </div>
-        </div>
-    );
+
+            {/* Contact icons only for Elan */}
+            {card.showContacts && (
+              <div className="absolute bottom-4 right-4 flex flex-col gap-3">
+                <a href="#" className="bg-yellow-400 text-black p-2 rounded-full">
+                  <IoMdMail size={20} />
+                </a>
+                <a href="#" className="bg-blue-500 text-white p-2 rounded-full">
+                  <BsFillTelephoneFill size={20} />
+                </a>
+                <a href="#" className="bg-green-500 text-white p-2 rounded-full">
+                  <FaWhatsapp size={20} />
+                </a>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
