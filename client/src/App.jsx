@@ -40,7 +40,7 @@ function App() {
       <AutoPopupDialog />
 
       {/* Lazy loading fallback and animation wrapper */}
-      <Suspense fallback={<div className="text-white text-center py-20">Loading...</div>}>
+      <Suspense fallback={<div className="text-primaryText text-center py-20">Loading...</div>}>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             {/* Main Pages */}
