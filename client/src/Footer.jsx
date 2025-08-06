@@ -308,6 +308,181 @@
 // }
 
 
+// import logo from "./assets/images/Logo- landing labs-black.png";
+
+// const navLinks = [
+//   { label: "Case Studies", href: "#" },
+//   { label: "Insights", href: "#" },
+//   { label: "Newsroom", href: "#" },
+//   { label: "Careers", href: "/career" },
+//   { label: "Blog", href: "#" },
+//   { label: "Disclaimer", href: "#" },
+//   { label: "Locate Us", href: "#" },
+// ];
+
+// const services = [
+//   "Search Engine Optimization (SEO)",
+//   "Web Development",
+//   "Social Media Marketing",
+//   "PPC / Ads",
+//   "App Development",
+//   "UI/UX Design",
+//   "Graphic Design",
+//   "Influencer Marketing",
+//   "Content Marketing",
+// ];
+
+// const industries = ["Real Estate", "Finance", "Education", "Healthcare"];
+
+// const companyLinks = [
+//   { label: "About", href: "#" },
+//   { label: "Meet the Team", href: "#" },
+//   { label: "Accounts Review", href: "#" },
+//   { label: "Helpful Links", href: "#" },
+// ];
+
+// const contactLinks = [
+//   { label: "FAQs", href: "#" },
+//   { label: "Live Chat", href: "#" },
+//   { label: "Contact", href: "#" },
+// ];
+
+// const footerLinks = [
+//   { label: "Privacy Policy", href: "#" },
+//   { label: "Terms and Conditions", href: "#" },
+//   { label: "Site Map", href: "#" },
+// ];
+
+// const Footer = () => {
+//   return (
+//     <div className="bg-white text-primaryText ">
+//       {/* Top Header */}
+//       <header className="px-6 py-4">
+//         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between">
+//           {/* Logo */}
+//           <div className="flex flex-col items-start mb-4 lg:mb-0 w-full lg:w-auto">
+//             <div className="w-48 max-w-full">
+//               <img
+//                 src={logo}
+//                 alt="Landing Labs Logo"
+//                 className="w-full h-auto object-contain"
+//               />
+//             </div>
+//             <div className="mt-2 text-xs text-accent">
+//               From Clicks to Code – We Power It All.
+//             </div>
+//           </div>
+
+//           {/* Nav */}
+//           <nav className="hidden lg:flex items-center space-x-4 text-sm text-secondaryText">
+//             {navLinks.map((item, i) => (
+//               <span key={item.label} className="flex items-center space-x-2">
+//                 <a href={item.href} className="hover:text-accentHover transition">
+//                   {item.label}
+//                 </a>
+//                 {i < navLinks.length - 1 && <span className="text-secondaryText">|</span>}
+//               </span>
+//             ))}
+//           </nav>
+//         </div>
+//       </header>
+
+//       {/* Divider */}
+//       <div className="border-t border-secondaryText/30 mx-6"></div>
+
+//       {/* Main Footer Body */}
+//       <main className="px-6 py-12">
+//         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+//           {/* Services */}
+//           <div>
+//             <h3 className="text-lg font-semibold mb-4">Services</h3>
+//             <ul className="space-y-2 text-sm text-secondaryText">
+//               {services.map((item) => (
+//                 <li key={item}>
+//                   <a href="#" className="hover:text-accentHover transition">
+//                     {item}
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           {/* Industries */}
+//           <div>
+//             <h3 className="text-lg font-semibold mb-4">Industries</h3>
+//             <ul className="space-y-2 text-sm text-secondaryText">
+//               {industries.map((item) => (
+//                 <li key={item}>
+//                   <a href="#" className="hover:text-accentHover transition">
+//                     {item}
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           {/* Company */}
+//           <div>
+//             <h3 className="text-lg font-semibold mb-4">Company</h3>
+//             <ul className="space-y-2 text-sm text-secondaryText">
+//               {companyLinks.map((item) => (
+//                 <li key={item.label}>
+//                   <a href={item.href} className="hover:text-accentHover transition">
+//                     {item.label}
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           {/* Contact */}
+//           <div>
+//             <h3 className="text-lg font-semibold mb-4">Contact</h3>
+//             <ul className="space-y-2 text-sm text-secondaryText">
+//               {contactLinks.map((item) => (
+//                 <li key={item.label}>
+//                   <a href={item.href} className="hover:text-accentHover transition">
+//                     {item.label}
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+//         </div>
+//       </main>
+
+//       {/* Bottom Footer */}
+//       <footer className="bg-primaryCardBg px-6 py-8">
+//         <div className="max-w-7xl mx-auto">
+//           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center">
+//             <div className="text-sm text-secondaryText mb-4 lg:mb-0">
+//               © 2025 Landing Labs 360 Pvt.
+//             </div>
+//             <div className="flex flex-wrap items-center space-x-4 text-sm text-secondaryText">
+//               {footerLinks.map((item, i) => (
+//                 <span key={item.label} className="flex items-center space-x-2">
+//                   <a href={item.href} className="hover:text-accentHover transition">
+//                     {item.label}
+//                   </a>
+//                   {i < footerLinks.length - 1 && (
+//                     <span className="text-secondaryText">|</span>
+//                   )}
+//                 </span>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </footer>
+//     </div>
+//   );
+// };
+
+
+// export default Footer;
+
+
+
+
 import React, { useState } from "react";
 import {
   Phone,
@@ -352,12 +527,12 @@ import {
   };
 
   return (
-    <footer className="bg-black text-white pt-10 px-6 md:px-12 lg:px-20 pb-6">
+    <footer className="bg-white text-primaryText pt-10 px-6 md:px-12 lg:px-20 pb-6">
       {/* Top Section */}
       <div className="flex flex-col lg:flex-row gap-10 border-b border-gray-600 pb-10">
         {/* Our Core */}
         <div className="flex-1 border-r  border-gray-600 pr-6">
-          <h3 className="text-yellow-400 font-bold text-lg mb-4">OUR CORE</h3>
+          <h3 className="text-accent font-bold text-lg mb-4">OUR CORE</h3>
           {coreItems.map((section, index) => (
             <div key={section.title} className="mb-4">
               <div
@@ -384,7 +559,7 @@ import {
 
         {/* Quick Links + Ventures + Social */}
         <div className="flex-1 border-r  border-gray-600 pr-6">
-          <h3 className="text-yellow-400 font-bold text-lg mb-4">QUICK LINKS</h3>
+          <h3 className="text-accent font-bold text-lg mb-4">QUICK LINKS</h3>
           <ul className="mb-6 space-y-1 text-sm">
             <li><a href="#" className="hover:underline">Home</a></li>
             <li><a href="#" className="hover:underline">Portfolio</a></li>
@@ -394,7 +569,7 @@ import {
             <li><a href="#" className="hover:underline">Blog</a></li>
           </ul>
 
-          <h3 className="text-yellow-400 font-bold text-lg mb-4">OUR VENTURES</h3>
+          <h3 className="text-accent font-bold text-lg mb-4">OUR VENTURES</h3>
           <ul className="mb-6 space-y-1 text-sm">
             <li>Influencer Marketing</li>
             <li>YaadRakho</li>
@@ -402,7 +577,7 @@ import {
             <li>Pratibhashali Initiative</li>
           </ul>
 
-          <h3 className="text-yellow-400 font-bold text-lg mb-4">SOCIALIZE WITH US</h3>
+          <h3 className="text-accent font-bold text-lg mb-4">SOCIALIZE WITH US</h3>
           <div className="flex gap-3 text-xl">
             <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
               <Facebook className="text-white w-5 h-5" />
@@ -418,15 +593,15 @@ import {
 
         {/* Contact Form */}
 <div className="flex-1 p-6 border border-gray-600 rounded-md">
-  <h3 className="font-semibold text-white mb-4 text-lg">
-    Ready to Skyrocket Your Sales and Boost ROI? <span className="text-yellow-400">Let's Talk!</span>
+  <h3 className="font-semibold text-secondaryText mb-4 text-lg">
+    Ready to Skyrocket Your Sales and Boost ROI? <span className="text-accent">Let's Talk!</span>
   </h3>
   <form className="space-y-4">
-    <input name="name" required type="text" placeholder="Name*" className="w-full bg-black border-b border-gray-600 text-white placeholder-gray-400 focus:outline-none pb-2" />
-    <input name="phone" required type="tel" placeholder="Contact No.*" className="w-full bg-black border-b border-gray-600 text-white placeholder-gray-400 focus:outline-none pb-2" />
-    <input name="email" required type="email" placeholder="Email*" className="w-full bg-black border-b border-gray-600 text-white placeholder-gray-400 focus:outline-none pb-2" />
-    <input name="requirement" required type="text" placeholder="Requirement*" className="w-full bg-black border-b border-gray-600 text-white placeholder-gray-400 focus:outline-none pb-2" />
-    <button type="submit" className="bg-yellow-400 text-black font-semibold py-2 px-4 rounded mt-2 hover:bg-yellow-300 transition">
+    <input name="name" required type="text" placeholder="Name*" className="w-full border-b border-gray-600 text-secondaryText placeholder-gray-400 focus:outline-none pb-2" />
+    <input name="phone" required type="tel" placeholder="Contact No.*" className="w-full  border-b border-gray-600 text-secondaryText placeholder-gray-400 focus:outline-none pb-2" />
+    <input name="email" required type="email" placeholder="Email*" className="w-full  border-b border-gray-600 text-secondaryText placeholder-gray-400 focus:outline-none pb-2" />
+    <input name="requirement" required type="text" placeholder="Requirement*" className="w-full  border-b border-gray-600 text-secondaryText  placeholder-gray-400 focus:outline-none pb-2" />
+    <button type="submit" className="bg-accent text-white font-semibold py-2 px-4 rounded mt-2 hover:bg-accentHover transition">
       Yes! I Want to Boost My Sales
     </button>
   </form>
@@ -439,8 +614,8 @@ import {
 
         {/* Phone */}
         <div className="flex items-start gap-
-        2194">
-          <Phone className="text-yellow-400 mt-1 w-10 h-10" />
+        4">
+          <Phone className="text-accent mt-1 w-10 h-10" />
           <ul className="space-y-0.5 leading-5">
             <li>+91-9810052141</li>
             <li>+91-9871613002</li>
@@ -450,7 +625,7 @@ import {
 
         {/* Email */}
         <div className="flex items-start gap-4">
-          <Mail className="text-yellow-400 mt-2 w-10 h-10" />
+          <Mail className="text-accent mt-2 w-10 h-10" />
           <a href="mailto:info@diinfotech.com" className="hover:underline mt-4">
             info@diinfotech.com
           </a>
@@ -458,7 +633,7 @@ import {
 
         {/* Address */}
         <div className="flex items-start gap-4 max-w-sm">
-          <MapPin className="text-yellow-400 mt-1 w-18 h-10" />
+          <MapPin className="text-accent mt-1 w-18 h-10" />
           <p>
             301, G-27, Pankaj Tower - IV, Commercial Complex (Behind Sonia PVR Cinema),
             Vikaspuri, New Delhi-110018

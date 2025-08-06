@@ -10,14 +10,17 @@ import Testimonies from './components/Testonomials'
 import Footer from './Footer'
 import { Industries } from './components/Industries'
 import Process from './components/Process'
+import NavbarServices from './components/nav-services'
 
 
 
 export default function Home() {
   return (
-    <div className='space-y-20 px-4 sm:px-6 lg:px-8 w-full'>
+    <div className='space-y-10  w-full'>
 
       <Navbar />
+
+    
 
       <Hero />
 
@@ -27,16 +30,17 @@ export default function Home() {
       <StateSection />
 
 
+
       <ServicesSnapshot />
 
-      <Features />
+      {/* <Features /> */}
 
       <Process/>
 
-<Testimonies/>
+{/* <Testimonies/> */}
 
      
-      <Portfolio />
+      {/* <Portfolio /> */}
 
  
  <Industries/>

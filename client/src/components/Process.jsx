@@ -21,15 +21,15 @@
 //   ];
 
 //   return (
-//     <div className="bg-black text-white">
+//     <div className="bg-black text-primaryText">
 //       {/* Partnership Section */}
 //       <section className="px-4 py-20">
 //         <div className="max-w-3xl mx-auto text-center">
-//           <h2 className="text-2xl md:text-3xl font-bold text-white">
+//           <h2 className="text-2xl md:text-3xl font-bold text-primaryText">
 //             Partnership isn’t just a promise —{" "}
 //             <span className="text-orange-500">it’s our process.</span>
 //           </h2>
-//           <p className="mt-4 text-gray-300 text-base md:text-lg">
+//           <p className="mt-4 text-secondaryText text-base md:text-lg">
 //             We’re committed to building sustainable systems and marketing strategies that drive
 //             long-term success for your business.
 //           </p>
@@ -68,8 +68,8 @@
 
 //                 {/* Step card */}
 //                 <div className="bg-[#1a1a1a] border border-orange-500 rounded-md shadow-md p-3 w-72 pointer-events-auto">
-//                   <h3 className="font-bold text-sm text-white mb-2">{step.title}</h3>
-//                   <p className="text-gray-300 text-sm">{step.description}</p>
+//                   <h3 className="font-bold text-sm text-primaryText mb-2">{step.title}</h3>
+//                   <p className="text-secondaryText text-sm">{step.description}</p>
 //                 </div>
 //               </div>
 //             );
@@ -110,20 +110,20 @@ export default function Process() {
   ];
 
   return (
-    <div className="text-white">
+    <div className="text-primaryText px-4 sm:px-6 lg:px-8 ">
       {/* Partnership Section */}
       <motion.section
-        className="px-4 py-8 md:py-20"
+        className="px-4 py-8 "
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-primaryText">
             Partnership isn’t just a promise —{" "}
             <span className="text-orange-500">it’s our process.</span>
           </h2>
-          <p className="mt-4 text-gray-300 text-base md:text-lg">
+          <p className="mt-4 text-secondaryText text-base md:text-lg">
             We’re committed to building sustainable systems and marketing strategies that drive
             long-term success for your business.
           </p>
@@ -164,23 +164,23 @@ export default function Process() {
               viewport={{ once: true }}
             >
               {/* Step Number */}
-              <div className="absolute left-5 z-10 bg-black rounded-full w-8 h-8 flex items-center justify-center shadow-lg border-2 border-orange-500">
-                <span className="text-sm font-bold text-white">{step.id}</span>
+              <div className="absolute left-5 z-10 bg-primaryCardBg rounded-full w-8 h-8 flex items-center justify-center shadow-lg border-2 border-orange-500">
+                <span className="text-sm font-bold text-primaryText">{step.id}</span>
               </div>
 
               {/* Step Content */}
               <div className="ml-16">
-                <div className="bg-gray-900 border-gray-700 transition-all duration-300 hover:shadow-xl">
+                <div className="bg-primaryCardBg border-gray-700 transition-all duration-300 hover:shadow-xl">
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{step.description}</p>
+                    <h3 className="text-xl font-bold text-primaryText mb-3">{step.title}</h3>
+                    <p className="text-primaryCardText leading-relaxed">{step.description}</p>
                   </div>
                 </div>
               </div>
 
               {/* Arrow Connector */}
               {index < steps.length - 1 && (
-                <div className="absolute left-7 -bottom-4 z-10">
+                <div className="absolute left-[25px] -bottom-4 z-10">
                   <ArrowDown className="w-4 h-4 text-orange-500" />
                 </div>
               )}
@@ -196,15 +196,15 @@ export default function Process() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="bg-gray-900 rounded-lg shadow-xl p-8 border border-gray-700">
-            <h3 className="text-2xl font-semibold text-white mb-3">Ready to Grow Your Business?</h3>
-            <p className="text-gray-300 mb-6 text-lg">
+          <div className="bg-primaryCardBg rounded-lg shadow-xl p-8 border border-[#A4BCD1]">
+            <h3 className="text-2xl font-semibold text-primaryText mb-3">Ready to Grow Your Business?</h3>
+            <p className="text-secondaryText mb-6 text-lg">
               Let's implement this proven process to drive real results for your brand
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-orange-500 hover:bg-orange-600 text-black px-8 py-3 rounded-lg font-bold transition-all duration-300 text-lg shadow-lg hover:shadow-xl hover:shadow-orange-500/30"
+              className="bg-orange-500 hover:bg-orange-600 text-black px-8 py-3 rounded-lg font-bold transition-all duration-300 text-lg shadow-lg"
             >
               Get Started Today
             </motion.button>

@@ -64,7 +64,7 @@ export function Industries() {
   };
 
   return (
-    <section className="w-full lg:mt-29 pb-10 lg:pb-32 bg-black text-white">
+    <section className="w-full lg:mt-29 pb-10 lg:pb-32  px-4 sm:px-6 lg:px-8  text-primaryText">
       <motion.h2
         className="text-3xl md:text-4xl font-bold text-orange-500 text-center mb-16"
         initial={{ opacity: 0, y: 30 }}
@@ -72,20 +72,20 @@ export function Industries() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        Industries <span className="text-[#EAEAEA]"> We Empower</span>
+        Industries <span className="text-primaryText"> We Empower</span>
       </motion.h2>
 
       <div className="container max-w-7xl mx-auto px-4 md:px-6">
         {/* Mobile Dropdown */}
         <div className="block md:hidden mb-10">
-          <label htmlFor="industrySelect" className="block text-sm font-medium text-white mb-2">
+          <label htmlFor="industrySelect" className="block text-sm font-medium text-primaryText mb-2">
             Industries We Empower
           </label>
           <select
             id="industrySelect"
             value={activeIndex}
             onChange={(e) => setActiveIndex(Number(e.target.value))}
-            className="w-full border border-gray-600 bg-black text-white px-4 py-2 rounded-md"
+            className="w-full border border-gray-600  text-primaryText px-4 py-2 rounded-md"
           >
             {industries.map((industry, index) => (
               <option key={industry.id} value={index}>
@@ -105,16 +105,16 @@ export function Industries() {
               exit={{ opacity: 0, x: 30 }}
               transition={{ duration: 0.5 }}
             >
-              <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h3 className="text-4xl md:text-5xl font-bold text-primaryText mb-4">
                 {currentIndustry.title}
               </h3>
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              <p className="text-secondaryText text-lg leading-relaxed mb-6">
                 {currentIndustry.description}
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 border border-orange-500 text-white rounded-full hover:bg-orange-500 hover:text-white transition-colors duration-200"
+                className="px-6 py-3 border border-orange-500 text-primaryText rounded-full hover:bg-orange-500 hover:text-primaryText transition-colors duration-200"
               >
                 Read More
               </motion.button>
@@ -148,7 +148,7 @@ export function Industries() {
         <div className="hidden md:flex relative mt-16 items-center justify-center">
           <button
             onClick={handlePrev}
-            className="absolute left-0 p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="absolute left-0 p-3 rounded-full bg-gray-800  hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500"
             aria-label="Previous industry"
           >
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -162,7 +162,7 @@ export function Industries() {
                 key={industry.id}
                 onClick={() => setActiveIndex(index)}
                 className={`flex-shrink-0 flex flex-col items-center cursor-pointer group transition-all w-[180px] ${
-                  index === activeIndex ? "text-orange-500" : "text-white"
+                  index === activeIndex ? "text-orange-500" : "text-primaryText"
                 }`}
                 whileHover={{ scale: 1.05 }}
               >
@@ -172,7 +172,7 @@ export function Industries() {
                   }`}
                 />
                 <h4 className="text-lg font-semibold mb-1 text-center">{industry.title}</h4>
-                <p className="text-sm text-gray-100 text-center max-w-[180px] truncate">
+                <p className="text-sm text-secondaryText text-center max-w-[180px] truncate">
                   {industry.description.split(".")[0]}...
                 </p>
               </motion.div>
