@@ -9,6 +9,7 @@ import CustomCursor from "./components/custome-cursor"
 
 import NotFound from "./components/NotFound.jsx"
 import Portfolio from "./components/Portfolio.jsx"
+import Loading from "./components/Loading.jsx"
 
 // Lazy-loaded pages
 const Home = lazy(() => import("./Home"))
@@ -40,7 +41,7 @@ function App() {
       <AutoPopupDialog />
 
       {/* Lazy loading fallback and animation wrapper */}
-      <Suspense fallback={<div className="text-primaryText text-center py-20">Loading...</div>}>
+      <Suspense fallback={<div className="text-primaryText text-center py-20"><Loading/></div>}>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             {/* Main Pages */}
