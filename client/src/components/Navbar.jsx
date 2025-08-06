@@ -8,15 +8,20 @@ import {
   X,
 } from "lucide-react";
 import { useState, useEffect } from "react";
-import logo from "../assets/images/Og-Logo.png";
+import logoBlack from "../assets/images/Logo- landing labs-black.png";
+import logoWhite from "../assets/images/Og-Logo.png";
 import { NavLink } from "react-router-dom";
 
 import { AnimatePresence, motion } from "framer-motion";
+import NavbarServices from "./nav-services";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollDirection, setScrollDirection] = useState("up");
+
+  const [showServicesPanel, setShowServicesPanel] = useState(false);
+
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -61,15 +66,15 @@ const itemVariants = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
 };
   return (
-    <div className="w-full text-[#EAEAEA] fixed top-0 z-50">
+    <div className="w-full text-primaryText fixed right-0 top-0 z-50">
       {/* Navbar Container with scroll logic */}
       <div
         className={`transition-all duration-500 ease-in-out ${
           isScrolled
             ? scrollDirection
-              ? "backdrop-blur-md bg-gray-950/70 py-2 shadow-md"
+              ? "backdrop-blur-md bg-gray-950/70 text-white py-2 shadow-md "
               : "backdrop-blur-md bg-gray-950/70 py-2 shadow-md"
-            : "bg-transparent py-5"
+            : "bg-transparent py-5 "
         }`}
       >
         <div className="max-w-7xl mx-auto px-4">
@@ -84,101 +89,140 @@ const itemVariants = {
               </div>
               <div className="flex items-center space-x-4">
                 <a href="https://www.facebook.com/share/16wqfNsNHL/">
-                  <Facebook className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" />
+                  <Facebook className="w-4 h-4 hover:text-accentHover cursor-pointer transition-colors" />
                 </a>
                 <a href="https://www.instagram.com/landinglabs_?igsh=Njc1YjZvdjc1Y2J1">
-                  <Instagram className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" />
+                  <Instagram className="w-4 h-4 hover:text-accentHover cursor-pointer transition-colors" />
                 </a>
                 <a href="https://www.linkedin.com/company/landing-labs/">
-                  <Linkedin className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" />
+                  <Linkedin className="w-4 h-4 hover:text-accentHover cursor-pointer transition-colors" />
                 </a>
                 <a href="https://www.youtube.com/@landinglabs">
-                  <Youtube className="w-4 h-4 hover:text-orange-500 cursor-pointer transition-colors" />
+                  <Youtube className="w-4 h-4 hover:text-accentHover cursor-pointer transition-colors" />
                 </a>
               </div>
             </div>
           )}
 
           {/* Main Navbar */}
-          <div className="flex items-center justify-between px-6 transition-all duration-300">
+          <div className="flex items-center justify-between px-6 transition-all duration-300 ">
             {/* Logo */}
             <div className={`transition-all ${isScrolled ? "w-28" : "w-36"}`}>
               <NavLink to="/">
-                <img src={logo} alt="Landing Labs Logo" className="w-full" />
+
+              {
+          isScrolled
+            ? scrollDirection
+              ?  <img src={logoWhite} alt="Landing Labs Logo" className="w-full" />
+              : <img src={logoBlack} alt="Landing Labs Logo" className="w-full" />
+            : <img src={logoBlack} alt="Landing Labs Logo" className="w-full" />
+
+        }
+
+              
+               
               </NavLink>
             </div>
 
             {/* Nav Links */}
-            <div className="hidden lg:flex items-center space-x-8 text-sm font-medium">
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-orange-500 font-medium"
-                    : "hover:text-orange-500 transition-colors"
-                }
-              >
-                Home
-              </NavLink>
+       <div className="hidden lg:flex items-center space-x-8 text-sm font-medium">
+  <NavLink
+    to="/"
+    className={({ isActive }) =>
+      isActive
+        ? "text-orange-500 font-semibold"
+        : "hover:text-accentHover cursor-pointer transition-colors"
+    }
+  >
+    Home
+  </NavLink>
 
-              <NavLink
-                to="/services"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-orange-500 font-medium"
-                    : "hover:text-orange-500 transition-colors"
-                }
-              >
-                <span className="flex items-center space-x-1">
-                  <span>Services</span>
-                  <ChevronDown className="w-4 h-4" />
-                </span>
-              </NavLink>
+  <div
+  className="relative"
+  onMouseEnter={() => setShowServicesPanel(true)}
+  onMouseLeave={() => setShowServicesPanel(false)}
+>
+  <NavLink
+    to="/services"
+    className={({ isActive }) =>
+      isActive
+        ? "text-orange-500 font-semibold"
+        : "hover:text-accentHover cursor-pointer transition-colors"
+    }
+  >
+    <span className="flex items-center space-x-1">
+      <span>Services</span>
+      <ChevronDown className="w-4 h-4" />
+    </span>
+  </NavLink>
 
-              <NavLink
-                to="/about-us"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-orange-500 font-medium"
-                    : "hover:text-orange-500 transition-colors"
-                }
-              >
-                About
-              </NavLink>
+  {/* Dropdown Panel */}
+{showServicesPanel && (
+  <div className="absolute top-full left-0 lg:left-[-300px] xl:left-[-400px] w-screen max-w-[90vw] lg:max-w-[69vw] bg-white shadow-lg z-50 rounded-b-lg overflow-x-auto">
+    <NavbarServices />
+  </div>
+)}
 
-              <NavLink
-                to="/career"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-orange-500 font-medium"
-                    : "hover:text-orange-500 transition-colors"
-                }
-              >
-                Career
-              </NavLink>
+</div>
 
-              <NavLink
-                to="/contact-us"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-orange-500 font-medium"
-                    : "hover:text-orange-500 transition-colors"
-                }
-              >
-                Contact
-              </NavLink>
 
-              <NavLink
-                to="/pricing"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-orange-500 font-medium"
-                    : "hover:text-orange-500 transition-colors"
-                }
-              >
-                Pricing
-              </NavLink>
-            </div>
+
+  <NavLink
+    to="/about-us"
+    className={({ isActive }) =>
+      isActive
+        ? "text-orange-500 font-semibold"
+        : "hover:text-accentHover cursor-pointer transition-colors"
+    }
+  >
+    About
+  </NavLink>
+
+  <NavLink
+    to="/career"
+    className={({ isActive }) =>
+      isActive
+        ? "text-orange-500 font-semibold"
+        : "hover:text-accentHover cursor-pointer transition-colors"
+    }
+  >
+    Career
+  </NavLink>
+  <NavLink
+    to="/portfolio"
+    className={({ isActive }) =>
+      isActive
+        ? "text-orange-500 font-semibold"
+        : "hover:text-accentHover cursor-pointer transition-colors"
+    }
+  >
+    Portfolio
+  </NavLink>
+
+  <NavLink
+    to="/contact-us"
+    className={({ isActive }) =>
+      isActive
+        ? "text-orange-500 font-semibold"
+        : "hover:text-accentHover cursor-pointer transition-colors"
+    }
+  >
+    Contact
+  </NavLink>
+
+  <NavLink
+    to="/pricing"
+    className={({ isActive }) =>
+      isActive
+        ? "text-orange-500 font-semibold"
+        :"hover:text-accentHover cursor-pointer transition-colors"
+    }
+  >
+    Pricing
+  </NavLink>
+</div>
+
+
 
             {/* CTA & Mobile Menu */}
             <div className="flex items-center space-x-4">
@@ -188,7 +232,7 @@ const itemVariants = {
                 </button>
               </NavLink>
               <button
-                className="lg:hidden text-white"
+                className="lg:hidden text-secondaryText"
                 onClick={() => setIsOpen(true)}
               >
                 <Menu className="h-6 w-6" />
@@ -212,7 +256,7 @@ const itemVariants = {
     >
       <div className="flex justify-end">
         <button onClick={() => setIsOpen(false)}>
-          <X className="w-6 h-6 text-white hover:text-orange-500" />
+          <X className="w-6 h-6 text-white hover:text-accentHover" />
         </button>
       </div>
 
@@ -238,8 +282,8 @@ const itemVariants = {
               to={to}
               className={({ isActive }) =>
                 isActive
-                  ? "text-orange-500 text-lg"
-                  : "hover:text-orange-500 text-lg"
+                  ? "text-primaryText text-lg"
+                  : "hover:text-accentHover text-lg"
               }
               onClick={() => setIsOpen(false)}
             >
@@ -253,16 +297,16 @@ const itemVariants = {
           className="flex items-center space-x-4 pt-4 border-t border-gray-800"
         >
           <a href="https://www.facebook.com/share/16wqfNsNHL/">
-            <Facebook className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
+            <Facebook className="w-5 h-5 hover:text-accentHover cursor-pointer" />
           </a>
           <a href="https://www.instagram.com/landinglabs_?igsh=Njc1YjZvdjc1Y2J1">
-            <Instagram className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
+            <Instagram className="w-5 h-5 hover:text-accentHover cursor-pointer" />
           </a>
           <a href="https://www.linkedin.com/company/landing-labs/">
-            <Linkedin className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
+            <Linkedin className="w-5 h-5 hover:text-accentHover cursor-pointer" />
           </a>
           <a href="https://www.youtube.com/@landinglabs">
-            <Youtube className="w-5 h-5 hover:text-orange-500 cursor-pointer" />
+            <Youtube className="w-5 h-5 hover:text-accentHover cursor-pointer" />
           </a>
         </motion.div>
 

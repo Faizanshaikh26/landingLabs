@@ -6,6 +6,8 @@ import { AnimatePresence, motion } from "framer-motion"
 import ScrollToTop from "./components/ScrollToTop"
 import CustomCursor from "./components/custome-cursor"
 import { AutoPopupDialog } from "./components/AutoDialog.jsx"
+import NotFound from "./components/NotFound.jsx"
+import Portfolio from "./components/Portfolio.jsx"
 
 // Lazy-loaded pages
 const Home = lazy(() => import("./Home"))
@@ -31,7 +33,7 @@ function App() {
   const location = useLocation()
 
   return (
-    <div className="min-h-screen bg-[white] font-poppins">
+    <div className="min-h-screen font-poppins   bg-white text-primaryText">
       <ScrollToTop />
       <CustomCursor />
       <AutoPopupDialog />
@@ -49,6 +51,7 @@ function App() {
             <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
             <Route path="/try" element={<PageWrapper><CareerForm /></PageWrapper>} />
             <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} />
+            <Route path="/portfolio" element={<PageWrapper><Portfolio /></PageWrapper>} />
             <Route path="/dum" element={<PricingPage />} />
 
             {/* Service Detail Pages */}
@@ -61,6 +64,7 @@ function App() {
             <Route path="/services/graphic-design" element={<PageWrapper><GraphicDesign /></PageWrapper>} />
             <Route path="/services/influencer-marketing" element={<PageWrapper><InfluencerMarketing /></PageWrapper>} />
             <Route path="/services/content-marketing" element={<PageWrapper><ContentMarketing /></PageWrapper>} />
+            <Route path="*" element={<NotFound/>} />
           </Routes>
         </AnimatePresence>
       </Suspense>
