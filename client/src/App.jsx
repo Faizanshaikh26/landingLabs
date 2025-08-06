@@ -2,10 +2,11 @@ import { Route, Routes, useLocation } from "react-router-dom"
 import { lazy, Suspense } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 
+import AutoPopupDialog, {} from './components/AutoDialog.jsx'
 // Static Components (not lazy)
 import ScrollToTop from "./components/ScrollToTop"
 import CustomCursor from "./components/custome-cursor"
-import { AutoPopupDialog } from "./components/AutoDialog.jsx"
+
 import NotFound from "./components/NotFound.jsx"
 import Portfolio from "./components/Portfolio.jsx"
 
