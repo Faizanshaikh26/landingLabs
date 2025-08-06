@@ -439,7 +439,7 @@ import {
 
         {/* Phone */}
         <div className="flex items-start gap-
-        4">
+        2194">
           <Phone className="text-yellow-400 mt-1 w-10 h-10" />
           <ul className="space-y-0.5 leading-5">
             <li>+91-9810052141</li>
