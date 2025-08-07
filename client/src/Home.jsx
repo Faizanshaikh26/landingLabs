@@ -36,10 +36,10 @@ export default function Home() {
 {/* <Testimonies/> */}
 
      
-      {/* <Portfolio /> */}
+       <Portfolio /> 
 
- 
- <Industries/>
+
+       <Industries />
 
   <Banner />
 

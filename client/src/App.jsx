@@ -27,6 +27,7 @@ const Pricing = lazy(() => import("./Pages/Pricing.jsx"))
 const CareerForm = lazy(() => import("./Pages/test-car.jsx"))
 const PricingPage = lazy(() => import("./Pages/dum.jsx"))
 const Appointment = lazy(() => import("./components/Appointment.jsx"))
+const Portfolio = lazy(() => import("./components/Portfolio.jsx"))
 
 function App() {
   const location = useLocation()
@@ -51,6 +52,7 @@ function App() {
             <Route path="/try" element={<PageWrapper><CareerForm /></PageWrapper>} />
             <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} />
             <Route path="/dum" element={<PricingPage />} />
+            <Route path="/portfolio" element={<PageWrapper><Portfolio /></PageWrapper>} />
 
             {/* Service Detail Pages */}
             <Route path="/services/search-engine-optimization" element={<PageWrapper><SEO /></PageWrapper>} />
