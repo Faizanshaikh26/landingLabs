@@ -7,7 +7,7 @@ const navItems = [
   { name: "Careers", path: "/careers", icon: Briefcase },
 ];
 
-export default function AdminSidebar() {
+export default function Sidebar() {
   return (
     <div className="w-64 bg-white shadow-md h-full">
       <div className="p-4 text-xl font-bold border-b">LandingLabs Admin</div>
