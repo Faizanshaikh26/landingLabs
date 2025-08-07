@@ -2,6 +2,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import AdminLayout from "./app/AdminLayout";
 import Dashboard from "./app/components/Dashboard";
 import Contact from "./app/components/Contact";
+import Client from "./app/components/Client";
+
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         {/* Add more routes here, e.g.: */}
         <Route path="contacts" element={<Contact />} />
         {/* <Route path="careers" element={<Careers />} /> */}
+        <Route path="client" element={<Client />} />
+        {/* <Route path="settings" element={<Settings />} /> */}
       </Route>
     </Routes>
   );
