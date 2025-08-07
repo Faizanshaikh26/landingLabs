@@ -9,72 +9,108 @@ import { ChevronsUpDown } from "lucide-react";
 
 const sampleData = [
   {
-    store: "Solaris Sparkle",
-    location: "Miami, Florida",
-    sell: "102 Quantity",
-    amount: "12.50K",
+    client: "LunaTech Studios",
+    location: "Austin, Texas",
+    service: "Web Development",
+    budget: "$12,500",
   },
   {
-    store: "Crimson Dusk",
+    client: "Nimbus Agency",
     location: "Denver, Colorado",
-    sell: "214 Quantity",
-    amount: "07.85K",
+    service: "SEO Optimization",
+    budget: "$7,850",
   },
   {
-    store: "Indigo Zephyr",
-    location: "Orlando, Florida",
-    sell: "143 Quantity",
-    amount: "16.40K",
+    client: "EchoSoft Systems",
+    location: "Miami, Florida",
+    service: "Mobile App Development",
+    budget: "$16,400",
   },
   {
-    store: "Roseate Crest",
-    location: "Las Vegas, Nevada",
-    sell: "185 Quantity",
-    amount: "23.64K",
+    client: "Crimson Pixel Co.",
+    location: "Seattle, Washington",
+    service: "UI/UX Design",
+    budget: "$23,640",
   },
-  // add more rows as needed
+  {
+    client: "SolarEdge Media",
+    location: "San Francisco, California",
+    service: "Content Marketing",
+    budget: "$15,750",
+  },
+  {
+    client: "BrightWave Labs",
+    location: "Chicago, Illinois",
+    service: "Custom Software",
+    budget: "$19,200",
+  },
+  {
+    client: "Twilight Ventures",
+    location: "New York, New York",
+    service: "Brand Identity",
+    budget: "$10,300",
+  },
+  {
+    client: "Zephyr Interactive",
+    location: "Phoenix, Arizona",
+    service: "E-commerce Development",
+    budget: "$22,450",
+  },
+  {
+    client: "NovaReach Digital",
+    location: "Portland, Oregon",
+    service: "Digital Strategy",
+    budget: "$13,980",
+  },
+  {
+    client: "Artemis Solutions",
+    location: "Atlanta, Georgia",
+    service: "Email Campaigns",
+    budget: "$8,600",
+  },
 ];
+
 
 export default function DashboardTable({ data = sampleData }) {
   const [sorting, setSorting] = useState([]);
 
-  const columns = useMemo(
-    () => [
-      {
-        accessorKey: "store",
-        header: () => <div className="text-sm font-medium">Store Name</div>,
-        cell: (info) => (
-          <div className="text-sm font-medium text-slate-800">
-            {info.getValue()}
-          </div>
-        ),
-      },
-      {
-        accessorKey: "location",
-        header: () => <div className="text-sm font-medium">Location</div>,
-        cell: (info) => (
-          <div className="text-sm text-slate-600">{info.getValue()}</div>
-        ),
-      },
-      {
-        accessorKey: "sell",
-        header: () => <div className="text-sm font-medium">Sell</div>,
-        cell: (info) => (
-          <div className="text-sm text-slate-800">{info.getValue()}</div>
-        ),
-      },
-      {
-        accessorKey: "amount",
-        header: () => <div className="text-sm font-medium">Amount</div>,
-        cell: (info) => (
-          <div className="text-sm font-medium text-slate-800">{info.getValue()}</div>
-        ),
-        // align right visually
-        meta: { align: "right" },
-      },
-    ],
-    []
-  );
+ const columns = useMemo(
+  () => [
+    {
+      accessorKey: "client",
+      header: () => <div className="text-sm font-medium">Client</div>,
+      cell: (info) => (
+        <div className="text-sm font-medium text-slate-800">
+          {info.getValue()}
+        </div>
+      ),
+    },
+    {
+      accessorKey: "location",
+      header: () => <div className="text-sm font-medium">Location</div>,
+      cell: (info) => (
+        <div className="text-sm text-slate-600">{info.getValue()}</div>
+      ),
+    },
+    {
+      accessorKey: "service",
+      header: () => <div className="text-sm font-medium">Service</div>,
+      cell: (info) => (
+        <div className="text-sm text-slate-800">{info.getValue()}</div>
+      ),
+    },
+    {
+      accessorKey: "budget",
+      header: () => <div className="text-sm font-medium">Budget</div>,
+      cell: (info) => (
+        <div className="text-sm font-medium text-slate-800">{info.getValue()}</div>
+      ),
+      meta: { align: "right" },
+    },
+  ],
+  []
+);
+
 
   const table = useReactTable({
     data,

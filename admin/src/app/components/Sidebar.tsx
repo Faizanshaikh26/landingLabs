@@ -7,16 +7,24 @@ import {
   BarChart2,
   Settings,
   LogOut,
+  PersonStanding,
+  PersonStandingIcon,
+  Projector,
+  DollarSign,
+  Workflow,
 } from "lucide-react";
 
 const navItems = [
-  { name: "Statistics", path: "/statistics", icon: BarChart2 },
-  { name: "Transaction", path: "/transactions", icon: Briefcase },
+  { name: "Clients", path: "/client", icon: PersonStandingIcon },
+  { name: "Projects", path: "/projects", icon: Projector },
   { name: "My Team", path: "/team", icon: Users },
-  { name: "Sell Reports", path: "/reports", icon: BarChart2 },
+  { name: "Services", path: "/services", icon: BarChart2 },
+  { name: "Billing", path: "/services", icon: DollarSign },
+  { name: "Integartion", path: "/services", icon: Workflow },
   { name: "Settings", path: "/settings", icon: Settings },
+
  
-  // add as many as you want here without breaking layout
+  
 ];
 
 export default function Sidebar() {
@@ -30,7 +38,7 @@ export default function Sidebar() {
             <div className="w-10 h-10 rounded-md bg-slate-900 flex items-center justify-center text-white font-semibold">
               LL
             </div>
-            <div className="text-lg font-bold">Niond</div>
+            <div className="text-lg font-bold">Landing Labs</div>
           </div>
 
           {/* Dashboard Highlight */}

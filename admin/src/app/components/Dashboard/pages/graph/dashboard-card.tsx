@@ -1,43 +1,45 @@
-import { Lock, Home, TrendingUp } from 'lucide-react'
+import { Users, DollarSign, AlarmClock } from 'lucide-react'
 
 export default function DashboardCards() {
   return (
-    <div className="flex flex-col md:flex-row gap-4 p-4 bg-gray-50  items-center justify-center">
-      {/* Total Earning Card */}
-      <div className="flex flex-col items-start justify-between p-6 rounded-xl bg-[#E8E3FF] text-gray-900 w-full max-w-xs h-48">
+    <div className="flex flex-col md:flex-row gap-4 p-4 bg-gray-50 items-center justify-center">
+      
+      {/* Active Clients Card */}
+      <div className="flex flex-col items-start justify-between p-6 rounded-xl bg-[#FFF3E3] text-gray-900 w-full max-w-xs h-48">
         <div className="flex items-center gap-2 text-sm font-medium">
           <div className="p-1 rounded-full bg-gray-900 text-white">
-            <Lock className="w-4 h-4" />
+            <Users className="w-4 h-4" />
           </div>
-          Total Earning
+          Active Clients
         </div>
-        <div className="text-5xl font-bold">242.65K</div>
-        <div className="text-sm text-gray-700">From the running month</div>
+        <div className="text-5xl font-bold">1,205</div>
+        <div className="text-sm text-gray-700">Currently subscribed clients</div>
       </div>
 
-      {/* Average Earning Card */}
+      {/* MRR Card */}
       <div className="flex flex-col items-start justify-between p-6 rounded-xl bg-[#E3F0FF] text-gray-900 w-full max-w-xs h-48">
         <div className="flex items-center gap-2 text-sm font-medium">
           <div className="p-1 rounded-full bg-gray-900 text-white">
-            <Home className="w-4 h-4" />
+            <DollarSign className="w-4 h-4" />
           </div>
-          Average Earning
+          Monthly Recurring Revenue
         </div>
-        <div className="text-5xl font-bold">17.347K</div>
-        <div className="text-sm text-gray-700">Daily Earning of this month</div>
+        <div className="text-5xl font-bold">$39.8K</div>
+        <div className="text-sm text-gray-700">Based on active subscriptions</div>
       </div>
 
-      {/* Conversation Rate Card */}
-      <div className="flex flex-col items-start justify-between p-6 rounded-xl bg-[#E3FFE8] text-gray-900 w-full max-w-xs h-48">
+      {/* Overdue Tasks Card */}
+      <div className="flex flex-col items-start justify-between p-6 rounded-xl bg-[#FFE3E9] text-gray-900 w-full max-w-xs h-48">
         <div className="flex items-center gap-2 text-sm font-medium">
           <div className="p-1 rounded-full bg-gray-900 text-white">
-            <TrendingUp className="w-4 h-4" />
+            <AlarmClock className="w-4 h-4" />
           </div>
-          Conversation Rate
+          Overdue Tasks
         </div>
-        <div className="text-5xl font-bold">74.86%</div>
-        <div className="text-sm text-gray-700">+6.04% greater that last month</div>
+        <div className="text-5xl font-bold">47</div>
+        <div className="text-sm text-gray-700">Pending past due date</div>
       </div>
+
     </div>
   )
 }

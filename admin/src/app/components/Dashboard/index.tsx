@@ -1,9 +1,11 @@
 import React from 'react'
 import DashboardCards from './pages/graph/dashboard-card'
-import { DashboardDoughnut } from './pages/graph/dashboard-Doughnut'
+import { ClientServiceDoughnut, DashboardDoughnut } from './pages/graph/dashboard-Doughnut'
 import { DashboardAnalysis } from './pages/graph/dashboard-analysis'
 import DashboardTable from './pages/dashboard-table'
-import { DashboardGraph } from './pages/graph/dashboard-graph'
+import { LeadPipelineOverview } from './pages/graph/dashboard-graph'
+import { Input } from '@/components/ui/input'
+import { ProjectTimeline } from './pages/graph/dashboard-projectTimeline'
 
 export default function Dashboard() {
   return (
@@ -17,13 +19,9 @@ export default function Dashboard() {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2">
-              <button className="w-10 h-10 rounded-lg bg-white border flex items-center justify-center shadow-sm">
-                💬
-              </button>
-              <button className="w-10 h-10 rounded-lg bg-white border flex items-center justify-center shadow-sm">
-                🔔
-              </button>
+            <div className="flex items-center gap-
+            ">
+              <Input placeholder='type here' />
             </div>
 
             {/* Avatar placeholder */}
@@ -48,22 +46,12 @@ export default function Dashboard() {
 
 
             <div>
-              <DashboardGraph/>
+              <LeadPipelineOverview />
             </div>
 
-            {/* Chart + Analysis row */}
-            <div className="grid grid-cols-12 gap-6">
-              <div className="col-span-12 lg:col-span-7">
-                <div className="rounded-xl bg-white p-4 shadow-sm">
-                  <DashboardDoughnut />
-                </div>
-              </div>
 
-              <div className="col-span-12 lg:col-span-5">
-                <div className="rounded-xl bg-white p-4 shadow-sm">
-                  <DashboardAnalysis />
-                </div>
-              </div>
+            <div className="">
+              <ProjectTimeline />
             </div>
 
             {/* Table */}
@@ -73,27 +61,19 @@ export default function Dashboard() {
           </div>
 
           {/* RIGHT: red colored panel */}
-          <div className="col-span-12 lg:col-span-4">
-            <div className="h-full rounded-xl p-6 shadow-sm bg-red-500 text-white flex flex-col">
-              {/* Put your right side content here. Example placeholders below: */}
-              <h3 className="text-lg font-semibold mb-2">Right Panel</h3>
-              <p className="text-sm mb-4 opacity-90">
-                This is the right column. It has a red background as requested.
-              </p>
+          <div className="col-span-12 lg:col-span-4 py-4">
+            <div className='space-y-5'>
+              <ClientServiceDoughnut />
 
-              <div className="mt-4 space-y-3">
-                <div className="bg-white/10 rounded-md p-3">Placeholder item 1</div>
-                <div className="bg-white/10 rounded-md p-3">Placeholder item 2</div>
-                <div className="bg-white/10 rounded-md p-3">Placeholder item 3</div>
-              </div>
 
-              {/* push button to bottom */}
-              <div className="mt-auto">
-                <button className="w-full py-2 rounded-full bg-white text-red-600 font-semibold">
-                  Action
-                </button>
-              </div>
+
+              <DashboardAnalysis />
             </div>
+
+            <div>
+
+            </div>
+
           </div>
         </div>
       </div>
