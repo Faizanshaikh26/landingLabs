@@ -5,6 +5,7 @@ const navItems = [
   { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
   { name: "Contacts", path: "/contacts", icon: Mail },
   { name: "Careers", path: "/careers", icon: Briefcase },
+  { name: "Team", path: "/team", icon: Briefcase },
 ];
 
 export default function Sidebar() {
