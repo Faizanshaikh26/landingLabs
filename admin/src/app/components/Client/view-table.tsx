@@ -1,5 +1,3 @@
-// client/view-table.tsx
-
 import type { ColumnDef } from "@tanstack/react-table";
 import {
   flexRender,
@@ -22,6 +20,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
+// ✅ Import dialogs
+import {EditClientDialog} from "./dialog/edit/edit-dialog";
+import { DeleteClientDialog} from "./dialog/delete/delete-dialog";
+import { AddClientDialog } from "./dialog/add/add-dialog";
+
 type Client = {
   name: string;
   project: string;
@@ -35,51 +38,47 @@ const data: Client[] = [
   { name: "Carol Davis", project: "Ecommerce Platform", package: "Enterprise", status: "Inactive" },
   { name: "David Wilson", project: "SEO Optimization", package: "Pro", status: "Active" },
   { name: "Emma Brown", project: "Analytics Dashboard", package: "Basic", status: "Pending" },
-  { name: "Carol Davis", project: "Ecommerce Platform", package: "Enterprise", status: "Inactive" },
-  { name: "David Wilson", project: "SEO Optimization", package: "Pro", status: "Active" },
-  { name: "Emma Brown", project: "Analytics Dashboard", package: "Basic", status: "Pending" },
-  { name: "Carol Davis", project: "Ecommerce Platform", package: "Enterprise", status: "Inactive" },
-  { name: "David Wilson", project: "SEO Optimization", package: "Pro", status: "Active" },
-  { name: "Emma Brown", project: "Analytics Dashboard", package: "Basic", status: "Pending" },
 ];
 
 export default function ViewTable() {
   const [filter, setFilter] = useState("");
 
-  const columns = useMemo<ColumnDef<Client>[]>(
-    () => [
-      {
-        accessorKey: "name",
-        header: "Name",
-        cell: (info) => info.getValue(),
+  const columns = useMemo<ColumnDef<Client>[]>(() => [
+    {
+      accessorKey: "name",
+      header: "Name",
+      cell: (info) => info.getValue(),
+    },
+    {
+      accessorKey: "project",
+      header: "Project",
+    },
+    {
+      accessorKey: "package",
+      header: "Package",
+    },
+    {
+      accessorKey: "status",
+      header: "Status",
+      cell: ({ row }) => {
+        const status = row.getValue("status") as Client["status"];
+        return (
+          <Badge variant={status === "Active" ? "default" : "outline"}>
+            {status}
+          </Badge>
+        );
       },
-      {
-        accessorKey: "project",
-        header: "Project",
-      },
-      {
-        accessorKey: "package",
-        header: "Package",
-      },
-      {
-        accessorKey: "status",
-        header: "Status",
-        cell: ({ row }) => {
-          const status = row.getValue("status") as Client["status"];
-          return (
-            <Badge variant={status === "Active" ? "default" : "outline"}>
-              {status}
-            </Badge>
-          );
-        },
-      },
-      {
-        header: "Manage",
-        cell: () => <Button size="sm">Manage</Button>,
-      },
-    ],
-    []
-  );
+    },
+    {
+      header: "Manage",
+      cell: ({ row }) => (
+        <div className="flex gap-2">
+          <EditClientDialog clientData={row.original} />
+          <DeleteClientDialog />
+        </div>
+      ),
+    },
+  ], []);
 
   const table = useReactTable({
     data,

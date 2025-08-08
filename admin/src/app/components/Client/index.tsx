@@ -1,16 +1,15 @@
-// client/index.tsx
+import { AddClientDialog } from "./dialog/add/add-dialog";
+import DataTable from "./view-table";
 
-import { Button } from "@/components/ui/button";
-import ViewTable from "./view-table";
-
-export default function ClientPage() {
+export default function Client() {
   return (
-    <div className="p-6">
+    <div className="min-h-screen bg-slate-50 p-6">
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold">Clients</h1>
-        <Button>Add Client</Button>
+        <AddClientDialog />
       </div>
-      <ViewTable />
+
+      <DataTable />
     </div>
   );
 }

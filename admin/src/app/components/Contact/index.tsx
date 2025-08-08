@@ -8,6 +8,7 @@ const Contact = () => {
         Contact
       </h1>
       <ViewTable />
+      
     </div>
   );
 };
