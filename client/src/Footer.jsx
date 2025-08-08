@@ -493,7 +493,9 @@ import {
   Linkedin,
   ChevronDown,
   ChevronUp,
+  Twitter,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
  const  Footer = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -561,12 +563,15 @@ import {
         <div className="flex-1 border-r  border-gray-600 pr-6">
           <h3 className="text-accent font-bold text-lg mb-4">QUICK LINKS</h3>
           <ul className="mb-6 space-y-1 text-sm">
-            <li><a href="#" className="hover:underline">Home</a></li>
-            <li><a href="#" className="hover:underline">Portfolio</a></li>
-            <li><a href="#" className="hover:underline">About Us</a></li>
-            <li><a href="#" className="hover:underline">Contact Us</a></li>
-            <li><a href="#" className="hover:underline">Privacy Policy</a></li>
-            <li><a href="#" className="hover:underline">Blog</a></li>
+
+           
+            <li><Link to="/" className="hover:underline">Home</Link></li>
+            <li><Link to="/portfolio" className="hover:underline">Portfolio</Link></li>
+            <li><Link to="/about-us" className="hover:underline">About Us</Link></li>
+            <li><Link to="/contact-us" className="hover:underline">Contact Us</Link></li>
+            <li><Link to="/career" className="hover:underline">Career</Link></li>
+            <li><Link to="pricing" className="hover:underline">Pricing</Link></li>
+            <li><Link to="#" className="hover:underline">Blog</Link></li>
           </ul>
 
           <h3 className="text-accent font-bold text-lg mb-4">OUR VENTURES</h3>
@@ -579,14 +584,17 @@ import {
 
           <h3 className="text-accent font-bold text-lg mb-4">SOCIALIZE WITH US</h3>
           <div className="flex gap-3 text-xl">
-            <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-              <Facebook className="text-white w-5 h-5" />
+            <a href="https://www.facebook.com/people/landinglabsin/61564373072403/?rdid=DTVRbgYiFJxHJkkj&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16wqfNsNHL%2F" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <Facebook className="text-secondaryText w-5 h-5" />
             </a>
-            <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="text-white w-5 h-5" />
+            <a href="https://www.linkedin.com/company/landing-labs/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <Linkedin className="text-secondaryText w-5 h-5" />
             </a>
-            <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-              <Instagram className="text-white w-5 h-5" />
+            <a href="https://www.instagram.com/landinglabs_?igsh=Njc1YjZvdjc1Y2J1" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <Instagram className="text-secondaryText w-5 h-5" />
+            </a>
+            <a href="https://www.youtube.com/@landinglabs" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <Twitter className="text-secondaryText w-5 h-5" />
             </a>
           </div>
         </div>
@@ -613,21 +621,19 @@ import {
       <div className="flex flex-col lg:flex-row justify-between items-start mt-6 text-sm gap-6 px-2">
 
         {/* Phone */}
-        <div className="flex items-start gap-
-        4">
-          <Phone className="text-accent mt-1 w-10 h-10" />
-          <ul className="space-y-0.5 leading-5">
-            <li>+91-9810052141</li>
-            <li>+91-9871613002</li>
-            <li>+91-11-45620844</li>
-          </ul>
+         <div className="flex items-start gap-4">
+          <Phone className="text-accent mt-2 w-10 h-10" />
+          <a href="mailto:info@diinfotech.com" className="hover:underline mt-4">
+               +91 738 739 2708
+          </a>
         </div>
 
         {/* Email */}
         <div className="flex items-start gap-4">
           <Mail className="text-accent mt-2 w-10 h-10" />
-          <a href="mailto:info@diinfotech.com" className="hover:underline mt-4">
-            info@diinfotech.com
+          <a href="" className="hover:underline mt-4">
+      
+           info@landinglabs.in
           </a>
         </div>
 
@@ -635,8 +641,7 @@ import {
         <div className="flex items-start gap-4 max-w-sm">
           <MapPin className="text-accent mt-1 w-18 h-10" />
           <p>
-            301, G-27, Pankaj Tower - IV, Commercial Complex (Behind Sonia PVR Cinema),
-            Vikaspuri, New Delhi-110018
+           Office 610, Suratwala Mark Plazzo, Hinjewadi, 411057
           </p>
         </div>
       </div>

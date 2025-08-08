@@ -2,11 +2,14 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-// Static Components
-import ScrollToTop from "./components/ScrollToTop";
-import CustomCursor from "./components/custome-cursor";
-import { AutoPopupDialog } from "./components/AutoDialog.jsx";
-import NotFound from "./components/NotFound.jsx";
+import AutoPopupDialog, {} from './components/AutoDialog.jsx'
+// Static Components (not lazy)
+import ScrollToTop from "./components/ScrollToTop"
+import CustomCursor from "./components/custome-cursor"
+
+import NotFound from "./components/NotFound.jsx"
+import Portfolio from "./components/Portfolio.jsx"
+import Loading from "./components/Loading.jsx"
 
 // Lazy-loaded pages
 const Home = lazy(() => import("./Home"));
@@ -36,7 +39,8 @@ function App() {
       <CustomCursor />
       <AutoPopupDialog />
 
-      <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
+      {/* Lazy loading fallback and animation wrapper */}
+      <Suspense fallback={<div className="text-primaryText text-center py-20"><Loading/></div>}>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             {/* Main Pages */}
