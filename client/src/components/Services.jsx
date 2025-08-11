@@ -194,8 +194,14 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import ServiceCard from "./service-card";
 
-import seoBack from "../assets/images/2.png"
-import seoFront from "../assets/images/1.png"
+import smmBack from "../assets/images/smm-back.png"
+import seoBack from "../assets/images/seo-back.png"
+import smmFront from "../assets/images/smm-front.png"
+import seoFront from "../assets/images/seo-front.png"
+import appDevFront from "../assets/images/appdev-front.png"
+import appDevBack from "../assets/images/appdev-back.png"
+import UIUXFront from "../assets/images/ui-uxFront.png"
+import UIUXBack from "../assets/images/ui-uxBack.png"
 
 const servicesData = [
   {
@@ -214,8 +220,9 @@ const servicesData = [
   {
     id: 3,
     title: "Social Media Marketing",
-    image: "/images/services/social-media.png",
-    hoverImage: "/images/services/social-media-hover.png",
+    image: smmFront,
+    hoverImage:
+      smmBack
   },
   {
     id: 4,
@@ -226,14 +233,14 @@ const servicesData = [
   {
     id: 5,
     title: "App Development",
-    image: "/images/services/app-dev.png",
-    hoverImage: "/images/services/app-dev-hover.png",
+    image: appDevFront,
+    hoverImage: appDevBack
   },
   {
     id: 6,
     title: "UI/UX Design",
-    image: "/images/services/uiux.png",
-    hoverImage: "/images/services/uiux-hover.png",
+    image: UIUXFront,
+    hoverImage: UIUXBack,
   },
   {
     id: 7,
@@ -271,14 +278,14 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
       ease: "easeOut",
     },
   },
 };
 
 export default function ServicesSnapshot() {
-  const [activeTab] = useState("IT");
+
 
   return (
     <div className="bg-black w-full text-white min-h-screen lg:p-8 rounded-t-[80px] py-10">

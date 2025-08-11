@@ -235,7 +235,7 @@ const itemVariants = {
                 className="lg:hidden text-secondaryText"
                 onClick={() => setIsOpen(true)}
               >
-                <Menu className="h-6 w-6" />
+                <Menu className={isScrolled ? "h-6 w-6 text-white" :"h-6 w-6"} />
               </button>
             </div>
           </div>
@@ -282,7 +282,7 @@ const itemVariants = {
               to={to}
               className={({ isActive }) =>
                 isActive
-                  ? "text-primaryText text-lg"
+                  ? "text-accent text-lg"
                   : "hover:text-accentHover text-lg"
               }
               onClick={() => setIsOpen(false)}

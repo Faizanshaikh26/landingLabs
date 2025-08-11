@@ -76,7 +76,7 @@ export default function AutoPopupDialog() {
 
   return (
      <div
-      className="fixed inset-0 z-50 flex items-center justify-center px-4"
+      className="fixed inset-0 z-50 lg:flex items-center justify-center px-4 hidden"
       role="dialog"
       aria-modal="true"
       aria-label="Contact us dialog"

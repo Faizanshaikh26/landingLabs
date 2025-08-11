@@ -4,8 +4,14 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 
-import retailCol from "../assets/images/retail-IndustriesCol.jpg.png"
+
 import retail from "../assets/images/retail-Industries.jpg"
+import finance from "../assets/images/finance-industries.jpg"
+import realEstate from "../assets/images/realEstate-industries.jpg"
+import healthCare from "../assets/images/healthCare-industries.jpg"
+import foodAndRestaurant from "../assets/images/food-industries.jpg"
+import education from "../assets/images/education-industries.jpg"
+import techStartup from "../assets/images/tech-startUp-industries.jpg"
 
 const industries = [
   {
@@ -15,7 +21,7 @@ const industries = [
       "Elevate your retail business with AI-led personalization, virtual shopping assistants, automated customer service, demand forecasting, and optimized inventory.",
     fullDescription:
       "Elevate your retail business with AI-led personalization, virtual shopping assistants, automated customer service, demand forecasting, and optimized inventory. Our solutions help you enhance customer experience, streamline operations, and boost sales.",
-    imageUrl: retailCol,
+    imageUrl: retail,
   },
   {
     id: 2,
@@ -24,7 +30,7 @@ const industries = [
       "Leverage property listing marketplace, virtual tours, and AI-powered analytics to transform your real estate operations.",
     fullDescription:
       "Leverage property listing marketplace, virtual tours, and AI-powered analytics to transform your real estate operations. We provide tools for better client matching, efficient property management, and insightful market predictions.",
-    imageUrl: retail
+    imageUrl: realEstate,
   },
   {
     id: 3,
@@ -33,7 +39,7 @@ const industries = [
       "Personalize your banking experience, automate fraud detection, and optimize investment strategies with our AI-driven financial solutions.",
     fullDescription:
       "Personalize your banking experience, automate fraud detection, and optimize investment strategies with our AI-driven financial solutions. Secure and efficient, our platforms help you stay ahead in the competitive financial landscape.",
-    imageUrl: "https://cdn.pixabay.com/photo/2018/02/08/10/22/desk-3139127_640.jpg",
+    imageUrl: finance,
   },
   {
     id: 4,
@@ -42,7 +48,7 @@ const industries = [
       "Provide the best experience with AI-powered personalized learning paths, automated grading, and smart content recommendations.",
     fullDescription:
       "Provide the best experience with AI-powered personalized learning paths, automated grading, and smart content recommendations. Our educational tools foster engagement and improve learning outcomes for students of all ages.",
-    imageUrl: "https://cdn.pixabay.com/photo/2014/10/14/20/14/library-488690_640.jpg",
+    imageUrl: education,
   },
   {
     id: 5,
@@ -51,9 +57,29 @@ const industries = [
       "Revolutionize patient care with AI diagnostics, personalized treatment plans, and efficient hospital management systems.",
     fullDescription:
       "Revolutionize patient care with AI diagnostics, personalized treatment plans, and efficient hospital management systems. Improve patient outcomes and operational efficiency with our cutting-edge healthcare solutions.",
-    imageUrl: "https://cdn.pixabay.com/photo/2020/05/14/02/31/covid-19-5169689_640.jpg",
+    imageUrl: healthCare,
+  },
+  {
+    id: 6,
+    title: "Food & Restaurant",
+    description:
+      "Enhance dining experiences with AI-powered menu recommendations, smart ordering systems, and kitchen automation.",
+    fullDescription:
+      "Enhance dining experiences with AI-powered menu recommendations, smart ordering systems, and kitchen automation. From predictive inventory management to personalized marketing campaigns, our solutions help restaurants boost efficiency and customer satisfaction.",
+    imageUrl: foodAndRestaurant,
+  },
+
+  {
+    id: 7,
+    title: "Startup",
+    description:
+      "Empower your startup with scalable AI tools, lean process automation, and data-driven decision-making platforms.",
+    fullDescription:
+      "Empower your startup with scalable AI tools, lean process automation, and data-driven decision-making platforms. Our services help you reduce time-to-market, optimize resources, and scale your business sustainably from day one.",
+    imageUrl: techStartup,
   },
 ];
+
 
 export function Industries() {
   const [activeIndex, setActiveIndex] = useState(0);
