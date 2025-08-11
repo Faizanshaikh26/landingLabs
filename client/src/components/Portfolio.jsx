@@ -246,7 +246,7 @@ export default function Portfolio() {
 
     <div className="min-h-screen bg-white text-primaryText p-6 sm:p-8 lg:p-12 py-20 mt-32">
       {/* Tabs */}
-      <div className="flex justify-center gap-3 sm:gap-4 mb-6">
+      <div className="flex justify-center gap-3 sm:gap-4 my-6 ">
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -339,3 +339,4 @@ export default function Portfolio() {
     </>
   );
 }
+

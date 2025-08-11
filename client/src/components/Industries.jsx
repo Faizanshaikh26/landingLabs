@@ -3,6 +3,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+
+import retailCol from "../assets/images/retail-IndustriesCol.jpg.png"
+import retail from "../assets/images/retail-Industries.jpg"
+
 const industries = [
   {
     id: 1,
@@ -11,7 +15,7 @@ const industries = [
       "Elevate your retail business with AI-led personalization, virtual shopping assistants, automated customer service, demand forecasting, and optimized inventory.",
     fullDescription:
       "Elevate your retail business with AI-led personalization, virtual shopping assistants, automated customer service, demand forecasting, and optimized inventory. Our solutions help you enhance customer experience, streamline operations, and boost sales.",
-    imageUrl: "https://cdn.pixabay.com/photo/2014/08/26/15/22/fish-market-428058_640.jpg",
+    imageUrl: retailCol,
   },
   {
     id: 2,
@@ -20,7 +24,7 @@ const industries = [
       "Leverage property listing marketplace, virtual tours, and AI-powered analytics to transform your real estate operations.",
     fullDescription:
       "Leverage property listing marketplace, virtual tours, and AI-powered analytics to transform your real estate operations. We provide tools for better client matching, efficient property management, and insightful market predictions.",
-    imageUrl: "https://cdn.pixabay.com/photo/2024/09/17/11/19/real-estate-9053405_640.jpg",
+    imageUrl: retail
   },
   {
     id: 3,

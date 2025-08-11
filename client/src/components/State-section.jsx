@@ -38,19 +38,28 @@ const LogoMarquee = ({ logos, direction = "left" }) => (
   >
     {/* Marquee Track */}
     <div
-      className={`flex gap-4 sm:gap-6 md:gap-8 w-max ${
-        direction === "right" ? "animate-marquee-right" : "animate-marquee-left"
-      }`}
+  className={`flex w-max ${
+    direction === "right" ? "animate-marquee-right" : "animate-marquee-left"
+  }`}
+>
+  {[...logos, ...logos].map((src, index) => (
+    <div
+      key={index}
+      className="flex items-center justify-center 
+                 h-20 w-32 mx-3  /* mobile default */
+                 sm:h-24 sm:w-40 sm:mx-4 /* small screens+ */
+                 md:h-32 md:w-48 md:mx-6 /* desktop */ 
+                 shrink-0"
     >
-      {[...logos, ...logos].map((src, index) => (
-        <img
-          key={index}
-          src={src}
-          alt={`Logo ${index}`}
-          className="h-14 sm:h-16 md:h-20 lg:h-28 xl:h-32 w-auto max-w-[200px] object-contain opacity-80 hover:scale-110 transition-transform duration-300"
-        />
-      ))}
+      <img
+        src={src}
+        alt={`Logo ${index}`}
+        className="max-h-full max-w-full object-contain opacity-80 hover:scale-110 transition-transform duration-300"
+      />
     </div>
+  ))}
+</div>
+
 
     {/* Styles */}
     <style jsx>{`
