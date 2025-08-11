@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export default function ServiceCard({
   iconSrc,
@@ -8,18 +8,6 @@ export default function ServiceCard({
   className = "",
 }) {
   const [isHovered, setIsHovered] = useState(false);
-  const [showHoverImage, setShowHoverImage] = useState(false);
-
-  // Delay image change on hover
-  useEffect(() => {
-    let timer;
-    if (isHovered) {
-      timer = setTimeout(() => setShowHoverImage(true), 150); // 150ms delay
-    } else {
-      setShowHoverImage(false); // instantly back to normal image
-    }
-    return () => clearTimeout(timer);
-  }, [isHovered]);
 
   const cardStyle = {
     clipPath: `
@@ -38,7 +26,7 @@ export default function ServiceCard({
     `,
     borderRadius: "16px",
     backgroundColor: isHovered ? "#FFFBED" : "white",
-    transition: "background-color 0.3s ease, transform 0.3s ease",
+    transition: "background-color 0.3s ease, transform 0.3s ease", // smooth background + movement
   };
 
   return (
@@ -51,11 +39,11 @@ export default function ServiceCard({
       {/* Image Section */}
       <div className="w-full flex justify-center mb-6 transition-all duration-300 ease-in-out">
         <img
-          src={showHoverImage ? hoverIconSrc : iconSrc}
+          src={isHovered ? hoverIconSrc : iconSrc}
           alt="icon"
           className="w-full h-36 object-contain transition-transform duration-300 ease-in-out"
           style={{
-            transform: isHovered ? "scale(1.05)" : "scale(1)",
+            transform: isHovered ? "scale(1.05)" : "scale(1)", // subtle zoom
           }}
         />
       </div>
