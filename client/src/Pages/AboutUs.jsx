@@ -764,7 +764,7 @@ export default function AboutUs() {
 
   const ScrollSlideInFromRight = ({ children, delay = 0 }) => (
     <motion.div
-      initial={{ opacity: 0, x: 30 }}
+      initial={{ opacity: 0, x: 20  }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay, ease: 'easeOut' }}
       viewport={{ once: false, amount: 0.2 }}
@@ -1075,7 +1075,7 @@ export default function AboutUs() {
       variants={fadeUpVariant}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: true}}
     >
       <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
         {/* Images */}
