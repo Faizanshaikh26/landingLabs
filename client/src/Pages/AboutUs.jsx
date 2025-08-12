@@ -764,35 +764,16 @@ export default function AboutUs() {
 
   const ScrollSlideInFromRight = ({ children, delay = 0 }) => (
     <motion.div
-      initial={{ opacity: 0, x: 10 }}
+      initial={{ opacity: 0, x: 60 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay, ease: 'easeOut' }}
-      viewport={{ once: false, amount: 0.4 }}
+      viewport={{ once: false, amount: 0.2 }}
     >
       {children}
     </motion.div>
   );
 
-  const ScrollFlipIn = ({ children, delay = 0 }) => (
-    <motion.div
-      initial={{
-        opacity: 0,
-        rotateX: -90,
-        scale: 0.9,
-        transformOrigin: 'bottom center'
-      }}
-      whileInView={{
-        opacity: 1,
-        rotateX: 0,
-        scale: 1
-      }}
-      transition={{ duration: 0.7, delay, ease: 'easeOut' }}
-      style={{ perspective: 1000 }}
-      viewport={{ once: false, amount: 0.15 }}
-    >
-      {children}
-    </motion.div>
-  );
+  
 
   // Fade up variant for reuse
   const fadeUpVariant = {
