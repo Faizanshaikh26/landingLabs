@@ -263,13 +263,13 @@ const servicesData = [
 ];
 
 const containerVariants = {
-  hidden: { opacity: 0 },
+  hidden: {},
   show: {
-    opacity: 1,
     transition: {
       staggerChildren: 0.15,
-    },
-  },
+      delayChildren: 0.1
+    }
+  }
 };
 
 const cardVariants = {
@@ -277,11 +277,8 @@ const cardVariants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut",
-    },
-  },
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
 };
 
 export default function ServicesSnapshot() {
@@ -306,18 +303,21 @@ export default function ServicesSnapshot() {
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: false, amount: 0.15 }}
         >
           {servicesData.map((service, index) => {
             const isDown = index % 2 === 1;
             return (
-              <motion.div key={service.id} variants={cardVariants}>
+              <motion.div
+                key={service.id}
+                variants={cardVariants}
+                className={isDown ? "xl:translate-y-24" : "xl:translate-y-0"}
+              >
                 <ServiceCard
                   number={`/${String(index + 1).padStart(2, "0")}`}
                   title={service.title}
                   iconSrc={service.image}
                   hoverIconSrc={service.hoverImage}
-                  className={isDown ? "xl:translate-y-24" : "xl:translate-y-0"}
                 />
               </motion.div>
             );
