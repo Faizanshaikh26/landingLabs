@@ -734,77 +734,74 @@ import {
   PanelsTopLeftIcon
 } from 'lucide-react';
 import StateSection from '../components/State-section';
-import {  motion } from 'framer-motion';
-
+import { useAnimation, motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 
 export default function AboutUs() {
 
- 
+ const ScrollFadeIn = ({ children, delay = 0 }) => (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay }}
+      viewport={{ once: false, amount: 0.2 }}
+    >
+      {children}
+    </motion.div>
+  );
 
-// Fade in & move up
-const ScrollFadeIn = ({ children, delay = 0 }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay }}
-    viewport={{ once: false, amount: 0.2 }}
-  >
-    {children}
-  </motion.div>
-);
+  const ScrollSlideInFromLeft = ({ children, delay = 0 }) => (
+    <motion.div
+      initial={{ opacity: 0, x: -100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, delay, ease: 'easeOut' }}
+      viewport={{ once: false, amount: 0.2 }}
+    >
+      {children}
+    </motion.div>
+  );
 
-// Slide in from left
-const ScrollSlideInFromLeft = ({ children }) => (
-  <motion.div
-    initial={{ opacity: 0, x: -100 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    viewport={{ once: true, amount: 0.2 }}
-  >
-    {children}
-  </motion.div>
-);
+  const ScrollSlideInFromRight = ({ children, delay = 0 }) => (
+    <motion.div
+      initial={{ opacity: 0, x: 100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, delay, ease: 'easeOut' }}
+      viewport={{ once: false, amount: 0.4 }}
+    >
+      {children}
+    </motion.div>
+  );
 
-// Slide in from right
-const ScrollSlideInFromRight = ({ children }) => (
-  <motion.div
-    initial={{ opacity: 0, x: 100 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    viewport={{ once: false, amount: 0.2 }}
-  >
-    {children}
-  </motion.div>
-);
+  const ScrollFlipIn = ({ children, delay = 0 }) => (
+    <motion.div
+      initial={{
+        opacity: 0,
+        rotateX: -90,
+        scale: 0.9,
+        transformOrigin: 'bottom center'
+      }}
+      whileInView={{
+        opacity: 1,
+        rotateX: 0,
+        scale: 1
+      }}
+      transition={{ duration: 0.7, delay, ease: 'easeOut' }}
+      style={{ perspective: 1000 }}
+      viewport={{ once: false, amount: 0.15 }}
+    >
+      {children}
+    </motion.div>
+  );
 
-// Flip in
-const ScrollFlipIn = ({ children, delay = 0 }) => (
-  <motion.div
-    initial={{
-      opacity: 0,
-      rotateX: -90,
-      scale: 0.9,
-      transformOrigin: "bottom center",
-    }}
-    whileInView={{
-      opacity: 1,
-      rotateX: 0,
-      scale: 1,
-    }}
-    transition={{ duration: 0.7, delay, ease: "easeOut" }}
-    viewport={{ once: false, amount: 0.15 }}
-    style={{ perspective: 1000 }}
-  >
-    {children}
-  </motion.div>
-);
-
-
-
+  // Fade up variant for reuse
   const fadeUpVariant = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut' }
+    },
   };
 
   const data = [
@@ -853,9 +850,7 @@ const ScrollFlipIn = ({ children, delay = 0 }) => (
     },
   ];
 
-
-
-  const duplicatedMembers = [...teamMembers, ...teamMembers,...teamMembers,...teamMembers]
+  const duplicatedMembers = [...teamMembers, ...teamMembers, ...teamMembers, ...teamMembers];
   return (
    <>
       <Navbar />
@@ -1084,7 +1079,7 @@ const ScrollFlipIn = ({ children, delay = 0 }) => (
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: false ,amount:0.2}}
+              viewport={{ once: true }}
             >
               <h1 className="text-2xl md:text-4xl font-semibold text-primaryText">
                 Landing <span className="text-orange-500">Labs</span>
@@ -1094,69 +1089,64 @@ const ScrollFlipIn = ({ children, delay = 0 }) => (
               </p>
             </motion.section>
 
-            <motion.div
-              className="bg-[#100604] text-black max-w-7xl mx-auto px-6 py-16 rounded-md"
-              variants={fadeUpVariant}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
-                {/* Images */}
-                <div className="flex flex-col md:flex-row gap-6 w-full justify-center md:justify-start">
-                  <motion.img
-                    src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.png.webp"
-                    alt="Creative Agency"
-                    className="w-full max-w-[260px] object-contain"
-                    initial={{ x: -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.6 }}
-                       viewport={{ once: false, amount: 0.2 }}
-                  />
-                  <motion.img
-                    src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.-1.png.webp"
-                    alt="Landing Labs"
-                    className="w-full max-w-[260px] object-contain"
-                    initial={{ x: 60, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: false , amount:0.2 }}
-                    
-                  />
-                </div>
+             <motion.div
+      className="bg-[#100604] text-black max-w-7xl mx-auto px-6 py-16 rounded-md"
+      variants={fadeUpVariant}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
+    >
+      <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+        {/* Images */}
+        <motion.img
+          src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.png.webp"
+          alt="Creative Agency"
+          className="w-full max-w-[260px] object-contain"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.2 }}
+        />
+        <motion.img
+          src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.-1.png.webp"
+          alt="Landing Labs"
+          className="w-full max-w-[260px] object-contain"
+          initial={{ x: 60, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.2 }}
+        />
 
-                {/* Text */}
-                <motion.div
-                  className="w-full"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7 }}
-                  viewport={{ once: false, amount: 0.2 }}
-            
-                >
-                  <p className="text-orange-500 font-semibold text-lg mb-2">2023 – 2025</p>
-                  <h2 className="text-black text-2xl md:text-3xl font-bold mb-6">
-                    We collaborate with:
-                  </h2>
-                  <ul className="space-y-3 text-[#DDD] text-base leading-relaxed">
-                    <li>Ambitious startups ready to launch.</li>
-                    <li>SMEs looking to scale operations.</li>
-                    <li>Corporates seeking transformation.</li>
-                    <li>
-                      Politicians, public figures, and influencers building digital authority.
-                    </li>
-                  </ul>
-                  <motion.button
-                    className="mt-8 bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-md font-semibold transition"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    viewport={{ once: false, amount: 0.2 }}
-                  >
-                    CONTACT US
-                  </motion.button>
-                </motion.div>
-              </div>
-            </motion.div>
+        {/* Text */}
+        <motion.div
+          className="w-full"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: false, amount: 0.2 }}
+        >
+          <p className="text-orange-500 font-semibold text-lg mb-2">2023 – 2025</p>
+          <h2 className="text-black text-2xl md:text-3xl font-bold mb-6">
+            We collaborate with:
+          </h2>
+          <ul className="space-y-3 text-[#DDD] text-base leading-relaxed">
+            <li>Ambitious startups ready to launch.</li>
+            <li>SMEs looking to scale operations.</li>
+            <li>Corporates seeking transformation.</li>
+            <li>
+              Politicians, public figures, and influencers building digital authority.
+            </li>
+          </ul>
+          <motion.button
+            className="mt-8 bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-md font-semibold transition"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            CONTACT US
+          </motion.button>
+        </motion.div>
+      </div>
+    </motion.div>
           </div>
         </div>
 
