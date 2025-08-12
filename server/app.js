@@ -6,6 +6,8 @@ dotenv.config();
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import contactRoutes from './routes/contact.js';
+import ClientRoutes from '../server/routes/client/client.js';
+// import AdminRoutes from '../server/routes/admin/admin.js';
 import careerRoutes from './routes/career.js';
 import appointmentRoutes from './routes/appointment.js';
 import authRoutes from './routes/auth.js';
@@ -31,8 +33,6 @@ cloudinary.config({
 app.use('/api', contactRoutes);
 app.use('/api/career',  careerRoutes);
 app.use('/api',  appointmentRoutes);
-app.use('/auth', authRoutes);
-
 app.get('/', (req, res) => {
   res.send('Landing Labs');
 });

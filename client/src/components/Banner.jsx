@@ -35,11 +35,13 @@
 //   );
 // }
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import bannerImg from "../assets/images/banner-image.jpg";
+import AppointmentDialog from "./Appointment";
 
 export default function Banner() {
+  const [open, setOpen] = useState(false);
   return (
 
 
@@ -80,6 +82,7 @@ export default function Banner() {
             className="bg-orange-500 hover:bg-[#A2D5C6] text-white px-6 py-3 sm:px-7 sm:py-4 rounded-lg font-medium transition"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+             onClick={() => setOpen(true)}
           >
             Book a free Consultation
           </motion.button>
@@ -87,6 +90,7 @@ export default function Banner() {
       </div>
     </motion.div>
 
+    <AppointmentDialog isOpen={open} onClose={() => setOpen(false)} />
     </div>
   );
 }

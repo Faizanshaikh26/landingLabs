@@ -11,6 +11,7 @@ import Footer from './Footer'
 import { Industries } from './components/Industries'
 import Process from './components/Process'
 import NavbarServices from './components/nav-services'
+import Loading from './components/Loading'
 
 
 
@@ -25,8 +26,7 @@ export default function Home() {
       <Hero />
 
 
-
-
+{/* <Loading/> */}
       <StateSection />
 
 

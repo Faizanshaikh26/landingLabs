@@ -329,7 +329,8 @@ import {
 import { Link } from "react-router-dom"
 
 export default function Pricing() {
-  const [openIndex, setOpenIndex] = useState(0)
+  const [openIndex, setOpenIndex] = useState(-1)
+
 
   const plans = [
     {
@@ -448,7 +449,7 @@ export default function Pricing() {
     },
   ]
 
-  const toggleFAQ = (index) => {
+   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? -1 : index)
   }
 

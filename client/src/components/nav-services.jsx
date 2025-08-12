@@ -84,7 +84,7 @@ export default function NavbarServices() {
         {/* Left Section */}
         <div className="space-y-2">
           <img src={currentTab.icon} alt="icon" className="w-8 h-8 object-contain" />
-          <h2 className="text-base font-semibold">{currentTab.title}</h2>
+          <h2 className="text-base font-semibold  text-primaryText">{currentTab.title}</h2>
           <p className="text-xs md:text-sm text-gray-700 leading-relaxed">{currentTab.intro}</p>
         </div>
 
@@ -100,7 +100,7 @@ export default function NavbarServices() {
                   : "hover:bg-gray-50"
               }`}
             >
-              <span className="text-xs md:text-sm font-medium text-left">{service.name}</span>
+              <span className="text-xs text-primaryText md:text-sm font-medium text-left">{service.name}</span>
               <span className="bg-accent p-1 rounded-full">
                 <ArrowRight className="w-3.5 h-3.5 text-black" />
               </span>

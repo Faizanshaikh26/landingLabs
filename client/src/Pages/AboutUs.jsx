@@ -735,134 +735,77 @@ import {
 } from 'lucide-react';
 import StateSection from '../components/State-section';
 import { useAnimation, motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+
 
 
 export default function AboutUs() {
 
-  const ScrollFadeIn = ({ children, delay = 0 }) => {
-    const controls = useAnimation();
-    const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+ 
 
-    useEffect(() => {
-      if (inView) controls.start('visible');
-    }, [controls, inView]);
+// Fade in & move up
+const ScrollFadeIn = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay }}
+    viewport={{ once: true, amount: 0.2 }}
+  >
+    {children}
+  </motion.div>
+);
 
-    return (
-      <motion.div
-        ref={ref}
-        initial="hidden"
-        animate={controls}
-        transition={{ duration: 0.6, delay }}
-        variants={{
-          hidden: { opacity: 0, y: 50 },
-          visible: { opacity: 1, y: 0 },
-        }}
-      >
-        {children}
-      </motion.div>
-    );
-  };
+// Slide in from left
+const ScrollSlideInFromLeft = ({ children }) => (
+  <motion.div
+    initial={{ opacity: 0, x: -100 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.2 }}
+  >
+    {children}
+  </motion.div>
+);
 
-  const ScrollSlideInFromLeft = ({ children }) => {
-    const controls = useAnimation();
-    const [ref, inView] = useInView({
-      threshold: [0.1, 0.2, 0.3, 0.4, 0.5], // triggers at partial visibility
-      triggerOnce: true,
-    });
+// Slide in from right
+const ScrollSlideInFromRight = ({ children }) => (
+  <motion.div
+    initial={{ opacity: 0, x: 100 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.2 }}
+  >
+    {children}
+  </motion.div>
+);
 
-    useEffect(() => {
-      if (inView) {
-        controls.start('visible');
-      }
-    }, [inView, controls]);
+// Flip in
+const ScrollFlipIn = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{
+      opacity: 0,
+      rotateX: -90,
+      scale: 0.9,
+      transformOrigin: "bottom center",
+    }}
+    whileInView={{
+      opacity: 1,
+      rotateX: 0,
+      scale: 1,
+    }}
+    transition={{ duration: 0.7, delay, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.15 }}
+    style={{ perspective: 1000 }}
+  >
+    {children}
+  </motion.div>
+);
 
-    return (
-      <motion.div
-        ref={ref}
-        initial="hidden"
-        animate={controls}
-        variants={{
-          hidden: { opacity: 0, x: -100 },
-          visible: { opacity: 1, x: 0 },
-        }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-      >
-        {children}
-      </motion.div>
-    );
-  };
 
-
-  const ScrollSlideInFromRight = ({ children }) => {
-    const controls = useAnimation();
-    const [ref, inView] = useInView({
-      threshold: [0.1, 0.2, 0.3, 0.4, 0.5],
-      triggerOnce: true,
-    });
-
-    useEffect(() => {
-      if (inView) {
-        controls.start('visible');
-      }
-    }, [inView, controls]);
-
-    return (
-      <motion.div
-        ref={ref}
-        initial="hidden"
-        animate={controls}
-        variants={{
-          hidden: { opacity: 0, x: 10 },
-          visible: { opacity: 1, x: 0 },
-        }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-      >
-        {children}
-      </motion.div>
-    );
-  };
 
   const fadeUpVariant = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
   };
-
-
-const ScrollFlipIn = ({ children, delay = 0 }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
-
-  useEffect(() => {
-    if (inView) controls.start('visible');
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      transition={{ duration: 0.7, delay, ease: 'easeOut' }}
-      variants={{
-        hidden: {
-          opacity: 0,
-          rotateX: -90,
-          scale: 0.9,
-          transformOrigin: 'bottom center',
-        },
-        visible: {
-          opacity: 1,
-          rotateX: 0,
-          scale: 1,
-        },
-      }}
-      style={{ perspective: 1000 }} 
-    >
-      {children}
-    </motion.div>
-  );
-};
-
 
   const data = [
     {

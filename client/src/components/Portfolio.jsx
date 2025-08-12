@@ -214,58 +214,104 @@ export default function Portfolio() {
         },
     ];
 
-    return (
-        <div className="min-h-[70vh] md:min-h-screen   ">
-            <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-                {/* Header */}
-                <motion.div
-                    className="text-center mb-12"
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: 'easeOut' }}
-                    viewport={{ once: true }}
-                >
-                    <h2 className="text-3xl md:text-4xl font-bold text-accent">
-                        Our <span className="text-secondaryText">Portfolio</span>
-                    </h2>
-                    <p className="mt-4 md:text-2xl text-primaryText">
-                        A full-service digital growth lab for startups, creators,
-                        <span className="text-secondaryText"> and challenger brands who want to win.</span>
-                    </p>
-                </motion.div>
+  return (
+<>
 
-                {/* Grid */}
-                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-                    {items.map((item, i) => (
-                        <motion.a
-                            key={i}
-                            href="#"
-                            custom={i}
-                            variants={cardVariants}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            className={`group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80 ${item.span || ''}`}
-                        >
-                            <img
-                                src={item.image}
-                                alt={item.label}
-                                loading="lazy"
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
-                            />
-                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-50 transition duration-300 group-hover:opacity-60" />
-                            <motion.span
-                                initial={{ opacity: 0, y: 10 }}
-                                whileHover={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="relative z-10 ml-4 mb-3 inline-block text-sm text-white md:text-lg"
-                            >
-                                {item.label}
-                            </motion.span>
-                        </motion.a>
-                    ))}
-                </div>
+<Navbar/>
+
+    <div className="min-h-screen bg-white text-primaryText p-6 sm:p-8 lg:p-12 py-20 mt-32">
+      {/* Tabs */}
+      <div className="flex justify-center gap-3 sm:gap-4 mb-6">
+        {tabs.map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`px-4 sm:px-6 py-2 border border-yellow-400 text-base sm:text-lg font-semibold rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 transition ${
+              activeTab === tab ? "bg-yellow-400 text-black" : "bg-transparent"
+            }`}
+            aria-pressed={activeTab === tab}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+
+      {/* Grid with equal height cards */}
+      <div className="grid md:grid-cols-2 gap-5">
+        {cards.map((card, index) => (
+          <article
+            key={index}
+            className="bg-primaryCardBg border border-yellow-500 p-4 flex flex-col justify-between h-[420px] relative rounded-md overflow-hidden"
+            aria-labelledby={`card-title-${index}`}
+          >
+            <img
+              src={card.image}
+              alt={`${card.title} preview`}
+              className="w-full h-64 sm:h-56 md:h-60 object-cover mb-3 rounded"
+              loading="lazy"
+            />
+
+            <div>
+              <h2 id={`card-title-${index}`} className="text-2xl font-semibold mb-2">
+                {card.title}
+              </h2>
+
+              <div className="flex flex-wrap gap-3 items-center text-sm text-secondaryText">
+                {card.tags.map((tag, i) => {
+                  const Icon = tag.icon;
+                  return (
+                    <span
+                      key={i}
+                      className="flex items-center gap-2 bg-white/3 px-2 py-1 rounded"
+                    >
+                      <Icon className="w-4 h-4 text-yellow-400" aria-hidden="true" />
+                      <span className="text-xs sm:text-sm">{tag.label}</span>
+                    </span>
+                  );
+                })}
+              </div>
             </div>
-        </div>
-    );
+
+            {/* Contact icons only for Elan */}
+            {card.showContacts && (
+              <div className="absolute bottom-4 right-4 flex flex-col gap-3">
+                <a
+                  href="mailto:hello@example.com"
+                  className="bg-yellow-400 text-black p-2 rounded-full shadow-md inline-flex items-center justify-center"
+                  aria-label="Email Elan"
+                  rel="noopener noreferrer"
+                >
+                  <Mail size={18} />
+                </a>
+
+                <a
+                  href="tel:+917387392708"
+                  className="bg-gray-800 border border-gray-700 text-white p-2 rounded-full inline-flex items-center justify-center"
+                  aria-label="Call Elan"
+                  rel="noopener noreferrer"
+                >
+                  <Phone size={18} />
+                </a>
+
+                {/* Using MessageSquare as WhatsApp alternative */}
+                <a
+                  href="https://wa.me/917387392708"
+                  target="_blank"
+                  className="bg-green-500 text-white p-2 rounded-full inline-flex items-center justify-center"
+                  aria-label="WhatsApp Elan"
+                  rel="noopener noreferrer"
+                >
+                  <MessageSquare size={18} />
+                </a>
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+
+<Footer/>
+    </>
+  );
 }
+

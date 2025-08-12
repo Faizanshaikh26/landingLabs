@@ -1,19 +1,19 @@
 
 import { motion } from 'framer-motion';
 
-import Aaradhya from '../assets/images/Aaradhya.Logo TP-white.png';
-import Crunchy from '../assets/images/Crunchy.Logo TP.png';
-import EzeDesign from '../assets/images/Eze Design.Logo TP.png';
-import Ezepune from '../assets/images/Ezepune.Logo TP.png';
-import Kiara from '../assets/images/Kiara.Logo TP.png';
-import Kohinoor from '../assets/images/Kohinoor.Logo TP-white.png';
-import MadakeJewellers from '../assets/images/Madake Jewellers.Logo TP-white.png';
-import MrMS from '../assets/images/Mr& MS.Logo TP-white.png';
-import NikolEV from '../assets/images/NikolEV.Logo TP.png';
-import Sidenest from '../assets/images/Sidenest.Logo TP-white.png';
-import SuncityVilla from '../assets/images/Suncity Villa.Logo TP-white.png';
-import Techmark from '../assets/images/Techmark.Logo TP-white.png';
-import Zelc from '../assets/images/Zelc.Logo TP-white.png';
+import Aaradhya from '../assets/images/clientLogo/Aaradhya.Logo TP-white.png';
+import Crunchy from '../assets/images/clientLogo/Crunchy.Logo TP.png';
+import EzeDesign from '../assets/images/clientLogo/Eze Design.Logo TP.png';
+import Ezepune from '../assets/images/clientLogo/Ezepune.Logo TP.png';
+import Kiara from '../assets/images/clientLogo/Kiara.Logo TP.png';
+import Kohinoor from '../assets/images/clientLogo/Kohinoor.Logo TP-white.png';
+import MadakeJewellers from '../assets/images/clientLogo/Madake Jewellers.Logo TP-white.png';
+import MrMS from '../assets/images/clientLogo/Mr& MS.Logo TP-white.png';
+import NikolEV from '../assets/images/clientLogo/NikolEV.Logo TP.png';
+import Sidenest from '../assets/images/clientLogo/Sidenest.Logo TP-white.png';
+import SuncityVilla from '../assets/images/clientLogo/Suncity Villa.Logo TP-white.png';
+import Techmark from '../assets/images/clientLogo/Techmark.Logo TP-white.png';
+import Zelc from '../assets/images/clientLogo/Zelc.Logo TP-white.png';
 
 const stats = [
   { label: 'Projects Delivered', value: '100+' },
@@ -38,19 +38,28 @@ const LogoMarquee = ({ logos, direction = "left" }) => (
   >
     {/* Marquee Track */}
     <div
-      className={`flex gap-4 sm:gap-6 md:gap-8 w-max ${
-        direction === "right" ? "animate-marquee-right" : "animate-marquee-left"
-      }`}
+  className={`flex w-max ${
+    direction === "right" ? "animate-marquee-right" : "animate-marquee-left"
+  }`}
+>
+  {[...logos, ...logos].map((src, index) => (
+    <div
+      key={index}
+      className="flex items-center justify-center 
+                 h-20 w-32 mx-3  /* mobile default */
+                 sm:h-24 sm:w-40 sm:mx-4 /* small screens+ */
+                 md:h-32 md:w-48 md:mx-6 /* desktop */ 
+                 shrink-0"
     >
-      {[...logos, ...logos].map((src, index) => (
-        <img
-          key={index}
-          src={src}
-          alt={`Logo ${index}`}
-          className="h-14 sm:h-16 md:h-20 lg:h-28 xl:h-32 w-auto max-w-[200px] object-contain opacity-80 hover:scale-110 transition-transform duration-300"
-        />
-      ))}
+      <img
+        src={src}
+        alt={`Logo ${index}`}
+        className="max-h-full max-w-full object-contain opacity-80 hover:scale-110 transition-transform duration-300"
+      />
     </div>
+  ))}
+</div>
+
 
     {/* Styles */}
     <style jsx>{`
