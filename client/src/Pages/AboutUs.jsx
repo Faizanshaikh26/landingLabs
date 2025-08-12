@@ -1111,7 +1111,7 @@ export default function AboutUs() {
           src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.-1.png.webp"
           alt="Landing Labs"
           className="w-full max-w-[260px] object-contain"
-          initial={{ x: 10, opacity: 0 }}
+          initial={{ x: 60, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.2 }}
