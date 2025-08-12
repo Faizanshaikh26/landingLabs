@@ -73,7 +73,7 @@ const itemVariants = {
           isScrolled
             ? scrollDirection
               ? "backdrop-blur-md bg-gray-950/70 text-white py-2 shadow-md "
-              : "backdrop-blur-md bg-gray-950/70 py-2 shadow-md"
+              : "backdrop-blur-md bg-gray-950/70  py-2 shadow-md"
             : "bg-transparent py-5 "
         }`}
       >
@@ -282,7 +282,7 @@ const itemVariants = {
               to={to}
               className={({ isActive }) =>
                 isActive
-                  ? "text-primaryText text-lg"
+                  ? "text-accent text-lg"
                   : "hover:text-accentHover text-lg"
               }
               onClick={() => setIsOpen(false)}

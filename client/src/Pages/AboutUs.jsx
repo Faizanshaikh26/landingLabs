@@ -918,7 +918,7 @@ const ScrollFlipIn = ({ children, delay = 0 }) => {
       <Navbar />
 
 
-      <div className="py-14 md:py-32 text-[#EAEAEA]">
+      <div className="py-14 md:py-14 text-[#EAEAEA]">
 
         <div className=" text-black py-16 px-6 md:px-12">
 
@@ -1122,10 +1122,10 @@ const ScrollFlipIn = ({ children, delay = 0 }) => {
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="px-6 py-3 border border-black text-black bg-orange-400 font-medium rounded-md hover:bg-gray-100 transition">
+                  <button className="px-6 py-3 md:px-16  border border-black text-black bg-orange-400 font-medium rounded-md hover:bg-gray-100 transition">
                     LEARN MORE
                   </button>
-                  <button className="px-6 py-3 bg-orange-500 text-black font-medium rounded-md hover:bg-orange-600 transition">
+                  <button className="px-6 py-3 md:px-16  bg-orange-500 text-black font-medium rounded-md hover:bg-orange-600 transition">
                     GET STARTED
                   </button>
                 </div>
@@ -1134,8 +1134,7 @@ const ScrollFlipIn = ({ children, delay = 0 }) => {
           </ScrollSlideInFromRight>
 
 
-
-          <div className="py-16">
+          <div className="py-16 ">
             <motion.section
               className="text-center max-w-lg mx-auto py-8 px-4"
               initial={{ scale: 0.8, opacity: 0 }}
@@ -1152,7 +1151,7 @@ const ScrollFlipIn = ({ children, delay = 0 }) => {
             </motion.section>
 
             <motion.div
-              className="bg-[#100604] text-black max-w-7xl mx-auto px-6 py-16 rounded-md"
+              className="bg-[#100604] text-black max-w-7xl mx-auto px-6 py-16 md:mx-10 rounded-md md:pt-1"
               variants={fadeUpVariant}
               initial="hidden"
               whileInView="visible"
@@ -1194,7 +1193,7 @@ const ScrollFlipIn = ({ children, delay = 0 }) => {
                   <h2 className="text-black text-2xl md:text-3xl font-bold mb-6">
                     We collaborate with:
                   </h2>
-                  <ul className="space-y-3 text-[#DDD] text-base leading-relaxed">
+                  <ul className="space-y-3 md:space-y-0 text-[#DDD] text-base leading-relaxed">
                     <li>Ambitious startups ready to launch.</li>
                     <li>SMEs looking to scale operations.</li>
                     <li>Corporates seeking transformation.</li>

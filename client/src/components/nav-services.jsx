@@ -96,7 +96,7 @@ export default function NavbarServices() {
               onClick={() => setActiveService(index)}
               className={`w-full flex items-center justify-between px-3 py-2 border rounded-md transition ${
                 index === activeService
-                  ? "bg-yellow-50 border-yellow-300"
+                  ? "bg-yellow-50 border-yellow-300 text-black"
                   : "hover:bg-gray-50"
               }`}
             >

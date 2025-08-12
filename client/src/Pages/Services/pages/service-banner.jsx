@@ -15,7 +15,7 @@ export default function ServiceBanner() {
   "Content Marketing",
 ];
   return (
-   <div className="h-[70vh] bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+   <div className="h-[70vh] bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden md:mt-21">
       {/* Background pattern/texture */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
 

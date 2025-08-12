@@ -108,7 +108,7 @@ export default function ServiceCard() {
   return (
     <div className="bg-slate-900 py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-row-2 md:w-150 md:ml-17 lg:grid-cols-3 gap-6">
           {servicesData.map((service, index) => (
             <Link
               to={service.path}

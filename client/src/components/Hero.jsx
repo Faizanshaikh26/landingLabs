@@ -208,12 +208,12 @@ export default function HeroSection() {
     <h4 className="text-md md:text-lg font-medium text-orange-500">
       From AI-backed marketing funnels to custom-built CRMs
     </h4>
-    <h1 className="text-3xl mb-8 md:text-5xl font-bold mt-2 text-primaryText">
+    <h1 className="text-3xl mb-10 md:text-5xl font-bold mt-2 text-primaryText">
       —all under one roof.
     </h1>
   </div>
 
-  <div className="lg:max-w-7xl w-full mx-auto px-4 py-4 lg:py-16 relative">
+  <div className="lg:max-w-7xl w-full mx-auto px-4 py-4 md:py-20 lg:py-16 relative">
     {/* Background Image */}
     <div
       className="relative w-full h-[400px] bg-cover bg-center rounded-[5px] md:rounded-3xl "
@@ -222,7 +222,7 @@ export default function HeroSection() {
       {/* Floating Text Box */}
      <div
   className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#111] 
-  p-3 w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[70%] 
+  p-3 w-[90%] sm:w-[70%] md:w-[80%] lg:w-[50%] xl:w-[70%] 
   rounded-xl text-center shadow-md border border-gray-700 z-20
   [@media(max-width:350px)]:p-1"
 >

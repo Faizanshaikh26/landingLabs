@@ -296,7 +296,7 @@ export default function Career() {
             <img
               src="https://cdn.prod.website-files.com/65d5ac710278672f815e9202/65ec798689fd0e67cef30538_RolandAndLuisCropped.webp"
               alt="Team"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover md:mt-20"
             />
           </motion.div>
         </div>
