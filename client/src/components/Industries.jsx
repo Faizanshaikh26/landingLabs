@@ -93,6 +93,31 @@ export function Industries() {
     setActiveIndex((prevIndex) => (prevIndex === industries.length - 1 ? 0 : prevIndex + 1));
   };
 
+    const textContainer = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { staggerChildren: 0.15, duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const textItem = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 80 } },
+  };
+
+  const imageAnim = {
+    hidden: { opacity: 0, scale: 0.9, x: 40 },
+    show: {
+      opacity: 1,
+      scale: 1,
+      x: 0,
+      transition: { type: "spring", stiffness: 80, damping: 15 },
+    },
+    exit: { opacity: 0, scale: 0.9, x: -40, transition: { duration: 0.4 } },
+  };
+
   return (
     <section className="w-full lg:mt-29 pb-10 lg:pb-32  px-4 sm:px-6 lg:px-8  text-primaryText">
       <motion.h2
@@ -108,14 +133,17 @@ export function Industries() {
       <div className="container max-w-7xl mx-auto px-4 md:px-6">
         {/* Mobile Dropdown */}
         <div className="block md:hidden mb-10">
-          <label htmlFor="industrySelect" className="block text-sm font-medium text-primaryText mb-2">
+          <label
+            htmlFor="industrySelect"
+            className="block text-sm font-medium text-primaryText mb-2"
+          >
             Industries We Empower
           </label>
           <select
             id="industrySelect"
             value={activeIndex}
             onChange={(e) => setActiveIndex(Number(e.target.value))}
-            className="w-full border border-gray-600  text-primaryText px-4 py-2 rounded-md"
+            className="w-full border border-gray-600 text-primaryText px-4 py-2 rounded-md bg-transparent"
           >
             {industries.map((industry, index) => (
               <option key={industry.id} value={index}>
@@ -125,83 +153,117 @@ export function Industries() {
           </select>
         </div>
 
-        {/* Content Grid with animation */}
-        <div className="grid md:grid-cols-2 gap-8 items-center min-h-[400px]">
+        {/* Main Grid */}
+        <div className="grid md:grid-cols-2 gap-10 items-center min-h-[420px] relative">
+          {/* Left Content */}
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndustry.id + "-text"}
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 30 }}
-              transition={{ duration: 0.5 }}
+              variants={textContainer}
+              initial="hidden"
+              animate="show"
+              exit={{ opacity: 0, x: -40, transition: { duration: 0.4 } }}
             >
-              <h3 className="text-4xl md:text-5xl font-bold text-primaryText mb-4">
+              <motion.h3
+                variants={textItem}
+                className="text-4xl md:text-5xl font-bold mb-4"
+              >
                 {currentIndustry.title}
-              </h3>
-              <p className="text-secondaryText text-lg leading-relaxed mb-6">
+              </motion.h3>
+              <motion.p
+                variants={textItem}
+                className="text-secondaryText text-lg leading-relaxed mb-6"
+              >
                 {currentIndustry.description}
-              </p>
+              </motion.p>
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                variants={textItem}
+                whileHover={{
+                  scale: 1.07,
+                  boxShadow: "0px 5px 20px rgba(255,165,0,0.5)",
+                }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 border border-orange-500 text-primaryText rounded-full hover:bg-orange-500 hover:text-primaryText transition-colors duration-200"
+                className="px-6 py-3 border border-orange-500 text-primaryText rounded-full hover:bg-orange-500 hover:text-white transition-colors duration-200"
               >
                 Read More
               </motion.button>
             </motion.div>
           </AnimatePresence>
 
-          {/* Right Image with animation */}
+          {/* Right Image */}
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndustry.id + "-image"}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.5 }}
-              className="flex justify-center md:justify-end"
+              className="flex justify-center md:justify-end relative"
+              variants={imageAnim}
+              initial="hidden"
+              animate="show"
+              exit="exit"
             >
-              <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img
-                  src={currentIndustry.imageUrl || "/placeholder.svg"}
+              <div className="rounded-2xl overflow-hidden shadow-2xl relative group">
+                <motion.img
+                  src={currentIndustry.imageUrl}
                   alt={currentIndustry.title}
                   width={600}
                   height={400}
-                  className="object-cover w-full h-auto"
+                  className="object-cover w-full h-auto transform group-hover:scale-105 transition-transform duration-500"
+                />
+                {/* Floating glow effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3 }}
                 />
               </div>
             </motion.div>
           </AnimatePresence>
         </div>
 
-        {/* Desktop Carousel Navigation */}
+        {/* Desktop Carousel Controls */}
         <div className="hidden md:flex relative mt-16 items-center justify-center">
-          <button
+          <motion.button
             onClick={handlePrev}
-            className="absolute left-0 p-3 rounded-full bg-gray-800  hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500"
-            aria-label="Previous industry"
+            whileHover={{ scale: 1.1 }}
+            className="absolute left-0 p-3 rounded-full bg-gray-800 hover:bg-gray-700 focus:outline-none"
           >
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <svg
+              className="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
-          </button>
+          </motion.button>
 
           <div className="flex overflow-x-auto md:overflow-hidden space-x-8 px-4 md:px-12 scrollbar-hide">
             {industries.map((industry, index) => (
               <motion.div
                 key={industry.id}
                 onClick={() => setActiveIndex(index)}
-                className={`flex-shrink-0 flex flex-col items-center cursor-pointer group transition-all w-[180px] ${
-                  index === activeIndex ? "text-orange-500" : "text-primaryText"
+                whileHover={{ scale: 1.05, y: -3 }}
+                className={`flex-shrink-0 flex flex-col items-center cursor-pointer transition-all w-[180px] ${
+                  index === activeIndex
+                    ? "text-orange-500"
+                    : "text-primaryText"
                 }`}
-                whileHover={{ scale: 1.05 }}
               >
                 <div
                   className={`h-1 mb-4 rounded-full transition-all duration-300 ${
-                    index === activeIndex ? "w-24 bg-blue-500" : "w-12 bg-gray-600 group-hover:bg-gray-500"
+                    index === activeIndex
+                      ? "w-24 bg-orange-500"
+                      : "w-12 bg-gray-600"
                   }`}
                 />
-                <h4 className="text-lg font-semibold mb-1 text-center">{industry.title}</h4>
+                <h4 className="text-lg font-semibold mb-1 text-center">
+                  {industry.title}
+                </h4>
                 <p className="text-sm text-secondaryText text-center max-w-[180px] truncate">
                   {industry.description.split(".")[0]}...
                 </p>
@@ -209,17 +271,27 @@ export function Industries() {
             ))}
           </div>
 
-          <button
+          <motion.button
             onClick={handleNext}
-            className="absolute right-0 p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500"
-            aria-label="Next industry"
+            whileHover={{ scale: 1.1 }}
+            className="absolute right-0 p-3 rounded-full bg-gray-800 hover:bg-gray-700 focus:outline-none"
           >
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <svg
+              className="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
             </svg>
-          </button>
+          </motion.button>
         </div>
-      </div>
+        </div>
     </section>
   );
 }

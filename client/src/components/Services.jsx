@@ -288,7 +288,7 @@ export default function ServicesSnapshot() {
 
 
   return (
-    <div className="bg-black w-full text-white min-h-screen lg:p-8 rounded-t-[80px] py-10">
+    <div className="bg-black w-full text-white min-h-screen lg:p-8 rounded-t-[40px] md:rounded-t-[80px] py-10 bg-red">
       {/* Header */}
       <section className="text-center mx-auto mb-10">
         <h2 className="text-2xl md:text-4xl font-semibold text-[#EAEAEA]">
@@ -327,4 +327,3 @@ export default function ServicesSnapshot() {
     </div>
   );
 }
-
