@@ -41,8 +41,12 @@ import bannerImg from "../assets/images/banner-image.jpg";
 
 export default function Banner() {
   return (
+
+
+<div className="px-4 sm:px-6 lg:px-8 ">
+
     <motion.div
-      className="relative bg-[#060606] text-white h-auto min-h-[300px] rounded-lg max-w-7xl mx-auto my-10 mb-20 overflow-hidden"
+      className="relative bg-[#060606] text-white h-auto min-h-[300px] rounded-lg max-w-7xl mx-auto my-10 mb-20 overflow-hidden  "
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -82,5 +86,7 @@ export default function Banner() {
         </motion.div>
       </div>
     </motion.div>
+
+    </div>
   );
 }

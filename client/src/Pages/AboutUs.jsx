@@ -920,10 +920,11 @@ const ScrollFlipIn = ({ children, delay = 0 }) => {
 
       <div className="py-14 md:py-32 text-[#EAEAEA]">
 
-        <div className=" text-black py-16 px-6 md:px-12">
+        <div className="text-black py-12 sm:py-14 md:py-16 px-4 sm:px-8 md:px-12">
 
 
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:pb-30">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:pb-30">
+
             <div>
               <p className="text-orange-500 font-semibold mb-2">About Company</p>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -1007,7 +1008,7 @@ const ScrollFlipIn = ({ children, delay = 0 }) => {
             <div className="overflow-hidden">
               <div className="flex animate-marquee hover:pause-marquee">
                 {duplicatedMembers.map((member, index) => (
-                  <div key={index} className="flex-shrink-0 w-64 mx-3">
+                  <div key={index} className="flex-shrink-0 w-48 sm:w-56 md:w-64 mx-2 sm:mx-3">
                     <div className="relative overflow-hidden rounded-2xl  aspect-[3/4]">
                       <img
                         src={member.image || "/placeholder.svg"}
@@ -1158,7 +1159,7 @@ const ScrollFlipIn = ({ children, delay = 0 }) => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
             >
-              <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+              <div className="flex flex-col sm:flex-col md:flex-row items-center md:items-start justify-between gap-6 sm:gap-8">
                 {/* Images */}
                 <div className="flex flex-col md:flex-row gap-6 w-full justify-center md:justify-start">
                   <motion.img

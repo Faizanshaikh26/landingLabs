@@ -1,106 +1,98 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   LayoutDashboard,
   Mail,
   Briefcase,
   Users,
-  ShieldCheck,
-  Settings as SettingsIcon,
-  ChevronRight,
-  ChevronDown,
+  BarChart2,
+  Settings,
+  LogOut,
+  PersonStanding,
+  PersonStandingIcon,
+  Projector,
+  DollarSign,
+  Workflow,
 } from "lucide-react";
-import React, { useState } from "react";
-
-// Avatar image for Settings (replace with your own logo if desired)
-const SettingsImage = () => (
-  <span className="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center">
-    <SettingsIcon size={20} className="text-black" />
-  </span>
-);
 
 const navItems = [
-  { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
-  { name: "Contacts", path: "/contacts", icon: Mail },
-  { name: "Careers", path: "/careers", icon: Briefcase },
-];
+  { name: "Clients", path: "/client", icon: PersonStandingIcon },
+  { name: "Projects", path: "/projects", icon: Projector },
+  { name: "My Team", path: "/team", icon: Users },
+  { name: "Services", path: "/services", icon: BarChart2 },
+  { name: "Billing", path: "/services", icon: DollarSign },
+  { name: "Integartion", path: "/services", icon: Workflow },
+  { name: "Settings", path: "/settings", icon: Settings },
 
-const settingsNavItems = [
-  { name: "Admin Users", path: "/settings/admin-users", icon: Users },
-  { name: "Roles Permissions", path: "/settings/roles-permissions", icon: ShieldCheck },
-  { name: "Integrations", path: "/settings/integrations", icon: SettingsIcon },
+ 
+  
 ];
 
 export default function Sidebar() {
-  const [settingsOpen, setSettingsOpen] = useState(false);
-  const location = useLocation();
-
-  React.useEffect(() => {
-    if (location.pathname.startsWith("/settings")) {
-      setSettingsOpen(true);
-    }
-  }, [location.pathname]);
-
   return (
-    <div className="w-64 bg-white text-black shadow-lg h-full flex flex-col border-r border-gray-200">
-      <div className="p-4 text-xl font-bold border-b border-gray-200 bg-white">LandingLabs Admin</div>
-      <nav className="flex flex-col mt-4 flex-1 overflow-y-auto">
-        {/* Main nav items */}
-        {navItems.map(({ name, path, icon: Icon }) => (
+    <aside className="w-64 h-screen bg-white border-r flex flex-col">
+      {/* Scrollable section */}
+      <div className="flex-1 overflow-y-auto">
+        <div className="p-5">
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-md bg-slate-900 flex items-center justify-center text-white font-semibold">
+              LL
+            </div>
+            <div className="text-lg font-bold">Landing Labs</div>
+          </div>
+
+          {/* Dashboard Highlight */}
           <NavLink
-            key={name}
-            to={path}
+            to="/dashboard"
             className={({ isActive }) =>
-              `flex items-center gap-3 px-4 py-2 rounded-md hover:bg-gray-100 transition ${
-                isActive ? "bg-gray-200 font-medium" : ""
+              `mt-5 flex items-center gap-3 px-4 py-3 rounded-md ${isActive
+                ? "bg-lime-300 text-slate-900 font-medium"
+                : "text-slate-700"
               }`
             }
           >
-            <Icon size={20} className="text-black" />
-            {name}
+            <LayoutDashboard size={18} />
+            <span>Dashboard</span>
           </NavLink>
-        ))}
 
-        <div className="border-t border-gray-200 my-4" />
-
-        {/* Settings collapser */}
-        <button
-          type="button"
-          onClick={() => setSettingsOpen(open => !open)}
-          className={`flex items-center justify-between w-full px-4 py-2 rounded-md transition hover:bg-gray-100 focus:outline-none ${
-            location.pathname.startsWith("/settings") ? "bg-gray-200 font-medium" : ""
-          }`}
-          aria-expanded={settingsOpen}
-        >
-          <span className="flex items-center gap-3">
-            <SettingsImage />
-            <span className="text-base font-medium">Settings</span>
-          </span>
-          {settingsOpen ? (
-            <ChevronDown size={20} className="text-black" />
-          ) : (
-            <ChevronRight size={20} className="text-black" />
-          )}
-        </button>
-
-        {/* Settings submenu */}
-        {settingsOpen && (
-          <div className="flex flex-col ml-8 mt-1">
-            {settingsNavItems.map(({ name, path, icon: Icon }) => (
+          {/* Other Nav Items */}
+          <nav className="flex flex-col mt-4 space-y-1">
+            {navItems.map(({ name, path, icon: Icon }) => (
               <NavLink
                 key={name}
                 to={path}
                 className={({ isActive }) =>
-                  `flex items-center gap-2 px-2 py-2 rounded hover:bg-gray-100 text-sm transition 
-                   ${isActive ? "bg-gray-200 font-medium" : ""}`
+                  `flex items-center gap-3 px-4 py-2 rounded-md mx-1 hover:bg-slate-100 transition ${isActive ? "bg-slate-100 font-medium" : "text-slate-700"
+                  }`
                 }
               >
-                <Icon size={16} className="text-black" />
-                {name}
+                <Icon size={18} />
+                <span>{name}</span>
               </NavLink>
             ))}
+          </nav>
+        </div>
+      </div>
+
+      {/* Fixed bottom profile */}
+      <div className="p-5 border-t">
+        <div className="flex items-center gap-3">
+          <img
+            src="/path/to/avatar.jpg"
+            alt="Nora Watson"
+            className="w-12 h-12 rounded-full object-cover"
+          />
+          <div>
+            <div className="text-sm font-medium">Nora Watson</div>
+            <div className="text-xs text-slate-500">Sales Manager</div>
           </div>
-        )}
-      </nav>
-    </div>
+        </div>
+
+        <button className="w-full mt-4 text-sm flex items-center gap-2 px-3 py-2 rounded-md hover:bg-slate-100">
+          <LogOut size={16} />
+          Log Out
+        </button>
+      </div>
+    </aside>
   );
 }

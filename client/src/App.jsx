@@ -2,11 +2,14 @@ import { Route, Routes, useLocation } from "react-router-dom"
 import { lazy, Suspense } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 
+import AutoPopupDialog, {} from './components/AutoDialog.jsx'
 // Static Components (not lazy)
 import ScrollToTop from "./components/ScrollToTop"
 import CustomCursor from "./components/custome-cursor"
-import { AutoPopupDialog } from "./components/AutoDialog.jsx"
+
 import NotFound from "./components/NotFound.jsx"
+import Portfolio from "./components/Portfolio.jsx"
+import Loading from "./components/Loading.jsx"
 
 // Lazy-loaded pages
 const Home = lazy(() => import("./Home"))
@@ -27,7 +30,6 @@ const Pricing = lazy(() => import("./Pages/Pricing.jsx"))
 const CareerForm = lazy(() => import("./Pages/test-car.jsx"))
 const PricingPage = lazy(() => import("./Pages/dum.jsx"))
 const Appointment = lazy(() => import("./components/Appointment.jsx"))
-const Portfolio = lazy(() => import("./components/Portfolio.jsx"))
 
 function App() {
   const location = useLocation()
@@ -39,7 +41,7 @@ function App() {
       <AutoPopupDialog />
 
       {/* Lazy loading fallback and animation wrapper */}
-      <Suspense fallback={<div className="text-white text-center py-20">Loading...</div>}>
+      <Suspense fallback={<div className="text-primaryText text-center py-20"><Loading/></div>}>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             {/* Main Pages */}
@@ -51,8 +53,8 @@ function App() {
             <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
             <Route path="/try" element={<PageWrapper><CareerForm /></PageWrapper>} />
             <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} />
-            <Route path="/dum" element={<PricingPage />} />
             <Route path="/portfolio" element={<PageWrapper><Portfolio /></PageWrapper>} />
+            <Route path="/dum" element={<PricingPage />} />
 
             {/* Service Detail Pages */}
             <Route path="/services/search-engine-optimization" element={<PageWrapper><SEO /></PageWrapper>} />

@@ -308,175 +308,346 @@
 // }
 
 
-import logo from "./assets/images/Logo- landing labs-black.png";
+// import logo from "./assets/images/Logo- landing labs-black.png";
 
-const navLinks = [
-  { label: "Case Studies", href: "#" },
-  { label: "Insights", href: "#" },
-  { label: "Newsroom", href: "#" },
-  { label: "Careers", href: "/career" },
-  { label: "Blog", href: "#" },
-  { label: "Disclaimer", href: "#" },
-  { label: "Locate Us", href: "#" },
-];
+// const navLinks = [
+//   { label: "Case Studies", href: "#" },
+//   { label: "Insights", href: "#" },
+//   { label: "Newsroom", href: "#" },
+//   { label: "Careers", href: "/career" },
+//   { label: "Blog", href: "#" },
+//   { label: "Disclaimer", href: "#" },
+//   { label: "Locate Us", href: "#" },
+// ];
 
-const services = [
-  "Search Engine Optimization (SEO)",
-  "Web Development",
-  "Social Media Marketing",
-  "PPC / Ads",
-  "App Development",
-  "UI/UX Design",
-  "Graphic Design",
-  "Influencer Marketing",
-  "Content Marketing",
-];
+// const services = [
+//   "Search Engine Optimization (SEO)",
+//   "Web Development",
+//   "Social Media Marketing",
+//   "PPC / Ads",
+//   "App Development",
+//   "UI/UX Design",
+//   "Graphic Design",
+//   "Influencer Marketing",
+//   "Content Marketing",
+// ];
 
-const industries = ["Real Estate", "Finance", "Education", "Healthcare"];
+// const industries = ["Real Estate", "Finance", "Education", "Healthcare"];
 
-const companyLinks = [
-  { label: "About", href: "#" },
-  { label: "Meet the Team", href: "#" },
-  { label: "Accounts Review", href: "#" },
-  { label: "Helpful Links", href: "#" },
-];
+// const companyLinks = [
+//   { label: "About", href: "#" },
+//   { label: "Meet the Team", href: "#" },
+//   { label: "Accounts Review", href: "#" },
+//   { label: "Helpful Links", href: "#" },
+// ];
 
-const contactLinks = [
-  { label: "FAQs", href: "#" },
-  { label: "Live Chat", href: "#" },
-  { label: "Contact", href: "#" },
-];
+// const contactLinks = [
+//   { label: "FAQs", href: "#" },
+//   { label: "Live Chat", href: "#" },
+//   { label: "Contact", href: "#" },
+// ];
 
-const footerLinks = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms and Conditions", href: "#" },
-  { label: "Site Map", href: "#" },
-];
+// const footerLinks = [
+//   { label: "Privacy Policy", href: "#" },
+//   { label: "Terms and Conditions", href: "#" },
+//   { label: "Site Map", href: "#" },
+// ];
 
-const Footer = () => {
+// const Footer = () => {
+//   return (
+//     <div className="bg-white text-primaryText ">
+//       {/* Top Header */}
+//       <header className="px-6 py-4">
+//         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between">
+//           {/* Logo */}
+//           <div className="flex flex-col items-start mb-4 lg:mb-0 w-full lg:w-auto">
+//             <div className="w-48 max-w-full">
+//               <img
+//                 src={logo}
+//                 alt="Landing Labs Logo"
+//                 className="w-full h-auto object-contain"
+//               />
+//             </div>
+//             <div className="mt-2 text-xs text-accent">
+//               From Clicks to Code – We Power It All.
+//             </div>
+//           </div>
+
+//           {/* Nav */}
+//           <nav className="hidden lg:flex items-center space-x-4 text-sm text-secondaryText">
+//             {navLinks.map((item, i) => (
+//               <span key={item.label} className="flex items-center space-x-2">
+//                 <a href={item.href} className="hover:text-accentHover transition">
+//                   {item.label}
+//                 </a>
+//                 {i < navLinks.length - 1 && <span className="text-secondaryText">|</span>}
+//               </span>
+//             ))}
+//           </nav>
+//         </div>
+//       </header>
+
+//       {/* Divider */}
+//       <div className="border-t border-secondaryText/30 mx-6"></div>
+
+//       {/* Main Footer Body */}
+//       <main className="px-6 py-12">
+//         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+//           {/* Services */}
+//           <div>
+//             <h3 className="text-lg font-semibold mb-4">Services</h3>
+//             <ul className="space-y-2 text-sm text-secondaryText">
+//               {services.map((item) => (
+//                 <li key={item}>
+//                   <a href="#" className="hover:text-accentHover transition">
+//                     {item}
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           {/* Industries */}
+//           <div>
+//             <h3 className="text-lg font-semibold mb-4">Industries</h3>
+//             <ul className="space-y-2 text-sm text-secondaryText">
+//               {industries.map((item) => (
+//                 <li key={item}>
+//                   <a href="#" className="hover:text-accentHover transition">
+//                     {item}
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           {/* Company */}
+//           <div>
+//             <h3 className="text-lg font-semibold mb-4">Company</h3>
+//             <ul className="space-y-2 text-sm text-secondaryText">
+//               {companyLinks.map((item) => (
+//                 <li key={item.label}>
+//                   <a href={item.href} className="hover:text-accentHover transition">
+//                     {item.label}
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+
+//           {/* Contact */}
+//           <div>
+//             <h3 className="text-lg font-semibold mb-4">Contact</h3>
+//             <ul className="space-y-2 text-sm text-secondaryText">
+//               {contactLinks.map((item) => (
+//                 <li key={item.label}>
+//                   <a href={item.href} className="hover:text-accentHover transition">
+//                     {item.label}
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+//         </div>
+//       </main>
+
+//       {/* Bottom Footer */}
+//       <footer className="bg-primaryCardBg px-6 py-8">
+//         <div className="max-w-7xl mx-auto">
+//           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center">
+//             <div className="text-sm text-secondaryText mb-4 lg:mb-0">
+//               © 2025 Landing Labs 360 Pvt.
+//             </div>
+//             <div className="flex flex-wrap items-center space-x-4 text-sm text-secondaryText">
+//               {footerLinks.map((item, i) => (
+//                 <span key={item.label} className="flex items-center space-x-2">
+//                   <a href={item.href} className="hover:text-accentHover transition">
+//                     {item.label}
+//                   </a>
+//                   {i < footerLinks.length - 1 && (
+//                     <span className="text-secondaryText">|</span>
+//                   )}
+//                 </span>
+//               ))}
+//             </div>
+//           </div>
+//         </div>
+//       </footer>
+//     </div>
+//   );
+// };
+
+
+// export default Footer;
+
+
+
+
+import React, { useState } from "react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+  ChevronDown,
+  ChevronUp,
+  Twitter,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+
+ const  Footer = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const coreItems = [
+    {
+      title: "DIGITAL MARKETING",
+      items: [
+        "Social Media Marketing",
+        "Performance Marketing",
+        "Email Marketing",
+        "Brand Management",
+      ],
+    },
+    {
+      title: "WEB DEVELOPMENT",
+      items: [
+        "Website Development",
+        "Ecommerce Development",
+        "UI/UX Designing",
+      ],
+    },
+    {
+      title: "SEO",
+      items: ["Website SEO", "Ecommerce SEO"],
+    },
+  ];
+
+  const toggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
-    <div className="bg-white text-primaryText ">
-      {/* Top Header */}
-      <header className="px-6 py-4">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between">
-          {/* Logo */}
-          <div className="flex flex-col items-start mb-4 lg:mb-0 w-full lg:w-auto">
-            <div className="w-48 max-w-full">
-              <img
-                src={logo}
-                alt="Landing Labs Logo"
-                className="w-full h-auto object-contain"
-              />
+    <footer className="bg-white text-primaryText pt-10 px-6 md:px-12 lg:px-20 pb-6">
+      {/* Top Section */}
+      <div className="flex flex-col sm:flex-row flex-wrap lg:flex-nowrap gap-6 sm:gap-8 lg:gap-10 border-b border-gray-600 pb-8 sm:pb-10">
+        {/* Our Core */}
+        <div className="flex-1 border-r  border-gray-600 pr-6">
+          <h3 className="text-accent font-bold text-lg mb-4">OUR CORE</h3>
+          {coreItems.map((section, index) => ( 
+            <div key={section.title} className="mb-4">
+              <div
+                className="flex justify-between items-center cursor-pointer font-bold"
+                onClick={() => toggle(index)}
+              >
+                <h4>{section.title}</h4>
+                {openIndex === index ? (
+                  <ChevronUp className="w-4 h-4" />
+                ) : (
+                  <ChevronDown className="w-4 h-4" />
+                )}
+              </div>
+              {openIndex === index && (
+                <ul className="ml-2 text-sm mt-2 space-y-1">
+                  {section.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              )}
             </div>
-            <div className="mt-2 text-xs text-accent">
-              From Clicks to Code – We Power It All.
-            </div>
-          </div>
-
-          {/* Nav */}
-          <nav className="hidden lg:flex items-center space-x-4 text-sm text-secondaryText">
-            {navLinks.map((item, i) => (
-              <span key={item.label} className="flex items-center space-x-2">
-                <a href={item.href} className="hover:text-accentHover transition">
-                  {item.label}
-                </a>
-                {i < navLinks.length - 1 && <span className="text-secondaryText">|</span>}
-              </span>
-            ))}
-          </nav>
+          ))}
         </div>
-      </header>
 
-      {/* Divider */}
-      <div className="border-t border-secondaryText/30 mx-6"></div>
+        {/* Quick Links + Ventures + Social */}
+        <div className="flex-1 border-r  border-gray-600 pr-6">
+          <h3 className="text-accent font-bold text-lg mb-4">QUICK LINKS</h3>
+          <ul className="mb-6 space-y-1 text-sm">
 
-      {/* Main Footer Body */}
-      <main className="px-6 py-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
-            <ul className="space-y-2 text-sm text-secondaryText">
-              {services.map((item) => (
-                <li key={item}>
-                  <a href="#" className="hover:text-accentHover transition">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+           
+            <li><Link to="/" className="hover:underline">Home</Link></li>
+            <li><Link to="/portfolio" className="hover:underline">Portfolio</Link></li>
+            <li><Link to="/about-us" className="hover:underline">About Us</Link></li>
+            <li><Link to="/contact-us" className="hover:underline">Contact Us</Link></li>
+            <li><Link to="/career" className="hover:underline">Career</Link></li>
+            <li><Link to="pricing" className="hover:underline">Pricing</Link></li>
+            <li><Link to="#" className="hover:underline">Blog</Link></li>
+          </ul>
 
-          {/* Industries */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Industries</h3>
-            <ul className="space-y-2 text-sm text-secondaryText">
-              {industries.map((item) => (
-                <li key={item}>
-                  <a href="#" className="hover:text-accentHover transition">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <h3 className="text-accent font-bold text-lg mb-4">OUR VENTURES</h3>
+          <ul className="mb-6 space-y-1 text-sm">
+            <li>Influencer Marketing</li>
+            <li>YaadRakho</li>
+            <li>DI Infotech Courses</li>
+            <li>Pratibhashali Initiative</li>
+          </ul>
 
-          {/* Company */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Company</h3>
-            <ul className="space-y-2 text-sm text-secondaryText">
-              {companyLinks.map((item) => (
-                <li key={item.label}>
-                  <a href={item.href} className="hover:text-accentHover transition">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <ul className="space-y-2 text-sm text-secondaryText">
-              {contactLinks.map((item) => (
-                <li key={item.label}>
-                  <a href={item.href} className="hover:text-accentHover transition">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <h3 className="text-accent font-bold text-lg mb-4">SOCIALIZE WITH US</h3>
+          <div className="flex gap-3 text-xl">
+            <a href="https://www.facebook.com/people/landinglabsin/61564373072403/?rdid=DTVRbgYiFJxHJkkj&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16wqfNsNHL%2F" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <Facebook className="text-secondaryText w-5 h-5" />
+            </a>
+            <a href="https://www.linkedin.com/company/landing-labs/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <Linkedin className="text-secondaryText w-5 h-5" />
+            </a>
+            <a href="https://www.instagram.com/landinglabs_?igsh=Njc1YjZvdjc1Y2J1" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <Instagram className="text-secondaryText w-5 h-5" />
+            </a>
+            <a href="https://www.youtube.com/@landinglabs" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <Twitter className="text-secondaryText w-5 h-5" />
+            </a>
           </div>
         </div>
-      </main>
 
-      {/* Bottom Footer */}
-      <footer className="bg-primaryCardBg px-6 py-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center">
-            <div className="text-sm text-secondaryText mb-4 lg:mb-0">
-              © 2025 Landing Labs 360 Pvt.
-            </div>
-            <div className="flex flex-wrap items-center space-x-4 text-sm text-secondaryText">
-              {footerLinks.map((item, i) => (
-                <span key={item.label} className="flex items-center space-x-2">
-                  <a href={item.href} className="hover:text-accentHover transition">
-                    {item.label}
-                  </a>
-                  {i < footerLinks.length - 1 && (
-                    <span className="text-secondaryText">|</span>
-                  )}
-                </span>
-              ))}
-            </div>
-          </div>
+        {/* Contact Form */}
+<div className="flex-1 p-6 border border-gray-600 rounded-md">
+  <h3 className="font-semibold text-secondaryText mb-4 text-lg">
+    Ready to Skyrocket Your Sales and Boost ROI? <span className="text-accent">Let's Talk!</span>
+  </h3>
+  <form className="space-y-4">
+    <input name="name" required type="text" placeholder="Name*" className="w-full border-b border-gray-600 text-secondaryText placeholder-gray-400 focus:outline-none pb-2" />
+    <input name="phone" required type="tel" placeholder="Contact No.*" className="w-full  border-b border-gray-600 text-secondaryText placeholder-gray-400 focus:outline-none pb-2" />
+    <input name="email" required type="email" placeholder="Email*" className="w-full  border-b border-gray-600 text-secondaryText placeholder-gray-400 focus:outline-none pb-2" />
+    <input name="requirement" required type="text" placeholder="Requirement*" className="w-full  border-b border-gray-600 text-secondaryText  placeholder-gray-400 focus:outline-none pb-2" />
+    <button type="submit" className="bg-accent text-white font-semibold py-2 px-4 rounded mt-2 hover:bg-accentHover transition">
+      Yes! I Want to Boost My Sales
+    </button>
+  </form>
+</div>
+
+      </div>
+
+      {/* Bottom Section */}
+      <div className="flex flex-col lg:flex-row justify-between items-start mt-6 text-sm gap-6 px-2">
+
+        {/* Phone */}
+         <div className="flex items-start gap-4">
+          <Phone className="text-accent mt-2 w-10 h-10" />
+          <a href="mailto:info@diinfotech.com" className="hover:underline mt-4">
+               +91 738 739 2708
+          </a>
         </div>
-      </footer>
-    </div>
+
+        {/* Email */}
+        <div className="flex items-start gap-4">
+          <Mail className="text-accent mt-2 w-10 h-10" />
+          <a href="" className="hover:underline mt-4">
+      
+           info@landinglabs.in
+          </a>
+        </div>
+
+        {/* Address */}
+        <div className="flex items-start gap-4 max-w-sm">
+          <MapPin className="text-accent mt-1 w-18 h-10" />
+          <p>
+           Office 610, Suratwala Mark Plazzo, Hinjewadi, 411057
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 };
 
 
-export default Footer;
-
+ export default Footer

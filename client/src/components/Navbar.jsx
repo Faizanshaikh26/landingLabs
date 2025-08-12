@@ -13,11 +13,15 @@ import logoWhite from "../assets/images/Og-Logo.png";
 import { NavLink } from "react-router-dom";
 
 import { AnimatePresence, motion } from "framer-motion";
+import NavbarServices from "./nav-services";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollDirection, setScrollDirection] = useState("up");
+
+  const [showServicesPanel, setShowServicesPanel] = useState(false);
+
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -133,12 +137,17 @@ const itemVariants = {
     Home
   </NavLink>
 
+  <div
+  className="relative"
+  onMouseEnter={() => setShowServicesPanel(true)}
+  onMouseLeave={() => setShowServicesPanel(false)}
+>
   <NavLink
     to="/services"
     className={({ isActive }) =>
       isActive
         ? "text-orange-500 font-semibold"
-        : "hover:text-accentHover cursor-pointer transition-colors "
+        : "hover:text-accentHover cursor-pointer transition-colors"
     }
   >
     <span className="flex items-center space-x-1">
@@ -146,6 +155,17 @@ const itemVariants = {
       <ChevronDown className="w-4 h-4" />
     </span>
   </NavLink>
+
+  {/* Dropdown Panel */}
+{showServicesPanel && (
+  <div className="absolute top-full left-0 lg:left-[-300px] xl:left-[-400px] w-screen max-w-[90vw] lg:max-w-[69vw] bg-white shadow-lg z-50 rounded-b-lg overflow-x-auto">
+    <NavbarServices />
+  </div>
+)}
+
+</div>
+
+
 
   <NavLink
     to="/about-us"
@@ -167,6 +187,16 @@ const itemVariants = {
     }
   >
     Career
+  </NavLink>
+  <NavLink
+    to="/portfolio"
+    className={({ isActive }) =>
+      isActive
+        ? "text-orange-500 font-semibold"
+        : "hover:text-accentHover cursor-pointer transition-colors"
+    }
+  >
+    Portfolio
   </NavLink>
 
   <NavLink
