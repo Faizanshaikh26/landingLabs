@@ -205,7 +205,7 @@ export default function HeroSection() {
     <section className="text-primaryText pt-20 lg:pt-32   ">
   {/* Headings */}
   <div className="text-center mt-10">
-    <h4 className="text-md md:text-lg font-medium  text-orange-500">
+    <h4 className="text-md md:text-lg mx-[2px] font-medium  text-orange-500">
       From AI-backed marketing funnels to custom-built CRMs
     </h4>
     <h1 className="text-3xl mb-8 md:text-5xl font-bold mt-2 text-primaryText">
