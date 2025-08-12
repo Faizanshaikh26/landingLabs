@@ -28,8 +28,8 @@ const InfluencerMarketing = lazy(() => import("./Pages/Services/details/Influenc
 const ContentMarketing = lazy(() => import("./Pages/Services/details/ContentMarketing"))
 const SEO = lazy(() => import("./Pages/Services/details/SEO.jsx"))
 const Pricing = lazy(() => import("./Pages/Pricing.jsx"))
-const CareerForm = lazy(() => import("./Pages/test-car.jsx"))
-const PricingPage = lazy(() => import("./Pages/dum.jsx"))
+
+
 // const Appointment = lazy(() => import("./components/Appointment.jsx"))
 
 function App() {
@@ -53,10 +53,10 @@ function App() {
             <Route path="/career" element={<PageWrapper><Carrer /></PageWrapper>} />
             <Route path="/services" element={<PageWrapper><Service /></PageWrapper>} />
             <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
-            <Route path="/try" element={<PageWrapper><CareerForm /></PageWrapper>} />
+           
             {/* <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} /> */}
             <Route path="/portfolio" element={<PageWrapper><Portfolio /></PageWrapper>} />
-            <Route path="/dum" element={<PricingPage />} />
+           
 
             {/* Service Detail Pages */}
             <Route path="/services/search-engine-optimization" element={<PageWrapper><SEO /></PageWrapper>} />
