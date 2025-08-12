@@ -2,19 +2,19 @@ import React, { useEffect, useState } from "react";
 import { X } from "lucide-react";
 
 /* --- Replace/keep these with your actual imports --- */
-import Aaradhya from "../assets/images/Aaradhya.Logo TP.png";
-import Crunchy from "../assets/images/Crunchy.Logo TP.png";
-import EzeDesign from "../assets/images/Eze Design.Logo TP.png";
-import Ezepune from "../assets/images/Ezepune.Logo TP.png";
-import Kiara from "../assets/images/Kiara.Logo TP.png";
-import Kohinoor from "../assets/images/Kohinoor.Logo TP.png";
-import MadakeJewellers from "../assets/images/Madake Jewellers.Logo TP.png";
-import MrMS from "../assets/images/Mr& MS.Logo TP.png";
-import NikolEV from "../assets/images/NikolEV.Logo TP.png";
-import Sidenest from "../assets/images/Sidenest.Logo TP.png";
-import SuncityVilla from "../assets/images/Suncity Villa.Logo TP.png";
-import Techmark from "../assets/images/Techmark.Logo TP.png";
-import Zelc from "../assets/images/Zelc.Logo TP.png";
+import Aaradhya from "../assets/images/clientLogo/Aaradhya.Logo TP.png";
+import Crunchy from "../assets/images/clientLogo/Crunchy.Logo TP.png";
+import EzeDesign from "../assets/images/clientLogo/Eze Design.Logo TP.png";
+import Ezepune from "../assets/images/clientLogo/Ezepune.Logo TP.png";
+import Kiara from "../assets/images/clientLogo/Kiara.Logo TP.png";
+import Kohinoor from "../assets/images/clientLogo/Kohinoor.Logo TP.png";
+import MadakeJewellers from "../assets/images/clientLogo/Madake Jewellers.Logo TP.png";
+import MrMS from "../assets/images/clientLogo/Mr& MS.Logo TP.png";
+import NikolEV from "../assets/images/clientLogo/NikolEV.Logo TP.png";
+import Sidenest from "../assets/images/clientLogo/Sidenest.Logo TP.png";
+import SuncityVilla from "../assets/images/clientLogo/Suncity Villa.Logo TP.png";
+import Techmark from "../assets/images/clientLogo/Techmark.Logo TP.png";
+import Zelc from "../assets/images/clientLogo/Zelc.Logo TP.png";
 /* ------------------------------------------------- */
 
 export default function AutoPopupDialog() {

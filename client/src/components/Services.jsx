@@ -194,14 +194,14 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import ServiceCard from "./service-card";
 
-import smmBack from "../assets/images/smm-back.png"
-import seoBack from "../assets/images/seo-back.png"
-import smmFront from "../assets/images/smm-front.png"
-import seoFront from "../assets/images/seo-front.png"
-import appDevFront from "../assets/images/appdev-front.png"
-import appDevBack from "../assets/images/appdev-back.png"
-import UIUXFront from "../assets/images/ui-uxFront.png"
-import UIUXBack from "../assets/images/ui-uxBack.png"
+import smmBack from "../assets/images/services/smm-back.png"
+import seoBack from "../assets/images/services/seo-back.png"
+import smmFront from "../assets/images/services/smm-front.png"
+import seoFront from "../assets/images/services/seo-front.png"
+import appDevFront from "../assets/images/services/appdev-front.png"
+import appDevBack from "../assets/images/services/appdev-back.png"
+import UIUXFront from "../assets/images/services/ui-uxFront.png"
+import UIUXBack from "../assets/images/services/ui-uxBack.png"
 
 const servicesData = [
   {
