@@ -734,7 +734,7 @@ import {
   PanelsTopLeftIcon
 } from 'lucide-react';
 import StateSection from '../components/State-section';
-import { useAnimation, motion } from 'framer-motion';
+import {  motion } from 'framer-motion';
 
 
 
@@ -748,7 +748,7 @@ const ScrollFadeIn = ({ children, delay = 0 }) => (
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6, delay }}
-    viewport={{ once: true, amount: 0.2 }}
+    viewport={{ once: false, amount: 0.2 }}
   >
     {children}
   </motion.div>
@@ -772,7 +772,7 @@ const ScrollSlideInFromRight = ({ children }) => (
     initial={{ opacity: 0, x: 100 }}
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
-    viewport={{ once: true, amount: 0.2 }}
+    viewport={{ once: false, amount: 0.2 }}
   >
     {children}
   </motion.div>
@@ -793,7 +793,7 @@ const ScrollFlipIn = ({ children, delay = 0 }) => (
       scale: 1,
     }}
     transition={{ duration: 0.7, delay, ease: "easeOut" }}
-    viewport={{ once: true, amount: 0.15 }}
+    viewport={{ once: false, amount: 0.15 }}
     style={{ perspective: 1000 }}
   >
     {children}
@@ -1084,7 +1084,7 @@ const ScrollFlipIn = ({ children, delay = 0 }) => (
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
+              viewport={{ once: false ,amount:0.2}}
             >
               <h1 className="text-2xl md:text-4xl font-semibold text-primaryText">
                 Landing <span className="text-orange-500">Labs</span>
@@ -1111,7 +1111,7 @@ const ScrollFlipIn = ({ children, delay = 0 }) => (
                     initial={{ x: -100, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
+                       viewport={{ once: false, amount: 0.2 }}
                   />
                   <motion.img
                     src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.-1.png.webp"
@@ -1120,7 +1120,7 @@ const ScrollFlipIn = ({ children, delay = 0 }) => (
                     initial={{ x: 60, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false , amount:0.2 }}
                     
                   />
                 </div>
@@ -1131,7 +1131,8 @@ const ScrollFlipIn = ({ children, delay = 0 }) => (
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false, amount: 0.2 }}
+            
                 >
                   <p className="text-orange-500 font-semibold text-lg mb-2">2023 – 2025</p>
                   <h2 className="text-black text-2xl md:text-3xl font-bold mb-6">
@@ -1149,6 +1150,7 @@ const ScrollFlipIn = ({ children, delay = 0 }) => (
                     className="mt-8 bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-md font-semibold transition"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    viewport={{ once: false, amount: 0.2 }}
                   >
                     CONTACT US
                   </motion.button>
