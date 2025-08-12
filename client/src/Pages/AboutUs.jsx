@@ -735,7 +735,7 @@ import {
 } from 'lucide-react';
 import StateSection from '../components/State-section';
 import { useAnimation, motion } from 'framer-motion';
-
+import { useInView } from 'react-intersection-observer';
 
 
 export default function AboutUs() {
@@ -762,16 +762,18 @@ export default function AboutUs() {
     </motion.div>
   );
 
-  const ScrollSlideInFromRight = ({ children, delay = 0 }) => (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8, delay, ease: 'easeOut' }}
-      viewport={{ once: false, amount: 0.4 }}
-    >
-      {children}
-    </motion.div>
-  );
+ const ScrollSlideInFromRight = ({ children, delay = 0 }) => (
+  <motion.div
+    initial={{ opacity: 0, x: '100%' }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8, delay, ease: 'easeOut' }}
+    viewport={{ once: false, amount: 0.2 }}
+    style={{ overflowX: 'hidden' }} // Prevents horizontal scroll
+  >
+    {children}
+  </motion.div>
+);
+
 
   const ScrollFlipIn = ({ children, delay = 0 }) => (
     <motion.div
@@ -1111,11 +1113,11 @@ export default function AboutUs() {
           src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.-1.png.webp"
           alt="Landing Labs"
           className="w-full max-w-[260px] object-contain"
-        
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          initial={{ x: 60, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: false, amount: 0.2 }}
+              style={{ overflowX: 'hidden' }}
         />
 
         {/* Text */}
