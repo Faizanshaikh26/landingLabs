@@ -227,6 +227,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../Footer";
 import { CustomAccordion } from "../components/custome-acordion";
 
+import carrerHero from "../assets/images/career-hero.png"
+
 export default function Career() {
   const jobListings = [
     { role: "Web Developer (React / WordPress)", team: "Software Development", workTime: "Full-time", location: "Pune, IN" },
@@ -294,7 +296,7 @@ export default function Career() {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <img
-              src="https://cdn.prod.website-files.com/65d5ac710278672f815e9202/65ec798689fd0e67cef30538_RolandAndLuisCropped.webp"
+              src={carrerHero}
               alt="Team"
               className="w-full h-full object-cover md:mt-20"
             />

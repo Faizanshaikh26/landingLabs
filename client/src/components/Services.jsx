@@ -191,92 +191,101 @@
 
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  Code,
-  ShoppingCart,
-  Stethoscope,
-  GraduationCap,
-  Truck,
-  Users,
-  Megaphone,
-  PenTool,
-  LineChart,
-  Search,
-  ScrollText,
-} from "lucide-react";
+import { motion } from "framer-motion";
 import ServiceCard from "./service-card";
 
-import { HandIcon as HandPointing, Eye, Sun, Triangle } from "lucide-react"
+import smmBack from "../assets/images/services/smm-back.png"
+import seoBack from "../assets/images/services/seo-back.png"
+import smmFront from "../assets/images/services/smm-front.png"
+import seoFront from "../assets/images/services/seo-front.png"
+import appDevFront from "../assets/images/services/appdev-front.png"
+import appDevBack from "../assets/images/services/appdev-back.png"
+import UIUXFront from "../assets/images/services/ui-uxFront.png"
+import UIUXBack from "../assets/images/services/ui-uxBack.png"
 
+const servicesData = [
+  {
+    id: 1,
+    title: "Search Engine Optimization(SEO)",
+    image: seoFront,
+    hoverImage:
+      seoBack
+  },
+  {
+    id: 2,
+    title: "Web Development",
+    image: "/images/services/web-dev.png",
+    hoverImage: "/images/services/web-dev-hover.png",
+  },
+  {
+    id: 3,
+    title: "Social Media Marketing",
+    image: smmFront,
+    hoverImage:
+      smmBack
+  },
+  {
+    id: 4,
+    title: "PPC / Ads",
+    image: "/images/services/ppc.png",
+    hoverImage: "/images/services/ppc-hover.png",
+  },
+  {
+    id: 5,
+    title: "App Development",
+    image: appDevFront,
+    hoverImage: appDevBack
+  },
+  {
+    id: 6,
+    title: "UI/UX Design",
+    image: UIUXFront,
+    hoverImage: UIUXBack,
+  },
+  {
+    id: 7,
+    title: "Graphic Design",
+    image: "/images/services/graphic.png",
+    hoverImage: "/images/services/graphic-hover.png",
+  },
+  {
+    id: 8,
+    title: "Influencer Marketing",
+    image: "/images/services/influencer.png",
+    hoverImage: "/images/services/influencer-hover.png",
+  },
+  {
+    id: 9,
+    title: "Content Marketing",
+    image: "/images/services/content.png",
+    hoverImage: "/images/services/content-hover.png",
+  },
+];
 
-
-
-
- const servicesData=[
-  {
-    "id": 1,
-    "title": "Search Engine Optimization(SEO)",
-    "image": "https://www.srvmedia.com/wp-content/uploads/2023/08/01.webp",
-    "hoverImage": "https://up.yimg.com/ib/th/id/OIP.r2QQmEkLtt0jAJ28IVWwdAHaHk?pid=Api&rs=1&c=1&qlt=95&w=113&h=115"
-  },
-  {
-    "id": 2,
-    "title": "Web Development",
-    "image": "/images/services/web-dev.png",
-    "hoverImage": "/images/services/web-dev-hover.png"
-  },
-  {
-    "id": 3,
-    "title": "Social Media Marketing",
-    "image": "/images/services/social-media.png",
-    "hoverImage": "/images/services/social-media-hover.png"
-  },
-  {
-    "id": 4,
-    "title": "PPC / Ads",
-    "image": "/images/services/ppc.png",
-    "hoverImage": "/images/services/ppc-hover.png"
-  },
-  {
-    "id": 5,
-    "title": "App Development",
-    "image": "/images/services/app-dev.png",
-    "hoverImage": "/images/services/app-dev-hover.png"
-  },
-  {
-    "id": 6,
-    "title": "UI/UX Design",
-    "image": "/images/services/uiux.png",
-    "hoverImage": "/images/services/uiux-hover.png"
-  },
-  {
-    "id": 7,
-    "title": "Graphic Design",
-    "image": "/images/services/graphic.png",
-    "hoverImage": "/images/services/graphic-hover.png"
-  },
-  {
-    "id": 8,
-    "title": "Influencer Marketing",
-    "image": "/images/services/influencer.png",
-    "hoverImage": "/images/services/influencer-hover.png"
-  },
-  {
-    "id": 9,
-    "title": "Content Marketing",
-    "image": "/images/services/content.png",
-    "hoverImage": "/images/services/content-hover.png"
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1
+    }
   }
-]
+};
 
-
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
 
 export default function ServicesSnapshot() {
-  const [activeTab, setActiveTab] = useState("IT");
+
 
   return (
-    <div className="bg-black w-full text-white min-h-screen lg:p-8 rounded-t-[80px] py-10">
+    <div className="bg-black w-full text-white min-h-screen lg:p-8 rounded-t-[40px] md:rounded-t-[80px] py-10 bg-red">
       {/* Header */}
       <section className="text-center mx-auto mb-10">
         <h2 className="text-2xl md:text-4xl font-semibold text-[#EAEAEA]">
@@ -287,26 +296,34 @@ export default function ServicesSnapshot() {
         </p>
       </section>
 
-      {/* Grid Layout */}
- <div className="w-full px-[20%] sm:px-8  md:px-20 ">
-  <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-12">
-    {servicesData.map((service, index) => {
-      const isDown = index % 2 === 1;
-
-      return (
-        <ServiceCard
-          key={service.id}
-          number={`/${String(index + 1).padStart(2, "0")}`}
-          title={service.title}
-          iconSrc={service.image}
-          hoverIconSrc={service.hoverImage}
-          className={isDown ? "xl:translate-y-24" : "xl:translate-y-0"}
-        />
-      );
-    })}
-  </div>
-</div>
-
+      {/* Grid Layout with animation */}
+      <div className="w-full px-[20%] sm:px-8 md:px-20">
+        <motion.div
+          className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.15 }}
+        >
+          {servicesData.map((service, index) => {
+            const isDown = index % 2 === 1;
+            return (
+              <motion.div
+                key={service.id}
+                variants={cardVariants}
+                className={isDown ? "xl:translate-y-24" : "xl:translate-y-0"}
+              >
+                <ServiceCard
+                  number={`/${String(index + 1).padStart(2, "0")}`}
+                  title={service.title}
+                  iconSrc={service.image}
+                  hoverIconSrc={service.hoverImage}
+                />
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
     </div>
   );
 }

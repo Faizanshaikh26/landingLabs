@@ -7,9 +7,9 @@ import mailSender from '../utils/mailSender.js';
 
 export const addAppointment = async (req, res) => {
   try {
-    const { appointmentType, date, phoneNumber, email } = req.body;
+    const { appointmentType, date, phoneNumber, email ,name} = req.body;
 
-    if (!appointmentType || !date || !phoneNumber || !email) {
+    if (!appointmentType || !date || !phoneNumber || !email , !name) {
       return res.status(400).json({ success: false, message: 'All fields are required.' });
     }
 
@@ -18,6 +18,7 @@ export const addAppointment = async (req, res) => {
       date,
       phoneNumber,
       email,
+      name
     });
 
     await newAppointment.save();
@@ -33,6 +34,7 @@ export const addAppointment = async (req, res) => {
       { header: 'Date', key: 'date' },
       { header: 'Phone Number', key: 'phoneNumber' },
       { header: 'Email', key: 'email' },
+      { header: 'Name', key: 'name' },
       { header: 'Created At', key: 'createdAt' },
     ];
 
@@ -42,6 +44,7 @@ export const addAppointment = async (req, res) => {
         date: new Date(appt.date).toLocaleString(),
         phoneNumber: appt.phoneNumber,
         email: appt.email,
+        name: appt.name,
         createdAt: new Date(appt.createdAt).toLocaleString(),
       });
     });

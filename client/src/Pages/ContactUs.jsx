@@ -303,49 +303,57 @@ import {
   PhoneCall,
   MailIcon,
 } from "lucide-react";
-
 import Navbar from "../components/Navbar";
 import Footer from "../Footer";
 import GetInTouchImg from "../assets/images/getIn-Touch-banner.webp";
-import { useState } from "react";
 import axios from "axios";
+import toast from "react-hot-toast";
 
+// React Hook Form & Validation
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { BASE_URL } from "../constant";
 
-export default function ContactPage() {
-
-  const [formData, setFormData] = useState({
-  fullName: "",
-  phoneNumber: "",
-  email: "",
-  service: "",
-  serviceDescription: "",
-  message: "",
+// ✅ Validation schema
+const schema = yup.object().shape({
+  fullName: yup.string().required("Full name is required"),
+  phoneNumber: yup
+    .string()
+    .matches(/^[0-9]{10}$/, "Phone number must be 10 digits")
+    .required("Phone number is required"),
+  email: yup.string().email("Invalid email format").required("Email is required"),
+  service: yup.string().required("Please select a service"),
+  serviceDescription: yup.string().nullable(),
+  message: yup.string().required("Message is required"),
 });
 
+export default function ContactPage() {
+  // ✅ React Hook Form setup
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const res = await axios.post("http://localhost:3000/api/contacts", formData);
-    if (res.data.success) {
-      alert("Message sent successfully!");
-      setFormData({
-        fullName: "",
-        phoneNumber: "",
-        email: "",
-        service: "",
-        serviceDescription: "",
-        message: "",
-      });
-    } else {
-      alert("Something went wrong.");
+  // ✅ Submit handler
+  const onSubmit = async (data) => {
+    try {
+      const res = await axios.post(`${BASE_URL}/api/contacts`, data);
+      if (res.data.success) {
+        toast.success("Message sent successfully!");
+        reset();
+      } else {
+        toast.error("Something went wrong.");
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("Submission failed. Please try again.");
     }
-  } catch (err) {
-    console.error("Error submitting contact form:", err);
-    alert("Submission failed. Please try again.");
-  }
-};
-
+  };
 
   const stats = [
     { icon: MessageSquare, value: "24/7", label: "Support Available" },
@@ -375,29 +383,24 @@ const handleSubmit = async (e) => {
   ];
 
   return (
-   <>
+    <>
       <Navbar />
+     
 
-      <div
-        className="min-h-screen text-white"
-        style={{
-          background:
-            "bg-white bg-opacity-10 backdrop-blur-lg",
-        }}
-      >
-        {/* Hero */}
+      <div className="min-h-screen text-white">
+        {/* Hero Section */}
         <motion.section
           className="pt-44 pb-20 text-center relative"
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <div className="relative z-10 max-w-4xl mx-auto px-4">
+          <div className="max-w-4xl mx-auto px-4">
             <span className="text-sm uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full">
               Get In Touch
             </span>
             <motion.h1
-              className="text-4xl md:text-6xl font-bold my-6 bg-clip-text text-black"
+              className="text-4xl md:text-6xl font-bold my-6 text-black"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.6 }}
@@ -408,6 +411,7 @@ const handleSubmit = async (e) => {
               We're here to help and answer any question you might have.
             </p>
 
+            {/* Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               {stats.map((stat, index) => (
                 <motion.div
@@ -418,7 +422,7 @@ const handleSubmit = async (e) => {
                   transition={{ delay: index * 0.2, duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-12 h-12 mx-auto bg-orange-500 text-secondaryText rounded-full flex items-center justify-center mb-3 animate-bounce">
+                  <div className="w-12 h-12 mx-auto bg-orange-500 rounded-full flex items-center justify-center mb-3 animate-bounce">
                     <stat.icon className="w-6 h-6" />
                   </div>
                   <div className="text-2xl font-bold text-primaryText">{stat.value}</div>
@@ -431,7 +435,7 @@ const handleSubmit = async (e) => {
 
         {/* Contact Cards */}
         <section className="px-4 max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 px-6 py-10 text-secondaryText">
+          <div className="flex flex-col md:flex-row gap-6 px-6 py-10 text-secondaryText">
             {cards.map((card, index) => (
               <motion.div
                 key={index}
@@ -486,73 +490,75 @@ const handleSubmit = async (e) => {
                 Any Question? <br /> Write Down And Send Us
               </h2>
 
-              <form className="space-y-4" onSubmit={handleSubmit}>
-  <input
-    type="text"
-    placeholder="Enter your full name"
-    className="w-full p-3 bg-transparent border border-gray-600 rounded text-black placeholder-gray-400 focus:outline-none focus:border-orange-500"
-    value={formData.fullName}
-    onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-    required
-  />
+              <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
+                {/* Full Name */}
+                <input
+                  type="text"
+                  placeholder="Enter your full name"
+                  {...register("fullName")}
+                  className="w-full p-3 border border-gray-600 rounded text-black focus:outline-none focus:border-orange-500"
+                />
+                {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName.message}</p>}
 
-  <input
-    type="text"
-    placeholder="Phone number"
-    className="w-full p-3 bg-transparent border border-gray-600 rounded text-black placeholder-gray-400 focus:outline-none focus:border-orange-500"
-    value={formData.phoneNumber}
-    onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-    required
-  />
+                {/* Phone */}
+                <input
+                  type="text"
+                  placeholder="Phone number"
+                  {...register("phoneNumber")}
+                  className="w-full p-3 border border-gray-600 rounded text-black focus:outline-none focus:border-orange-500"
+                />
+                {errors.phoneNumber && <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>}
 
-  <input
-    type="email"
-    placeholder="Your email"
-    className="w-full p-3 bg-transparent border border-gray-600 rounded text-black placeholder-gray-400 focus:outline-none focus:border-orange-500"
-    value={formData.email}
-    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-    required
-  />
+                {/* Email */}
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  {...register("email")}
+                  className="w-full p-3 border border-gray-600 rounded text-black focus:outline-none focus:border-orange-500"
+                />
+                {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
 
-  <input
-    type="text"
-    placeholder="Service Description"
-    className="w-full p-3 bg-transparent border border-gray-600 rounded text-black placeholder-gray-400 focus:outline-none focus:border-orange-500"
-    value={formData.serviceDescription}
-    onChange={(e) => setFormData({ ...formData, serviceDescription: e.target.value })}
-  />
+                {/* Service Description */}
+                <input
+                  type="text"
+                  placeholder="Service Description"
+                  {...register("serviceDescription")}
+                  className="w-full p-3 border border-gray-600 rounded text-black focus:outline-none focus:border-orange-500"
+                />
 
-  <select
-    className="w-full p-3 bg-transparent border border-gray-600 rounded text-black placeholder-gray-400 focus:outline-none focus:border-orange-500"
-    value={formData.service}
-    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-    required
-  >
-    <option value="" disabled>Select a Service</option>
-    <option value="web-design" className="text-black">Web Design</option>
-    <option value="seo" className="text-black">SEO</option>
-    <option value="digital-marketing" className="text-black">Digital Marketing</option>
-    <option value="app-development" className="text-black">App Development</option>
-  </select>
+                {/* Service Dropdown */}
+                <select
+                  {...register("service")}
+                  className="w-full p-3 border border-gray-600 rounded text-black focus:outline-none focus:border-orange-500"
+                >
+                  <option value="">Select a Service</option>
+                  <option value="web-design">Web Design</option>
+                  <option value="seo">SEO</option>
+                  <option value="digital-marketing">Digital Marketing</option>
+                  <option value="app-development">App Development</option>
+                </select>
+                {errors.service && <p className="text-red-500 text-sm">{errors.service.message}</p>}
 
-  <textarea
-    placeholder="Message"
-    rows={4}
-    className="w-full p-3 bg-transparent border border-gray-600 rounded text-black placeholder-gray-400 focus:outline-none focus:border-orange-500"
-    value={formData.message}
-    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-  ></textarea>
+                {/* Message */}
+                <textarea
+                  placeholder="Message"
+                  rows={4}
+                  {...register("message")}
+                  className="w-full p-3 border border-gray-600 rounded text-black focus:outline-none focus:border-orange-500"
+                ></textarea>
+                {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
 
-  <motion.button
-    type="submit"
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded transition duration-200"
-  >
-    GET A FREE QUOTE
-  </motion.button>
-</form>
-
+                {/* Submit */}
+                <motion.button
+                  type="submit"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  disabled={isSubmitting}
+                  className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded transition duration-200 disabled:opacity-50"
+                >
+                  {isSubmitting ? "Sending..." : "GET A FREE QUOTE"}
+                </motion.button>
+              </form>
             </motion.div>
           </div>
         </motion.section>
@@ -564,20 +570,22 @@ const handleSubmit = async (e) => {
             <div className="w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
               <iframe
                 title="Our Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6844.389343535898!2d73.74328612704322!3d18.589892071999216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b960040a8f1d%3A0x442ddcbba499eb66!2sSuratwala%20Mark%20Plaza%2C%20Hinjawadi%2C%20Pimpri-Chinchwad%2C%20Maharashtra%20411057%2C%20India!5e1!3m2!1sen!2sus!4v1753161809370!5m2!1sen!2sus"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8971.566460880815!2d73.74558212579804!3d18.589892117051907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b960040a8f1d%3A0x442ddcbba499eb66!2sSuratwala%20Mark%20Plaza%2C%20Hinjawadi%2C%20Pimpri-Chinchwad%2C%20Maharashtra%20411057%2C%20India!5e1!3m2!1sen!2sus!4v1754974803382!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
-                allowFullScreen=""
+                allowFullScreen
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
+
+
+              
             </div>
           </div>
         </section>
       </div>
 
-      <Footer />
-    </>
+      <Footer />
+    </>
   );
 }

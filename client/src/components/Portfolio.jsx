@@ -283,7 +283,7 @@ export default function PortfolioShowcase() {
   return (
     <div className="min-h-screen bg-black text-white p-8">
       {/* Tabs */}
-      <div className="flex justify-center gap-4 mb-6">
+      <div className="flex justify-center gap-3 sm:gap-4 my-6 ">
         {tabs.map((tab) => (
           <button
             key={tab}

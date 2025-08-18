@@ -25,22 +25,22 @@ export default function AppDevelopment() {
       id: 1,
       title: "Strategy & Planning",
       description: "Define your app's purpose, target users, and core features.",
-      defaultIcon: <Search className="w-8 h-8 text-purple-400" />,
-      hoverIcon: <Globe2 className="w-8 h-8 text-purple-600" />,
+      defaultIcon: <Search className="w-8 h-8 text-secondaryText" />,
+      hoverIcon: <Globe2 className="w-8 h-8 text-accent" />,
     },
     {
       id: 2,
       title: "Design & Development",
       description: "Create intuitive UI/UX and build scalable mobile apps.",
-      defaultIcon: <BarChart3 className="w-8 h-8 text-blue-400" />,
-      hoverIcon: <TrendingUp className="w-8 h-8 text-blue-600" />,
+      defaultIcon: <BarChart3 className="w-8 h-8 text-secondaryText" />,
+      hoverIcon: <TrendingUp className="w-8 h-8 text-accent" />,
     },
     {
       id: 3,
       title: "Testing & Launch",
       description: "Test thoroughly and deploy across iOS, Android, or web.",
-      defaultIcon: <Settings2 className="w-8 h-8 text-cyan-400" />,
-      hoverIcon: <LineChart className="w-8 h-8 text-cyan-600" />,
+      defaultIcon: <Settings2 className="w-8 h-8 text-secondaryText" />,
+      hoverIcon: <LineChart className="w-8 h-8 text-accent" />,
     },
   ];
 
@@ -80,7 +80,7 @@ export default function AppDevelopment() {
   return (
     <>
       <Navbar />
-      <div className="bg-slate-900 py-40 px-4">
+      <div className=" py-40 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <ServiceSidebar />
@@ -94,24 +94,24 @@ export default function AppDevelopment() {
               </div>
 
               <div className="space-y-6">
-                <p className="text-gray-300 text-lg leading-relaxed">
+                <p className="text-secondaryText text-lg leading-relaxed">
                   Mobile and web applications are essential tools for connecting with users and offering personalized digital experiences. Our app development service helps turn your ideas into powerful, user-friendly applications.
                 </p>
 
-                <p className="text-gray-300 text-lg leading-relaxed">
+                <p className="text-secondaryText text-lg leading-relaxed">
                   From startups to enterprises, we build scalable and secure apps tailored to your business goals. Our end-to-end development process ensures innovation, efficiency, and a smooth user journey.
                 </p>
               </div>
 
-              <section className="text-white pt-16 px-4">
+              <section className="text-secondaryText pt-16 px-4">
                 <div className="mb-16">
-                  <h2 className="text-2xl lg:text-[40px] font-bold text-white leading-tight mb-6">
+                  <h2 className="text-2xl lg:text-[40px] font-bold text-secondaryText leading-tight mb-6">
                     Step-by-step app development tailored to{" "}
-                    <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                    <span className="text-accent ">
                       your business goals
                     </span>
                   </h2>
-                  <p className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto">
+                  <p className="text-secondaryText text-lg leading-relaxed max-w-4xl mx-auto">
                     Our development process is designed to deliver apps that not only look great but also perform seamlessly. From idea to deployment, we provide complete support at every stage.
                   </p>
                 </div>
@@ -120,34 +120,34 @@ export default function AppDevelopment() {
                   {steps.map((step, index) => (
                     <div
                       key={step.id}
-                      className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 relative transition duration-300 hover:shadow-2xl hover:scale-[1.02]"
+                      className="border border-slate-700/50 rounded-2xl p-6 relative transition duration-300 hover:shadow-2xl hover:scale-[1.02]"
                       onMouseEnter={() => setHoveredIndex(index)}
                       onMouseLeave={() => setHoveredIndex(null)}
                     >
-                      <div className="absolute top-0 right-0 bg-gradient-to-r from-blue-400 to-purple-500 text-white text-sm font-bold px-4 py-2 rounded-bl-2xl">
+                      <div className="absolute top-0 right-0 bg-accent  text-secondaryText text-sm font-bold px-4 py-2 rounded-bl-2xl">
                         {`0${step.id}`}
                       </div>
 
                       <div className="mb-4">
                         {hoveredIndex === index ? step.hoverIcon : step.defaultIcon}
                       </div>
-                      <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                      <p className="text-gray-400">{step.description}</p>
+                      <h3 className="text-xl text-primaryText font-semibold mb-2">{step.title}</h3>
+                      <p className="text-secondaryText">{step.description}</p>
                     </div>
                   ))}
                 </div>
               </section>
 
-              <section className="text-white py-16 px-4">
+              <section className="text-secondaryText py-16 px-4">
                 <div className="space-y-10">
                   <h2 className="text-2xl lg:text-4xl font-bold leading-tight">
                     Experienced developers dedicated to<br />
-                    <span className="text-transparent bg-gradient-to-r from-[#3A49F9] to-[#C44AFB] bg-clip-text">
+                    <span className="text-accent">
                       building innovative apps
                     </span>
                   </h2>
 
-                  <p className="text-gray-300 text-lg leading-relaxed max-w-3xl">
+                  <p className="text-secondaryText text-lg leading-relaxed max-w-3xl">
                     Our team of developers brings your ideas to life with high-quality, secure, and scalable mobile and web applications. We focus on user experience, performance, and future-ready technologies.
                   </p>
 
@@ -164,13 +164,13 @@ export default function AppDevelopment() {
               <div className="py-16 px-4">
                 <div className="max-w-4xl mx-auto">
                   <div className="mb-12">
-                    <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+                    <h1 className="text-4xl lg:text-5xl font-bold text-secondaryText leading-tight mb-6">
                       Frequently Asked Questions About <br />
-                      <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                      <span className="text-accent">
                         App Development
                       </span>
                     </h1>
-                    <p className="text-gray-300 text-lg leading-relaxed">
+                    <p className="text-secondaryText text-lg leading-relaxed">
                       Get answers to common questions about timelines, platforms, technologies, and post-launch support related to app development.
                     </p>
                   </div>
@@ -179,19 +179,19 @@ export default function AppDevelopment() {
                     {faqs.map((faq) => (
                       <div
                         key={faq.id}
-                        className="bg-slate-800/50 border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 hover:bg-slate-800/70"
+                        className=" border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 hover:bg-amber-100"
                       >
                         <button
                           onClick={() => toggleQuestion(faq.id)}
                           className="w-full flex items-center justify-between p-6 text-left group"
                         >
-                          <h3 className="text-white text-lg font-medium pr-4 group-hover:text-blue-300 transition-colors duration-300">
+                          <h3 className="text-secondaryText text-lg font-medium pr-4 group-hover:text-accent transition-colors duration-300">
                             {faq.question}
                           </h3>
                           <div className="flex-shrink-0">
                             {openQuestion === faq.id ? (
                               <svg
-                                className="w-6 h-6 text-white group-hover:text-blue-300 transition-colors duration-300"
+                                className="w-6 h-6 text-secondaryText group-hover:text-blue-300 transition-colors duration-300"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -200,7 +200,7 @@ export default function AppDevelopment() {
                               </svg>
                             ) : (
                               <svg
-                                className="w-6 h-6 text-white group-hover:text-blue-300 transition-colors duration-300"
+                                className="w-6 h-6 text-secondaryText group-hover:text-blue-300 transition-colors duration-300"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -218,7 +218,7 @@ export default function AppDevelopment() {
                         >
                           <div className="px-6 pb-6">
                             <div className="h-px bg-slate-700/50 mb-4"></div>
-                            <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                            <p className="text-secondaryText leading-relaxed">{faq.answer}</p>
                           </div>
                         </div>
                       </div>

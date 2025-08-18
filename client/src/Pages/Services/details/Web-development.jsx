@@ -27,22 +27,22 @@ export default function WebDevelopment() {
       id: 1,
       title: "Planning & Analysis",
       description: "Understanding your business goals and defining project scope.",
-      defaultIcon: <LayoutDashboard className="w-8 h-8 text-purple-400" />,
-      hoverIcon: <MonitorSmartphone className="w-8 h-8 text-purple-600" />,
+      defaultIcon: <LayoutDashboard className="w-8 h-8 text-secondaryText" />,
+      hoverIcon: <MonitorSmartphone className="w-8 h-8 text-accent" />,
     },
     {
       id: 2,
       title: "Design & UI/UX",
       description: "Creating wireframes and user-friendly interfaces.",
-      defaultIcon: <Code className="w-8 h-8 text-blue-400" />,
-      hoverIcon: <Code2 className="w-8 h-8 text-blue-600" />,
+      defaultIcon: <Code className="w-8 h-8 text-secondaryText" />,
+      hoverIcon: <Code2 className="w-8 h-8 text-accent" />,
     },
     {
       id: 3,
       title: "Development & Launch",
       description: "Building, testing, and deploying your website or web app.",
-      defaultIcon: <Wrench className="w-8 h-8 text-cyan-400" />,
-      hoverIcon: <Hammer className="w-8 h-8 text-cyan-600" />,
+      defaultIcon: <Wrench className="w-8 h-8 text-secondaryText" />,
+      hoverIcon: <Hammer className="w-8 h-8 text-accent" />,
     },
   ];
 
@@ -82,7 +82,7 @@ export default function WebDevelopment() {
   return (
     <>
       <Navbar />
-      <div className="bg-slate-900 py-40 px-4">
+      <div className=" py-40 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <ServiceSidebar />
@@ -98,26 +98,26 @@ export default function WebDevelopment() {
 
               {/* Introduction Content */}
               <div className="space-y-6">
-                <p className="text-gray-300 text-lg leading-relaxed">
+                <p className="text-secondaryText text-lg leading-relaxed">
                   Web development is the backbone of your online presence. From landing pages to enterprise-level platforms, 
                   our team delivers customized solutions that are responsive, fast, and user-friendly.
                 </p>
-                <p className="text-gray-300 text-lg leading-relaxed">
+                <p className="text-secondaryText text-lg leading-relaxed">
                   Whether you need a personal portfolio, a business website, or a full-stack web application, we specialize 
                   in turning your ideas into interactive digital experiences tailored for your audience.
                 </p>
               </div>
 
               {/* Process Section */}
-              <section className="text-white pt-16 px-4">
+              <section className="text-secondaryText pt-16 px-4">
                 <div className="mb-16">
-                  <h2 className="text-2xl lg:text-[40px] font-bold text-white leading-tight mb-6">
+                  <h2 className="text-2xl lg:text-[40px] font-bold text-primaryText leading-tight mb-6">
                     Our step-by-step web development process tailored to{" "}
-                    <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                    <span className="text-accent bg-clip-text ">
                       your vision
                     </span>
                   </h2>
-                  <p className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto">
+                  <p className="text-secondaryText text-lg leading-relaxed max-w-4xl mx-auto">
                     We follow a clear and collaborative process—from planning and design to development and deployment—to bring your digital ideas to life.
                   </p>
                 </div>
@@ -126,11 +126,11 @@ export default function WebDevelopment() {
                   {steps.map((step, index) => (
                     <div
                       key={step.id}
-                      className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 relative transition duration-300 hover:shadow-2xl hover:scale-[1.02]"
+                      className="  border border-slate-700/50 rounded-2xl p-6 relative transition duration-300 hover:shadow-2xl hover:scale-[1.02]"
                       onMouseEnter={() => setHoveredIndex(index)}
                       onMouseLeave={() => setHoveredIndex(null)}
                     >
-                      <div className="absolute top-0 right-0 bg-gradient-to-r from-blue-400 to-purple-500 text-white text-sm font-bold px-4 py-2 rounded-bl-2xl">
+                      <div className="absolute top-0 right-0 bg-accent text-secondaryText  text-sm font-bold px-4 py-2 rounded-bl-2xl">
                         {`0${step.id}`}
                       </div>
 
@@ -138,23 +138,23 @@ export default function WebDevelopment() {
                         {hoveredIndex === index ? step.hoverIcon : step.defaultIcon}
                       </div>
                       <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                      <p className="text-gray-400">{step.description}</p>
+                      <p className="text-secondaryText-400">{step.description}</p>
                     </div>
                   ))}
                 </div>
               </section>
 
               {/* Expert Section */}
-              <section className="text-white py-16 px-4">
+              <section className="text-secondaryText py-16 px-4">
                 <div className="space-y-10">
                   <h2 className="text-2xl lg:text-4xl font-bold leading-tight">
                     Skilled developers building modern <br />
-                    <span className="text-transparent bg-gradient-to-r from-[#3A49F9] to-[#C44AFB] bg-clip-text">
+                    <span className="text-accent bg-clip-text">
                       web experiences
                     </span>
                   </h2>
 
-                  <p className="text-gray-300 text-lg leading-relaxed max-w-3xl">
+                  <p className="text-secondaryText text-lg leading-relaxed max-w-3xl">
                     Our developers combine creativity with code to deliver performance-driven websites that captivate and convert. We build future-ready, scalable, and accessible platforms.
                   </p>
 
@@ -172,13 +172,13 @@ export default function WebDevelopment() {
               <div className="py-16 px-4">
                 <div className="max-w-4xl mx-auto">
                   <div className="mb-12">
-                    <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+                    <h1 className="text-4xl lg:text-5xl font-bold text-secondaryText leading-tight mb-6">
                       Web development FAQs to <br />
-                      <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                      <span className="text-accent">
                         guide your project
                       </span>
                     </h1>
-                    <p className="text-gray-300 text-lg leading-relaxed">
+                    <p className="text-secondaryText text-lg leading-relaxed">
                       Have questions about our web development services? Here’s everything you need to know before starting your project with us.
                     </p>
                   </div>
@@ -187,13 +187,13 @@ export default function WebDevelopment() {
                     {faqs.map((faq) => (
                       <div
                         key={faq.id}
-                        className="bg-slate-800/50 border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 hover:bg-slate-800/70"
+                        className="border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 hover:bg-amber-100"
                       >
                         <button
                           onClick={() => toggleQuestion(faq.id)}
                           className="w-full flex items-center justify-between p-6 text-left group"
                         >
-                          <h3 className="text-white text-lg font-medium pr-4 group-hover:text-blue-300 transition-colors duration-300">
+                          <h3 className="text-primaryText text-lg font-medium pr-4 group-hover:text-accent transition-colors duration-300">
                             {faq.question}
                           </h3>
                           <div className="flex-shrink-0">
@@ -208,7 +208,7 @@ export default function WebDevelopment() {
                               </svg>
                             ) : (
                               <svg
-                                className="w-6 h-6 text-white group-hover:text-blue-300 transition-colors duration-300"
+                                className="w-6 h-6 text-secondaryText group-hover:text-blue-300 transition-colors duration-300"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -225,8 +225,8 @@ export default function WebDevelopment() {
                           }`}
                         >
                           <div className="px-6 pb-6">
-                            <div className="h-px bg-slate-700/50 mb-4"></div>
-                            <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                            <div className="h-px  mb-4"></div>
+                            <p className="text-secondaryText leading-relaxed">{faq.answer}</p>
                           </div>
                         </div>
                       </div>
