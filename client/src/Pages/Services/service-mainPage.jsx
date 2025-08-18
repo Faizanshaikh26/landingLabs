@@ -21,7 +21,7 @@ export default function Service() {
 
 
 
-<div className='py-30'>  
+<div className=' py-20 md:py-30'>  
 
 
     <ServiceBanner/>

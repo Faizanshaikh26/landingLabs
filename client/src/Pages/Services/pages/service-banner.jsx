@@ -106,25 +106,27 @@ export default function ServiceBanner() {
   return (
     <div className="w-full relative overflow-hidden text-primaryText">
       {/* Hero Content Section */}
-      <div className="w-full min-h-[70vh] flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 lg:px-12">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight max-w-4xl">
-          This Isn’t Just a Platform. It’s a{" "}
-          <span className="text-accent">Possibility Engine</span>
-        </h1>
+      <div className="w-full min-h-[60vh] md:min-h-[70vh] flex flex-col items-center justify-center text-center px-2 sm:px-6 md:px-8 lg:px-12 ">
+  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight 
+                 w-full  sm:max-w-4xl">
+    This Isn’t Just a Platform. It’s a{" "}
+    <span className="text-accent">Possibility Engine</span>
+  </h1>
 
-        <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl font-semibold text-secondaryText">
-          Launch Smarter. Grow Faster.
-        </h2>
+  <h2 className="mt-4 text-xl sm:text-2xl md:text-3xl font-semibold text-secondaryText w-full sm:w-auto">
+    Launch Smarter. Grow Faster.
+  </h2>
 
-        <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-gray-600 px-2">
-          Empower your brand, engage your audience, elevate your success —
-          Tailored growth solutions fueled by creativity and data.
-        </p>
+  <p className="mt-6 text-base sm:text-lg md:text-xl text-gray-600  w-full sm:max-w-2xl">
+    Empower your brand, engage your audience, elevate your success —
+    Tailored growth solutions fueled by creativity and data.
+  </p>
 
-        <button className="mt-8 px-5 sm:px-6 py-2.5 sm:py-3 bg-accent hover:bg-accentHover rounded-full text-base sm:text-lg font-medium shadow-md transition">
-          Get Started
-        </button>
-      </div>
+  <button className="mt-8 px-5 sm:px-6 py-2.5 sm:py-3 bg-accent hover:bg-accentHover rounded-full text-base sm:text-lg font-medium shadow-md transition">
+    Get Started
+  </button>
+</div>
+
 
       {/* Services ticker below hero */}
       <div className="bg-primaryCardBg border-t border-secondaryText">
