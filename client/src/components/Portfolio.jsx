@@ -717,33 +717,10 @@
 //}
 //
 // src/pages/Portfolio.jsx
-// -----------------------------------------------------------------------------
-// ✅ Drop-in enhanced portfolio page for a service-based web agency
-//    - Modern UI/UX with Tailwind + Framer Motion
-//    - Filterable masonry gallery (react-photo-album)
-//    - Lightbox on click (yet-another-react-lightbox)
-//    - Smooth brand credibility marquee (react-fast-marquee)
-//    - Crisp icons (lucide-react)
-//    - Accessible, responsive, dark-mode friendly
-// -----------------------------------------------------------------------------
-// 📦 Install (Vite/CRA/Next) — run in your project root:
-// npm i framer-motion react-photo-album yet-another-react-lightbox react-fast-marquee lucide-react
-//
-// 💅 Styles (required for the lightbox)
-// import this stylesheet **once** in your app entry (e.g., src/main.jsx or App.jsx):
-//   import "yet-another-react-lightbox/styles.css";
-//
-// 🧰 Tailwind: ensure Tailwind is already set up. Add `class="scroll-smooth"` on <html>.
-// -----------------------------------------------------------------------------
-
 import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import PhotoAlbum from "react-photo-album";
-import Lightbox from "yet-another-react-lightbox";
-import Marquee from "react-fast-marquee";
-import { ArrowUpRight, BadgeCheck, Filter, Images, Star } from "lucide-react";
 
-// ✅ Local assets (replace with your real images)
+// ✅ Import images from local assets
 import hero from "../assets/images/hero-image-4.jpg";
 import aboutUsBanner from "../assets/images/finance-industries.jpg";
 import education from "../assets/images/Education.jpg";
@@ -751,24 +728,18 @@ import foodIndustries from "../assets/images/food-industries.jpg";
 import healthcare from "../assets/images/healthCare-industries.jpg";
 import retail from "../assets/images/retail-Industries.jpg";
 import startup from "../assets/images/tech-startUp-industries.jpg";
-
 import client1 from "../assets/images/hero-image-4.jpg";
 import client2 from "../assets/images/hero-image-4.jpg";
 import client3 from "../assets/images/hero-image-4.jpg";
 
-// ----------------------------------------------------------------------------
-// DATA
-// ----------------------------------------------------------------------------
-const RAW_PROJECTS = [
+// ✅ Project Data
+const PROJECTS = [
   {
     id: 1,
     title: "D2C E‑Commerce Revamp",
     category: "Web",
     img: aboutUsBanner,
     tags: ["Next.js", "Tailwind", "Stripe"],
-    // Approx aspect ratio; adjust if you know the real sizes
-    width: 1600,
-    height: 1040,
   },
   {
     id: 2,
@@ -776,8 +747,6 @@ const RAW_PROJECTS = [
     category: "Web",
     img: education,
     tags: ["SEO", "A/B Test", "Analytics"],
-    width: 1600,
-    height: 1000,
   },
   {
     id: 3,
@@ -785,8 +754,6 @@ const RAW_PROJECTS = [
     category: "App",
     img: foodIndustries,
     tags: ["iOS", "React Native", "Design"],
-    width: 1600,
-    height: 1067,
   },
   {
     id: 4,
@@ -794,32 +761,25 @@ const RAW_PROJECTS = [
     category: "Branding",
     img: healthcare,
     tags: ["Logo", "Guidelines", "Typography"],
-    width: 1600,
-    height: 1000,
   },
   {
     id: 5,
     title: "EdTech Portal",
     category: "Web",
     img: retail,
-    tags: ["CMS", "Accessibility", "Lighthouse 95+"],
-    width: 1600,
-    height: 1067,
+    tags: ["CMS", "Accessibility", "Lighthouse 95+"]
   },
   {
     id: 6,
     title: "Food Delivery App UI",
     category: "App",
     img: startup,
-    tags: ["Android", "Prototyping", "UX"],
-    width: 1600,
-    height: 1000,
+    tags: ["Android", "Prototyping", "UX"]
   },
 ];
 
 const CATEGORIES = ["All", "Web", "App", "Branding"];
 
-// Motion helpers
 const fadeIn = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
@@ -827,68 +787,42 @@ const fadeIn = {
 
 export default function Portfolio() {
   const [filter, setFilter] = useState("All");
-  const [lightboxIndex, setLightboxIndex] = useState(-1);
 
-  const projects = useMemo(() => {
-    const list = filter === "All" ? RAW_PROJECTS : RAW_PROJECTS.filter((p) => p.category === filter);
-    return list;
-  }, [filter]);
-
-  // react-photo-album expects `{ src, width, height }`
-  const photos = useMemo(
-    () =>
-      projects.map((p) => ({
-        src: p.img,
-        width: p.width,
-        height: p.height,
-        alt: p.title,
-        key: p.id,
-      })),
-    [projects]
+  const filtered = useMemo(
+    () => (filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.category === filter)),
+    [filter]
   );
 
   return (
-    <div className="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100">
+    <main className="px-4 sm:px-6 lg:px-10 py-10 lg:py-14">
       {/* HERO */}
-      <section className="relative min-h-[72vh] grid place-items-center overflow-hidden">
-        <img src={hero} alt="Hero background" className="absolute inset-0 size-full object-cover opacity-40 dark:opacity-30" />
-        <div className="relative z-10 px-6 text-center max-w-4xl">
-          <motion.p
-            variants={fadeIn}
-            initial="hidden"
-            animate="show"
-            className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/70 px-3 py-1 text-xs font-medium text-gray-900 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/50 dark:bg-gray-900/50 dark:text-white"
-          >
-            <BadgeCheck className="h-4 w-4" /> Results‑driven Web Agency
-          </motion.p>
-          <motion.h1
-            variants={fadeIn}
-            initial="hidden"
-            animate="show"
-            className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl"
-          >
-            Work that ships. Results that stick.
-          </motion.h1>
-          <motion.p
-            variants={fadeIn}
-            initial="hidden"
-            animate="show"
-            className="mx-auto mt-3 max-w-2xl text-base text-gray-700 dark:text-gray-300 sm:text-lg"
-          >
-            Websites, apps and brand systems built for growth—fast, accessible and SEO‑ready.
-          </motion.p>
-          <motion.div variants={fadeIn} initial="hidden" animate="show" className="mt-6 flex flex-wrap justify-center gap-3">
-            <a href="#work" className="inline-flex items-center rounded-xl bg-gray-900 px-5 py-3 font-semibold text-white shadow-lg shadow-gray-900/10 transition hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100">
-              Explore Work <ArrowUpRight className="ml-2 h-4 w-4" />
-            </a>
-            <a href="#contact" className="inline-flex items-center rounded-xl border px-5 py-3 font-semibold transition hover:bg-gray-50 dark:border-white/20 dark:hover:bg-white/10">
-              Get a Quote
-            </a>
-          </motion.div>
+      <motion.section
+        id="top"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.4 }}
+        className="max-w-5xl mx-auto text-center"
+      >
+        <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs sm:text-sm bg-white/60 backdrop-blur supports-[backdrop-filter]:bg-white/40">
+          <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+          Results‑driven Web Agency Portfolio
+        </span>
+        <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+          Work that ships. Results that stick.
+        </h1>
+        <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+          Websites, apps, and brand systems crafted for growth—fast, accessible, and SEO‑ready.
+        </p>
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <a href="#work" className="inline-flex items-center rounded-xl px-5 py-3 text-white font-semibold bg-gray-900 hover:bg-gray-800 transition shadow-lg shadow-gray-900/10">
+            Explore Work
+          </a>
+          <a href="#contact" className="inline-flex items-center rounded-xl px-5 py-3 font-semibold border hover:bg-gray-50 transition">
+            Get a Quote
+          </a>
         </div>
-        {/* Decorative gradient */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white to-transparent dark:from-gray-950" />
-      </section>
+      </motion.section>
 
       {/* FILTER BAR */}
       <motion.div
@@ -896,12 +830,9 @@ export default function Portfolio() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.3 }}
-        className="sticky top-0 z-30 mx-auto mt-8 w-full max-w-6xl rounded-2xl border bg-white/80 px-3 py-3 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-white/10 dark:bg-gray-900/70"
+        className="max-w-6xl mx-auto sticky top-0 z-20 mt-10 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/50 rounded-2xl border px-3 sm:px-4 py-3"
       >
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-          <span className="hidden items-center gap-2 rounded-xl border px-3 py-1 text-xs sm:inline-flex dark:border-white/20">
-            <Filter className="h-4 w-4" /> Filter by
-          </span>
           {CATEGORIES.map((cat) => {
             const active = filter === cat;
             return (
@@ -911,8 +842,8 @@ export default function Portfolio() {
                 className={
                   `px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 border ` +
                   (active
-                    ? "bg-gray-900 text-white border-gray-900 shadow dark:bg-white dark:text-gray-900"
-                    : "bg-white hover:bg-gray-50 border-gray-200 dark:bg-gray-950 dark:border-white/10 dark:hover:bg-white/10")
+                    ? "bg-gray-900 text-white border-gray-900 shadow"
+                    : "bg-white hover:bg-gray-50 border-gray-200")
                 }
                 aria-pressed={active}
               >
@@ -923,131 +854,111 @@ export default function Portfolio() {
         </div>
       </motion.div>
 
-      {/* WORK GRID (Masonry) */}
-      <section id="work" className="mx-auto mt-8 max-w-6xl px-4">
-        <div className="mb-6 text-center">
-          <h2 className="text-2xl font-bold sm:text-3xl">Featured Projects</h2>
-          <p className="mx-auto mt-2 max-w-2xl text-sm text-gray-600 dark:text-gray-300">
-            From SaaS to e‑commerce, apps to branding—crafted experiences that drive real results.
-          </p>
-        </div>
-
-        <PhotoAlbum
-          layout="masonry"
-          spacing={12}
-          padding={0}
-          photos={photos}
-          columns={(containerWidth) => {
-            if (containerWidth < 640) return 1;
-            if (containerWidth < 1024) return 2;
-            return 3;
-          }}
-          onClick={({ index }) => setLightboxIndex(index)}
-          renderPhoto={({ imageProps, photo, index }) => {
-            const project = projects[index];
-            return (
-              <motion.figure
-                key={photo.key}
+      {/* GRID / MASONRY */}
+      <section id="work" className="max-w-6xl mx-auto mt-8">
+        <AnimatePresence mode="popLayout">
+          {/* Masonry columns with break-inside-avoid for card integrity */}
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
+            {filtered.map((p, i) => (
+              <motion.article
+                key={p.id}
+                layout
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5 }}
-                className="group relative overflow-hidden rounded-2xl border shadow-sm transition-shadow hover:shadow-md dark:border-white/10"
+                transition={{ duration: 0.5, delay: i * 0.03 }}
+                className="mb-6 break-inside-avoid rounded-2xl overflow-hidden border shadow-sm hover:shadow-md transition-shadow group bg-white"
               >
-                <img
-                  {...imageProps}
-                  className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-                {/* Overlay */}
-                <figcaption className="pointer-events-none absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/50 via-black/10 to-transparent p-4 opacity-0 transition-opacity group-hover:opacity-100">
-                  <div className="pointer-events-none text-white">
-                    <p className="text-xs font-medium opacity-90">{project.category}</p>
-                    <h3 className="text-lg font-semibold leading-tight">{project.title}</h3>
-                    <div className="mt-1 flex flex-wrap gap-1">
-                      {project.tags?.slice(0, 3).map((t) => (
-                        <span key={t} className="pointer-events-auto rounded-full bg-white/90 px-2 py-0.5 text-[11px] font-medium text-gray-900">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
+                <div className="relative overflow-hidden">
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <div className="p-5 text-left">
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 border">
+                      {p.category}
+                    </span>
+                    {p.tags?.slice(0, 3).map((t) => (
+                      <span key={t} className="px-2 py-1 rounded-full bg-gray-50 border text-gray-600">
+                        {t}
+                      </span>
+                    ))}
                   </div>
-                </figcaption>
-              </motion.figure>
-            );
-          }}
-        />
-
-        {/* Lightbox */}
-        <AnimatePresence>
-          {lightboxIndex >= 0 && (
-            <Lightbox
-              open
-              close={() => setLightboxIndex(-1)}
-              index={lightboxIndex}
-              slides={projects.map((p) => ({ src: p.img, description: p.title }))}
-              // small UI polish
-              carousel={{ finite: projects.length <= 1 }}
-              render={{
-                buttonPrev: projects.length <= 1 ? () => null : undefined,
-                buttonNext: projects.length <= 1 ? () => null : undefined,
-              }}
-            />
-          )}
+                  <h3 className="mt-3 text-lg font-semibold">{p.title}</h3>
+                  <div className="mt-3 flex items-center justify-between">
+                    <a
+                      href="#contact"
+                      className="text-sm font-semibold underline underline-offset-4 hover:no-underline"
+                    >
+                      Start a Similar Project →
+                    </a>
+                    <button
+                      className="text-xs px-3 py-1 rounded-lg border hover:bg-gray-50"
+                      onClick={() => window.alert(`Open case study for: ${p.title}`)}
+                    >
+                      View Case Study
+                    </button>
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </div>
         </AnimatePresence>
       </section>
 
-      {/* SOCIAL PROOF / CLIENT LOGOS */}
-      <section className="mx-auto mt-16 max-w-6xl px-4">
+      {/* CLIENT LOGOS / SOCIAL PROOF */}
+      <motion.section
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        className="max-w-6xl mx-auto mt-16"
+      >
         <div className="text-center">
-          <h2 className="text-2xl font-bold sm:text-3xl">Trusted by ambitious teams</h2>
-          <p className="mt-2 text-gray-600 dark:text-gray-300">From startups to enterprises.</p>
+          <h2 className="text-2xl sm:text-3xl font-bold">Trusted by ambitious teams</h2>
+          <p className="mt-2 text-gray-600">From startups to enterprises.</p>
         </div>
-        <div className="mt-6 rounded-2xl border p-4 dark:border-white/10">
-          <Marquee pauseOnHover gradient={false} speed={50} className="[--gap:3rem]">
-            {[client1, client2, client3, client1, client2, client3].map((logo, i) => (
-              <div key={i} className="mx-10 inline-flex items-center justify-center">
-                <img src={logo} alt={`client-${i + 1}`} className="h-10 w-auto opacity-70" />
-              </div>
-            ))}
-          </Marquee>
+        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
+          {[client1, client2, client3, client1, client2, client3].map((logo, n) => (
+            <div key={n} className="flex items-center justify-center p-4 rounded-xl border bg-white hover:shadow-sm transition">
+              <img src={logo} alt="client logo" className="h-8 sm:h-10 opacity-70" />
+            </div>
+          ))}
         </div>
-      </section>
-
-      {/* METRICS / VALUE PROPS */}
-      <section className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-4 px-4 sm:grid-cols-3">
-        {[
-          { icon: Images, label: "Projects shipped", value: "120+" },
-          { icon: Star, label: "Avg. Lighthouse Score", value: "95+" },
-          { icon: BadgeCheck, label: "Client NPS", value: "70+" },
-        ].map((kpi) => (
-          <div key={kpi.label} className="rounded-2xl border p-6 text-center shadow-sm dark:border-white/10">
-            <kpi.icon className="mx-auto h-6 w-6 opacity-80" />
-            <div className="mt-3 text-3xl font-extrabold">{kpi.value}</div>
-            <div className="text-sm text-gray-600 dark:text-gray-300">{kpi.label}</div>
-          </div>
-        ))}
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section id="contact" className="mx-auto my-16 max-w-6xl px-4">
-        <div className="relative overflow-hidden rounded-3xl border dark:border-white/10">
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-white dark:via-gray-200 dark:to-white" />
-          <div className="relative px-6 py-12 text-center text-white dark:text-gray-900 sm:px-10 sm:py-16">
-            <h3 className="text-2xl font-extrabold sm:text-3xl">Ready to build your next big thing?</h3>
-            <p className="mx-auto mt-2 max-w-2xl text-white/85 dark:text-gray-700">
-              We design, develop and launch high‑performance websites and apps.
+      <motion.section
+        id="contact"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        className="max-w-5xl mx-auto mt-16"
+      >
+        <div className="relative overflow-hidden rounded-3xl border">
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900" />
+          <div className="relative px-6 py-12 sm:px-10 sm:py-16 text-center text-white">
+            <h3 className="text-2xl sm:text-3xl font-extrabold">Ready to build your next big thing?</h3>
+            <p className="mt-2 text-white/80 max-w-2xl mx-auto">
+              We design, develop, and launch high‑performance websites and apps.
             </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <a href="/contact" className="inline-flex items-center rounded-xl bg-white px-5 py-3 font-semibold text-gray-900 transition hover:bg-gray-100 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800">
+            <div className="mt-6 flex flex-wrap gap-3 justify-center">
+              <a href="/contact" className="inline-flex items-center px-5 py-3 bg-white text-gray-900 rounded-xl font-semibold hover:bg-gray-100 transition">
                 Get a Quote
               </a>
-              <a href="#top" className="inline-flex items-center rounded-xl border border-white/30 px-5 py-3 font-semibold transition hover:bg-white/10 dark:border-gray-300 dark:hover:bg-gray-100/60">
+              <a href="#top" className="inline-flex items-center px-5 py-3 border border-white/30 rounded-xl font-semibold hover:bg-white/10 transition">
                 Back to top
               </a>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </motion.section>
+    </main>
   );
 }
