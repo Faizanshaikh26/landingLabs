@@ -3,9 +3,10 @@
 import { useState } from "react";
 
 export default function FAQSection() {
-  const [openQuestion, setOpenQuestion] = useState(1);
+const [openQuestion, setOpenQuestion] = useState(-1);
 
-  const toggleQuestion = (id) => {
+
+ const toggleQuestion = (id) => {
     setOpenQuestion(openQuestion === id ? -1 : id);
   };
 

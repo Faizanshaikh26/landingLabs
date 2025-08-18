@@ -14,15 +14,15 @@
 //                 <div className="flex -space-x-2">
 //                   <img
 //                     src="https://html.awaikenthemes.com/firevall/images/author-1.jpg"
-//                     className="w-10 h-10 rounded-full border-2 border-secondaryText"
+//                     className="h-8 w-8 md:w-10 md:h-10 rounded-full border-2 border-secondaryText"
 //                   />
 //                   <img
 //                     src="https://html.awaikenthemes.com/firevall/images/author-2.jpg"
-//                     className="w-10 h-10 rounded-full border-2 border-secondaryText"
+//                     className="h-8 w-8 md:w-10 md:h-10 rounded-full border-2 border-secondaryText"
 //                   />
 //                   <img
 //                     src="https://html.awaikenthemes.com/firevall/images/author-3.jpg"
-//                     className="w-10 h-10 rounded-full border-2 border-secondaryText"
+//                     className="h-8 w-8 md:w-10 md:h-10 rounded-full border-2 border-secondaryText"
 //                   />
 //                 </div>
 //                 <p className="text-primaryText text-sm">80% faster project delivery</p>
@@ -112,6 +112,7 @@
 
 
 import readMore from '../../../assets/images/READ MORE.png'
+
 export default function ServiceInsights() {
   return (
     <div className=" py-16 px-4">
@@ -124,47 +125,44 @@ export default function ServiceInsights() {
               <img src={readMore} alt="" className='w-full ' />
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
-            {/* Left Image with Testimonial */}
-            <div className="relative w-full max-w-sm">
-              {/* Testimonial Avatars & Text */}
-              <div className="flex items-center mb-4 space-x-3">
-                <div className="flex -space-x-2">
-                  <img
-                    src="https://html.awaikenthemes.com/firevall/images/author-1.jpg"
-                    className="w-10 h-10 rounded-full border-2 border-secondaryText"
-                  />
-                  <img
-                    src="https://html.awaikenthemes.com/firevall/images/author-2.jpg"
-                    className="w-10 h-10 rounded-full border-2 border-secondaryText"
-                  />
-                  <img
-                    src="https://html.awaikenthemes.com/firevall/images/author-3.jpg"
-                    className="w-10 h-10 rounded-full border-2 border-secondaryText"
-                  />
-                </div>
-                <p className="text-primaryText text-sm">80% faster project delivery</p>
-              </div>
+          <div className="flex flex-row items-center justify-center gap-6 w-full">
+  {/* Left Image */}
+  <div className="relative w-full max-w-sm">
+    <div className="flex items-center mb-4 space-x-3">
+      <div className="flex -space-x-2">
+        <img
+          src="https://html.awaikenthemes.com/firevall/images/author-1.jpg"
+          className="h-8 w-8 md:w-10 md:h-10 rounded-full border-2 border-secondaryText"
+        />
+        <img
+          src="https://html.awaikenthemes.com/firevall/images/author-2.jpg"
+          className="h-8 w-8 md:w-10 md:h-10 rounded-full border-2 border-secondaryText"
+        />
+        <img
+          src="https://html.awaikenthemes.com/firevall/images/author-3.jpg"
+          className="h-8 w-8 md:w-10 md:h-10 rounded-full border-2 border-secondaryText"
+        />
+      </div>
+      <p className="text-primaryText text-[10px] ml-5 md:ml-0 md:text-sm">80% faster project delivery</p>
+    </div>
 
-              {/* Left Image */}
-              <img
-                src="https://html.awaikenthemes.com/firevall/images/who-we-are-img-1.jpg"
-                alt="Team collaboration"
-                className="w-full h-auto rounded-[24px] object-cover"
-              />
-            </div>
+    <img
+      src="https://html.awaikenthemes.com/firevall/images/who-we-are-img-1.jpg"
+      alt="Team collaboration"
+      className="w-full h-auto rounded-[24px] object-cover"
+    />
+  </div>
 
-          
+  {/* Right Image */}
+  <div className="relative w-full max-w-sm">
+    <img
+      src="https://html.awaikenthemes.com/firevall/images/who-we-are-img-2.jpg"
+      alt="Our workspace"
+      className="w-full h-auto rounded-[24px] object-cover"
+    />
+  </div>
+</div>
 
-            {/* Right Image */}
-            <div className="relative w-full max-w-sm mt-6 lg:mt-0">
-              <img
-                src="https://html.awaikenthemes.com/firevall/images/who-we-are-img-2.jpg"
-                alt="Our workspace"
-                className="w-full h-auto rounded-[24px] object-cover"
-              />
-            </div>
-          </div>
 
           {/* RIGHT SIDE: Content */}
           <div className="space-y-8 relative">
