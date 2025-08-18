@@ -59,14 +59,14 @@ export default function FAQSection() {
 
 
   return (
-    <div className="bg-slate-900 py-20 px-4">
+    <div className=" py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Column */}
           <div>
             <div className="inline-flex items-center mb-5">
-              <div className="bg-slate-800/80 border border-purple-500/30 rounded-full px-6 py-2 flex items-center space-x-2">
-                <svg className="w-4 h-4 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="bg-slate-800 border border-purple-500/30 rounded-full px-6 py-2 flex items-center space-x-2">
+                <svg className="w-4 h-4 text-accentHover" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -78,10 +78,10 @@ export default function FAQSection() {
               </div>
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight mb-10">
+            <h2 className="text-3xl md:text-4xl font-semibold text-primaryText leading-tight mb-10">
               Know more about our
               <br />
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              <span className="bg-accentHover bg-clip-text text-transparent">
                 digital services
               </span>
             </h2>
@@ -89,7 +89,7 @@ export default function FAQSection() {
             <div className="flex flex-col md:flex-row md:items-center md:space-x-12 space-y-6 md:space-y-0 mb-10">
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-6 h-6 text-accentHover" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -105,14 +105,14 @@ export default function FAQSection() {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-blue-400 font-medium">24/7 Support</div>
-                  <div className="text-gray-300">(+1) 659-888-695</div>
+                  <div className="text-primaryText font-medium">24/7 Support</div>
+                  <div className="text-secondaryText">(+1) 659-888-695</div>
                 </div>
               </div>
 
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-6 h-6 text-accentHover" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -122,8 +122,8 @@ export default function FAQSection() {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-blue-400 font-medium">Email Assistance</div>
-                  <div className="text-gray-300">support@youragency.com</div>
+                  <div className="text-primaryText font-medium">Email Assistance</div>
+                  <div className="text-secondaryText">support@youragency.com</div>
                 </div>
               </div>
             </div>
@@ -142,19 +142,19 @@ export default function FAQSection() {
             {faqs.map((faq) => (
               <div
                 key={faq.id}
-                className="bg-slate-800/60 border border-slate-700 rounded-xl overflow-hidden transition-all duration-300"
+                className="bg-primaryCardBg border border-slate-700 rounded-xl overflow-hidden transition-all duration-300"
               >
                 <button
                   onClick={() => toggleQuestion(faq.id)}
                   className="w-full flex items-center justify-between p-6 text-left"
                 >
-                  <h3 className="text-white text-base md:text-lg font-medium">{faq.question}</h3>
+                  <h3 className="text-primaryText text-base md:text-lg font-medium">{faq.question}</h3>
                   {openQuestion === faq.id ? (
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-primaryText" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   ) : (
-                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-primaryText" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v12m6-6H6" />
                     </svg>
                   )}
@@ -164,7 +164,7 @@ export default function FAQSection() {
                     openQuestion === faq.id ? "max-h-[500px] pb-6" : "max-h-0"
                   }`}
                 >
-                  <p className="text-gray-300 text-sm md:text-base">{faq.answer}</p>
+                  <p className="text-secondaryText text-sm md:text-base">{faq.answer}</p>
                 </div>
               </div>
             ))}
