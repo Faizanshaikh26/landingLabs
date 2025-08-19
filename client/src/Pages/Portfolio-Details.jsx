@@ -170,7 +170,7 @@
 
 import { motion } from "framer-motion";
 import Footer from "../Footer";
-
+import Navbar from "../components/Navbar";
 export default function PortfolioDetails() {
   const heroImg =
     "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-3.png.webp";
@@ -183,15 +183,17 @@ export default function PortfolioDetails() {
     "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-3.png.webp",
     "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1.png.webp",
     "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-2.png.webp",
-    "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-4.png.webp",
+   
     "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-3.png.webp",
     "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1.png.webp",
     "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-2.png.webp",
-    "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-4.png.webp",
+   
   ];
 
   return (
     <>
+
+    <Navbar/>
       <div className="w-full flex flex-col">
         {/* Hero Section */}
         <div
