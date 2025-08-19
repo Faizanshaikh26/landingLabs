@@ -73,10 +73,28 @@ export default function ViewTable() {
     {
       header: "Manage",
       cell: ({ row }) => (
-        <div className="flex gap-2">
-          <EditClientDialog clientData={row.original} />
-          <DeleteClientDialog />
-        </div>
+        <>
+          <div>
+            <Button
+              variant="outline"
+              size="sm"
+              className="mr-2 cursor-pointer"
+             
+            >
+              <Pencil size={16} />
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+               className=" cursor-pointer"
+              
+              
+             
+            >
+              <Trash2 size={16} />
+            </Button>
+          </div>
+        </>
       ),
     },
   ], []);
@@ -101,6 +119,12 @@ export default function ViewTable() {
         onChange={(e) => setFilter(e.target.value)}
         className="w-full max-w-sm"
       />
+
+       <Button variant="outline" className="cursor-pointer">Add Client</Button>
+        </div>
+   
+
+      
 
       <div className="rounded-md border">
         <Table>

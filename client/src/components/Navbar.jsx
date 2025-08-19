@@ -165,7 +165,16 @@ const itemVariants = {
 
 </div>
 
-
+  <NavLink
+    to="/portfolio"
+    className={({ isActive }) =>
+      isActive
+        ? "text-orange-500 font-semibold"
+        : "hover:text-accentHover cursor-pointer transition-colors"
+    }
+  >
+    Portfolio
+  </NavLink>
 
   <NavLink
     to="/about-us"
@@ -188,15 +197,17 @@ const itemVariants = {
   >
     Career
   </NavLink>
-  <NavLink
-    to="/portfolio"
+
+
+<NavLink
+    to="/pricing"
     className={({ isActive }) =>
       isActive
         ? "text-orange-500 font-semibold"
-        : "hover:text-accentHover cursor-pointer transition-colors"
+        :"hover:text-accentHover cursor-pointer transition-colors"
     }
   >
-    Portfolio
+    Pricing
   </NavLink>
 
   <NavLink
@@ -210,16 +221,7 @@ const itemVariants = {
     Contact
   </NavLink>
 
-  <NavLink
-    to="/pricing"
-    className={({ isActive }) =>
-      isActive
-        ? "text-orange-500 font-semibold"
-        :"hover:text-accentHover cursor-pointer transition-colors"
-    }
-  >
-    Pricing
-  </NavLink>
+  
 </div>
 
 
@@ -272,10 +274,11 @@ const itemVariants = {
         {[
           { to: "/", label: "Home" },
           { to: "/services", label: "Services" },
+          { to: "/portfolio", label: "Portfolio" },
           { to: "/about-us", label: "About" },
           { to: "/career", label: "Career" },
-          { to: "/contact-us", label: "Contact" },
           { to: "/pricing", label: "Pricing" },
+          { to: "/contact-us", label: "Contact" },
         ].map(({ to, label }) => (
           <motion.div key={to} variants={itemVariants}>
             <NavLink

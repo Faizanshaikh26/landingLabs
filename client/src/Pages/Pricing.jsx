@@ -238,7 +238,7 @@
 //                 initial={{ opacity: 0, y: 20 }}
 //                 whileInView={{ opacity: 1, y: 0 }}
 //                 transition={{ duration: 0.4, delay: index * 0.1 }}
-//                 viewport={{ once: true }}
+//                viewport={{ once: false,amount:0.4}}
 //                 className="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden"
 //               >
 //                 <button
@@ -289,7 +289,7 @@
 //                   initial={{ opacity: 0, y: 30 }}
 //                   whileInView={{ opacity: 1, y: 0 }}
 //                   transition={{ duration: 0.4, delay: index * 0.1 }}
-//                   viewport={{ once: true }}
+//                  viewport={{ once: false,amount:0.4}}
 //                   className="group"
 //                 >
 //                   <div className="mb-6  md:p-2 ">
@@ -330,7 +330,30 @@ import { Link } from "react-router-dom"
 
 export default function Pricing() {
   const [openIndex, setOpenIndex] = useState(-1)
+  const [currency, setCurrency] = useState("USD")
+  const [billingCycle, setBillingCycle] = useState("monthly") // ✅ monthly or annually
 
+  // ✅ Currency rates (demo only, you can connect live API)
+  const exchangeRates = {
+    USD: 1,
+    INR: 83,
+  }
+
+  // ✅ Convert function with monthly/annual toggle
+  const convertPrice = (usdPrice) => {
+    if (usdPrice === "Custom") return "Custom"
+    const numericValue = parseFloat(usdPrice.replace(/[^0-9.]/g, ""))
+
+    let price = numericValue
+    if (billingCycle === "annually") {
+      price = numericValue * 10 // e.g., 2 months free
+    }
+
+    const converted = price * exchangeRates[currency]
+    const symbol = currency === "USD" ? "$" : "₹"
+
+    return symbol + converted.toFixed(0)
+  }
 
   const plans = [
     {
@@ -449,7 +472,7 @@ export default function Pricing() {
     },
   ]
 
-   const toggleFAQ = (index) => {
+  const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? -1 : index)
   }
 
@@ -460,7 +483,8 @@ export default function Pricing() {
       {/* Pricing Section */}
       <section className="pt-40 pb-10 px-4 text-black bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          {/* Heading */}
+          <div className="text-center mb-10">
             <h1 className="text-3xl md:text-5xl font-bold mb-4">
               Simple and Affordable
               <br />
@@ -469,44 +493,98 @@ export default function Pricing() {
             <p className="text-gray-700 text-lg">
               Start tracking and improving your finance management
             </p>
+
+            {/* ✅ Currency + Billing Toggle */}
+            <div className="flex justify-center gap-6 mt-6 flex-wrap">
+              {/* Currency Buttons */}
+              <div className="bg-gray-200 rounded-lg p-1 flex">
+                {["USD", "INR"].map((c) => (
+                  <button
+                    key={c}
+                    onClick={() => setCurrency(c)}
+                    className={`px-4 py-2 text-sm font-medium rounded-md transition ${
+                      currency === c
+                        ? "bg-gray-800 text-white"
+                        : "text-gray-700 hover:bg-gray-300"
+                    }`}
+                  >
+                    {c}
+                  </button>
+                ))}
+              </div>
+
+              {/* Billing Cycle Buttons */}
+              <div className="bg-gray-200 rounded-lg p-1 flex">
+                {["monthly", "annually"].map((cycle) => (
+                  <button
+                    key={cycle}
+                    onClick={() => setBillingCycle(cycle)}
+                    className={`px-4 py-2 text-sm font-medium rounded-md capitalize transition ${
+                      billingCycle === cycle
+                        ? "bg-gray-800 text-white"
+                        : "text-gray-700 hover:bg-gray-300"
+                    }`}
+                  >
+                    {cycle}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Pricing Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {plans.map((plan, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.4, delay: index * 0.2 }}
-                className="bg-gray-800 border border-gray-700 rounded-lg p-6 relative"
+                className="bg-gray-800 border border-gray-700 rounded-2xl p-8 relative overflow-hidden group transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl"
               >
+                {/* Most Popular Badge */}
                 {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gray-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+                  <div className="absolute -top-0 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-gray-600 text-white px-4 py-1 rounded-full text-sm font-medium shadow-md">
                       Most Popular
                     </span>
                   </div>
                 )}
+
+                {/* Card Header */}
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold text-white mb-4">{plan.name}</h3>
                   <div className="mb-4">
-                    <span className="text-4xl font-bold text-white">{plan.price}</span>
-                    <span className="text-gray-400 text-lg">{plan.period}</span>
+                    <span className="text-4xl font-bold text-white">
+                      {convertPrice(plan.price)}
+                    </span>
+                    <span className="text-gray-400 text-lg">
+                      {plan.price !== "Custom"
+                        ? billingCycle === "annually"
+                          ? "/year"
+                          : "/month"
+                        : ""}
+                    </span>
                   </div>
                   <p className="text-gray-400 text-sm leading-relaxed">{plan.description}</p>
                 </div>
-               <button
-  className={`w-full py-3 px-4 rounded-lg font-medium text-sm mb-8 transition-colors ${plan.buttonStyle}`}
->
 
+                {/* CTA Button */}
+                <button
+                  className={`w-full py-3 px-4 rounded-lg font-medium text-sm mb-8 transition-colors ${plan.buttonStyle}`}
+                >
                   {plan.buttonText}
                 </button>
+
+                {/* Features */}
                 <div>
                   <h4 className="text-gray-400 text-xs font-semibold tracking-wider uppercase mb-4">
                     FEATURES
                   </h4>
-                  <ul className="space-y-3">
-                    {plan.features.map((feature, featureIndex) => (
+                  <ul className="space-y-3 transition-all duration-500">
+                    {/* Always show first 2 features */}
+                    {plan.features.slice(0, 2).map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start">
                         <svg
                           className="w-4 h-4 text-green-500 mr-3 mt-0.5 flex-shrink-0"
@@ -522,6 +600,26 @@ export default function Pricing() {
                         <span className="text-gray-300 text-sm">{feature}</span>
                       </li>
                     ))}
+
+                    {/* Reveal remaining features on hover */}
+                    <div className="max-h-0  space-y-3 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+                      {plan.features.slice(2).map((feature, featureIndex) => (
+                        <li key={featureIndex + 2} className="flex items-start">
+                          <svg
+                            className="w-4 h-4 text-green-500 mr-3 mt-0.5 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                          <span className="text-gray-300 text-sm">{feature}</span>
+                        </li>
+                      ))}
+                    </div>
                   </ul>
                 </div>
               </motion.div>
@@ -531,19 +629,23 @@ export default function Pricing() {
       </section>
 
       {/* FAQ Section */}
-      <section className=" py-10 md:py-20 px-4 bg-white text-white">
+      <section className="py-10 md:py-20 px-4 bg-white text-white">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full border border-gray-700">
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              <span className="text-sm font-medium text-gray-300">FAQs</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent rounded-full border border-gray-300">
+              <div className="w-2 h-2 bg-secondaryText rounded-full"></div>
+              <span className="text-sm font-medium text-secondaryText">FAQs</span>
             </div>
           </div>
           <div className="text-center mb-12">
             <h1 className="text-2xl md:text-5xl font-bold mb-4 text-black">Frequently Asked Questions</h1>
             <p className="text-gray-700 text-lg">
               Don't see the answer you're looking for?{" "}
-              <Link to="/contact-us"><span className="text-blue-500 hover:text-blue-300 cursor-pointer">Get in touch.</span></Link>
+              <Link to="/contact-us">
+                <span className="text-accent hover:text-secondaryText cursor-pointer">
+                  Get in touch.
+                </span>
+              </Link>
             </p>
           </div>
 
@@ -554,24 +656,26 @@ export default function Pricing() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden"
+                viewport={{ once: false, amount: 0.4 }}
+                className="hover:bg-primaryCardBg rounded-lg border border-gray-700 overflow-hidden"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
                   className="w-full px-2 md:px-6 py-3 md:py-5 text-left flex items-center justify-between hover:bg-gray-750 transition-colors"
                 >
-                  <span className="md:text-lg font-medium text-white pr-4">{faq.question}</span>
+                  <span className="md:text-lg font-medium text-primaryCardText pr-4">
+                    {faq.question}
+                  </span>
                   {openIndex === index ? (
-                    <ChevronUp className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                    <ChevronUp className="w-5 h-5 text-secondaryText flex-shrink-0" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                    <ChevronDown className="w-5 h-5 text-secondaryText flex-shrink-0" />
                   )}
                 </button>
                 {openIndex === index && (
                   <div className="px-6 pb-5">
                     <div className="pt-2 border-t border-gray-700">
-                      <p className="text-gray-300 leading-relaxed mt-3">{faq.answer}</p>
+                      <p className="text-secondaryText leading-relaxed mt-3">{faq.answer}</p>
                     </div>
                   </div>
                 )}
@@ -581,22 +685,24 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* ✅ Features Section with updated styles */}
+      {/* ✅ Features Section with spacing fix */}
       <section className="py-10 md:py-20 px-4 bg-white text-black">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 rounded-full border border-gray-700">
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              <span className="text-sm font-medium text-gray-300">Best Tools</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent rounded-full border border-gray-300">
+              <div className="w-2 h-2 bg-secondaryText rounded-full"></div>
+              <span className="text-sm font-medium text-secondaryText">Best Tools</span>
             </div>
           </div>
           <div className="text-center mb-8 md:mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">What's included</h1>
-            <p className="text-gray-700 text-sm max-w-2xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primaryText">
+              What's included
+            </h1>
+            <p className="text-secondaryText text-sm max-w-2xl mx-auto">
               Get 100+ features out of the box with the world's leading customer insights hub
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-2">
             {features.map((feature, index) => {
               const Icon = feature.icon
               return (
@@ -605,17 +711,17 @@ export default function Pricing() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false, amount: 0.4 }}
                   className="group"
                 >
-                  <div className="mb-6 md:p-2">
-                    <div className="w-9 md:w-12 h-9 md:h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 group-hover:bg-gray-700 transition-colors">
-                      <Icon className="w-4 h-4 md:w-6 md:h-6 text-gray-300" />
+                  <div className="mb-6 md:p-6 border border-secondaryText rounded-2xl bg-primaryCardBg hover:shadow-xl transition">
+                    <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-primaryCardText" />
                     </div>
-                    <h3 className="text-lg md:text-xl font-semibold text-black mb-2 md:mb-3 primary">
+                    <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 text-primaryText">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed secondary">
+                    <p className="text-secondaryText text-sm leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
