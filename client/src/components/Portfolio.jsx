@@ -172,7 +172,6 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 
 export default function Portfolio() {
-  // Scroll-in (stagger) on first reveal
   const appear = {
     off: { opacity: 0, y: 40 },
     on: (i) => ({
@@ -182,7 +181,6 @@ export default function Portfolio() {
     }),
   };
 
-  // Hover-driven variants (overlay -> title -> meta)
   const overlayV = {
     rest: { opacity: 0 },
     hover: { opacity: 1, transition: { duration: 0.25 } },
@@ -196,72 +194,74 @@ export default function Portfolio() {
     hover: { opacity: 1, y: 0, transition: { delay: 0.30, duration: 0.40 } },
   };
 
-  const items = [
-    {
-      title: "Immersive VR Experience",
-      year: "2024",
-      name: "Meta Labs",
-      image:
-        "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-3.png.webp",
-      className: "row-span-6",
-    },
-    {
-      title: "AI Tech Platform",
-      year: "2023",
-      name: "TechNova",
-      image:
-        "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-2.png.webp",
-      className: "row-span-3",
-    },
-    {
-      title: "Developer Tools",
-      year: "2022",
-      name: "CodeFlow",
-      image:
-        "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1.png.webp",
-      className: "row-span-3 col-start-2 row-start-4",
-    },
-    {
-      title: "Retro Branding",
-      year: "2024",
-      name: "Pixel Studio",
-      image:
-        "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1024x1024.png.webp",
-      className: "col-span-2 row-span-6 col-start-3 row-start-1",
-    },
-    {
-      title: "Creative Design System",
-      year: "2023",
-      name: "Designify",
-      image:
-        "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-2.png.webp",
-      className: "col-span-2 row-span-6 row-start-7",
-    },
-    {
-      title: "Modern UI Kit",
-      year: "2022",
-      name: "UIX",
-      image:
-        "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-3.png.webp",
-      className: "col-span-2 row-span-3 col-start-3 row-start-7",
-    },
-    {
-      title: "Brand Identity",
-      year: "2024",
-      name: "Brandify",
-      image:
-        "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1.png.webp",
-      className: "row-span-3 col-start-3 row-start-10",
-    },
-    {
-      title: "Creative Strategy",
-      year: "2025",
-      name: "ThinkLab",
-      image:
-        "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1024x1024.png.webp",
-      className: "row-span-3 col-start-4 row-start-10",
-    },
-  ];
+  // 🔹 NOTE: all spans/positions are now md:*
+ const items = [
+  {
+    title: "Immersive VR Experience",
+    year: "2024",
+    name: "Meta Labs",
+    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-3.png.webp",
+    className: "md:row-span-6",
+    mobileHeight: "h-[400px]",   // big
+  },
+  {
+    title: "AI Tech Platform",
+    year: "2023",
+    name: "TechNova",
+    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-2.png.webp",
+    className: "md:row-span-3",
+    mobileHeight: "h-[220px]",   // small
+  },
+  {
+    title: "Developer Tools",
+    year: "2022",
+    name: "CodeFlow",
+    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1.png.webp",
+    className: "md:row-span-3 md:col-start-2 md:row-start-4",
+    mobileHeight: "h-[400px]",   // big
+  },
+  {
+    title: "Retro Branding",
+    year: "2024",
+    name: "Pixel Studio",
+    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1024x1024.png.webp",
+    className: "md:col-span-2 md:row-span-6 md:col-start-3 md:row-start-1",
+    mobileHeight: "h-[220px]",   // small
+  },
+  {
+    title: "Creative Design System",
+    year: "2023",
+    name: "Designify",
+    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-2.png.webp",
+    className: "md:col-span-2 md:row-span-6 md:row-start-7",
+    mobileHeight: "h-[400px]",   // big
+  },
+  {
+    title: "Modern UI Kit",
+    year: "2022",
+    name: "UIX",
+    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-3.png.webp",
+    className: "md:col-span-2 md:row-span-3 md:col-start-3 md:row-start-7",
+    mobileHeight: "h-[220px]",   // small
+  },
+  {
+    title: "Brand Identity",
+    year: "2024",
+    name: "Brandify",
+    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1.png.webp",
+    className: "md:row-span-3 md:col-start-3 md:row-start-10",
+    mobileHeight: "h-[220px]",   // small
+  },
+  {
+    title: "Creative Strategy",
+    year: "2025",
+    name: "ThinkLab",
+    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1024x1024.png.webp",
+    className: "md:row-span-3 md:col-start-4 md:row-start-10",
+    mobileHeight: "h-[220px]",   // small
+  },
+];
+
 
   return (
     <>
@@ -282,41 +282,47 @@ export default function Portfolio() {
             </h2>
             <p className="mt-4 md:text-2xl text-primaryText max-w-2xl mx-auto">
               A full-service digital growth lab for startups, creators,
-              <span className="text-secondaryText"> and challenger brands who want to win.</span>
+              <span className="text-secondaryText">
+                {" "}
+                and challenger brands who want to win.
+              </span>
             </p>
           </motion.div>
 
-          {/* Exact CSS grid layout (4 cols x 12 rows) */}
+          {/* 🔹 Mobile: 1 col + auto height. md+/lg: unchanged grid */}
           <div
-            className="grid lg:grid-cols-4 gap-4 md:gap-6 h-[600px]  md:h-[1000px] lg:h-[1200px] p-4  grid-rows-12"
-         
+            className="
+              grid grid-cols-1 lg:grid-cols-4
+              gap-4 md:gap-6
+              h-auto md:h-[1000px] lg:h-[1200px]
+              p-4
+              md:grid-rows-12
+            "
           >
             {items.map((item, i) => (
-              <motion.div
-                key={i}
-                className={`${item.className}`}
-                variants={appear}
-                initial="off"
-                whileInView="on"
-                custom={i}
-                viewport={{ once: false ,amount:"0.2"}}
-                
-              >
-                {/* Card (handles hover for children) */}
-                <motion.div
-                  className="relative group h-full w-full overflow-hidden "
-                  initial="rest"
-                  whileHover="hover"
-                >
-                  {/* Image */}
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+             <motion.div
+  key={i}
+  className={`${item.className}`}
+  variants={appear}
+  initial="off"
+  whileInView="on"
+  custom={i}
+  viewport={{ once: false, amount: 0.2 }}
+>
+  <motion.div
+    className={`relative group w-full ${item.mobileHeight} md:h-full overflow-hidden`}
+    initial="rest"
+    whileHover="hover"
+  >
+    <img
+      src={item.image}
+      alt={item.title}
+      className="w-full h-full object-cover"
+      loading="lazy"
+    />
 
-                  {/* Overlay + text (all hover-driven via variants) */}
+
+                  {/* Overlay */}
                   <motion.div
                     className="absolute inset-0 pointer-events-none bg-black/30 backdrop-blur-md flex flex-col items-center justify-center px-4"
                     variants={overlayV}
@@ -327,7 +333,6 @@ export default function Portfolio() {
                     >
                       {item.title}
                     </motion.h3>
-
                     <motion.p
                       className="text-gray-200 text-xs md:text-sm mt-1 text-center"
                       variants={metaV}
@@ -344,5 +349,6 @@ export default function Portfolio() {
     </>
   );
 }
+
 
 
