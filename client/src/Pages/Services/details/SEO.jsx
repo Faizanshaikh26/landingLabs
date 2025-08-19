@@ -319,7 +319,7 @@ export default function SEO() {
             <div className="lg:col-span-8">
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
-                  src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
+                  src="https://cdn.pixabay.com/photo/2022/03/26/02/07/seo-7092123_1280.png"
                   alt="SEO Strategy Discussion"
                   className="w-full h-[400px] object-cover"
                 />
@@ -391,7 +391,7 @@ export default function SEO() {
 
                   <div className="rounded-3xl overflow-hidden shadow-lg max-w-4xl">
                     <img
-                      src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
+                      src="https://wallpaperaccess.com/full/8597354.jpg"
                       alt="SEO Team at Work"
                       className="w-full h-auto object-cover"
                     />
