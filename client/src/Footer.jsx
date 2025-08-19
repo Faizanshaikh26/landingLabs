@@ -639,7 +639,7 @@ import { Link } from "react-router-dom";
 
         {/* Address */}
         <div className="flex items-start gap-4 max-w-sm">
-          <MapPin className="text-accent mt-1 w-18 h-10" />
+          <MapPin className="text-accent mt-1 w-14 h-10" />
           <p>
            Office 610, Suratwala Mark Plazzo, Hinjewadi, 411057
           </p>

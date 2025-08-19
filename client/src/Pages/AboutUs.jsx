@@ -1107,7 +1107,7 @@ export default function AboutUs() {
           viewport={{ once: false, amount: 0.2 }}
         >
           <p className="text-orange-500 font-semibold text-lg mb-2">2023 – 2025</p>
-          <h2 className="text-black text-2xl md:text-3xl font-bold mb-6">
+          <h2 className="text-white text-2xl md:text-3xl font-bold mb-6">
             We collaborate with:
           </h2>
           <ul className="space-y-3 text-[#DDD] text-base leading-relaxed">
