@@ -111,121 +111,112 @@ export default function AppointmentDialog({ isOpen, onClose }) {
         ></div>
 
         {/* Dialog */}
-        <div className="relative w-full max-w-[90%] sm:max-w-lg p-3 sm:p-6 rounded-lg sm:rounded-xl shadow-xl bg-gray-900/90 backdrop-blur-md text-white z-10 border border-gray-700">
-          {/* Close Button */}
-          <button
-            onClick={onClose}
-            className="absolute top-2 right-2 sm:top-4 sm:right-4 text-gray-400 hover:text-white"
-          >
-            <X size={18} className="sm:w-[22px] sm:h-[22px]" />
-          </button>
+        <div className="relative w-full max-w-sm sm:max-w-md p-3 sm:p-4 rounded-lg shadow-xl bg-gray-900/95 backdrop-blur-md text-white z-10 border border-gray-700">
+  {/* Close Button */}
+  <button
+    onClick={onClose}
+    className="absolute top-2 right-2 sm:top-3 sm:right-3 text-gray-400 hover:text-white"
+  >
+    <X size={16} className="w-4 h-4 sm:w-5 sm:h-5" />
+  </button>
 
-          {/* Title */}
-          <h2 className="text-lg sm:text-2xl font-bold text-center mb-2 sm:mb-4">
-            Book Appointment
-          </h2>
-          <p className="text-center text-gray-400 mb-3 sm:mb-6 text-xs sm:text-sm">
-            Fill in your details and select a suitable date
-          </p>
+  {/* Title */}
+  <h2 className="text-base sm:text-lg font-semibold text-center mb-1 sm:mb-2">
+    Book Appointment
+  </h2>
+  <p className="text-center text-gray-400 mb-3 sm:mb-4 text-xs sm:text-sm">
+    Fill in your details and select a date
+  </p>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-5">
-            {/* Row: Appointment Type + Phone */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
-              <div>
-                <label className="block text-xs sm:text-sm mb-1">Type</label>
-                <select
-                  {...register("appointmentType")}
-                  className="w-full p-1.5 sm:p-2 text-xs sm:text-sm bg-gray-800 border border-gray-700 rounded-md"
-                >
-                  <option value="">Choose</option>
-                  <option value="consultation">Consultation</option>
-                  <option value="checkup">Check-up</option>
-                  <option value="follow-up">Follow-up</option>
-                  <option value="emergency">Emergency</option>
-                </select>
-                {errors.appointmentType && (
-                  <p className="text-red-500 text-xs mt-1">{errors.appointmentType.message}</p>
-                )}
-              </div>
-              <div>
-                <label className="block text-xs sm:text-sm mb-1">Phone</label>
-                <input
-                  type="tel"
-                  {...register("phoneNumber")}
-                  className="w-full p-1.5 sm:p-2 text-xs sm:text-sm bg-gray-800 border border-gray-700 rounded-md"
-                  placeholder="9876543210"
-                />
-                {errors.phoneNumber && (
-                  <p className="text-red-500 text-xs mt-1">{errors.phoneNumber.message}</p>
-                )}
-              </div>
-            </div>
+  <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 sm:space-y-4">
+    {/* Row: Appointment Type + Phone */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+      <div>
+        <label className="block text-xs sm:text-sm mb-1">Type</label>
+        <select
+          {...register("appointmentType")}
+          className="w-full p-1.5 sm:p-2 text-xs sm:text-sm bg-gray-800 border border-gray-700 rounded-md"
+        >
+          <option value="">Choose</option>
+          <option value="consultation">Consultation</option>
+          <option value="checkup">Check-up</option>
+          <option value="follow-up">Follow-up</option>
+          <option value="emergency">Emergency</option>
+        </select>
+      </div>
+      <div>
+        <label className="block text-xs sm:text-sm mb-1">Phone</label>
+        <input
+          type="tel"
+          {...register("phoneNumber")}
+          className="w-full p-1.5 sm:p-2 text-xs sm:text-sm bg-gray-800 border border-gray-700 rounded-md"
+          placeholder="9876543210"
+        />
+      </div>
+    </div>
 
-            {/* Email */}
-            <div>
-              <label className="block text-xs sm:text-sm mb-1">Name</label>
-              <input
-                type="text"
-                {...register("name")}
-                className="w-full p-1.5 sm:p-2 text-xs sm:text-sm bg-gray-800 border border-gray-700 rounded-md"
-                placeholder="Name"
-              />
-              {errors.name && (
-                <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
-              )}
-            </div>
+    {/* Name */}
+    <div>
+      <label className="block text-xs sm:text-sm mb-1">Name</label>
+      <input
+        type="text"
+        {...register("name")}
+        className="w-full p-1.5 sm:p-2 text-xs sm:text-sm bg-gray-800 border border-gray-700 rounded-md"
+        placeholder="Name"
+      />
+    </div>
 
+    {/* Email */}
+    <div>
+      <label className="block text-xs sm:text-sm mb-1">Email</label>
+      <input
+        type="email"
+        {...register("email")}
+        className="w-full p-1.5 sm:p-2 text-xs sm:text-sm bg-gray-800 border border-gray-700 rounded-md"
+        placeholder="you@example.com"
+      />
+    </div>
 
-
-            <div>
-              <label className="block text-xs sm:text-sm mb-1">Email</label>
-              <input
-                type="email"
-                {...register("email")}
-                className="w-full p-1.5 sm:p-2 text-xs sm:text-sm bg-gray-800 border border-gray-700 rounded-md"
-                placeholder="you@example.com"
-              />
-              {errors.email && (
-                <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
-              )}
-            </div>
-
-            {/* Calendar */}
-            <div>
-              <label className="block text-xs sm:text-sm mb-2">Select Date</label>
-              <div className="border border-gray-700 rounded-md p-2 sm:p-3 bg-gray-800">
-                <div className="text-center font-semibold mb-2 text-xs sm:text-sm">
-                  {new Date(currentYear, currentMonth).toLocaleString("default", {
-                    month: "long",
-                    year: "numeric",
-                  })}
-                </div>
-                <div className="grid grid-cols-7 gap-1 text-center text-[8px] sm:text-[10px] text-gray-400 mb-1">
-                  <div>Su</div>
-                  <div>Mo</div>
-                  <div>Tu</div>
-                  <div>We</div>
-                  <div>Th</div>
-                  <div>Fr</div>
-                  <div>Sa</div>
-                </div>
-                <div className="grid grid-cols-7 gap-1">{days}</div>
-              </div>
-              {errors.date && (
-                <p className="text-red-500 text-xs mt-1">{errors.date.message}</p>
-              )}
-            </div>
-
-            {/* Submit */}
-            <button
-              type="submit"
-              className="w-full py-1.5 sm:py-2 text-xs sm:text-base rounded-md bg-orange-500 hover:bg-orange-600 transition font-medium"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Booking" : "Book Now"}
-            </button>
-          </form>
+    {/* Calendar */}
+    <div>
+      <label className="block text-xs sm:text-sm mb-1">Select Date</label>
+      <div className="border border-gray-700 rounded-md p-2 sm:p-3 bg-gray-800">
+        <div className="text-center font-medium mb-1 sm:mb-2 text-xs sm:text-sm">
+          {new Date(currentYear, currentMonth).toLocaleString("default", {
+            month: "long",
+            year: "numeric",
+          })}
         </div>
+        <div className="grid grid-cols-7 gap-1 text-center text-[9px] sm:text-[11px] text-gray-400 mb-1">
+          <div>Su</div>
+          <div>Mo</div>
+          <div>Tu</div>
+          <div>We</div>
+          <div>Th</div>
+          <div>Fr</div>
+          <div>Sa</div>
+        </div>
+        <div className="grid grid-cols-7 gap-1">
+          {days.map((day, i) => (
+            <div key={i} className="h-6 w-6 sm:h-7 sm:w-7">
+              {day}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Submit */}
+    <button
+      type="submit"
+      className="w-full py-1.5 sm:py-2 text-xs sm:text-sm rounded-md bg-orange-500 hover:bg-orange-600 transition font-medium"
+      disabled={isSubmitting}
+    >
+      {isSubmitting ? "Booking" : "Book Now"}
+    </button>
+  </form>
+</div>
+
       </div>
     </div>
   );

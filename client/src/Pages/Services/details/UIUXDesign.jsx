@@ -305,7 +305,7 @@ export default function UIUXDesign() {
   return (
     <>
       <Navbar />
-      <div className=" py-40 px-4">
+      <div className="pt-40 md:pb-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <ServiceSidebar />

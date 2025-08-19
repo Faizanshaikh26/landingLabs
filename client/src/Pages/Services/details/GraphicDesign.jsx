@@ -320,10 +320,10 @@ export default function GraphicDesign() {
   return (
     <>
       <Navbar />
-      <div className="py-40 px-4">
+      <div className="pt-40 md:pb-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <ServiceSidebar />
+            <ServiceSidebar  />
             <div className="lg:col-span-8">
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
