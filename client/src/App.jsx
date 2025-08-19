@@ -10,25 +10,27 @@ import CustomCursor from "./components/custome-cursor"
 import NotFound from "./components/NotFound.jsx"
 import Portfolio from "./components/Portfolio.jsx"
 import Loading from "./components/Loading.jsx"
+import { Toaster } from "react-hot-toast"
 
 // Lazy-loaded pages
-const Home = lazy(() => import("./Home"));
-const AboutUs = lazy(() => import("./Pages/AboutUs"));
-const ContactUs = lazy(() => import("./Pages/ContactUs"));
-const Career = lazy(() => import("./Pages/Career.jsx"));
-const Service = lazy(() => import("./Pages/Services/service-mainPage"));
-const WebDevelopment = lazy(() => import("./Pages/Services/details/Web-development"));
-const SocialMediaMarketing = lazy(() => import("./Pages/Services/details/SocialMediaMarketing"));
-const PPCAds = lazy(() => import("./Pages/Services/details/PPCAds"));
-const AppDevelopment = lazy(() => import("./Pages/Services/details/App-development"));
-const UIUXDesign = lazy(() => import("./Pages/Services/details/UIUXDesign"));
-const GraphicDesign = lazy(() => import("./Pages/Services/details/GraphicDesign"));
-const InfluencerMarketing = lazy(() => import("./Pages/Services/details/InfluencerMarketing"));
-const ContentMarketing = lazy(() => import("./Pages/Services/details/ContentMarketing"));
-const SEO = lazy(() => import("./Pages/Services/details/SEO.jsx"));
-const Pricing = lazy(() => import("./Pages/Pricing.jsx"));
-const CareerForm = lazy(() => import("./Pages/test-car.jsx"));
-const Appointment = lazy(() => import("./components/Appointment.jsx"));
+const Home = lazy(() => import("./Home"))
+const AboutUs = lazy(() => import("./Pages/AboutUs"))
+const ContactUs = lazy(() => import("./Pages/ContactUs"))
+const Carrer = lazy(() => import("./Pages/Career.jsx"))
+const Service = lazy(() => import("./Pages/Services/service-mainPage"))
+const WebDevelopment = lazy(() => import("./Pages/Services/details/Web-development"))
+const SocialMediaMarketing = lazy(() => import("./Pages/Services/details/SocialMediaMarketing"))
+const PPCAds = lazy(() => import("./Pages/Services/details/PPCAds"))
+const AppDevelopment = lazy(() => import("./Pages/Services/details/App-development"))
+const UIUXDesign = lazy(() => import("./Pages/Services/details/UIUXDesign"))
+const GraphicDesign = lazy(() => import("./Pages/Services/details/GraphicDesign"))
+const InfluencerMarketing = lazy(() => import("./Pages/Services/details/InfluencerMarketing"))
+const ContentMarketing = lazy(() => import("./Pages/Services/details/ContentMarketing"))
+const SEO = lazy(() => import("./Pages/Services/details/SEO.jsx"))
+const Pricing = lazy(() => import("./Pages/Pricing.jsx"))
+
+
+// const Appointment = lazy(() => import("./components/Appointment.jsx"))
 
 function App() {
   const location = useLocation();
@@ -36,6 +38,7 @@ function App() {
   return (
     <div className="min-h-screen font-poppins bg-white text-primaryText">
       <ScrollToTop />
+       <Toaster position="bottom-center" reverseOrder={false} />
       <CustomCursor />
       <AutoPopupDialog />
 
@@ -50,8 +53,10 @@ function App() {
             <Route path="/career" element={<PageWrapper><Career /></PageWrapper>} />
             <Route path="/services" element={<PageWrapper><Service /></PageWrapper>} />
             <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
-            <Route path="/try" element={<PageWrapper><CareerForm /></PageWrapper>} />
-            <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} />
+           
+            {/* <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} /> */}
+            <Route path="/portfolio" element={<PageWrapper><Portfolio /></PageWrapper>} />
+           
 
             {/* Service Detail Pages */}
             <Route path="/services/search-engine-optimization" element={<PageWrapper><SEO /></PageWrapper>} />

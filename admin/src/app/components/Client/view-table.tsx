@@ -21,6 +21,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Pencil, Trash2 } from "lucide-react";
 
 type Client = {
   name: string;
@@ -79,10 +80,31 @@ export default function DataTable() {
       )
     },
   },
-      {
-        header: "Manage",
-        cell: () => <Button size="sm">Manage</Button>,
-      },
+     {
+      accessorKey: '',
+      header: 'Actions',
+      cell: ({ row }) => (
+        <>
+          <div>
+            <Button
+              variant="outline"
+              size="sm"
+              className="mr-2"
+             
+            >
+              <Pencil size={16} />
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+             
+            >
+              <Trash2 size={16} />
+            </Button>
+          </div>
+        </>
+      ),
+    },
     ],
     []
   );

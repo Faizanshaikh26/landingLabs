@@ -21,6 +21,12 @@ const appointmentSchema = new mongoose.Schema({
     lowercase: true,
     trim: true,
   },
+  name: {
+    type: String,
+    required: true,
+    lowercase: true,
+    trim: true,
+  },
 }, {
   timestamps: true,
 });

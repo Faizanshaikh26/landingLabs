@@ -4,6 +4,8 @@ import { connectDb } from './db/connection.js';
 import dotenv from 'dotenv';
 dotenv.config();
 import contactRoutes from './routes/contact.js';
+import ClientRoutes from '../server/routes/client/client.js';
+// import AdminRoutes from '../server/routes/admin/admin.js';
 import careerRoutes from './routes/career.js';
 import appointmentRoutes from './routes/appointment.js';
 import { v2 as cloudinary } from "cloudinary";
@@ -22,6 +24,8 @@ cloudinary.config({
 app.use('/api', contactRoutes);
 app.use('/api/career',  careerRoutes);
 app.use('/api',  appointmentRoutes);
+app.use('/api/client',  ClientRoutes);
+// app.use('/api/admin',  AdminRoutes);
 app.get('/', (req, res) => {
   res.send('Landing Labs');
 });
