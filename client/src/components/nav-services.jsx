@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 
+import digitalMarketing from '../assets/images/marketing-illustration.jpg'
+import webDevelopment from   '../assets/images/webDevelopment-illustration.png' 
+import seoIllustration from   '../assets/images/seo-illustration.jpg' 
+
 const tabData = [
   {
     tab: "Digital Marketing",
-    icon: "https://cdn-icons-png.flaticon.com/512/4140/4140048.png",
+    icon: digitalMarketing,
     title: "Digital Marketing",
     intro:
       "Partnering with DI Infotech ensures higher conversions, increased revenue, and sustained growth. Our data-driven strategies boost visibility, attract the right audience, and maximize sales.",
@@ -17,7 +21,7 @@ const tabData = [
   },
   {
     tab: "Web Development",
-    icon: "https://cdn-icons-png.flaticon.com/512/4140/4140048.png",
+    icon: webDevelopment,
     title: "Web Development",
     intro:
       "We craft fast, scalable, and conversion-optimized websites that help businesses establish authority and drive sales.",
@@ -29,7 +33,7 @@ const tabData = [
   },
   {
     tab: "SEO",
-    icon: "https://cdn-icons-png.flaticon.com/512/4140/4140048.png",
+    icon: seoIllustration,
     title: "Search Engine Optimization (SEO)",
     intro:
       "Rank higher, attract the right audience, and drive conversions with expert SEO strategies.",
@@ -83,7 +87,7 @@ export default function NavbarServices() {
         
         {/* Left Section */}
         <div className="space-y-2">
-          <img src={currentTab.icon} alt="icon" className="w-8 h-8 object-contain" />
+          <img src={currentTab.icon} alt="icon" className="w-12 h-12 object-contain rounded-full" />
           <h2 className="text-base font-semibold  text-primaryText">{currentTab.title}</h2>
           <p className="text-xs md:text-sm text-gray-700 leading-relaxed">{currentTab.intro}</p>
         </div>

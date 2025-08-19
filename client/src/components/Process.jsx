@@ -137,7 +137,7 @@ export default function Process() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+        viewport={{ once: false,amount:0.5 }}
         >
           <div className="relative">
             <img
@@ -161,7 +161,7 @@ export default function Process() {
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              viewport={{ once: true }}
+              viewport={{ once: false,amount:0.5 }}
             >
               {/* Step Number */}
               <div className="absolute left-5 z-10 bg-primaryCardBg rounded-full w-8 h-8 flex items-center justify-center shadow-lg border-2 border-orange-500">
@@ -194,7 +194,7 @@ export default function Process() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+     viewport={{ once: false,amount:0.5 }}
         >
           <div className="bg-primaryCardBg rounded-lg shadow-xl p-8 border border-[#A4BCD1]">
             <h3 className="text-2xl font-semibold text-primaryText mb-3">Ready to Grow Your Business?</h3>

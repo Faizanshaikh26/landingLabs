@@ -89,7 +89,7 @@ export default function DataTable() {
             <Button
               variant="outline"
               size="sm"
-              className="mr-2"
+              className="mr-2 cursor-pointer"
              
             >
               <Pencil size={16} />
@@ -97,6 +97,9 @@ export default function DataTable() {
             <Button
               variant="outline"
               size="sm"
+               className=" cursor-pointer"
+              
+              
              
             >
               <Trash2 size={16} />
@@ -132,7 +135,7 @@ export default function DataTable() {
         className="w-full max-w-sm"
       />
 
-       <Button variant="outline">Add Client</Button>
+       <Button variant="outline" className="cursor-pointer">Add Client</Button>
         </div>
    
 
