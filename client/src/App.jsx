@@ -28,6 +28,8 @@ const InfluencerMarketing = lazy(() => import("./Pages/Services/details/Influenc
 const ContentMarketing = lazy(() => import("./Pages/Services/details/ContentMarketing"))
 const SEO = lazy(() => import("./Pages/Services/details/SEO.jsx"))
 const Pricing = lazy(() => import("./Pages/Pricing.jsx"))
+const MyProject = lazy(() => import("./components/task/myproject"));
+
 
 
 // const Appointment = lazy(() => import("./components/Appointment.jsx"))
@@ -44,36 +46,37 @@ function App() {
 
       {/* Lazy loading fallback and animation wrapper */}
       <Suspense fallback={<div className="text-primaryText text-center py-20"><Loading/></div>}>
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            {/* Main Pages */}
-            <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
-            <Route path="/about-us" element={<PageWrapper><AboutUs /></PageWrapper>} />
-            <Route path="/contact-us" element={<PageWrapper><ContactUs /></PageWrapper>} />
-            <Route path="/career" element={<PageWrapper><Career /></PageWrapper>} />
-            <Route path="/services" element={<PageWrapper><Service /></PageWrapper>} />
-            <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
-           
-            {/* <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} /> */}
-            <Route path="/portfolio" element={<PageWrapper><Portfolio /></PageWrapper>} />
-           
+  <AnimatePresence mode="wait">
+    <Routes location={location} key={location.pathname}>
+      {/* Main Pages */}
+      <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+      <Route path="/about-us" element={<PageWrapper><AboutUs /></PageWrapper>} />
+      <Route path="/contact-us" element={<PageWrapper><ContactUs /></PageWrapper>} />
+      <Route path="/career" element={<PageWrapper><Carrer /></PageWrapper>} />
+      <Route path="/services" element={<PageWrapper><Service /></PageWrapper>} />
+      <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
+      <Route path="/portfolio" element={<PageWrapper><Portfolio /></PageWrapper>} />
 
-            {/* Service Detail Pages */}
-            <Route path="/services/search-engine-optimization" element={<PageWrapper><SEO /></PageWrapper>} />
-            <Route path="/services/web-development" element={<PageWrapper><WebDevelopment /></PageWrapper>} />
-            <Route path="/services/social-media-marketing" element={<PageWrapper><SocialMediaMarketing /></PageWrapper>} />
-            <Route path="/services/ppc-ads" element={<PageWrapper><PPCAds /></PageWrapper>} />
-            <Route path="/services/app-development" element={<PageWrapper><AppDevelopment /></PageWrapper>} />
-            <Route path="/services/ui-ux-design" element={<PageWrapper><UIUXDesign /></PageWrapper>} />
-            <Route path="/services/graphic-design" element={<PageWrapper><GraphicDesign /></PageWrapper>} />
-            <Route path="/services/influencer-marketing" element={<PageWrapper><InfluencerMarketing /></PageWrapper>} />
-            <Route path="/services/content-marketing" element={<PageWrapper><ContentMarketing /></PageWrapper>} />
+      {/* My Project Route */}
+      <Route path="/myproject" element={<PageWrapper><MyProject /></PageWrapper>} />
 
-            {/* 404 */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </AnimatePresence>
-      </Suspense>
+      {/* Service Detail Pages */}
+      <Route path="/services/search-engine-optimization" element={<PageWrapper><SEO /></PageWrapper>} />
+      <Route path="/services/web-development" element={<PageWrapper><WebDevelopment /></PageWrapper>} />
+      <Route path="/services/social-media-marketing" element={<PageWrapper><SocialMediaMarketing /></PageWrapper>} />
+      <Route path="/services/ppc-ads" element={<PageWrapper><PPCAds /></PageWrapper>} />
+      <Route path="/services/app-development" element={<PageWrapper><AppDevelopment /></PageWrapper>} />
+      <Route path="/services/ui-ux-design" element={<PageWrapper><UIUXDesign /></PageWrapper>} />
+      <Route path="/services/graphic-design" element={<PageWrapper><GraphicDesign /></PageWrapper>} />
+      <Route path="/services/influencer-marketing" element={<PageWrapper><InfluencerMarketing /></PageWrapper>} />
+      <Route path="/services/content-marketing" element={<PageWrapper><ContentMarketing /></PageWrapper>} />
+
+      {/* 404 */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </AnimatePresence>
+</Suspense>
+
     </div>
   );
 }
