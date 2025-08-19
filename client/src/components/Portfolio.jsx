@@ -170,6 +170,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
+import Footer from "../Footer";
+import { Link } from "react-router-dom";
 
 export default function Portfolio() {
   const appear = {
@@ -290,6 +292,10 @@ export default function Portfolio() {
           </motion.div>
 
           {/* 🔹 Mobile: 1 col + auto height. md+/lg: unchanged grid */}
+
+<Link to="/portfolio/details">
+
+
           <div
             className="
               grid grid-cols-1 lg:grid-cols-4
@@ -344,8 +350,13 @@ export default function Portfolio() {
               </motion.div>
             ))}
           </div>
+
+          </Link>
+
         </div>
       </div>
+
+      <Footer/>
     </>
   );
 }

@@ -11,6 +11,7 @@ import NotFound from "./components/NotFound.jsx"
 import Portfolio from "./components/Portfolio.jsx"
 import Loading from "./components/Loading.jsx"
 import { Toaster } from "react-hot-toast"
+import PortfolioDetails from "./Pages/Portfolio-Details.jsx"
 
 // Lazy-loaded pages
 const Home = lazy(() => import("./Home"))
@@ -56,6 +57,7 @@ function App() {
            
             {/* <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} /> */}
             <Route path="/portfolio" element={<PageWrapper><Portfolio /></PageWrapper>} />
+            <Route path="/portfolio/details" element={<PageWrapper><PortfolioDetails /></PageWrapper>} />
            
 
             {/* Service Detail Pages */}
