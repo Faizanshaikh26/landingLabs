@@ -34,7 +34,7 @@ const LogoMarquee = ({ logos, direction = "left" }) => (
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.4 }}
-    viewport={{ once: true, amount: 0.3 }}
+    viewport={{ once: false, amount: 0.3 }}
   >
     {/* Marquee Track */}
     <div
@@ -106,7 +106,7 @@ export default function StateSection() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false ,amount: 0.3 }}
         >
           <span className="flex-grow h-px bg-gray-600"></span>
           <h2 className="lg:text-xl text-base font-semibold text-primaryText">
@@ -125,7 +125,7 @@ export default function StateSection() {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }}
               whileHover={{ scale: 1.05 }}
             >
               <h3 className="text-xl sm:text-2xl lg:text-4xl font-extrabold text-secondaryText">
