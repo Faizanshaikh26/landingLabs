@@ -123,7 +123,7 @@
 //                   initial={{ opacity: 0, y: 30 }}
 //                   whileInView={{ opacity: 1, y: 0 }}
 //                   transition={{ delay: index * 0.2, duration: 0.5 }}
-//                   viewport={{ once: true }}
+//                  viewport={{ once: false,amount:0.2}}
 //                 >
 //                   <div className="w-12 h-12 mx-auto bg-white/30 rounded-full flex items-center justify-center mb-3 animate-bounce">
 //                     <stat.icon className="w-6 h-6" />
@@ -146,7 +146,7 @@
 //                 initial={{ y: 50, opacity: 0 }}
 //                 whileInView={{ y: 0, opacity: 1 }}
 //                 transition={{ delay: index * 0.2, duration: 0.6 }}
-//                 viewport={{ once: true }}
+//                viewport={{ once: false,amount:0.2}}
 //               >
 //                 <h3 className="text-xl font-semibold mb-1">{card.title}</h3>
 //                 <div className="w-10 h-0.5 bg-orange-500 mb-4"></div>
@@ -168,7 +168,7 @@
 //           initial={{ opacity: 0 }}
 //           whileInView={{ opacity: 1 }}
 //           transition={{ duration: 0.8 }}
-//           viewport={{ once: true }}
+//          viewport={{ once: false,amount:0.2}}
 //         >
 //           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 //             <motion.img
@@ -184,7 +184,7 @@
 //               initial={{ y: 30, opacity: 0 }}
 //               whileInView={{ y: 0, opacity: 1 }}
 //               transition={{ delay: 0.2, duration: 0.6 }}
-//               viewport={{ once: true }}
+//              viewport={{ once: false,amount:0.2}}
 //             >
 //               <h4 className="text-orange-500 font-semibold text-sm uppercase mb-2">
 //                 Get In Touch
@@ -394,9 +394,10 @@ export default function ContactPage() {
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
+         
         >
           <div className="max-w-4xl mx-auto px-4">
-            <span className="text-sm uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full">
+            <span className="text-sm uppercase tracking-wider bg-accent px-3 py-1 rounded-full">
               Get In Touch
             </span>
             <motion.h1
@@ -420,7 +421,7 @@ export default function ContactPage() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2, duration: 0.5 }}
-                  viewport={{ once: true }}
+                 viewport={{ once: false,amount:0.2}}
                 >
                   <div className="w-12 h-12 mx-auto bg-orange-500 rounded-full flex items-center justify-center mb-3 animate-bounce">
                     <stat.icon className="w-6 h-6" />
@@ -443,7 +444,7 @@ export default function ContactPage() {
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: index * 0.2, duration: 0.6 }}
-                viewport={{ once: true }}
+               viewport={{ once: false,amount:0.2}}
               >
                 <h3 className="text-xl font-semibold mb-1">{card.title}</h3>
                 <div className="w-10 h-0.5 bg-orange-500 mb-4"></div>
@@ -465,7 +466,7 @@ export default function ContactPage() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+         viewport={{ once: false,amount:0.2}}
         >
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
             <motion.img
@@ -481,7 +482,7 @@ export default function ContactPage() {
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              viewport={{ once: true }}
+             viewport={{ once: false,amount:0.2}}
             >
               <h4 className="text-orange-500 font-semibold text-sm uppercase mb-2">
                 Get In Touch

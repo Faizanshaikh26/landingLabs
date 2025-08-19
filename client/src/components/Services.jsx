@@ -200,8 +200,18 @@ import smmFront from "../assets/images/services/smm-front.png"
 import seoFront from "../assets/images/services/seo-front.png"
 import appDevFront from "../assets/images/services/appdev-front.png"
 import appDevBack from "../assets/images/services/appdev-back.png"
-import UIUXFront from "../assets/images/services/ui-uxFront.png"
-import UIUXBack from "../assets/images/services/ui-uxBack.png"
+import UIUXFront from "../assets/images/services/uiux-1.png"
+import UIUXBack from "../assets/images/services/uiux-2.png"
+import cMarketingBack from "../assets/images/services/cMarketing-back.png"
+import cMarketingFront from "../assets/images/services/cMarketing-front.png"
+import graphicDesignBack from "../assets/images/services/graphicDesign-back.png"
+import graphicDesignFront from "../assets/images/services/graphicDesign-front.png"
+import ppcBack from "../assets/images/services/ppc-back.png"
+import ppcFront from "../assets/images/services/ppc-front.png"
+import webDevBack from "../assets/images/services/webDev-back.png"
+import webDevFront from "../assets/images/services/webDev-front.png"
+import influMaketingFront from "../assets/images/services/influMaketing-front.png"
+import influMaketingBack from "../assets/images/services/influMaketing-back.png"
 
 const servicesData = [
   {
@@ -214,8 +224,8 @@ const servicesData = [
   {
     id: 2,
     title: "Web Development",
-    image: "/images/services/web-dev.png",
-    hoverImage: "/images/services/web-dev-hover.png",
+    image: webDevFront,
+    hoverImage: webDevBack,
   },
   {
     id: 3,
@@ -227,8 +237,8 @@ const servicesData = [
   {
     id: 4,
     title: "PPC / Ads",
-    image: "/images/services/ppc.png",
-    hoverImage: "/images/services/ppc-hover.png",
+    image: ppcFront,
+    hoverImage: ppcBack,
   },
   {
     id: 5,
@@ -245,20 +255,20 @@ const servicesData = [
   {
     id: 7,
     title: "Graphic Design",
-    image: "/images/services/graphic.png",
-    hoverImage: "/images/services/graphic-hover.png",
+    image: graphicDesignFront,
+    hoverImage: graphicDesignBack,
   },
   {
     id: 8,
     title: "Influencer Marketing",
-    image: "/images/services/influencer.png",
-    hoverImage: "/images/services/influencer-hover.png",
+    image: influMaketingFront,
+    hoverImage: influMaketingBack,
   },
   {
     id: 9,
     title: "Content Marketing",
-    image: "/images/services/content.png",
-    hoverImage: "/images/services/content-hover.png",
+    image: cMarketingFront,
+    hoverImage: cMarketingBack,
   },
 ];
 

@@ -238,7 +238,7 @@
 //                 initial={{ opacity: 0, y: 20 }}
 //                 whileInView={{ opacity: 1, y: 0 }}
 //                 transition={{ duration: 0.4, delay: index * 0.1 }}
-//                 viewport={{ once: true }}
+//                viewport={{ once: false,amount:0.4}}
 //                 className="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden"
 //               >
 //                 <button
@@ -289,7 +289,7 @@
 //                   initial={{ opacity: 0, y: 30 }}
 //                   whileInView={{ opacity: 1, y: 0 }}
 //                   transition={{ duration: 0.4, delay: index * 0.1 }}
-//                   viewport={{ once: true }}
+//                  viewport={{ once: false,amount:0.4}}
 //                   className="group"
 //                 >
 //                   <div className="mb-6  md:p-2 ">
@@ -474,12 +474,13 @@ export default function Pricing() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {plans.map((plan, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.2 }}
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: false, amount: 0.2 }}
+  transition={{ duration: 0.4, delay: index * 0.2 }}
                 className="bg-gray-800 border border-gray-700 rounded-lg p-6 relative"
-              >
+>
+
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                     <span className="bg-gray-600 text-white px-4 py-1 rounded-full text-sm font-medium">
@@ -554,7 +555,7 @@ export default function Pricing() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
+               viewport={{ once: false,amount:0.4}}
                 className="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden"
               >
                 <button
@@ -605,7 +606,7 @@ export default function Pricing() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                 viewport={{ once: false,amount:0.4}}
                   className="group"
                 >
                   <div className="mb-6 md:p-2">

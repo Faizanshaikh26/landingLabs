@@ -85,7 +85,7 @@
 //           className="px-8 lg:px-16 py-16"
 //           initial="hidden"
 //           whileInView="visible"
-//           viewport={{ once: true }}
+//           viewport={{ once: false,amount:0.3}}
 //           variants={{
 //             hidden: {},
 //             visible: { transition: { staggerChildren: 0.1 } },
@@ -118,7 +118,7 @@
 //                     initial={{ opacity: 0, rotateY: 15 }}
 //                     whileInView={{ opacity: 1, rotateY: 0 }}
 //                     transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
-//                     viewport={{ once: true }}
+//                     viewport={{ once: false,amount:0.3}}
 //                   >
 //                     <div className="col-span-4"><h3 className="text-lg font-medium text-white">{job.role}</h3></div>
 //                     <div className="col-span-2 text-gray-300">{job.team}</div>
@@ -141,7 +141,7 @@
 //                   initial={{ opacity: 0, rotateY: 15 }}
 //                   whileInView={{ opacity: 1, rotateY: 0 }}
 //                   transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
-//                   viewport={{ once: true }}
+//                   viewport={{ once: false,amount:0.3}}
 //                 >
 //                   <h3 className="text-xl font-medium text-white mb-4">{job.role}</h3>
 //                   <div className="space-y-2 mb-6 text-gray-300">
@@ -162,7 +162,7 @@
 //           initial={{ opacity: 0 }}
 //           whileInView={{ opacity: 1 }}
 //           transition={{ duration: 0.6 }}
-//           viewport={{ once: true }}
+//           viewport={{ once: false,amount:0.3}}
 //         >
 //           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
 //             <div>
@@ -178,7 +178,7 @@
 //           className="px-8 lg:px-16 py-16"
 //           initial="hidden"
 //           whileInView="visible"
-//           viewport={{ once: true }}
+//           viewport={{ once: false,amount:0.3}}
 //           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
 //         >
 //           <div className="max-w-7xl mx-auto">
@@ -192,7 +192,7 @@
 //                   whileInView={{ opacity: 1, y: 0 }}
 //                   whileHover={{ rotateX: 4, rotateY: -4, scale: 1.03 }}
 //                   transition={{ type: "spring", stiffness: 150, damping: 10, duration: 0.4, delay: i * 0.1 }}
-//                   viewport={{ once: true }}
+//                   viewport={{ once: false,amount:0.3}}
 //                 >
 //                   <div className="text-sm text-gray-400 mb-4">0{i + 1}</div>
 //                   <h3 className="text-2xl font-bold text-white mb-4">{step}</h3>
@@ -308,7 +308,7 @@ export default function Career() {
           className="px-8 lg:px-16 py-16"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+       viewport={{ once: false,amount:0.3}}
           variants={{
             hidden: {},
             visible: { transition: { staggerChildren: 0.1 } },
@@ -320,6 +320,7 @@ export default function Career() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
+              viewport={{ once: false,amount:0.3}}
             >
               <h2 className="text-3xl lg:text-4xl font-bold mb-2 text-black">Available positions</h2>
               <p className="text-gray-600 text-lg">waiting to be filled</p>
@@ -341,7 +342,7 @@ export default function Career() {
                     initial={{ opacity: 0, rotateY: 15 }}
                     whileInView={{ opacity: 1, rotateY: 0 }}
                     transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
-                    viewport={{ once: true }}
+                   viewport={{ once: false,amount:0.3}}
                   >
                     <div className="col-span-4"><h3 className="text-lg font-medium text-black">{job.role}</h3></div>
                     <div className="col-span-2 text-gray-700">{job.team}</div>
@@ -366,7 +367,7 @@ export default function Career() {
                   initial={{ opacity: 0, rotateY: 15 }}
                   whileInView={{ opacity: 1, rotateY: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false,amount:0.3}}
                 >
                   <h3 className="text-xl font-medium text-black mb-4">{job.role}</h3>
                   <div className="space-y-2 mb-6 text-gray-700">
@@ -389,7 +390,7 @@ export default function Career() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          viewport={{ once: false,amount:0.3}}
         >
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
@@ -407,10 +408,10 @@ export default function Career() {
 
         {/* Hiring Process */}
         <motion.div
-          className="px-8 lg:px-16 py-16"
+          className="px-4 sm:px-8 lg:px-16 py-8 sm:py-16"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false,amount:0.3}}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
         >
           <div className="max-w-7xl mx-auto">
@@ -424,7 +425,7 @@ export default function Career() {
                   whileInView={{ opacity: 1, y: 0 }}
                   whileHover={{ rotateX: 4, rotateY: -4, scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 150, damping: 10, duration: 0.4, delay: i * 0.1 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false,amount:0.3}}
                 >
                   <div className="text-sm text-gray-500 mb-4">0{i + 1}</div>
                   <h3 className="text-2xl font-bold text-black mb-4">{step}</h3>
