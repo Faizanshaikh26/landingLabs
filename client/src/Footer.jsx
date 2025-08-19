@@ -638,7 +638,7 @@ import { Link } from "react-router-dom";
         </div>
 
         {/* Address */}
-        <div className="flex items-start gap-3 max-w-sm">
+        <div className="flex items-start gap-5 max-w-sm">
           <MapPin className="text-accent mt-2 -ml-0 w-15 h-10" />
           <p className="hover:underline mt-2">
            Office 610, Suratwala Mark Plazzo, Hinjewadi, 411057
