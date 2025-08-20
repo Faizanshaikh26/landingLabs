@@ -252,6 +252,8 @@ import Navbar from "../../../components/Navbar";
 import Footer from "../../../Footer";
 import ServiceSidebar from "./Service-Sidebar";
 
+import graphicDesignImage from '../../../assets/images/services/graphic-design-services.jpg'
+import graphicDesignIllustration from '../../../assets/images/illustration/GRPHIC DESIGN.jpg'
 export default function GraphicDesign() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [openQuestion, setOpenQuestion] = useState(-1);
@@ -327,7 +329,7 @@ export default function GraphicDesign() {
             <div className="lg:col-span-8">
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
-                  src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
+                  src={graphicDesignIllustration}
                   alt="Graphic Design Process"
                   className="w-full h-[400px] object-cover"
                 />
@@ -393,7 +395,7 @@ export default function GraphicDesign() {
 
                   <div className="rounded-3xl overflow-hidden shadow-lg max-w-4xl">
                     <img
-                      src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
+                      src={graphicDesignImage}
                       alt="Graphic Design Brainstorming Session"
                       className="w-full h-auto object-cover"
                     />

@@ -80,8 +80,8 @@ export default function Banner() {
           </p>
           <motion.button
             className="bg-accent hover:bg-accentHover text-white px-6 py-3 sm:px-7 sm:py-4 rounded-lg font-medium transition"
-          
-           
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
              onClick={() => setOpen(true)}
           >
             Book a free Consultation

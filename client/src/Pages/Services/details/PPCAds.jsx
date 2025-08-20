@@ -155,7 +155,7 @@
 //                     <img
 //                       src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
 //                       alt="PPC Team at Work"
-//                       className="w-full h-auto object-cover"
+//                       className="w-full h-[400px] object-cover"
 //                     />
 //                   </div>
 //                 </div>
@@ -250,6 +250,10 @@ import ReusableAccordion from "../../reusable-accordion";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../Footer";
 import ServiceSidebar from "./Service-Sidebar";
+import ppcAdsImage from '../../../assets/images/services/ppc-adds-servies.jpeg'
+
+import ppcAdsIllustration from '../../../assets/images/illustration/PPC ADS.jpg'
+
 
 export default function PPCAds() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -326,7 +330,7 @@ export default function PPCAds() {
             <div className="lg:col-span-8">
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
-                  src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
+                  src={ppcAdsIllustration}
                   alt="PPC Strategy Discussion"
                   className="w-full h-[400px] object-cover"
                 />
@@ -392,9 +396,9 @@ export default function PPCAds() {
 
                   <div className="rounded-3xl overflow-hidden shadow-lg max-w-4xl">
                     <img
-                      src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
+                      src={ppcAdsImage}
                       alt="PPC Team at Work"
-                      className="w-full h-auto object-cover"
+                      className="w-full h-[400px] object-cover"
                     />
                   </div>
                 </div>

@@ -3,13 +3,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import retail from "../assets/images/retail-Industries.jpg";
-import finance from "../assets/images/finance-industries.jpg";
-import realEstate from "../assets/images/realEstate-industries.jpg";
-import healthCare from "../assets/images/healthCare-industries.jpg";
-import foodAndRestaurant from "../assets/images/food-industries.jpg";
-import education from "../assets/images/education-industries.jpg";
-import techStartup from "../assets/images/tech-startUp-industries.jpg";
+import retail from "../assets/images/industries/retail-Industries.jpg";
+import finance from "../assets/images/industries/finance-industries.jpg";
+import realEstate from "../assets/images/industries/realEstate-industries.jpg";
+import healthCare from "../assets/images/industries/healthCare-industries.jpg";
+import foodAndRestaurant from "../assets/images/industries/food-industries.jpg";
+import education from "../assets/images/industries/education-industries.jpg";
+import techStartup from "../assets/images/industries/tech-startUp-industries.jpg";
 
 const industries = [
   { id: 1, title: "Retail", description: "Elevate your retail business with AI-led personalization, virtual shopping assistants, automated customer service, demand forecasting, and optimized inventory.", fullDescription: "...", imageUrl: retail },

@@ -157,7 +157,7 @@
 //                     <img
 //                       src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
 //                       alt="SMM Team"
-//                       className="w-full h-auto object-cover"
+//                       className="w-full h-[400px] object-cover"
 //                     />
 //                   </div>
 //                 </div>
@@ -253,6 +253,10 @@ import Navbar from "../../../components/Navbar";
 import Footer from "../../../Footer";
 import ServiceSidebar from "./Service-Sidebar";
 
+import smmImage from '../../../assets/images/services/smm-marketing-services.jpeg'
+
+import smmIllustration from '../../../assets/images/illustration/Social media marketing.jpg'
+
 export default function SocialMediaMarketing() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [openQuestion, setOpenQuestion] = useState(-1);
@@ -329,7 +333,7 @@ export default function SocialMediaMarketing() {
               {/* Banner Image */}
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
-                  src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
+                  src={smmIllustration}
                   alt="Social Media Marketing"
                   className="w-full h-[400px] object-cover"
                 />
@@ -397,9 +401,9 @@ export default function SocialMediaMarketing() {
 
                   <div className="rounded-3xl overflow-hidden shadow-lg max-w-4xl">
                     <img
-                      src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
+                      src={smmImage}
                       alt="SMM Team"
-                      className="w-full h-auto object-cover"
+                      className="w-full h-[400px] object-cover"
                     />
                   </div>
                 </div>

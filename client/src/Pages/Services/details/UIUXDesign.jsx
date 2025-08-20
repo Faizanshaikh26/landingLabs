@@ -148,7 +148,7 @@
 //                     <img
 //                       src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
 //                       alt="UI/UX Workshop Session"
-//                       className="w-full h-auto object-cover"
+//                       className="w-full h-[400px] object-cover"
 //                     />
 //                   </div>
 //                 </div>
@@ -236,7 +236,9 @@ import ReusableAccordion from "../../reusable-accordion";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../Footer";
 import ServiceSidebar from "./Service-Sidebar";
+import uiUxImage from '../../../assets/images/services/uiux-services.jpeg'
 
+import uiUxIllustration from '../../../assets/images/illustration/UI UX DESIGN.jpg'
 export default function UIUXDesign() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [openQuestion, setOpenQuestion] = useState(-1);
@@ -312,7 +314,7 @@ export default function UIUXDesign() {
             <div className="lg:col-span-8">
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
-                  src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
+                  src={uiUxIllustration}
                   alt="UI/UX Design Process"
                   className="w-full h-[400px] object-cover"
                 />
@@ -378,9 +380,9 @@ export default function UIUXDesign() {
 
                   <div className="rounded-3xl overflow-hidden shadow-lg max-w-4xl">
                     <img
-                      src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
+                      src={uiUxImage}
                       alt="UI/UX Workshop Session"
-                      className="w-full h-auto object-cover"
+                      className="w-full h-[400px] object-cover"
                     />
                   </div>
                 </div>

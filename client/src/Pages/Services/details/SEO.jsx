@@ -154,7 +154,7 @@
 //                     <img
 //                       src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
 //                       alt="SEO Team at Work"
-//                       className="w-full h-auto object-cover"
+//                       className="w-full h-[400px] object-cover"
 //                     />
 //                   </div>
 //                 </div>
@@ -244,6 +244,9 @@ import Navbar from "../../../components/Navbar";
 import Footer from "../../../Footer";
 import ServiceSidebar from "./Service-Sidebar";
 
+import seoImage from '../../../assets/images/services/seo-marketing-services.jpeg'
+
+import seoIllustration from '../../../assets/images/illustration/SEO 1.jpg'
 export default function SEO() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [openQuestion, setOpenQuestion] = useState(-1);
@@ -319,7 +322,7 @@ export default function SEO() {
             <div className="lg:col-span-8">
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
-                  src="https://cdn.pixabay.com/photo/2022/03/26/02/07/seo-7092123_1280.png"
+                  src={seoIllustration}
                   alt="SEO Strategy Discussion"
                   className="w-full h-[400px] object-cover"
                 />
@@ -391,9 +394,9 @@ export default function SEO() {
 
                   <div className="rounded-3xl overflow-hidden shadow-lg max-w-4xl">
                     <img
-                      src="https://wallpaperaccess.com/full/8597354.jpg"
+                      src={seoImage}
                       alt="SEO Team at Work"
-                      className="w-full h-auto object-cover"
+                      className="w-full h-[400px] object-cover"
                     />
                   </div>
                 </div>

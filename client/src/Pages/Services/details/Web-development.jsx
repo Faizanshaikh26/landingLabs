@@ -162,7 +162,7 @@
 //                     <img
 //                       src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
 //                       alt="Web Development Team"
-//                       className="w-full h-auto object-cover"
+//                       className="w-full h-[400px] object-cover"
 //                     />
 //                   </div>
 //                 </div>
@@ -261,6 +261,11 @@ import ReusableAccordion from "../../reusable-accordion";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../Footer";
 import ServiceSidebar from "./Service-Sidebar";
+import webDevImage from '../../../assets/images/services/webDev-services.jpeg'
+
+
+import webDevIllustration from '../../../assets/images/illustration/WEB DEVELOPMENT.png'
+
 
 export default function WebDevelopment() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -342,7 +347,7 @@ export default function WebDevelopment() {
               {/* Banner Image */}
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
-                  src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
+                  src={webDevIllustration}
                   alt="Web Development Workspace"
                   className="w-full h-[400px] object-cover"
                 />
@@ -412,9 +417,9 @@ export default function WebDevelopment() {
 
                   <div className="rounded-3xl overflow-hidden shadow-lg max-w-4xl">
                     <img
-                      src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
+                      src={webDevImage}
                       alt="Web Development Team"
-                      className="w-full h-auto object-cover"
+                      className="w-full h-[400px] object-cover"
                     />
                   </div>
                 </div>

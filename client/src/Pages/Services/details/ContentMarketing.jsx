@@ -154,7 +154,7 @@
 //                     <img
 //                       src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
 //                       alt="Content Strategy Planning"
-//                       className="w-full h-auto object-cover"
+//                       className="w-full h-[400px] object-cover"
 //                     />
 //                   </div>
 //                 </div>
@@ -247,7 +247,8 @@ import {
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../Footer";
 import ServiceSidebar from "./Service-Sidebar";
-
+import contentMaketingImage from '../../../assets/images/services/content-marketing-services.jpeg'
+import contentMaketingIllustration from '../../../assets/images/illustration/CONTENT MARKETING 1.png'
 export default function ContentMarketing() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [openQuestion, setOpenQuestion] = useState(-1);
@@ -323,7 +324,7 @@ export default function ContentMarketing() {
             <div className="lg:col-span-8">
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
-                  src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
+                  src={contentMaketingIllustration}
                   alt="Content Marketing Strategy"
                   className="w-full h-[400px] object-cover"
                 />
@@ -389,9 +390,9 @@ export default function ContentMarketing() {
 
                   <div className="rounded-3xl overflow-hidden shadow-lg max-w-4xl">
                     <img
-                      src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
+                      src={contentMaketingImage}
                       alt="Content Strategy Planning"
-                      className="w-full h-auto object-cover"
+                      className="w-full h-[400px] object-cover"
                     />
                   </div>
                 </div>

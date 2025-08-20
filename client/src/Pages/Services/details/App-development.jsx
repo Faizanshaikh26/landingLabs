@@ -155,7 +155,7 @@
 //                     <img
 //                       src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
 //                       alt="App Development Team at Work"
-//                       className="w-full h-auto object-cover"
+//                       className="w-full h-[400px] object-cover"
 //                     />
 //                   </div>
 //                 </div>
@@ -250,6 +250,10 @@ import Navbar from "../../../components/Navbar";
 import Footer from "../../../Footer";
 import ServiceSidebar from "./Service-Sidebar";
 
+import appDevImage from '../../../assets/images/services/appdev-services.jpeg'
+import appDevIllustration from '../../../assets/images/illustration/APP Development.jpg'
+
+
 export default function AppDevelopment() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [openQuestion, setOpenQuestion] = useState(-1);
@@ -325,7 +329,7 @@ export default function AppDevelopment() {
             <div className="lg:col-span-8">
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
-                  src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
+                  src={appDevIllustration}
                   alt="App Development Discussion"
                   className="w-full h-[400px] object-cover"
                 />
@@ -391,9 +395,9 @@ export default function AppDevelopment() {
 
                   <div className="rounded-3xl overflow-hidden shadow-lg max-w-4xl">
                     <img
-                      src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
+                      src={appDevImage}
                       alt="App Development Team at Work"
-                      className="w-full h-auto object-cover"
+                      className="w-full h-[400px] object-cover"
                     />
                   </div>
                 </div>

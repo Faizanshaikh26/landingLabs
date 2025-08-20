@@ -26,7 +26,7 @@ export default function ServiceCard({
     `,
     borderRadius: "16px",
     backgroundColor: isHovered ? "#FFFBED" : "white",
-    transition: "background-color 0.3s ease, transform 0.3s ease", // smooth background + movement
+    transition: "background-color 0.4s ease, transform 0.3s ease",
   };
 
   return (
@@ -37,14 +37,22 @@ export default function ServiceCard({
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image Section */}
-      <div className="w-full flex justify-center mb-6 transition-all duration-300 ease-in-out">
+      <div className="relative w-full h-36 flex justify-center mb-6">
+        {/* Default Image */}
         <img
-          src={isHovered ? hoverIconSrc : iconSrc}
+          src={iconSrc}
           alt="icon"
-          className="w-full h-36 object-contain transition-transform duration-300 ease-in-out"
-          style={{
-            transform: isHovered ? "scale(1.05)" : "scale(1)", // subtle zoom
-          }}
+          className={`absolute w-full h-full object-contain transition-all duration-500 ease-in-out ${
+            isHovered ? "opacity-0 scale-95" : "opacity-100 scale-100"
+          }`}
+        />
+        {/* Hover Image */}
+        <img
+          src={hoverIconSrc}
+          alt="hover-icon"
+          className={`absolute w-full h-full object-contain transition-all duration-500 ease-in-out ${
+            isHovered ? "opacity-100 " : "opacity-0 "
+          }`}
         />
       </div>
 
