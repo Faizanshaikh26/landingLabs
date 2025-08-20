@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import faqImage from '../../../assets/images/services/services-faq.jpg'
+
 export default function FAQSection() {
 const [openQuestion, setOpenQuestion] = useState(-1);
 
@@ -59,6 +61,9 @@ const [openQuestion, setOpenQuestion] = useState(-1);
 ];
 
 
+
+
+
   return (
     <div className=" py-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -107,7 +112,8 @@ const [openQuestion, setOpenQuestion] = useState(-1);
                 </div>
                 <div>
                   <div className="text-primaryText font-medium">24/7 Support</div>
-                  <div className="text-secondaryText">(+1) 659-888-695</div>
+                  <div className="text-secondaryText">+91 738 739 2708
+</div>
                 </div>
               </div>
 
@@ -124,16 +130,16 @@ const [openQuestion, setOpenQuestion] = useState(-1);
                 </div>
                 <div>
                   <div className="text-primaryText font-medium">Email Assistance</div>
-                  <div className="text-secondaryText">support@youragency.com</div>
+                  <div className="text-secondaryText">info@landinglabs.in</div>
                 </div>
               </div>
             </div>
 
             <div className="rounded-3xl overflow-hidden">
               <img
-                src="https://html.awaikenthemes.com/firevall/images/faqs-image.jpg"
+                src={faqImage}
                 alt="Support image"
-                className="w-full h-auto object-cover"
+                className="w-full h-[350px] object-cover"
               />
             </div>
           </div>
