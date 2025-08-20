@@ -261,7 +261,7 @@ import ReusableAccordion from "../../reusable-accordion";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../Footer";
 import ServiceSidebar from "./Service-Sidebar";
-import webDevImage from '../../../assets/images/services/webDev-services.jpeg'
+import webDevImage from '../../../assets/images/services/webdev-services.jpeg'
 
 
 import webDevIllustration from '../../../assets/images/illustration/WEB DEVELOPMENT.png'
