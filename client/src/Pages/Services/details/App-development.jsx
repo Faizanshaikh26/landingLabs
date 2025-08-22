@@ -349,12 +349,12 @@ export default function AppDevelopment() {
 
             {/* Process Steps */}
             <section>
-              <div className="mb-12 text-center">
-                <h2 className="text-2xl lg:text-4xl font-bold leading-tight mb-4">
-                  Step-by-step app development tailored to{" "}
-                  <span className="text-accent">your business goals</span>
-                </h2>
-                <p className="text-secondaryText text-lg leading-relaxed max-w-3xl mx-auto">
+              <div className="mb-12">
+              <h1 className="text-xl  lg:text-4xl font-bold leading-tight mb-4"> 
+                  Step-by-step app development tailored to   <span className="text-accent">your business goals</span>
+               
+                </h1>
+                <p className="text-secondaryText text-lg leading-relaxed">
                   Our development process is designed to deliver apps that not only look great but also perform seamlessly. From idea to deployment, we provide complete support at every stage.
                 </p>
               </div>
@@ -383,10 +383,10 @@ export default function AppDevelopment() {
 
             {/* Developers Section */}
             <section className="space-y-8">
-              <h2 className="text-3xl lg:text-4xl font-bold leading-tight">
-                Experienced developers dedicated to <br />
-                <span className="text-accent">building innovative apps</span>
-              </h2>
+                <h1 className="text-xl  lg:text-4xl font-bold leading-tight mb-4"> 
+                Experienced developers dedicated to 
+                <span className="text-accent"> building innovative apps</span>
+              </h1>
 
               <p className="text-secondaryText text-lg leading-relaxed ">
                 Our team of developers brings your ideas to life with high-quality, secure, and scalable mobile and web applications. We focus on user experience, performance, and future-ready technologies.
