@@ -88,7 +88,7 @@
 //                 <img
 //                   src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
 //                   alt="Influencer Marketing Collaboration"
-//                   className="w-full h-[400px] object-cover"
+//            className="w-full h-56 md:h-96 object-cover"
 //                 />
 //               </div>
 
@@ -154,7 +154,7 @@
 //                     <img
 //                       src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
 //                       alt="Influencer Collaboration Session"
-//                       className="w-full h-[400px] object-cover"
+//                className="w-full h-56 md:h-96 object-cover"
 //                     />
 //                   </div>
 //                 </div>
@@ -329,7 +329,7 @@ export default function InfluencerMarketing() {
                 <img
                   src={influencerMaketingIllustration}
                   alt="Influencer Marketing Collaboration"
-                  className="w-full h-[400px] object-cover"
+           className="w-full h-56 md:h-96 object-cover"
                 />
               </div>
 
@@ -343,9 +343,9 @@ export default function InfluencerMarketing() {
                 </p>
               </div>
 
-              <section className="text-primaryText pt-16 px-4">
-                <div className="mb-16">
-                  <h2 className="text-2xl lg:text-[40px] font-bold text-primaryText leading-tight mb-6">
+              <section className="text-primaryText pt-16 ">
+                <div className="mb-6">
+                  <h2 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-6">
                     End-to-end influencer campaigns that{" "}
                     <span className="text-accent">
                       move your brand forward
@@ -378,9 +378,9 @@ export default function InfluencerMarketing() {
                 </div>
               </section>
 
-              <section className="text-primaryText py-16 px-4">
-                <div className="space-y-10">
-                  <h2 className="text-2xl lg:text-4xl font-bold leading-tight">
+              <section className="text-primaryText py-16 ">
+                <div className="space-y-6">
+                  <h2 className="text-xl lg:text-4xl font-bold leading-tight">
                     Build authentic partnerships for <br />
                     <span className="text-accent">
                       maximum influence
@@ -395,16 +395,16 @@ export default function InfluencerMarketing() {
                     <img
                       src={influenceMaketingImage}
                       alt="Influencer Collaboration Session"
-                      className="w-full h-[400px] object-cover"
+               className="w-full h-56 md:h-96 object-cover"
                     />
                   </div>
                 </div>
               </section>
 
-              <div className="py-16 px-4">
-                <div className="max-w-4xl mx-auto">
-                  <div className="mb-12">
-                    <h1 className="text-4xl lg:text-5xl font-bold text-primaryText leading-tight mb-6">
+             
+                  <div className="max-w-4xl mx-auto space-y-8">
+                  <div className="mb-6">
+                    <h1 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-6">
                       Frequently Asked Questions About <br />
                       <span className="text-accent">
                         Influencer Marketing
@@ -465,7 +465,7 @@ export default function InfluencerMarketing() {
                     ))}
                   </div>
                 </div>
-              </div>
+             
 
             </div>
           </div>

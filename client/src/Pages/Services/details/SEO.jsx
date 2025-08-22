@@ -324,7 +324,7 @@ export default function SEO() {
                 <img
                   src={seoIllustration}
                   alt="SEO Strategy Discussion"
-                  className="w-full h-[400px] object-cover"
+             className="w-full h-56 md:h-96 object-cover"
                 />
               </div>
 
@@ -342,14 +342,14 @@ export default function SEO() {
                 </p>
               </div>
 
-              <section className="text-primaryText pt-16 px-4">
+              <section className="text-primaryText pt-16 ">
                 <div className="mb-16">
-                  <h2 className="text-2xl lg:text-[40px] font-bold text-primaryText leading-tight mb-6">
+                  <h1 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-4">
                     Step-by-step SEO solutions tailored to{" "}
                     <span className="text-accent">
                       your business
                     </span>
-                  </h2>
+                  </h1>
                   <p className="text-secondaryText text-lg leading-relaxed max-w-4xl mx-auto">
                     Our SEO solutions are custom-built to drive traffic and generate leads. From keyword research to
                     content optimization, our step-by-step process ensures measurable success.
@@ -378,14 +378,14 @@ export default function SEO() {
                 </div>
               </section>
 
-              <section className="text-primaryText py-16 px-4">
+              <section className="text-primaryText py-16 ">
                 <div className="space-y-10">
-                  <h2 className="text-2xl lg:text-4xl font-bold leading-tight">
-                    Experienced SEO professionals dedicated to<br />
+                  <h1 className="text-xl lg:text-4xl font-bold leading-tight">
+                    Experienced SEO professionals dedicated to <br />
                     <span className="text-accent">
                       ranking your website
                     </span>
-                  </h2>
+                  </h1>
 
                   <p className="text-secondaryText text-lg leading-relaxed max-w-3xl">
                     Our SEO experts stay ahead of the latest algorithm updates to ensure your website ranks consistently.
@@ -396,16 +396,16 @@ export default function SEO() {
                     <img
                       src={seoImage}
                       alt="SEO Team at Work"
-                      className="w-full h-[400px] object-cover"
+                     className="w-full h-56 md:h-96 object-cover"
                     />
                   </div>
                 </div>
               </section>
 
-              <div className="py-16 px-4">
-                <div className="max-w-4xl mx-auto">
-                  <div className="mb-12">
-                    <h1 className="text-4xl lg:text-5xl font-bold text-primaryText leading-tight mb-6">
+              
+              <div className="max-w-4xl mx-auto space-y-8">
+                  
+                    <h1 className="text-xl  lg:text-4xl font-bold leading-tight mb-4"> 
                       Frequently Asked Questions About <br />
                       <span className="text-accent">
                         SEO Services
@@ -415,7 +415,7 @@ export default function SEO() {
                       Have questions about SEO? We’ve got answers. Learn more about our strategies, timelines,
                       deliverables, and how we help you grow online.
                     </p>
-                  </div>
+              
 
                   <div className="space-y-4">
                     {faqs.map((faq) => (
@@ -466,7 +466,7 @@ export default function SEO() {
                       </div>
                     ))}
                   </div>
-                </div>
+             
               </div>
 
             </div>

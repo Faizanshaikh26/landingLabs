@@ -92,7 +92,7 @@
 //                 <img
 //                   src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
 //                   alt="Web Development Workspace"
-//                   className="w-full h-[400px] object-cover"
+//                className="w-full h-56 md:h-96 object-cover"
 //                 />
 //               </div>
 
@@ -162,7 +162,7 @@
 //                     <img
 //                       src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
 //                       alt="Web Development Team"
-//                       className="w-full h-[400px] object-cover"
+//                    className="w-full h-56 md:h-96 object-cover"
 //                     />
 //                   </div>
 //                 </div>
@@ -349,7 +349,7 @@ export default function WebDevelopment() {
                 <img
                   src={webDevIllustration}
                   alt="Web Development Workspace"
-                  className="w-full h-[400px] object-cover"
+               className="w-full h-56 md:h-96 object-cover"
                 />
               </div>
 
@@ -366,9 +366,9 @@ export default function WebDevelopment() {
               </div>
 
               {/* Process Section */}
-              <section className="text-secondaryText pt-16 px-4">
-                <div className="mb-16">
-                  <h2 className="text-2xl lg:text-[40px] font-bold text-primaryText leading-tight mb-6">
+              <section className="text-secondaryText pt-16 ">
+            
+                  <h2 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-4">
                     Our step-by-step web development process tailored to{" "}
                     <span className="text-accent bg-clip-text ">
                       your vision
@@ -377,7 +377,7 @@ export default function WebDevelopment() {
                   <p className="text-secondaryText text-lg leading-relaxed max-w-4xl mx-auto">
                     We follow a clear and collaborative process—from planning and design to development and deployment—to bring your digital ideas to life.
                   </p>
-                </div>
+             
 
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                   {steps.map((step, index) => (
@@ -402,9 +402,9 @@ export default function WebDevelopment() {
               </section>
 
               {/* Expert Section */}
-              <section className="text-secondaryText py-16 px-4">
-                <div className="space-y-10">
-                  <h2 className="text-2xl lg:text-4xl font-bold leading-tight">
+              <section className="text-secondaryText py-16">
+                <div className="space-y-4">
+                  <h2 className="text-xl lg:text-4xl font-bold leading-tight">
                     Skilled developers building modern <br />
                     <span className="text-accent bg-clip-text">
                       web experiences
@@ -419,17 +419,17 @@ export default function WebDevelopment() {
                     <img
                       src={webDevImage}
                       alt="Web Development Team"
-                      className="w-full h-[400px] object-cover"
+                   className="w-full h-56 md:h-96 object-cover"
                     />
                   </div>
                 </div>
               </section>
 
               {/* FAQ Section */}
-              <div className="py-16 px-4">
+             
                 <div className="max-w-4xl mx-auto">
-                  <div className="mb-12">
-                    <h1 className="text-4xl lg:text-5xl font-bold text-secondaryText leading-tight mb-6">
+                  <div className="mb-6">
+                    <h1 className="text-xl lg:text-4xl font-bold text-secondaryText leading-tight mb-6">
                       Web development FAQs to <br />
                       <span className="text-accent">
                         guide your project
@@ -490,7 +490,7 @@ export default function WebDevelopment() {
                     ))}
                   </div>
                 </div>
-              </div>
+             
 
             </div>
 

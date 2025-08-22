@@ -82,7 +82,7 @@
 //                 <img
 //                   src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
 //                   alt="UI/UX Design Process"
-//                   className="w-full h-[400px] object-cover"
+//                className="w-full h-56 md:h-96 object-cover"
 //                 />
 //               </div>
 
@@ -148,7 +148,7 @@
 //                     <img
 //                       src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
 //                       alt="UI/UX Workshop Session"
-//                       className="w-full h-[400px] object-cover"
+//                    className="w-full h-56 md:h-96 object-cover"
 //                     />
 //                   </div>
 //                 </div>
@@ -316,7 +316,7 @@ export default function UIUXDesign() {
                 <img
                   src={uiUxIllustration}
                   alt="UI/UX Design Process"
-                  className="w-full h-[400px] object-cover"
+               className="w-full h-56 md:h-96 object-cover"
                 />
               </div>
 
@@ -330,9 +330,9 @@ export default function UIUXDesign() {
                 </p>
               </div>
 
-              <section className="text-primaryText pt-16 px-4">
-                <div className="mb-16">
-                  <h2 className="text-2xl lg:text-[40px] font-bold text-primaryText leading-tight mb-6">
+              <section className="text-primaryText pt-16">
+             
+                  <h2 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-4">
                     Step-by-step UI/UX solutions built for{" "}
                     <span className="text-accent">
                       seamless experiences
@@ -341,7 +341,7 @@ export default function UIUXDesign() {
                   <p className="text-secondaryText text-lg leading-relaxed max-w-4xl mx-auto">
                     Our process ensures users have an engaging journey from start to finish. Through research, wireframes, prototypes, and visual polish—we deliver experiences that users remember.
                   </p>
-                </div>
+             
 
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                   {steps.map((step, index) => (
@@ -365,9 +365,9 @@ export default function UIUXDesign() {
                 </div>
               </section>
 
-              <section className="text-primaryText py-16 px-4">
-                <div className="space-y-10">
-                  <h2 className="text-2xl lg:text-4xl font-bold leading-tight">
+              <section className="text-primaryText py-16">
+                <div className="space-y-4">
+                  <h2 className="text-xl lg:text-4xl font-bold leading-tight">
                     Experienced designers focused on<br />
                     <span className="text-accent">
                       elevating user experience
@@ -382,16 +382,16 @@ export default function UIUXDesign() {
                     <img
                       src={uiUxImage}
                       alt="UI/UX Workshop Session"
-                      className="w-full h-[400px] object-cover"
+                   className="w-full h-56 md:h-96 object-cover"
                     />
                   </div>
                 </div>
               </section>
 
-              <div className="py-16 px-4">
+         
                 <div className="max-w-4xl mx-auto">
-                  <div className="mb-12">
-                    <h1 className="text-4xl lg:text-5xl font-bold text-primaryText leading-tight mb-6">
+                  <div className="mb-6">
+                    <h1 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-6 ">
                       Frequently Asked Questions About <br />
                       <span className="text-accent">
                         UI/UX Design
@@ -451,7 +451,7 @@ export default function UIUXDesign() {
                       </div>
                     ))}
                   </div>
-                </div>
+                
               </div>
 
             </div>

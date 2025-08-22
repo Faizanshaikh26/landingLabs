@@ -89,7 +89,7 @@
 //                 <img
 //                   src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
 //                   alt="Social Media Marketing"
-//                   className="w-full h-[400px] object-cover"
+//                className="w-full h-56 md:h-96 object-cover"
 //                 />
 //               </div>
 
@@ -157,7 +157,7 @@
 //                     <img
 //                       src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
 //                       alt="SMM Team"
-//                       className="w-full h-[400px] object-cover"
+//                    className="w-full h-56 md:h-96 object-cover"
 //                     />
 //                   </div>
 //                 </div>
@@ -335,7 +335,7 @@ export default function SocialMediaMarketing() {
                 <img
                   src={smmIllustration}
                   alt="Social Media Marketing"
-                  className="w-full h-[400px] object-cover"
+               className="w-full h-56 md:h-96 object-cover"
                 />
               </div>
 
@@ -350,9 +350,9 @@ export default function SocialMediaMarketing() {
               </div>
 
               {/* Process Section */}
-              <section className="text-primaryText pt-16 px-4">
-                <div className="mb-16">
-                  <h2 className="text-2xl lg:text-[40px] font-bold text-primaryText leading-tight mb-6">
+              <section className="text-primaryText pt-16 ">
+                <div className="mb-6">
+                  <h2 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-6">
                     Our step-by-step SMM process tailored to{" "}
                     <span className=" text-accent">
                       your brand goals
@@ -386,9 +386,9 @@ export default function SocialMediaMarketing() {
               </section>
 
               {/* Expert Section */}
-              <section className="text-secondaryText py-16 px-4">
-                <div className="space-y-10">
-                  <h2 className="text-2xl lg:text-4xl font-bold leading-tight">
+              <section className="text-secondaryText py-16 ">
+                <div className="space-y-4">
+                  <h2 className="text-xl lg:text-4xl font-bold leading-tight">
                     Creative experts growing your <br />
                     <span className="text-accent">
                       social media impact
@@ -403,17 +403,17 @@ export default function SocialMediaMarketing() {
                     <img
                       src={smmImage}
                       alt="SMM Team"
-                      className="w-full h-[400px] object-cover"
+                   className="w-full h-56 md:h-96 object-cover"
                     />
                   </div>
                 </div>
               </section>
 
               {/* FAQ Section */}
-              <div className="py-16 px-4">
+            
                 <div className="max-w-4xl mx-auto">
-                  <div className="mb-12">
-                    <h1 className="text-4xl lg:text-5xl font-bold text-primaryText leading-tight mb-6">
+                  <div className="mb-6">
+                    <h1 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-6">
                       Social Media FAQs to <br />
                       <span className="text-accent">
                         guide your success
@@ -474,7 +474,7 @@ export default function SocialMediaMarketing() {
                     ))}
                   </div>
                 </div>
-              </div>
+            
 
             </div>
           </div>
