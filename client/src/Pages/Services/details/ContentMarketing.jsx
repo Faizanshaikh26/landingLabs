@@ -339,15 +339,15 @@ export default function ContentMarketing() {
                 </p>
               </div>
 
-              <section className="text-primaryText pt-16 px-4">
+              <section className="text-primaryText pt-16">
                 <div className="mb-16">
-                  <h2 className="text-2xl lg:text-[40px] font-bold text-primaryText leading-tight mb-6">
+                  <h1 className="text-xl lg:text-4xl font-bold leading-tight mb-4">
                     Compelling content that{" "}
                     <span className="text-accent">
                       powers your growth
                     </span>
-                  </h2>
-                  <p className="text-secondaryText text-lg leading-relaxed max-w-4xl mx-auto">
+                  </h1>
+                  <p className="text-secondaryText text-lg leading-relaxed">
                     From strategy to analytics, our content marketing services are built to drive meaningful results for your brand.
                   </p>
                 </div>
@@ -367,8 +367,8 @@ export default function ContentMarketing() {
                       <div className="mb-4">
                         {hoveredIndex === index ? step.hoverIcon : step.defaultIcon}
                       </div>
-                      <h3 className="text-xl text-primaryText font-semibold mb-2">{step.title}</h3>
-                      <p className="text-secondaryText">{step.description}</p>
+                      <h1 className="text-xl lg:text-4xl font-bold leading-tight mb-4">{step.title}</h1>
+                      <p className="text-secondaryText text-lg leading-relaxed">{step.description}</p>
                     </div>
                   ))}
                 </div>
@@ -376,14 +376,14 @@ export default function ContentMarketing() {
 
               <section className="text-primaryText py-16 px-4">
                 <div className="space-y-10">
-                  <h2 className="text-2xl lg:text-4xl font-bold leading-tight">
+                  <h1 className="text-xl  lg:text-4xl font-bold leading-tight mb-4">
                     Create value that keeps <br />
                     <span className="text-accent">
                       audiences coming back
                     </span>
-                  </h2>
+                  </h1>
 
-                  <p className="text-secondaryText text-lg leading-relaxed max-w-3xl">
+                  <p className="text-secondaryText text-lg leading-relaxed">
                     Our writers, designers, and strategists work together to develop content experiences that educate, entertain, and engage.
                   </p>
 
@@ -400,7 +400,7 @@ export default function ContentMarketing() {
               <div className="py-16 px-4">
                 <div className="max-w-4xl mx-auto">
                   <div className="mb-12">
-                    <h1 className="text-4xl lg:text-5xl font-bold text-primaryText leading-tight mb-6">
+                    <h1 className="text-xl  lg:text-4xl font-bold leading-tight mb-4">
                       Frequently Asked Questions About <br />
                       <span className="text-accent">
                         Content Marketing
@@ -421,9 +421,9 @@ export default function ContentMarketing() {
                           onClick={() => toggleQuestion(faq.id)}
                           className="w-full flex items-center justify-between p-6 text-left group"
                         >
-                          <h3 className="text-primaryText text-lg font-medium pr-4 group-hover:text-accent transition-colors duration-300">
+                          <h1 className="text-xl  lg:text-4xl font-bold leading-tight mb-4">
                             {faq.question}
-                          </h3>
+                          </h1>
                           <div className="flex-shrink-0">
                             {openQuestion === faq.id ? (
                               <svg
@@ -454,7 +454,7 @@ export default function ContentMarketing() {
                         >
                           <div className="px-6 pb-6">
                             <div className="h-px bg-slate-700/50 mb-4"></div>
-                            <p className="text-secondaryText leading-relaxed">{faq.answer}</p>
+                            <p className="text-secondaryText text-lg leading-relaxed">{faq.answer}</p>
                           </div>
                         </div>
                       </div>

@@ -311,11 +311,12 @@
 //   )
 // }
 
-
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import Navbar from "../components/Navbar"
 import Footer from "../Footer"
+
+
 import {
   Monitor,
   TrendingUp,
@@ -493,141 +494,150 @@ export default function Pricing() {
             <p className="text-gray-700 text-lg">
               Start tracking and improving your finance management
             </p>
+{/* ✅ Currency + Billing Toggle (UIverse Style, Smaller Text) */}
+<div className="flex justify-center gap-6 mt-6 flex-wrap">
+  {/* Currency Toggle */}
+  <label className="relative inline-flex items-center cursor-pointer">
+    <input
+      type="checkbox"
+      className="sr-only peer"
+      checked={currency === "INR"}
+      onChange={() => setCurrency(currency === "USD" ? "INR" : "USD")}
+    />
+    <div className="peer rounded-full outline-none duration-200 after:duration-500 
+        w-24 h-10 bg-accent shadow-md 
+        peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-orange-400
+        after:content-['USD'] after:absolute after:rounded-full 
+        after:h-8 after:w-10 after:bg-white after:top-1 after:left-1 
+        after:flex after:justify-center after:items-center 
+        after:text-[12px] after:font-semibold after:text-orange-600
+        peer-checked:after:translate-x-12 peer-checked:after:content-['INR']">
+    </div>
+  </label>
 
-            {/* ✅ Currency + Billing Toggle */}
-            <div className="flex justify-center gap-6 mt-6 flex-wrap">
-              {/* Currency Buttons */}
-              <div className="bg-gray-200 rounded-lg p-1 flex">
-                {["USD", "INR"].map((c) => (
-                  <button
-                    key={c}
-                    onClick={() => setCurrency(c)}
-                    className={`px-4 py-2 text-sm font-medium rounded-md transition ${
-                      currency === c
-                        ? "bg-gray-800 text-white"
-                        : "text-gray-700 hover:bg-gray-300"
-                    }`}
-                  >
-                    {c}
-                  </button>
-                ))}
-              </div>
+  {/* Billing Cycle Toggle */}
+  <label className="relative inline-flex items-center cursor-pointer">
+    <input
+      type="checkbox"
+      className="sr-only peer"
+      checked={billingCycle === "annually"}
+      onChange={() =>
+        setBillingCycle(billingCycle === "monthly" ? "annually" : "monthly")
+      }
+    />
+    <div className="peer rounded-full outline-none duration-200 after:duration-500 
+        w-36 h-10 bg-accent shadow-md 
+        peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-orange-400
+        after:content-['Monthly'] after:absolute after:rounded-full 
+        after:h-8 after:w-16 after:bg-white after:top-1 after:left-1 
+        after:flex after:justify-center after:items-center 
+        after:text-[12px] after:font-semibold after:text-orange-600
+        peer-checked:after:translate-x-18 peer-checked:after:content-['Yearly']">
+    </div>
+  </label>
+</div>
 
-              {/* Billing Cycle Buttons */}
-              <div className="bg-gray-200 rounded-lg p-1 flex">
-                {["monthly", "annually"].map((cycle) => (
-                  <button
-                    key={cycle}
-                    onClick={() => setBillingCycle(cycle)}
-                    className={`px-4 py-2 text-sm font-medium rounded-md capitalize transition ${
-                      billingCycle === cycle
-                        ? "bg-gray-800 text-white"
-                        : "text-gray-700 hover:bg-gray-300"
-                    }`}
-                  >
-                    {cycle}
-                  </button>
-                ))}
-              </div>
-            </div>
           </div>
 
-          {/* Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {plans.map((plan, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.2 }}
-                transition={{ duration: 0.4, delay: index * 0.2 }}
-                className="bg-gray-800 border border-gray-700 rounded-2xl p-8 relative overflow-hidden group transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl"
+         {/* Pricing Cards */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+  {plans.map((plan, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ duration: 0.4, delay: index * 0.2 }}
+      className="bg-gray-800 border border-gray-700 rounded-2xl p-8 relative overflow-hidden transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl group"
+    >
+      {/* Most Popular Badge */}
+      {plan.popular && (
+        <div className="absolute -top-0 left-1/2 transform -translate-x-1/2">
+          <span className="bg-gray-600 text-white px-4 py-1 rounded-full text-sm font-medium shadow-md">
+            Most Popular
+          </span>
+        </div>
+      )}
+
+      {/* Card Header */}
+      <div className="mb-6">
+        <h3 className="text-xl font-semibold text-white mb-4">{plan.name}</h3>
+        <div className="mb-4">
+          <span className="text-4xl font-bold text-white">
+            {convertPrice(plan.price)}
+          </span>
+          <span className="text-gray-400 text-lg">
+            {plan.price !== "Custom"
+              ? billingCycle === "annually"
+                ? "/year"
+                : "/month"
+              : ""}
+          </span>
+        </div>
+        <p className="text-gray-400 text-sm leading-relaxed">
+          {plan.description}
+        </p>
+      </div>
+
+      {/* CTA Button */}
+      <button
+        className={`w-full py-3 px-4 rounded-lg font-medium text-sm mb-8 transition-colors ${plan.buttonStyle}`}
+      >
+        {plan.buttonText}
+      </button>
+
+      {/* Features */}
+      <div>
+        <h4 className="text-gray-400 text-xs font-semibold tracking-wider uppercase mb-4">
+          FEATURES
+        </h4>
+        <ul className="space-y-3 transition-all duration-500">
+          {/* Always show first 2 features */}
+          {plan.features.slice(0, 2).map((feature, featureIndex) => (
+            <li key={featureIndex} className="flex items-start">
+              <svg
+                className="w-4 h-4 text-green-500 mr-3 mt-0.5 flex-shrink-0"
+                fill="currentColor"
+                viewBox="0 0 20 20"
               >
-                {/* Most Popular Badge */}
-                {plan.popular && (
-                  <div className="absolute -top-0 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gray-600 text-white px-4 py-1 rounded-full text-sm font-medium shadow-md">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span className="text-gray-300 text-sm">{feature}</span>
+            </li>
+          ))}
 
-                {/* Card Header */}
-                <div className="mb-6">
-                  <h3 className="text-xl font-semibold text-white mb-4">{plan.name}</h3>
-                  <div className="mb-4">
-                    <span className="text-4xl font-bold text-white">
-                      {convertPrice(plan.price)}
-                    </span>
-                    <span className="text-gray-400 text-lg">
-                      {plan.price !== "Custom"
-                        ? billingCycle === "annually"
-                          ? "/year"
-                          : "/month"
-                        : ""}
-                    </span>
-                  </div>
-                  <p className="text-gray-400 text-sm leading-relaxed">{plan.description}</p>
-                </div>
-
-                {/* CTA Button */}
-                <button
-                  className={`w-full py-3 px-4 rounded-lg font-medium text-sm mb-8 transition-colors ${plan.buttonStyle}`}
+          {/* Reveal remaining features ONLY for hovered card */}
+          <div className="max-h-0 space-y-3 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+            {plan.features.slice(2).map((feature, featureIndex) => (
+              <li key={featureIndex + 2} className="flex items-start">
+                <svg
+                  className="w-4 h-4 text-green-500 mr-3 mt-0.5 flex-shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
                 >
-                  {plan.buttonText}
-                </button>
-
-                {/* Features */}
-                <div>
-                  <h4 className="text-gray-400 text-xs font-semibold tracking-wider uppercase mb-4">
-                    FEATURES
-                  </h4>
-                  <ul className="space-y-3 transition-all duration-500">
-                    {/* Always show first 2 features */}
-                    {plan.features.slice(0, 2).map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <svg
-                          className="w-4 h-4 text-green-500 mr-3 mt-0.5 flex-shrink-0"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        <span className="text-gray-300 text-sm">{feature}</span>
-                      </li>
-                    ))}
-
-                    {/* Reveal remaining features on hover */}
-                    <div className="max-h-0  space-y-3 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
-                      {plan.features.slice(2).map((feature, featureIndex) => (
-                        <li key={featureIndex + 2} className="flex items-start">
-                          <svg
-                            className="w-4 h-4 text-green-500 mr-3 mt-0.5 flex-shrink-0"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                          <span className="text-gray-300 text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </div>
-                  </ul>
-                </div>
-              </motion.div>
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span className="text-gray-300 text-sm">{feature}</span>
+              </li>
             ))}
           </div>
+        </ul>
+      </div>
+    </motion.div>
+  ))}
+</div>
+
         </div>
       </section>
-
+    
       {/* FAQ Section */}
       <section className="py-10 md:py-20 px-4 bg-white text-white">
         <div className="max-w-6xl mx-auto">
