@@ -21,7 +21,7 @@ export default function CustomCursor() {
         left: position.x,
         width: "10px",
         height: "10px",
-        backgroundColor: "#f2630a",
+        backgroundColor: "#fff",
         borderRadius: "50%",
         pointerEvents: "none",
         transform: "translate(-50%, -50%)",
