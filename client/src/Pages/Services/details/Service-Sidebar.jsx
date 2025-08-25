@@ -171,7 +171,7 @@ export default function ServiceSidebar() {
             <a
               href={service.link}
               key={service.id}
-              className="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-amber-100 transition-colors cursor-pointer group"
+              className="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-primaryCardBg transition-colors cursor-pointer group"
             >
               <span className="text-primaryText  transition-colors">
                 {service.title}

@@ -420,7 +420,7 @@ export default function Career() {
               {["Apply", "Screening", "Skill Test / Task Round", "Final Interview", "Offer Rollout", "Apply Now"].map((step, i) => (
                 <motion.div
                   key={step}
-                  className="border border-gray-300 rounded-lg p-8 bg-white shadow-sm"
+                  className="border border-gray-300 rounded-lg p-8 bg-primaryCardBg shadow-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   whileHover={{ rotateX: 4, rotateY: -4, scale: 1.03 }}
@@ -429,7 +429,7 @@ export default function Career() {
                 >
                   <div className="text-sm text-gray-500 mb-4">0{i + 1}</div>
                   <h3 className="text-2xl font-bold text-black mb-4">{step}</h3>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 ">
                     {step === "Apply"
                       ? "Submit resume + portfolio (if needed)"
                       : step === "Screening"

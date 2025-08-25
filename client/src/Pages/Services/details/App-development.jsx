@@ -417,7 +417,7 @@ export default function AppDevelopment() {
                 {faqs.map((faq) => (
                   <div
                     key={faq.id}
-                    className="border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 hover:bg-amber-50"
+                    className="border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 "
                   >
                     <button
                       onClick={() => toggleQuestion(faq.id)}
