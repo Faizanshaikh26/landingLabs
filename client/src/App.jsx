@@ -11,6 +11,7 @@ import NotFound from "./components/NotFound.jsx"
 import Portfolio from "./components/Portfolio.jsx"
 import Loading from "./components/Loading.jsx"
 import { Toaster } from "react-hot-toast"
+import page1 from "./components/page1.jsx"
 
 // Lazy-loaded pages
 const Home = lazy(() => import("./Home"))
@@ -28,6 +29,7 @@ const InfluencerMarketing = lazy(() => import("./Pages/Services/details/Influenc
 const ContentMarketing = lazy(() => import("./Pages/Services/details/ContentMarketing"))
 const SEO = lazy(() => import("./Pages/Services/details/SEO.jsx"))
 const Pricing = lazy(() => import("./Pages/Pricing.jsx"))
+const Page1 = lazy(() => import("./components/page1.jsx"))
 
 
 // const Appointment = lazy(() => import("./components/Appointment.jsx"))
@@ -68,6 +70,7 @@ function App() {
             <Route path="/services/graphic-design" element={<PageWrapper><GraphicDesign /></PageWrapper>} />
             <Route path="/services/influencer-marketing" element={<PageWrapper><InfluencerMarketing /></PageWrapper>} />
             <Route path="/services/content-marketing" element={<PageWrapper><ContentMarketing /></PageWrapper>} />
+            <Route path="/page1" element={<PageWrapper><Page1 /></PageWrapper>} />
             <Route path="*" element={<NotFound/>} />
           </Routes>
         </AnimatePresence>
