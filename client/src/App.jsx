@@ -11,6 +11,12 @@ import NotFound from "./components/NotFound.jsx"
 import Portfolio from "./components/Portfolio.jsx"
 import Loading from "./components/Loading.jsx"
 import { Toaster } from "react-hot-toast"
+// import Trial from "./components/free-trial/trial.jsx" 
+import PostTrial from './components/free-trial/PostTrialPackages.jsx'
+import WhyChoose from './components/free-trial/WhyChoose.jsx'
+import Portfoli from "./components/free-trial/PortfolioHighlights.jsx"
+import Growth from "./components/free-trial/GrowthStory.jsx"
+import Grid from "./components/free-trial/PortfolioGrid.jsx"
 
 
 
@@ -77,6 +83,15 @@ function App() {
             <Route path="/services/content-marketing" element={<PageWrapper><ContentMarketing /></PageWrapper>} />
             <Route path="*" element={<NotFound/>} />
             <Route path="/dashboard" element={<PageWrapper><Dashboard /></PageWrapper>} />
+
+              {/* Your Trial Page */}
+          {/* //  <Route path="/trial" element={<PageWrapper><Trial /></PageWrapper>} /> */}
+             <Route path="/why-choose" element={<PageWrapper><WhyChoose /></PageWrapper>} />
+             <Route path="/portfoli" element={<PageWrapper><Portfoli /></PageWrapper>} />
+            <Route path="/grid" element={<PageWrapper><Grid /></PageWrapper>} />
+            <Route path="/growth" element={<PageWrapper><Growth /></PageWrapper>} />
+            <Route path="/post-trial" element={<PageWrapper><PostTrial /></PageWrapper>} />
+            
 
 
           </Routes>
