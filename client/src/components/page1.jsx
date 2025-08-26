@@ -1,17 +1,14 @@
 //// Page1.jsx
 //import React from "react";
-//// Update the import paths below to match your project structure
+//
 //import logoSrc from "../assets/images/Logo- landing labs-black.png";
 //import rightImg from "../assets/images/banner-image.jpg";
 //
 //export default function ViralLandingPage() {
 //  return (
 //    <div className="flex h-screen bg-white">
-//      {/* Left Panel */}
 //      <div className="flex flex-col justify-center pl-20 pt-8 w-[50%] bg-white">
-//        {/* Logo */}
 //        <img src={logoSrc} alt="LANDING LABS.IN Logo" className="w-40 mb-10" />
-//        {/* Heading */}
 //        <div className="relative">
 //          <h1 className="text-9xl font-bold text-gray-900 tracking-wider z-10">
 //            GO VIRAL
@@ -26,7 +23,6 @@
 //            Go Further ....
 //          </span>
 //        </div>
-//        {/* Subtext */}
 //        <p className="text-2xl font-extrabold text-gray-700 mt-20 mb-4">
 //          Your business growth starts here, risk-free.
 //        </p>
@@ -34,7 +30,6 @@
 //          Visit us at www.landinglabs.in
 //        </p>
 //      </div>
-//      {/* Right Panel */}
 //      <div className="flex justify-center items-center w-[50%] bg-accent">
 //        <div className="relative w-[470px] h-[600px] flex items-center justify-center rounded-2xl overflow-hidden shadow-xl">
 //          <img
@@ -42,7 +37,6 @@
 //            alt="Main Banner"
 //            className="w-full h-full object-cover rounded-2xl"
 //          />
-//          {/* Overlay bee images here if needed, using your own PNGs and absolute positioning */}
 //        </div>
 //      </div>
 //    </div>
@@ -58,7 +52,6 @@
 //export default function ZeroToTrendingPage() {
 //  return (
 //    <div className="relative min-h-screen w-full bg-white">
-//      {/* Top Badge Row */}
 //      <div className="flex justify-center pt-14 mb-10 w-full">
 //        <img
 //          src={freeTrialImg}
@@ -66,7 +59,6 @@
 //          className="h-35 w-auto"
 //        />
 //      </div>
-//      {/* Main Heading and Subtext */}
 //      <div className="w-full flex flex-col items-center">
 //        <h1 className="text-[4.5rem] md:text-[6rem] font-bold tracking-tight leading-tight text-black text-center mb-2">
 //          From Zero to Trending
@@ -89,16 +81,14 @@
 ////page3
 //
 //import React from "react";
-//// Import images from your assets (replace paths as needed)
+//
 //import cinnamonImg from "../assets/images/food-industries.jpg";
 //import kampoImg from "../assets/images/education-industries.jpg";
 //import kiElementImg from "../assets/images/tech-startUp-industries.jpg";
-//import stylishProductImg from "../assets/images/realEstate-industries.jpg"; // example stylish product image
-//
+//import stylishProductImg from "../assets/images/realEstate-industries.jpg"; 
 //export default function Page4Replication() {
 //  return (
 //    <div className="w-full h-screen flex bg-[#FF6A00]">
-//      {/* Left White Section */}
 //      <div >
 //        <div className="ml-15 w-[100%] bg-white p-16 relative flex flex-col justify-between">
 //          <p className="uppercase tracking-widest text-sm text-gray-700 mb-4">
@@ -117,9 +107,7 @@
 //          </p>
 //        </div>
 //
-//        {/* Bottom Cards */}
 //        <div className="w-[120%] h-80 bg-gray-300 flex gap-2 -mt-26">
-//          {/* Cinnamon */}
 //          <div className=" shadow-md rounded-md p-6">
 //            <img
 //              src={cinnamonImg}
@@ -128,7 +116,6 @@
 //            />
 //          </div>
 //
-//          {/* How to Kampo */}
 //          <div className="shadow-md rounded-md p-6">
 //            <img
 //              src={kampoImg}
@@ -138,7 +125,6 @@
 //            
 //          </div>
 //
-//          {/* Ki Element */}
 //          <div className="shadow-md rounded-md p-6">
 //            <img
 //              src={kiElementImg}
@@ -149,7 +135,6 @@
 //        </div>
 //      </div>
 //
-//      {/* Right Orange Section */}
 //      <div className="w-2/5 relative flex flex-col items-center justify-center -mt-40">
 //        <div className="relative w-full max-w-xs mb-10">
 //          <img
@@ -183,7 +168,6 @@ import rightCardImg from "../assets/images/services-banner.png";
 export default function ProblemSectionReplication() {
   return (
     <div className="relative w-full h-screen bg-white font-sans overflow-hidden">
-      {/* Top section: Full width image */}
       <div className="w-full h-[320px] relative z-0">
         <img
           src={leftBgImg}
@@ -193,11 +177,9 @@ export default function ProblemSectionReplication() {
         />
       </div>
 
-      {/* Overlapping Card (Oktoberfest) */}
       <div
         className="absolute z-20 top-[180px] left-2/3 -translate-x-12 w-[400px] min-h-[340px] flex flex-col shadow-2xl rounded-lg overflow-hidden"
         style={{ 
-          // 20% top image overlap, 80% text overlap
           boxShadow: "0 10px 40px rgba(80,30,10,0.18)"
         }}
       >
@@ -206,7 +188,7 @@ export default function ProblemSectionReplication() {
           alt="Oktoberfest"
           className="w-full h-[360px] object-cover"
         />
-        {/* Card Bottom Orange */}
+        
         <div className="bg-[#FF6A00] w-full h-[86px] flex flex-col justify-center items-start px-7">
           <div className="text-lg font-semibold text-white">
             Startup Launch Kits
@@ -217,9 +199,9 @@ export default function ProblemSectionReplication() {
         </div>
       </div>
 
-      {/* Main Content Section */}
+      
       <div className="relative z-10 w-full flex flex-col px-16 pt-16 pb-10 bg-white"
-        style={{ marginTop: "-40px" }} // Adjust for stacking and overlap under the card
+        style={{ marginTop: "-40px" }} 
       >
         <div className="uppercase tracking-[.28em] text-gray-700 text-lg mb-2 -mt-2">
           What’s Holding Your Brand Back?
