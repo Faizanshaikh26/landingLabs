@@ -12,6 +12,11 @@ import Portfolio from "./components/Portfolio.jsx"
 import Loading from "./components/Loading.jsx"
 import { Toaster } from "react-hot-toast"
 
+import NewTrailPage5 from "./components/New/page.jsx";
+import NewTrailPage4 from "./components/New/page2.jsx";
+import NewTrailPage3 from "./components/New/page3.jsx";
+import NewTrailPage2 from "./components/New/page4.jsx";
+
 // Lazy-loaded pages
 const Home = lazy(() => import("./Home"))
 const AboutUs = lazy(() => import("./Pages/AboutUs"))
@@ -25,10 +30,12 @@ const AppDevelopment = lazy(() => import("./Pages/Services/details/App-developme
 const UIUXDesign = lazy(() => import("./Pages/Services/details/UIUXDesign"))
 const GraphicDesign = lazy(() => import("./Pages/Services/details/GraphicDesign"))
 const InfluencerMarketing = lazy(() => import("./Pages/Services/details/InfluencerMarketing"))
-const ContentMarketing = lazy(() => import("./Pages/Services/details/ContentMarketing"))
+
 const SEO = lazy(() => import("./Pages/Services/details/SEO.jsx"))
 const Pricing = lazy(() => import("./Pages/Pricing.jsx"))
 const MyProject = lazy(() => import("./components/task/myproject"));
+
+
 
 
 
@@ -56,10 +63,8 @@ function App() {
       <Route path="/services" element={<PageWrapper><Service /></PageWrapper>} />
       <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
       <Route path="/portfolio" element={<PageWrapper><Portfolio /></PageWrapper>} />
-
       {/* My Project Route */}
       <Route path="/myproject" element={<PageWrapper><MyProject /></PageWrapper>} />
-
       {/* Service Detail Pages */}
       <Route path="/services/search-engine-optimization" element={<PageWrapper><SEO /></PageWrapper>} />
       <Route path="/services/web-development" element={<PageWrapper><WebDevelopment /></PageWrapper>} />
@@ -69,10 +74,16 @@ function App() {
       <Route path="/services/ui-ux-design" element={<PageWrapper><UIUXDesign /></PageWrapper>} />
       <Route path="/services/graphic-design" element={<PageWrapper><GraphicDesign /></PageWrapper>} />
       <Route path="/services/influencer-marketing" element={<PageWrapper><InfluencerMarketing /></PageWrapper>} />
-      <Route path="/services/content-marketing" element={<PageWrapper><ContentMarketing /></PageWrapper>} />
+      {/* <Route path="/services/content-marketing" element={<PageWrapper><ContentMarketing /></PageWrapper>} /> */}
+      <Route path="/tpage" element={<PageWrapper><NewTrailPage5 /></PageWrapper>} />
+      <Route path="/ttpage" element={<PageWrapper><NewTrailPage4 /></PageWrapper>} />
+      <Route path="/tttpage" element={<PageWrapper><NewTrailPage3 /></PageWrapper>} />
+      <Route path="/ttttpage" element={<PageWrapper><NewTrailPage2 /></PageWrapper>} />
+
 
       {/* 404 */}
       <Route path="*" element={<NotFound />} />
+      
     </Routes>
   </AnimatePresence>
 </Suspense>
