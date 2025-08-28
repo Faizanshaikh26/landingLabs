@@ -217,7 +217,7 @@ export default function ProblemSectionReplication() {
           marginTop: window.innerWidth >= 1024 ? "-30px" : "0px" 
         }}
       >
-        <div className="uppercase tracking-[.18em] sm:tracking-[.22em] lg:tracking-[.28em] text-gray-700 text-base sm:text-lg mb-2 lg:mt-4 -mt-18">
+        <div className="uppercase tracking-[.18em] sm:tracking-[.22em] lg:tracking-[.28em] text-gray-700 text-base sm:text-lg mb-2 lg:mt-2 -mt-18">
           What's Holding Your Brand Back?
         </div>
         <div className="text-4xl sm:text-6xl lg:text-8xl font-bold text-black mb-3 sm:mb-5 lg:mb-7 leading-tight lg:-mt-2">
