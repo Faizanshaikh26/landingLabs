@@ -10,7 +10,7 @@ export default function PostTrialPackages() {
         <img
           src="/images/post-trial-bg.jpg"
           alt="Post Trial Packages"
-          className="h-60 w-160 mt-4"
+          className="h-60 lg:w-160 mt-4"
         />
 
         {/* Centered Text at bottom of image */}
@@ -19,10 +19,8 @@ export default function PostTrialPackages() {
           <span className="text-orange-600 uppercase">PACKAGES</span>
         </h1>
 
-        
-{/* Show on right side for medium+ screens */}
-<div className="hidden sm:block absolute top-1/2 -translate-y-1/2 right-6 sm:right-6 md:right-16 lg:right-28">
-  <BsArrowRight className="w-7 h-7 md:w-8 md:h-8 lg:w-9 lg:h-9" />
+ <div className="absolute top-1/2 -translate-y-1/2 right-1 sm:right-1 md:right-16 lg:right-28">
+  <BsArrowRight className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9" />
 </div>
 </div>
 
