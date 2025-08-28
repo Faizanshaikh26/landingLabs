@@ -1,58 +1,67 @@
 export default function PortfolioGrid() {
   return (
-    <div className="grid grid-cols-6 grid-rows-7 gap-1.5 w-full h-screen p-4">
-      {/* div1 */}
-      <div className="col-span-2 row-span-6 rounded-lg shadow overflow-hidden">
-        <img
-          src="images/img-4.png"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div>
+    <div className="w-full min-h-screen p-4 sm:p-6  bg-black lg:p-8">
+      <div className="
+        grid gap-3
+        grid-cols-1 
+        sm:grid-cols-2
+        md:grid-cols-3
+        lg:grid-cols-6 lg:grid-rows-7
+        auto-rows-[minmax(150px,auto)]
+      ">
+        {/* div1 */}
+        <div className="col-span-1 sm:col-span-2 lg:col-span-2 lg:row-span-6  shadow-lg overflow-hidden">
+          <img
+            src="images/img-6.jpg"
+            alt=""
+            className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto"
+          />
+        </div>
 
-      {/* div2 */}
-      <div className="col-span-2 row-span-2 col-start-3 rounded-lg shadow overflow-hidden">
-        <img
-          src="images/img-6.jpg"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div>
+        {/* div2 */}
+        <div className="col-span-1 sm:col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-2 lg:col-start-3  shadow-lg overflow-hidden">
+          <img
+            src="images/img-6.jpg"
+            alt=""
+            className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto"
+          />
+        </div>
 
-      {/* div7 */}
-      <div className="col-span-2 row-span-2 col-start-3 row-start-3 rounded-lg shadow overflow-hidden">
-        <img
-          src="images/img-1.jpg"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div>
+        {/* div7 */}
+        <div className="col-span-1 sm:col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-2 lg:col-start-3 lg:row-start-3  shadow-lg overflow-hidden">
+          <img
+            src="images/img-1.jpg"
+            alt=""
+            className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto"
+          />
+        </div>
 
-      {/* div6 */}
-      <div className="col-span-2 row-span-2 col-start-3 row-start-5 rounded-lg shadow overflow-hidden">
-        <img
-          src="images/img-2.webp"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div>
+        {/* div6 */}
+        <div className="col-span-1 sm:col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-2 lg:col-start-3 lg:row-start-5 shadow-lg overflow-hidden">
+          <img
+            src="images/img-2.webp"
+            alt=""
+            className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto"
+          />
+        </div>
 
-      {/* div9 */}
-      <div className="col-span-2 row-span-3 col-start-5 row-start-1 rounded-lg shadow overflow-hidden">
-        <img
-          src="images/img-3.jpg"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div>
+        {/* div9 */}
+        <div className="col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2 lg:row-span-3 lg:col-start-5 lg:row-start-1  shadow-lg overflow-hidden">
+          <img
+            src="images/img-3.jpg"
+            alt=""
+            className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto"
+          />
+        </div>
 
-      {/* div8 */}
-      <div className="col-span-2 row-span-3 col-start-5 row-start-4 rounded-lg shadow overflow-hidden">
-        <img
-          src="images/img-5.webp"
-          alt=""
-          className="w-full h-full object-cover"
-        />
+        {/* div8 */}
+        <div className="col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2 lg:row-span-3 lg:col-start-5 lg:row-start-4  shadow-lg overflow-hidden">
+          <img
+            src="images/img-5.webp"
+            alt=""
+            className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto"
+          />
+        </div>
       </div>
     </div>
   );

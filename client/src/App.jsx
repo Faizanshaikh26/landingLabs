@@ -11,7 +11,6 @@ import NotFound from "./components/NotFound.jsx"
 import Portfolio from "./components/Portfolio.jsx"
 import Loading from "./components/Loading.jsx"
 import { Toaster } from "react-hot-toast"
-// import Trial from "./components/free-trial/trial.jsx" 
 import PostTrial from './components/free-trial/PostTrialPackages.jsx'
 import WhyChoose from './components/free-trial/WhyChoose.jsx'
 import Portfoli from "./components/free-trial/PortfolioHighlights.jsx"
@@ -85,7 +84,6 @@ function App() {
             <Route path="/dashboard" element={<PageWrapper><Dashboard /></PageWrapper>} />
 
               {/* Your Trial Page */}
-          {/* //  <Route path="/trial" element={<PageWrapper><Trial /></PageWrapper>} /> */}
              <Route path="/why-choose" element={<PageWrapper><WhyChoose /></PageWrapper>} />
              <Route path="/portfoli" element={<PageWrapper><Portfoli /></PageWrapper>} />
             <Route path="/grid" element={<PageWrapper><Grid /></PageWrapper>} />
