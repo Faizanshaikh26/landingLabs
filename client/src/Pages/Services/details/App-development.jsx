@@ -325,10 +325,12 @@ export default function AppDevelopment() {
     <div className="pt-32 pb-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <ServiceSidebar />
+        
+
+         
 
           {/* Main Content */}
-          <div className="lg:col-span-8 space-y-16">
+          <div className="lg:col-span-8 space-y-16 order-1 lg:order-2">
             {/* Hero Image + Intro */}
             <div className="rounded-3xl overflow-hidden">
               <img
@@ -464,6 +466,12 @@ export default function AppDevelopment() {
               </div>
             </section>
           </div>
+
+
+                 <div className="lg:col-span-4 order-2 lg:order-1">
+    <ServiceSidebar />
+  </div>
+           
         </div>
       </div>
     </div>

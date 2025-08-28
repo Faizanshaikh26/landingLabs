@@ -65,7 +65,7 @@ const [openQuestion, setOpenQuestion] = useState(-1);
 
 
   return (
-    <div className=" py-20 px-4">
+    <div className="py-8 sm:py-12 lg:py-16 px-3 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Column */}
@@ -139,7 +139,7 @@ const [openQuestion, setOpenQuestion] = useState(-1);
               <img
                 src={faqImage}
                 alt="Support image"
-                className="w-full h-[350px] object-cover"
+                className="w-full h-[300px] md:h-[350px] object-cover"
               />
             </div>
           </div>

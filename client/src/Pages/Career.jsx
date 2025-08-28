@@ -58,7 +58,7 @@
 //               <motion.button
 //                 whileHover={{ scale: 1.05 }}
 //                 whileTap={{ scale: 0.95 }}
-//                 className="bg-white text-black hover:bg-gray-200 px-8 py-3 rounded-full font-medium text-base"
+//                 className="bg-white text-primaryText hover:bg-gray-200 px-8 py-3 rounded-full font-medium text-base"
 //               >
 //                 See open roles
 //               </motion.button>
@@ -125,7 +125,7 @@
 //                     <div className="col-span-2 text-gray-300">{job.workTime}</div>
 //                     <div className="col-span-2 text-gray-300">{job.location}</div>
 //                     <div className="col-span-2 flex justify-end">
-//                       <button className="bg-white text-black hover:bg-gray-200 px-6 py-2 rounded-full font-medium">Apply</button>
+//                       <button className="bg-white text-primaryText hover:bg-gray-200 px-6 py-2 rounded-full font-medium">Apply</button>
 //                     </div>
 //                   </motion.div>
 //                 ))}
@@ -149,7 +149,7 @@
 //                     <p>{job.workTime}</p>
 //                     <p>{job.location}</p>
 //                   </div>
-//                   <button className="bg-white text-black hover:bg-gray-200 px-6 py-2 rounded-full font-medium w-full">Apply</button>
+//                   <button className="bg-white text-primaryText hover:bg-gray-200 px-6 py-2 rounded-full font-medium w-full">Apply</button>
 //                 </motion.div>
 //               ))}
 //             </div>
@@ -257,7 +257,7 @@ export default function Career() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-white text-black">
+      <div className="min-h-screen text-primaryText pb-10">
         {/* Hero Section */}
         <div className="flex flex-col lg:flex-row min-h-screen">
           {/* Text */}
@@ -305,7 +305,7 @@ export default function Career() {
 
         {/* Job Listings */}
         <motion.div
-          className="px-8 lg:px-16 py-16"
+          className="px-8 lg:px-16 py-8 md:py-16"
           initial="hidden"
           whileInView="visible"
        viewport={{ once: false,amount:0.3}}
@@ -322,7 +322,7 @@ export default function Career() {
               transition={{ duration: 0.4 }}
               viewport={{ once: false,amount:0.3}}
             >
-              <h2 className="text-3xl lg:text-4xl font-bold mb-2 text-black">Available positions</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-2 text-primaryText">Available positions</h2>
               <p className="text-gray-600 text-lg">waiting to be filled</p>
             </motion.div>
 
@@ -344,7 +344,7 @@ export default function Career() {
                     transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
                    viewport={{ once: false,amount:0.3}}
                   >
-                    <div className="col-span-4"><h3 className="text-lg font-medium text-black">{job.role}</h3></div>
+                    <div className="col-span-4"><h3 className="text-lg font-medium text-primaryText">{job.role}</h3></div>
                     <div className="col-span-2 text-gray-700">{job.team}</div>
                     <div className="col-span-2 text-gray-700">{job.workTime}</div>
                     <div className="col-span-2 text-gray-700">{job.location}</div>
@@ -369,7 +369,7 @@ export default function Career() {
                   transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
                   viewport={{ once: false,amount:0.3}}
                 >
-                  <h3 className="text-xl font-medium text-black mb-4">{job.role}</h3>
+                  <h3 className="text-xl font-medium text-primaryText mb-4">{job.role}</h3>
                   <div className="space-y-2 mb-6 text-gray-700">
                     <p>{job.team}</p>
                     <p>{job.workTime}</p>
@@ -386,7 +386,7 @@ export default function Career() {
 
         {/* FAQ */}
         <motion.div
-          className="px-8 lg:px-16 py-16"
+            className="px-8 lg:px-16 py-8 md:py-16"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
@@ -394,7 +394,7 @@ export default function Career() {
         >
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-black">Questions?</h2>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-primaryText">Questions?</h2>
               <p className="text-xl text-gray-600">We're glad you asked...</p>
             </div>
             <CustomAccordion items={faqItems} />
@@ -415,7 +415,7 @@ export default function Career() {
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
         >
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-12 text-black">Our Hiring Process</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-12 text-primaryText">Our Hiring Process</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {["Apply", "Screening", "Skill Test / Task Round", "Final Interview", "Offer Rollout", "Apply Now"].map((step, i) => (
                 <motion.div
@@ -428,7 +428,7 @@ export default function Career() {
                   viewport={{ once: false,amount:0.3}}
                 >
                   <div className="text-sm text-gray-500 mb-4">0{i + 1}</div>
-                  <h3 className="text-2xl font-bold text-black mb-4">{step}</h3>
+                  <h3 className="text-2xl font-bold text-primaryText mb-4">{step}</h3>
                   <p className="text-gray-700 ">
                     {step === "Apply"
                       ? "Submit resume + portfolio (if needed)"

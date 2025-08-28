@@ -77,7 +77,7 @@
 //         <div className="max-w-7xl mx-auto">
 //           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 //             <ServiceSidebar />
-//             <div className="lg:col-span-8">
+//             <div className="lg:col-span-8  order-1 lg:order-2">
 //               <div className="rounded-3xl overflow-hidden mb-8">
 //                 <img
 //                   src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
@@ -318,8 +318,8 @@ export default function SEO() {
       <div className=" pt-40 md:pb-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <ServiceSidebar />
-            <div className="lg:col-span-8">
+           
+            <div className="lg:col-span-8  order-1 lg:order-2">
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
                   src={seoIllustration}
@@ -470,6 +470,10 @@ export default function SEO() {
               </div>
 
             </div>
+
+              <div className="lg:col-span-4 order-2 lg:order-1">
+    <ServiceSidebar />
+  </div>
           </div>
         </div>
       </div>
