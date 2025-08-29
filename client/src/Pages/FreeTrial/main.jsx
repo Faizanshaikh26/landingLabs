@@ -1,5 +1,6 @@
 import React from "react";
 import logoWhite from "../../assets/images/Og-Logo.png";
+import { Link } from "react-router-dom";
 export default function FreeTrialLanding() {
   return (
     <div className="min-h-screen w-full bg-gray-950 text-white selection:bg-white/10">
@@ -63,7 +64,7 @@ export default function FreeTrialLanding() {
             }}
               className="hover:text-white cursor-pointer" >Industries</a>
           </nav>
-          <a href="#cta" className="inline-flex items-center rounded-2xl bg-white/10 hover:bg-white/20 transition px-4 py-2 text-sm">Contact</a>
+          <Link to="/contact-us" className="inline-flex items-center rounded-2xl bg-white/10 hover:bg-white/20 transition px-4 py-2 text-sm">Contact</Link>
         </div>
       </header>
 
@@ -371,10 +372,20 @@ export default function FreeTrialLanding() {
                 <h2 className="text-3xl sm:text-4xl font-bold">Let’s start your growth story</h2>
                 <p className="mt-2 text-white/70">Visit us at www.landinglabs.in • +91 738 739 2708 • info@landinglabs.in</p>
               </div>
-              <div className="flex gap-3">
-                <a href="#" className="rounded-2xl bg-white text-gray-900 font-semibold px-5 py-3">Book a Call</a>
-                <a href="#trial" className="rounded-2xl border border-white/20 px-5 py-3 hover:bg-white/10">Start Free Trial</a>
-              </div>
+                <div className="flex justify-end flex-col sm:flex-row gap-3 w-full sm:w-auto">
+  <Link
+    to="/contact-us"
+    className="rounded-2xl bg-white text-gray-900 font-semibold px-5 py-3 text-center w-full sm:w-auto"
+  >
+    Book a Call
+  </Link>
+  <Link
+    to="#trial"
+    className="rounded-2xl border border-white/20 px-5 py-3 hover:bg-white/10 text-center w-full sm:w-auto"
+  >
+    Start Free Trial
+  </Link>
+</div>
             </div>
           </div>
         </div>
