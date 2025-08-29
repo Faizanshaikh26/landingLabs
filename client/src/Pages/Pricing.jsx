@@ -336,7 +336,7 @@ export default function Pricing() {
   // ✅ Currency rates (demo only, you can connect live API)
   const exchangeRates = {
     USD: 1,
-    INR: 83,
+    INR: 87.7875,
   }
 
   // ✅ Convert function with monthly/annual toggle
@@ -357,55 +357,101 @@ export default function Pricing() {
 
 
   const plans = [
-    {
-      name: "Starter",
-      price: "$0",
-      period: "/month",
-      description: "Perfect for small businesses getting started with online presence.",
-      popular: false,
-      buttonText: "Start for Free",
-      buttonStyle: "bg-gray-700 hover:bg-gray-600 text-white",
-      features: [
-        "Basic Website Audit",
-        "Social Media Setup",
-        "1 Free Design Mockup",
-        "Basic SEO Suggestions",
-        "Email Support",
-      ],
-    },
-    {
-      name: "Growth",
-      price: "$199",
-      period: "/month",
-      description: "Ideal for growing brands looking for consistent marketing efforts.",
-      popular: true,
-      buttonText: "Get Started with Growth",
-      buttonStyle: "bg-orange-500 hover:bg-orange-600 text-white",
-      features: [
-        "SEO Optimization",
-        "Content Marketing",
-        "Social Media Management",
-        "PPC Campaigns Setup",
-        "Dedicated Account Manager",
-      ],
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      period: "",
-      description: "Tailored services for enterprises and high-growth teams.",
-      popular: false,
-      buttonText: "Contact Sales",
-      buttonStyle: "bg-gray-700 hover:bg-gray-600 text-white",
-      features: [
-        "Custom Web/App Development",
-        "Influencer Campaigns",
-        "Full Funnel Strategy",
-        "Advanced Analytics & Reports",
-        "24/7 Priority Support",
-      ],
-    },
-  ]
+  {
+    name: "Starter",
+    price: "$161.30342",
+    period: "/month",
+    description: "Best for startups & local businesses.",
+    popular: false,
+ buttonText: "Get Started with Starter",
+    buttonStyle: "bg-orange-500 hover:bg-orange-600 text-white",
+    features: [
+      "8 Posts + 4 Stories",
+      "Mini Competitor Check",
+      "Monthly Performance Report",
+      "Email & WhatsApp Support",
+      "Profile Optimization",
+    ],
+  },
+
+  {
+    name: "Growth",
+    price: "$336.04",
+    period: "/month",
+    description: "For SMEs & service businesses.",
+    popular: true,
+    buttonText: "Get Started with Growth",
+    buttonStyle: "bg-orange-500 hover:bg-orange-600 text-white",
+    features: [
+      "15 Posts + 8 Stories + Branded Templates",
+      "4 Reels (engagement focused)",
+      "2 SEO Blogs (700–900 words)",
+      "Comment & DM Replies",
+      "Google OR Meta Ads Setup (Ad Spend Extra)",
+      "Monthly Keyword Research + SEO Fixes",
+      "Monthly Competitor Insights",
+      "Advanced Monthly Report",
+    ],
+  },
+
+  {
+    name: "Performance",
+    price: "$604.870",
+    period: "/month",
+    description: "For growing companies focused on leads & sales.",
+    popular: "",
+    buttonText: "Get Started with Performance",
+    buttonStyle: "bg-orange-500 hover:bg-orange-600 text-white",
+    features: [
+      "20 Posts + 12 Stories + Branded Creatives",
+      "6 Reels (trend-based)",
+      "4 SEO Blogs (1000–1200 words)",
+      "Full SEO Audit + 10 Keywords Optimization",
+      "Google + Meta Ads Campaigns (Ad Spend Extra)",
+      "Deep Competitor Report (SWOT + Positioning)",
+      "Landing Page Setup + Email Automation (basic)",
+      "Weekly Reports + Strategy Call",
+    ],
+  },
+
+  {
+    name: "Elite Domination",
+    price: "1,008.1200",
+    period: "/month",
+    description: "For growing companies focused on leads & sales.",
+    popular: "",
+    buttonText: "Get Started with Elite",
+    buttonStyle: "bg-orange-500 hover:bg-orange-600 text-white",
+    features: [
+      "30 Posts + 20 Stories + Campaigns",
+      "Advanced SEO (On-page + Off-page + Backlinks + GMB)",
+      "10 Reels (AI-assisted, high-quality edits)",
+      "6 SEO Blogs (1200+ words, authority-building)",
+      "AI-driven Analytics Dashboard",
+      "Google + Meta + Retargeting Campaigns (Ad Spend Extra)",
+      "Multiple Buyer Personas + Behavior Analysis",
+      "Email Sequences + CRM Integration",
+      "Dedicated Account Manager + Weekly Calls",
+    ],
+  },
+
+  {
+    name: "Free Trial",
+    price: "$0",
+    period: "",
+    description: "Try out our services before you commit.",
+    popular: false,
+    buttonText: "Claim Free Trial",
+    buttonStyle: "bg-gray-700 hover:bg-gray-600 text-white",
+    features: [
+      "4 Social Posts + 1 Reel",
+      "Competitor Snapshot",
+      "Analytics Report",
+    ],
+  },
+];
+
+
 
   const faqs = [
     {
@@ -546,7 +592,7 @@ export default function Pricing() {
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-              
+
                 transition={{ duration: 0.4, delay: index * 0.2 }}
                 className="bg-gray-800 border border-gray-700 rounded-lg p-6 relative"
               >
@@ -562,13 +608,13 @@ export default function Pricing() {
                   <h3 className="text-xl font-semibold text-white mb-4">{plan.name}</h3>
                   <div className="mb-4">
                     <span className="text-4xl font-bold text-white">  {convertPrice(plan.price)}</span>
-                             <span className="text-gray-400 text-lg">
-            {plan.price !== "Custom"
-              ? billingCycle === "annually"
-                ? "/year"
-                : "/month"
-              : ""}
-          </span>
+                    <span className="text-gray-400 text-lg">
+                      {plan.price !== "Custom"
+                        ? billingCycle === "annually"
+                          ? "/year"
+                          : "/month"
+                        : ""}
+                    </span>
 
                   </div>
                   <p className="text-gray-400 text-sm leading-relaxed">{plan.description}</p>
