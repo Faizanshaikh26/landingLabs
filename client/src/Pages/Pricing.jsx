@@ -357,6 +357,23 @@ export default function Pricing() {
 
 
   const plans = [
+
+
+    {
+    name: "Free Trial",
+    price: "$0",
+    period: "",
+     href:"/free-trial",
+    description: "Try out our services before you commit.",
+    popular: false,
+    buttonText: "Claim Free Trial",
+    buttonStyle: "bg-gray-700 hover:bg-gray-600 text-white",
+    features: [
+      "4 Social Posts + 1 Reel",
+      "Competitor Snapshot",
+      "Analytics Report",
+    ],
+  },
   {
     name: "Starter",
     price: "$161.30342",
@@ -418,6 +435,7 @@ export default function Pricing() {
     name: "Elite Domination",
     price: "1,008.1200",
     period: "/month",
+   
     description: "For growing companies focused on leads & sales.",
     popular: "",
     buttonText: "Get Started with Elite",
@@ -435,20 +453,7 @@ export default function Pricing() {
     ],
   },
 
-  {
-    name: "Free Trial",
-    price: "$0",
-    period: "",
-    description: "Try out our services before you commit.",
-    popular: false,
-    buttonText: "Claim Free Trial",
-    buttonStyle: "bg-gray-700 hover:bg-gray-600 text-white",
-    features: [
-      "4 Social Posts + 1 Reel",
-      "Competitor Snapshot",
-      "Analytics Report",
-    ],
-  },
+  
 ];
 
 
@@ -619,18 +624,24 @@ export default function Pricing() {
                   </div>
                   <p className="text-gray-400 text-sm leading-relaxed">{plan.description}</p>
                 </div>
-                <button
+                <Link to={plan.href}>
+                 <button
                   className={`w-full py-3 px-4 rounded-lg font-medium text-sm mb-8 transition-colors ${plan.buttonStyle}`}
                 >
 
                   {plan.buttonText}
                 </button>
+                </Link>
+               
                 <div>
                   <h4 className="text-gray-400 text-xs font-semibold tracking-wider uppercase mb-4">
                     FEATURES
                   </h4>
                   <ul className="space-y-3">
                     {plan.features.map((feature, featureIndex) => (
+
+                   
+
                       <li key={featureIndex} className="flex items-start">
                         <svg
                           className="w-4 h-4 text-green-500 mr-3 mt-0.5 flex-shrink-0"
@@ -645,6 +656,8 @@ export default function Pricing() {
                         </svg>
                         <span className="text-gray-300 text-sm">{feature}</span>
                       </li>
+                    
+                      
                     ))}
                   </ul>
                 </div>

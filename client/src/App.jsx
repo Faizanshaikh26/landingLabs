@@ -12,6 +12,8 @@ import Portfolio from "./components/Portfolio.jsx"
 import Loading from "./components/Loading.jsx"
 import { Toaster } from "react-hot-toast"
 import PortfolioDetails from "./Pages/Portfolio-Details.jsx"
+import FreeTrail from "./Pages/FreeTrial/main.jsx"
+import FreeTrialLanding from "./Pages/FreeTrial/main.jsx"
 
 // Lazy-loaded pages
 const Home = lazy(() => import("./Home"))
@@ -70,6 +72,7 @@ function App() {
             <Route path="/services/graphic-design" element={<PageWrapper><GraphicDesign /></PageWrapper>} />
             <Route path="/services/influencer-marketing" element={<PageWrapper><InfluencerMarketing /></PageWrapper>} />
             <Route path="/services/content-marketing" element={<PageWrapper><ContentMarketing /></PageWrapper>} />
+            <Route path="/free-trial" element={<PageWrapper><FreeTrialLanding /></PageWrapper>} />
             <Route path="*" element={<NotFound/>} />
           </Routes>
         </AnimatePresence>
