@@ -2,7 +2,7 @@ import { Route, Routes, useLocation } from "react-router-dom"
 import { lazy, Suspense } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 
-import AutoPopupDialog, {} from './components/AutoDialog.jsx'
+import AutoPopupDialog, { } from './components/AutoDialog.jsx'
 // Static Components (not lazy)
 import ScrollToTop from "./components/ScrollToTop"
 import CustomCursor from "./components/custome-cursor"
@@ -11,16 +11,9 @@ import NotFound from "./components/NotFound.jsx"
 import Portfolio from "./components/Portfolio.jsx"
 import Loading from "./components/Loading.jsx"
 import { Toaster } from "react-hot-toast"
-import PostTrial from './components/free-trial/PostTrialPackages.jsx'
-import WhyChoose from './components/free-trial/WhyChoose.jsx'
-import Portfoli from "./components/free-trial/PortfolioHighlights.jsx"
-import Growth from "./components/free-trial/GrowthStory.jsx"
-import Grid from "./components/free-trial/PortfolioGrid.jsx"
-import Portsample from "./components/Portsample.jsx"
-
-
-
-
+import PortfolioDetails from "./Pages/Portfolio-Details.jsx"
+import FreeTrail from "./Pages/FreeTrial/main.jsx"
+import FreeTrialLanding from "./Pages/FreeTrial/main.jsx"
 
 // Lazy-loaded pages
 const Home = lazy(() => import("./Home"))
@@ -49,15 +42,20 @@ const Dashboard = lazy(() => import("./components/task/Dashboard"));
 function App() {
   const location = useLocation()
 
+
+  
   return (
     <div className="min-h-screen font-poppins   bg-white text-primaryText">
+
+    
       <ScrollToTop />
-       <Toaster position="bottom-center" reverseOrder={false} />
+      <Toaster position="bottom-center" reverseOrder={false} />
       <CustomCursor />
       <AutoPopupDialog />
+     
 
       {/* Lazy loading fallback and animation wrapper */}
-      <Suspense fallback={<div className="text-primaryText text-center py-20"><Loading/></div>}>
+      <Suspense fallback={<div className="text-primaryText text-center py-20"><Loading /></div>}>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             {/* Main Pages */}
@@ -67,10 +65,11 @@ function App() {
             <Route path="/career" element={<PageWrapper><Career /></PageWrapper>} />
             <Route path="/services" element={<PageWrapper><Service /></PageWrapper>} />
             <Route path="/pricing" element={<PageWrapper><Pricing /></PageWrapper>} />
-           
+
             {/* <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} /> */}
             <Route path="/portfolio" element={<PageWrapper><Portfolio /></PageWrapper>} />
-           
+            <Route path="/portfolio/details" element={<PageWrapper><PortfolioDetails /></PageWrapper>} />
+
 
             {/* Service Detail Pages */}
             <Route path="/services/search-engine-optimization" element={<PageWrapper><SEO /></PageWrapper>} />
@@ -82,18 +81,8 @@ function App() {
             <Route path="/services/graphic-design" element={<PageWrapper><GraphicDesign /></PageWrapper>} />
             <Route path="/services/influencer-marketing" element={<PageWrapper><InfluencerMarketing /></PageWrapper>} />
             <Route path="/services/content-marketing" element={<PageWrapper><ContentMarketing /></PageWrapper>} />
-            <Route path="*" element={<NotFound/>} />
-            <Route path="/dashboard" element={<PageWrapper><Dashboard /></PageWrapper>} />
-
-              {/* Your Trial Page */}
-             <Route path="/why-choose" element={<PageWrapper><WhyChoose /></PageWrapper>} />
-             <Route path="/portfoli" element={<PageWrapper><Portfoli /></PageWrapper>} />
-            <Route path="/grid" element={<PageWrapper><Grid /></PageWrapper>} />
-            <Route path="/growth" element={<PageWrapper><Growth /></PageWrapper>} />
-            <Route path="/post-trial" element={<PageWrapper><PostTrial /></PageWrapper>} />
-            <Route path="/Portsample" element={<PageWrapper><Portsample/></PageWrapper>} />
-          
-
+            <Route path="/free-trial" element={<PageWrapper><FreeTrialLanding /></PageWrapper>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
       </Suspense>

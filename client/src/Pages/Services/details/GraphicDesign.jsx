@@ -84,12 +84,12 @@
 //         <div className="max-w-7xl mx-auto">
 //           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 //             <ServiceSidebar />
-//             <div className="lg:col-span-8">
+//             <div className="lg:col-span-8  order-1 lg:order-2">
 //               <div className="rounded-3xl overflow-hidden mb-8">
 //                 <img
 //                   src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
 //                   alt="Graphic Design Process"
-//                   className="w-full h-[400px] object-cover"
+//                className="w-full h-56 md:h-96 object-cover"
 //                 />
 //               </div>
 
@@ -252,6 +252,8 @@ import Navbar from "../../../components/Navbar";
 import Footer from "../../../Footer";
 import ServiceSidebar from "./Service-Sidebar";
 
+import graphicDesignImage from '../../../assets/images/services/graphic-design-services.jpg'
+import graphicDesignIllustration from '../../../assets/images/illustration/GRPHIC DESIGN.jpg'
 export default function GraphicDesign() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [openQuestion, setOpenQuestion] = useState(-1);
@@ -320,16 +322,16 @@ export default function GraphicDesign() {
   return (
     <>
       <Navbar />
-      <div className="py-40 px-4">
+      <div className="pt-40 md:pb-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <ServiceSidebar />
-            <div className="lg:col-span-8">
+          
+            <div className="lg:col-span-8  order-1 lg:order-2">
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
-                  src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
+                  src={graphicDesignIllustration}
                   alt="Graphic Design Process"
-                  className="w-full h-[400px] object-cover"
+               className="w-full h-56 md:h-96 object-cover"
                 />
               </div>
 
@@ -343,18 +345,18 @@ export default function GraphicDesign() {
                 </p>
               </div>
 
-              <section className="text-primaryText pt-16 px-4">
-                <div className="mb-16">
-                  <h2 className="text-2xl lg:text-[40px] font-bold text-primaryText leading-tight mb-6">
+              <section className="text-primaryText pt-16">
+            
+                  <h1 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-4">
                     Step-by-step graphic solutions that{" "}
                     <span className="text-accent">
                       bring brands to life
                     </span>
-                  </h2>
+                  </h1>
                   <p className="text-secondaryText text-lg leading-relaxed max-w-4xl mx-auto">
                     From concepts to final visuals, we ensure each design reflects your identity and captures your audience’s attention effectively.
                   </p>
-                </div>
+            
 
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                   {steps.map((step, index) => (
@@ -378,11 +380,11 @@ export default function GraphicDesign() {
                 </div>
               </section>
 
-              <section className="text-primaryText py-16 px-4">
-                <div className="space-y-10">
-                  <h2 className="text-2xl lg:text-4xl font-bold leading-tight">
+              <section className="text-primaryText py-16 ">
+                <div className="space-y-6">
+                  <h2 className="text-xl lg:text-4xl font-bold leading-tight">
                     Passionate designers committed to <br />
-                    <span className="text-primaryText">
+                    <span className="text-accent">
                       impactful visuals
                     </span>
                   </h2>
@@ -393,7 +395,7 @@ export default function GraphicDesign() {
 
                   <div className="rounded-3xl overflow-hidden shadow-lg max-w-4xl">
                     <img
-                      src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
+                      src={graphicDesignImage}
                       alt="Graphic Design Brainstorming Session"
                       className="w-full h-auto object-cover"
                     />
@@ -401,10 +403,10 @@ export default function GraphicDesign() {
                 </div>
               </section>
 
-              <div className="py-16 px-4">
-                <div className="max-w-4xl mx-auto">
-                  <div className="mb-12">
-                    <h1 className="text-4xl lg:text-5xl font-bold text-primaryText leading-tight mb-6">
+            
+                <div className="max-w-4xl mx-auto space-y-8">
+                  <div className="mb-6">
+                    <h1 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-6">
                       Frequently Asked Questions About <br />
                       <span className="text-accent">
                         Graphic Design
@@ -419,7 +421,7 @@ export default function GraphicDesign() {
                     {faqs.map((faq) => (
                       <div
                         key={faq.id}
-                        className="border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 hover:bg-amber-100"
+                        className="border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 "
                       >
                         <button
                           onClick={() => toggleQuestion(faq.id)}
@@ -467,10 +469,14 @@ export default function GraphicDesign() {
                 </div>
               </div>
 
+                <div className="lg:col-span-4 order-2 lg:order-1">
+    <ServiceSidebar />
+  </div>
+
             </div>
           </div>
         </div>
-      </div>
+  
       <Footer />
     </>
   );

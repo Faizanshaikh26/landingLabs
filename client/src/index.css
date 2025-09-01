@@ -8,21 +8,25 @@
   --font-righteous: "Righteous", sans-serif;
   --font-doto: "Doto", sans-serif;
   --font-poppins: "Poppins", sans-serif;
-  --color-accent:#F97316;
-  --color-accentHover:#EA580C;
-  --color-primaryText:#0F172A;
-  --color-secondaryText:#252926;
-  --color-primaryCardBg:#FFFBED;
-  --color-primaryCardText:#112A46;
+  --color-accent: #F97316;
+  --color-accentHover: #EA580C;
+  --color-primaryText: #0F172A;
+  --color-secondaryText: #475569;
+  /* --color-primaryCardBg:#FFFBED;
+  --color-primaryCardText:#112A46; */
+
+  --color-primaryCardBg: #F9FAFB;
+  --color-primaryCardText: #1E293B;
 
 }
 
 
 
 
-body{
+body {
   cursor: none;
- 
+  scroll-behavior: smooth;
+
 }
 
 .plus-jakarta {
@@ -54,9 +58,15 @@ body{
 
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
+
 .animate-spin-slow {
   animation: spin 18s linear infinite;
 }
@@ -68,6 +78,7 @@ body{
     transform: translateX(-100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -80,6 +91,7 @@ body{
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(100%);
   }
@@ -89,17 +101,18 @@ body{
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(-100%);
   }
 }
 
 .move-to-bottom {
-  animation: move-to-bottom 20s ;
+  animation: move-to-bottom 20s;
 }
 
 .move-to-top {
-  animation: move-to-top 20s forwards ;
+  animation: move-to-top 20s forwards;
 }
 
 .paused-animation {
@@ -130,7 +143,8 @@ body{
 }
 
 .shrink {
-  height: 8rem; /* adjust to taste */
+  height: 8rem;
+  /* adjust to taste */
   transform: translateY(30%);
 }
 
@@ -149,8 +163,7 @@ body{
   /* background: rgba(255, 255, 255, 0.1); */
   backdrop-filter: blur(8x);
   -webkit-backdrop-filter: blur(8px);
-  
+
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
   color: #fff;
 }
-

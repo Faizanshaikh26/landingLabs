@@ -154,7 +154,7 @@
 //                     <img
 //                       src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
 //                       alt="Content Strategy Planning"
-//                       className="w-full h-auto object-cover"
+//                       className="w-full h-[400px] object-cover"
 //                     />
 //                   </div>
 //                 </div>
@@ -247,7 +247,8 @@ import {
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../Footer";
 import ServiceSidebar from "./Service-Sidebar";
-
+import contentMaketingImage from '../../../assets/images/services/content-marketing-services.jpeg'
+import contentMaketingIllustration from '../../../assets/images/illustration/CONTENT MARKETING 1.png'
 export default function ContentMarketing() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [openQuestion, setOpenQuestion] = useState(-1);
@@ -316,16 +317,16 @@ export default function ContentMarketing() {
   return (
     <>
       <Navbar />
-      <div className="py-40 px-4">
+      <div className="pt-40 md:pb-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <ServiceSidebar />
-            <div className="lg:col-span-8">
+          
+            <div className="lg:col-span-8  order-1 lg:order-2">
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
-                  src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
+                  src={contentMaketingIllustration}
                   alt="Content Marketing Strategy"
-                  className="w-full h-[400px] object-cover"
+                className="w-full h-56 md:h-96 object-cover"
                 />
               </div>
 
@@ -339,9 +340,15 @@ export default function ContentMarketing() {
                 </p>
               </div>
 
+<<<<<<< HEAD
               <section className="text-primaryText pt-16">
                 <div className="mb-16">
                   <h1 className="text-xl lg:text-4xl font-bold leading-tight mb-4">
+=======
+              <section className="text-primaryText pt-16 ">
+              
+                  <h2 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-6">
+>>>>>>> d2a5ab8868b02fd889d77a9737f64b536a07050a
                     Compelling content that{" "}
                     <span className="text-accent">
                       powers your growth
@@ -350,7 +357,7 @@ export default function ContentMarketing() {
                   <p className="text-secondaryText text-lg leading-relaxed">
                     From strategy to analytics, our content marketing services are built to drive meaningful results for your brand.
                   </p>
-                </div>
+          
 
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                   {steps.map((step, index) => (
@@ -374,33 +381,47 @@ export default function ContentMarketing() {
                 </div>
               </section>
 
+<<<<<<< HEAD
               <section className="text-primaryText py-16 px-4">
                 <div className="space-y-10">
                   <h1 className="text-xl  lg:text-4xl font-bold leading-tight mb-4">
+=======
+              <section className="text-primaryText py-16">
+                <div className="space-y-6">
+                 <h2 className="text-xl lg:text-4xl font-bold leading-tight ">
+>>>>>>> d2a5ab8868b02fd889d77a9737f64b536a07050a
                     Create value that keeps <br />
                     <span className="text-accent">
                       audiences coming back
                     </span>
                   </h1>
 
+<<<<<<< HEAD
                   <p className="text-secondaryText text-lg leading-relaxed">
+=======
+                <p className="text-secondaryText text-lg leading-relaxed">
+>>>>>>> d2a5ab8868b02fd889d77a9737f64b536a07050a
                     Our writers, designers, and strategists work together to develop content experiences that educate, entertain, and engage.
                   </p>
 
                   <div className="rounded-3xl overflow-hidden shadow-lg max-w-4xl">
                     <img
-                      src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
+                      src={contentMaketingImage}
                       alt="Content Strategy Planning"
-                      className="w-full h-auto object-cover"
+                    className="w-full h-56 md:h-96 object-cover"
                     />
                   </div>
                 </div>
               </section>
 
-              <div className="py-16 px-4">
+              
                 <div className="max-w-4xl mx-auto">
                   <div className="mb-12">
+<<<<<<< HEAD
                     <h1 className="text-xl  lg:text-4xl font-bold leading-tight mb-4">
+=======
+                     <h1 className="text-2xl  lg:text-4xl font-bold leading-tight mb-4"> 
+>>>>>>> d2a5ab8868b02fd889d77a9737f64b536a07050a
                       Frequently Asked Questions About <br />
                       <span className="text-accent">
                         Content Marketing
@@ -415,7 +436,7 @@ export default function ContentMarketing() {
                     {faqs.map((faq) => (
                       <div
                         key={faq.id}
-                        className=" border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 hover:bg-amber-100"
+                        className=" border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 "
                       >
                         <button
                           onClick={() => toggleQuestion(faq.id)}
@@ -461,9 +482,13 @@ export default function ContentMarketing() {
                     ))}
                   </div>
                 </div>
-              </div>
+             
 
             </div>
+
+            <div className="lg:col-span-4 order-2 lg:order-1">
+    <ServiceSidebar />
+  </div>
           </div>
         </div>
       </div>

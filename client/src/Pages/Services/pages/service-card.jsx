@@ -105,30 +105,35 @@ const servicesData = [
 ];
 
 export default function ServiceCard() {
+  
   return (
-    <div className=" py-16 px-4">
+    <div className="py-8 sm:py-12 lg:py-16 px-3 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {servicesData.map((service, index) => (
             <Link
               to={service.path}
               key={index}
-              className="group bg-primaryCardBg border border-slate-700/50 rounded-2xl p-8 transition-all duration-300 ease-in-out cursor-pointer hover:-translate-y-2"
+              className="group bg-primaryCardBg border border-slate-700/50 rounded-2xl p-4 sm:p-6 lg:p-7 transition-all duration-300 ease-in-out cursor-pointer hover:-translate-y-2 hover:shadow-lg"
             >
-              <div className="mb-6 transition-colors duration-300 group-hover:text-accentHover">
+              {/* Icon */}
+              <div className="mb-3 sm:mb-4 transition-colors duration-300 group-hover:text-accentHover">
                 {service.icon}
               </div>
 
-              <h3 className="text-primaryText text-xl font-semibold mb-4 leading-tight transition-colors duration-300 group-hover:text-accentHover">
+              {/* Title */}
+              <h3 className="text-primaryText text-base sm:text-lg lg:text-xl font-semibold mb-2 sm:mb-3 leading-snug transition-colors duration-300 group-hover:text-accentHover">
                 {service.title}
               </h3>
 
-              <p className="text-secondaryText text-base mb-8 leading-relaxed">
+              {/* Description */}
+              <p className="text-secondaryText text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
                 {service.description}
               </p>
 
+              {/* Read More */}
               <div className="flex items-center text-primaryText hover:text-accentHover transition-colors duration-200">
-                <span className="mr-2">Read More</span>
+                <span className="mr-2 text-sm sm:text-base">Read More</span>
                 <svg
                   className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-2"
                   fill="none"

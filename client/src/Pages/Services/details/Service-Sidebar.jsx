@@ -164,14 +164,14 @@ export default function ServiceSidebar() {
   return (
     <div className="lg:col-span-4 space-y-8 lg:sticky lg:top-20 self-start">
       {/* Service Category Section */}
-      <div className=" border border-slate-700/50 rounded-3xl p-8">
-        <h3 className="text-primaryText text-xl font-semibold mb-3">Service Category</h3>
+      <div className=" border border-slate-700/50 rounded-3xl md:p-8">
+        <h3 className="text-primaryText text-xl font-semibold md:mb-3 p-3 md:p-0 ">Service Category</h3>
         <div className="space-y-2">
           {serviceCategories.map((service) => (
             <a
               href={service.link}
               key={service.id}
-              className="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-amber-100 transition-colors cursor-pointer group"
+              className="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-primaryCardBg transition-colors cursor-pointer group"
             >
               <span className="text-primaryText  transition-colors">
                 {service.title}
@@ -190,14 +190,14 @@ export default function ServiceSidebar() {
       </div>
 
       {/* How Can We Help Section */}
-      <div className="border border-slate-700/50 rounded-3xl p-8">
-        <div className="w-16 h-16 rounded-full  flex items-center justify-center mb-6">
+      <div className="border border-slate-700/50 rounded-3xl p-4">
+        <div className="w-16 h-16 rounded-full  flex items-center justify-center ">
           <svg className="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
           </svg>
         </div>
-        <h3 className="text-primaryText text-xl font-semibold mb-4">How Can We Help</h3>
+        <h3 className="text-primaryText text-xl font-semibold mb-2">How Can We Help</h3>
         <p className="text-secondaryText mb-8 leading-relaxed">
           Whenever you need help, our team is just a message or call away.
         </p>
