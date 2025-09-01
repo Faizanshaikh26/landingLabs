@@ -848,203 +848,209 @@ export default function AboutUs() {
 
 
 
-       <div className="text-primaryText pt-16 px-6 md:px-12">
+        <div className="text-primaryText pt-16 px-6 md:px-12">
 
-  {/* --- OUR STORY --- */}
-  <section className="max-w-7xl mx-auto py-20">
-    <div className="grid md:grid-cols-2 gap-10 items-center">
-      
-      {/* TEXT */}
-      <div>
-        <p className="text-orange-500 font-semibold mb-2">Our Story</p>
-        <h1 className="text-5xl font-light leading-tight">
-          Smarter Growth — <br /> Engineered for You
-        </h1>
-        <p className="mt-6 text-gray-600 max-w-md">
-          At Landing Labs, we transform ideas into growth engines — designing,
-          developing, and launching digital ecosystems for creators, startups,
-          and businesses.
-        </p>
-      </div>
+          {/* --- OUR STORY --- */}
+          <section className="max-w-7xl mx-auto sm:py-20">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
 
-      {/* IMAGE */}
-      <div>
-        <img
-          src="https://cdn.wallpapersafari.com/8/35/WEGgt5.jpeg"
-          alt="Landing Labs"
-          className="rounded-xl shadow-md"
-        />
-      </div>
-    </div>
-  </section>
+              {/* TEXT */}
+              <div>
+                <p className="text-orange-500 font-semibold mb-2">Our Story</p>
+                <h1 className="text-2xl sm:text-5xl font-light leading-tight">
+                  Smarter Growth — <br /> Engineered for You
+                </h1>
+                <p className="mt-6 text-gray-600 max-w-md">
+                  At Landing Labs, we transform ideas into growth engines — designing,
+                  developing, and launching digital ecosystems for creators, startups,
+                  and businesses.
+                </p>
+              </div>
 
-  {/* --- WHAT WE DO --- */}
-  <section className=" py-20">
-    <div className="max-w-7xl mx-auto text-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6">
-        What <span className="text-orange-500">We Do</span>
-      </h2>
-      <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
-        At Landing Labs, we connect creativity, technology, and growth to build digital solutions that actually work.
-      </p>
+              {/* IMAGE */}
+              <div>
+                <img
+                  src="https://cdn.wallpapersafari.com/8/35/WEGgt5.jpeg"
+                  alt="Landing Labs"
+                  className="rounded-xl shadow-md"
+                />
+              </div>
+            </div>
+          </section>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[
-          { title: "Custom Landing Pages & Websites", desc: "Sleek, lightning-fast, built to convert.", icon: Rocket },
-          { title: "App & Software Development", desc: "Scalable products for tomorrow’s world.", icon: Code2 },
-          { title: "Digital Marketing & Branding", desc: "From SEO to social, we put you on the map.", icon: Target },
-          { title: "Business Growth Strategies", desc: "Data + insight = your growth blueprint.", icon: Lightbulb },
-          { title: "Creative Design & Content", desc: "Stories and visuals that click (literally).", icon: PenTool },
-        ].map((item, index) => {
-          const Icon = item.icon;
-          return (
+          {/* --- WHAT WE DO --- */}
+          <section className=" py-10 sm:py-20">
+            <div className="max-w-7xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                What <span className="text-orange-500">We Do</span>
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
+                At Landing Labs, we connect creativity, technology, and growth to build digital solutions that actually work.
+              </p>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[
+                  { title: "Custom Landing Pages & Websites", desc: "Sleek, lightning-fast, built to convert.", icon: Rocket },
+                  { title: "App & Software Development", desc: "Scalable products for tomorrow’s world.", icon: Code2 },
+                  { title: "Digital Marketing & Branding", desc: "From SEO to social, we put you on the map.", icon: Target },
+                  { title: "Business Growth Strategies", desc: "Data + insight = your growth blueprint.", icon: Lightbulb },
+                  { title: "Creative Design & Content", desc: "Stories and visuals that click (literally).", icon: PenTool },
+                ].map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.2 }}
+                      viewport={{ once: true }}
+                      className="bg-primaryCardBg shadow-md rounded-xl p-6 hover:shadow-xl transition"
+                    >
+                      <Icon className="w-10 h-10 text-orange-500 mb-4" />
+                      <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                      <p className="text-gray-600 text-sm">{item.desc}</p>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* --- WHY LABS --- */}
+          <section className="max-w-6xl mx-auto sm:py-10 text-center">
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-primaryCardBg shadow-md rounded-xl p-6 hover:shadow-xl transition"
             >
-              <Icon className="w-10 h-10 text-orange-500 mb-4" />
-              <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-              <p className="text-gray-600 text-sm">{item.desc}</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Why <span className="text-orange-500">“Labs”?</span>
+              </h2>
+              <p className="text-sm sm:text-lg text-gray-700 max-w-3xl mx-auto">
+                Because we experiment, innovate, and iterate until we crack the code for your growth.
+                Think of us as your digital R&D department, where concepts become prototypes, and prototypes become success stories.
+              </p>
             </motion.div>
-          );
-        })}
-      </div>
-    </div>
-  </section>
+          </section>
 
-  {/* --- WHY LABS --- */}
-  <section className="max-w-6xl mx-auto py-20 text-center">
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-    >
-      <h2 className="text-3xl md:text-4xl font-bold mb-6">
-        Why <span className="text-orange-500">“Labs”?</span>
-      </h2>
-      <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-        Because we experiment, innovate, and iterate until we crack the code for your growth.
-        Think of us as your digital R&D department, where concepts become prototypes, and prototypes become success stories.
-      </p>
-    </motion.div>
-  </section>
+          {/* --- MISSION & VISION --- */}
+          <section className=" py-10">
+            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-primaryCardBg rounded-xl shadow-md p-8 border-l-4 border-orange-500"
+              >
+                <h3 className="text-xl sm:text-2xl font-bold mb-4">Our Mission</h3>
+                <p className="text-gray-700 text-sm">
+                  To empower businesses of all sizes with development, design, and marketing solutions that create visibility, build trust, and spark measurable growth.
+                </p>
+              </motion.div>
 
-  {/* --- MISSION & VISION --- */}
-  <section className=" py-20">
-    <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="bg-white rounded-xl shadow-md p-8 border-l-4 border-orange-500"
-      >
-        <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-        <p className="text-gray-700">
-          To empower businesses of all sizes with development, design, and marketing solutions that create visibility, build trust, and spark measurable growth.
-        </p>
-      </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-primaryCardBg rounded-xl shadow-md p-8 border-l-4 border-orange-500"
+              >
+                <h3 className="text-xl sm:text-2xl  font-bold mb-4">Our Vision</h3>
+                <p className="text-gray-700 text-sm">
+                  A future where every brand, startup, or creator can leverage technology and creativity to scale, without limits.
+                </p>
+              </motion.div>
+            </div>
+          </section>
 
-      <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="bg-primaryCardBg rounded-xl shadow-md p-8 border-l-4 border-orange-500"
-      >
-        <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-        <p className="text-gray-700">
-          A future where every brand, startup, or creator can leverage technology and creativity to scale, without limits.
-        </p>
-      </motion.div>
-    </div>
-  </section>
+          {/* --- FROM US TO YOU --- */}
+          <section className="max-w-7xl mx-auto py-20 ">
+            <div className="grid md:grid-cols-2 gap-20 items-center">
 
-  {/* --- FROM US TO YOU --- */}
-<section className="max-w-6xl mx-auto py-20 px-6 md:px-12">
-  <div className="grid md:grid-cols-2 gap-12 items-center">
-    
-    {/* Left Side - Image */}
-    <motion.div
-      initial={{ opacity: 0, x: -50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-    >
-      <img
-        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
-        alt="From Us To You"
-        className="rounded-2xl shadow-lg"
-      />
-    </motion.div>
+              {/* Left Side - Image */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+                  alt="From Us To You"
+                  className="rounded shadow-lg"
+                />
+              </motion.div>
 
-    {/* Right Side - Text */}
-    <motion.div
-      initial={{ opacity: 0, x: 50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-    >
-      <h2 className="text-3xl md:text-4xl font-bold mb-6">
-        From <span className="text-orange-500">Us</span>, To{" "}
-        <span className="text-orange-500">You</span>
-      </h2>
-      <p className="text-lg text-gray-700 leading-relaxed mb-8">
-        We don’t just deliver services. We deliver platforms, experiences,
-        and growth journeys. Your vision is our blueprint. Your growth is our
-        goal.
-      </p>
+              {/* Right Side - Text */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  From <span className="text-orange-500">Us</span>, To{" "}
+                  <span className="text-orange-500">You</span>
+                </h2>
+                <p className="text-lg text-gray-700 leading-relaxed mb-8">
+                  We don’t just deliver services. We deliver platforms, experiences,
+                  and growth journeys. Your vision is our blueprint. Your growth is our
+                  goal.
+                </p>
 
-      {/* Highlight Points */}
-      <div className="space-y-6">
-        <div className="flex items-start gap-4">
-          <div className="h-10 w-10 flex items-center justify-center rounded-full bg-orange-100 text-orange-500 font-bold">
-            1
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg">Strategy First</h3>
-            <p className="text-gray-600 text-sm">
-              Every solution begins with a roadmap designed around your
-              business goals.
-            </p>
-          </div>
+                {/* Highlight Points */}
+                <div className="relative max-w-3xl mx-auto px-4">
+                  {/* Vertical line */}
+                  <div className="absolute left-[35px] top-0 bottom-0 w-0.5 bg-orange-300"></div>
+
+                  {/* Point 1 */}
+                  <div className="flex items-start gap-4 mb-10 relative">
+                    <div className="relative z-10 flex items-center justify-center h-10 w-10 rounded-full bg-orange-500 text-white font-bold ">
+                      1
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg sm:text-xl">Strategy First</h3>
+                      <p className="text-gray-600 text-sm sm:text-base">
+                        Every solution begins with a roadmap designed around your business goals.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Point 2 */}
+                  <div className="flex items-start gap-4 mb-10 relative">
+                    <div className="relative z-10 flex items-center justify-center h-10 w-10 rounded-full bg-orange-500 text-white font-bold">
+                      2
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg sm:text-xl">Seamless Execution</h3>
+                      <p className="text-gray-600 text-sm sm:text-base">
+                        From design to launch, we ensure smooth collaboration and delivery.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Point 3 */}
+                  <div className="flex items-start gap-4 relative">
+                    <div className="relative z-10 flex items-center justify-center h-10 w-10 rounded-full bg-orange-500 text-white font-bold">
+                      3
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg sm:text-xl">Growth that Lasts</h3>
+                      <p className="text-gray-600 text-sm sm:text-base">
+                        Beyond launch, we scale and optimize for long-term impact.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </motion.div>
+            </div>
+          </section>
+
+
         </div>
-
-        <div className="flex items-start gap-4">
-          <div className="h-10 w-10 flex items-center justify-center rounded-full bg-orange-100 text-orange-500 font-bold">
-            2
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg">Seamless Execution</h3>
-            <p className="text-gray-600 text-sm">
-              From design to launch, we ensure smooth collaboration and delivery.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex items-start gap-4">
-          <div className="h-10 w-10 flex items-center justify-center rounded-full bg-orange-100 text-orange-500 font-bold">
-            3
-          </div>
-          <div>
-            <h3 className="font-semibold text-lg">Growth that Lasts</h3>
-            <p className="text-gray-600 text-sm">
-              Beyond launch, we scale and optimize for long-term impact.
-            </p>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  </div>
-</section>
-
-
-</div>
 
 
         <div className=" text-primaryText pt-16 px-6 md:px-12">
