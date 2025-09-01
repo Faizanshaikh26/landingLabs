@@ -16,6 +16,8 @@ import WhyChoose from './components/free-trial/WhyChoose.jsx'
 import Portfoli from "./components/free-trial/PortfolioHighlights.jsx"
 import Growth from "./components/free-trial/GrowthStory.jsx"
 import Grid from "./components/free-trial/PortfolioGrid.jsx"
+import Portsample from "./components/Portsample.jsx"
+
 
 
 
@@ -89,8 +91,8 @@ function App() {
             <Route path="/grid" element={<PageWrapper><Grid /></PageWrapper>} />
             <Route path="/growth" element={<PageWrapper><Growth /></PageWrapper>} />
             <Route path="/post-trial" element={<PageWrapper><PostTrial /></PageWrapper>} />
-            
-
+            <Route path="/Portsample" element={<PageWrapper><Portsample/></PageWrapper>} />
+          
 
           </Routes>
         </AnimatePresence>
