@@ -42,7 +42,7 @@
 
 //                     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
 //                         <div>
-//                             <p className="text-orange-500 font-semibold mb-2">About Company</p>
+//                             <p className="text-accent font-semibold mb-2">About Company</p>
 //                             <h2 className="text-3xl md:text-4xl font-bold mb-6">
 //                                 Turning Ideas Into Impact
 //                             </h2>
@@ -103,10 +103,10 @@
 //                                 Why Choose Us
 //                             </span>
 //                             <h2 className="text-3xl md:text-5xl font-bold text-white">
-//                                 Why Landing <span className="text-orange-500">Labs?</span>
+//                                 Why Landing <span className="text-accent">Labs?</span>
 //                             </h2>
 //                             <p className="text-[#CFFFE2] text-md md:text-2xl">
-//                                 <span className="text-orange-500">Here’s what</span> makes us different.
+//                                 <span className="text-accent">Here’s what</span> makes us different.
 //                             </p>
 //                         </div>
 //                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
@@ -132,10 +132,10 @@
 //                     <div className="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100 mt-20 text-center border-t border-gray-700 pt-16 ">
 //                         <div className="mb-12 space-y-5 py-4 md:mb-16 md:text-center">
 //                             <h1 className="mb-5 text-3xl font-semibold text-white md:text-center md:text-5xl">
-//                                 Trusted by the <span className="text-orange-500">Best in the Industry</span>
+//                                 Trusted by the <span className="text-accent">Best in the Industry</span>
 //                             </h1>
 //                             <p className="mt-4 md:text-2xl text-[#CFFFE2]">
-//                                 <span className="text-orange-500">Our partners</span> are leaders, innovators, and game-changers who trust us to deliver excellence — every single time.
+//                                 <span className="text-accent">Our partners</span> are leaders, innovators, and game-changers who trust us to deliver excellence — every single time.
 //                             </p>
 
 //                             <div className="py-10">
@@ -174,7 +174,7 @@
 //                     <div className="py-16">
 //                         <section className="text-center max-w-lg mx-auto py-8 px-4">
 //                             <h1 className="text-2xl md:text-4xl font-semibold text-[#EAEAEA]">
-//                                 Landing <span className="text-orange-500">Labs</span>
+//                                 Landing <span className="text-accent">Labs</span>
 //                             </h1>
 //                             <p className="mt-4 md:text-4xl text-3xl text-[#CFFFE2]">
 //                                 Who <span className="text-[#EAEAEA]"> We Work With:</span>
@@ -197,7 +197,7 @@
 //                                 </div>
 
 //                                 <div className="w-full">
-//                                     <p className="text-orange-500 font-semibold text-lg mb-2">2023 – 2025</p>
+//                                     <p className="text-accent font-semibold text-lg mb-2">2023 – 2025</p>
 //                                     <h2 className="text-white text-2xl md:text-3xl font-bold mb-6">
 //                                         We collaborate with:
 //                                     </h2>
@@ -424,7 +424,7 @@
 
 //           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:pb-30">
 //             <div>
-//               <p className="text-orange-500 font-semibold mb-2">About Company</p>
+//               <p className="text-accent font-semibold mb-2">About Company</p>
 //               <h2 className="text-3xl md:text-4xl font-bold mb-6">
 //                 Turning Ideas Into Impact
 //               </h2>
@@ -557,10 +557,10 @@
 //                   Why Choose Us
 //                 </span>
 //                 <h2 className="text-3xl md:text-5xl font-bold text-white">
-//                   Why Landing <span className="text-orange-500">Labs?</span>
+//                   Why Landing <span className="text-accent">Labs?</span>
 //                 </h2>
 //                 <p className="text-[#CFFFE2] text-md md:text-2xl">
-//                   <span className="text-orange-500">Here’s what</span> makes us different.
+//                   <span className="text-accent">Here’s what</span> makes us different.
 //                 </p>
 //               </div>
 //               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
@@ -588,10 +588,10 @@
 //             <div className="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100 mt-20 text-center border-t border-gray-700 pt-16 ">
 //               <div className="mb-12 space-y-5 py-4 md:mb-16 md:text-center">
 //                 <h1 className="mb-5 text-3xl font-semibold text-white md:text-center md:text-5xl">
-//                   Trusted by the <span className="text-orange-500">Best in the Industry</span>
+//                   Trusted by the <span className="text-accent">Best in the Industry</span>
 //                 </h1>
 //                 <p className="mt-4 md:text-2xl text-[#CFFFE2]">
-//                   <span className="text-orange-500">Our partners</span> are leaders, innovators, and game-changers who trust us to deliver excellence — every single time.
+//                   <span className="text-accent">Our partners</span> are leaders, innovators, and game-changers who trust us to deliver excellence — every single time.
 //                 </p>
 
 //                 <div className="py-10">
@@ -642,7 +642,7 @@
 //               viewport={{ once: true }}
 //             >
 //               <h1 className="text-2xl md:text-4xl font-semibold text-[#EAEAEA]">
-//                 Landing <span className="text-orange-500">Labs</span>
+//                 Landing <span className="text-accent">Labs</span>
 //               </h1>
 //               <p className="mt-4 md:text-4xl text-3xl text-[#CFFFE2]">
 //                 Who <span className="text-[#EAEAEA]"> We Work With:</span>
@@ -688,7 +688,7 @@
 //                   transition={{ duration: 0.7 }}
 //                   viewport={{ once: true }}
 //                 >
-//                   <p className="text-orange-500 font-semibold text-lg mb-2">2023 – 2025</p>
+//                   <p className="text-accent font-semibold text-lg mb-2">2023 – 2025</p>
 //                   <h2 className="text-white text-2xl md:text-3xl font-bold mb-6">
 //                     We collaborate with:
 //                   </h2>
@@ -856,7 +856,7 @@ export default function AboutUs() {
 
               {/* TEXT */}
               <div>
-                <p className="text-orange-500 font-semibold mb-2">Our Story</p>
+                <p className="text-accent font-semibold mb-2">Our Story</p>
                 <h1 className="text-2xl sm:text-5xl font-light leading-tight">
                   Smarter Growth — <br /> Engineered for You
                 </h1>
@@ -882,7 +882,7 @@ export default function AboutUs() {
           <section className=" py-10 sm:py-20">
             <div className="max-w-7xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                What <span className="text-orange-500">We Do</span>
+                What <span className="text-accent">We Do</span>
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
                 At Landing Labs, we connect creativity, technology, and growth to build digital solutions that actually work.
@@ -903,10 +903,10 @@ export default function AboutUs() {
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.2 }}
-                      viewport={{ once: true }}
+                      viewport={{ once: false ,amount:0.3 }}
                       className="bg-primaryCardBg shadow-md rounded-xl p-6 hover:shadow-xl transition"
                     >
-                      <Icon className="w-10 h-10 text-orange-500 mb-4" />
+                      <Icon className="w-10 h-10 text-accent mb-4" />
                       <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
                       <p className="text-gray-600 text-sm">{item.desc}</p>
                     </motion.div>
@@ -922,10 +922,10 @@ export default function AboutUs() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
+              viewport={{ once: false ,amount:0.3 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Why <span className="text-orange-500">“Labs”?</span>
+                Why <span className="text-accent">“Labs”?</span>
               </h2>
               <p className="text-sm sm:text-lg text-gray-700 max-w-3xl mx-auto">
                 Because we experiment, innovate, and iterate until we crack the code for your growth.
@@ -942,7 +942,7 @@ export default function AboutUs() {
       initial={{ opacity: 0, scale: 0.9, y: 30 }}
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
+      viewport={{ once: false ,amount:0.3 }}
       className="bg-primaryCardBg rounded-xl shadow-md p-8 border-l-4 border-orange-500"
     >
       <h3 className="text-xl sm:text-2xl font-bold mb-4">Our Mission</h3>
@@ -955,7 +955,7 @@ export default function AboutUs() {
       initial={{ opacity: 0, scale: 0.9, y: 30 }}
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.2 }}
-      viewport={{ once: true }}
+      viewport={{ once: false ,amount:0.3 }}
       className="bg-primaryCardBg rounded-xl shadow-md p-8 border-l-4 border-orange-500"
     >
       <h3 className="text-xl sm:text-2xl font-bold mb-4">Our Vision</h3>
@@ -975,7 +975,7 @@ export default function AboutUs() {
       initial={{ opacity: 0, scale: 0.85 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.7 }}
-      viewport={{ once: true }}
+      viewport={{ once: false ,amount:0.3 }}
     >
       <img
         src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
@@ -989,11 +989,11 @@ export default function AboutUs() {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
+      viewport={{ once: false ,amount:0.3 }}
     >
       <h2 className="text-3xl md:text-4xl font-bold mb-6">
-        From <span className="text-orange-500">Us</span>, To{" "}
-        <span className="text-orange-500">You</span>
+        From <span className="text-accent">Us</span>, To{" "}
+        <span className="text-accent">You</span>
       </h2>
       <p className="text-lg text-gray-700 leading-relaxed mb-8">
         We don’t just deliver services. We deliver platforms, experiences,
@@ -1055,7 +1055,7 @@ export default function AboutUs() {
 
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:pb-30">
             <div>
-              <p className="text-orange-500 font-semibold mb-2">About Company</p>
+              <p className="text-accent font-semibold mb-2">About Company</p>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Turning Ideas Into Impact
               </h2>
@@ -1188,10 +1188,10 @@ export default function AboutUs() {
                   Why Choose Us
                 </span>
                 <h2 className="text-3xl md:text-5xl font-bold text-primaryText">
-                  Why Landing <span className="text-orange-500">Labs?</span>
+                  Why Landing <span className="text-accent">Labs?</span>
                 </h2>
                 <p className="text-secondaryText text-md md:text-2xl">
-                  <span className="text-orange-500">Here’s what</span> makes us different.
+                  <span className="text-accent">Here’s what</span> makes us different.
                 </p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
@@ -1219,10 +1219,10 @@ export default function AboutUs() {
             <div className="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100 mt-20 text-center border-t border-gray-700 pt-10 ">
               <div className="mb-12 space-y-5 py-4 md:mb-16 md:text-center">
                 <h1 className="mb-5 text-3xl font-semibold text-primaryText md:text-center md:text-5xl">
-                  Trusted by the <span className="text-orange-500">Best in the Industry</span>
+                  Trusted by the <span className="text-accent">Best in the Industry</span>
                 </h1>
                 <p className="mt-4 md:text-2xl text-secondaryText">
-                  <span className="text-orange-500">Our partners</span> are leaders, innovators, and game-changers who trust us to deliver excellence — every single time.
+                  <span className="text-accent">Our partners</span> are leaders, innovators, and game-changers who trust us to deliver excellence — every single time.
                 </p>
 
                 <div className="py-4">
@@ -1274,9 +1274,9 @@ export default function AboutUs() {
               viewport={{ once: true }}
             >
               <h1 className="text-2xl md:text-4xl font-semibold text-primaryText">
-                Landing <span className="text-orange-500">Labs</span>
+                Landing <span className="text-accent">Labs</span>
               </h1>
-              <p className="mt-4 md:text-4xl text-3xl text-orange-500">
+              <p className="mt-4 md:text-4xl text-3xl text-accent">
                 Who <span className="text-secondaryText"> We Work With:</span>
               </p>
             </motion.section>
@@ -1317,7 +1317,7 @@ export default function AboutUs() {
                   transition={{ duration: 0.7 }}
                   viewport={{ once: false, amount: 0.2 }}
                 >
-                  <p className="text-orange-500 font-semibold text-lg mb-2">2023 – 2025</p>
+                  <p className="text-accent font-semibold text-lg mb-2">2023 – 2025</p>
                   <h2 className="text-white text-2xl md:text-3xl font-bold mb-6">
                     We collaborate with:
                   </h2>
