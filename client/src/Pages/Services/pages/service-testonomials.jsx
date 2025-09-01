@@ -45,7 +45,7 @@ export default function Testimonials() {
   }
 
   return (
-    <div className=" py-16 px-4">
+  <div className="py-8 sm:py-12 lg:py-16 px-3 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16">
@@ -89,8 +89,8 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Rating Card */}
           <div className="lg:col-span-4">
-            <div className="bg-primaryCardBg border border-slate-700/50 rounded-3xl p-8 flex flex-col items-center text-center">
-              <div className="text-7xl font-bold text-primaryTextmb-4">4.9</div>
+            <div className="bg-primaryCardBg border border-slate-700/50 rounded-3xl p-2   sm:p-8 flex flex-col items-center text-center">
+              <div className="text-7xl font-bold text-primaryText mb-4">4.9</div>
               <div className="flex mb-2">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-6 h-6 text-accentHover" fill="currentColor" viewBox="0 0 20 20">
@@ -103,7 +103,7 @@ export default function Testimonials() {
                 <img className="w-10 h-10 rounded-full border-2 border-slate-800" src="https://html.awaikenthemes.com/firevall/images/author-4.jpg" />
                 <img className="w-10 h-10 rounded-full border-2 border-slate-800" src="https://html.awaikenthemes.com/firevall/images/author-5.jpg" />
                 <img className="w-10 h-10 rounded-full border-2 border-slate-800" src="https://html.awaikenthemes.com/firevall/images/author-6.jpg" />
-                <div className="w-10 h-10 rounded-full border-2 border-slate-800 bg-slate-700 text-primaryTexttext-xs flex items-center justify-center">+2</div>
+                <div className="w-10 h-10 rounded-full border-2 border-slate-800 bg-slate-700 text-white text-xs flex items-center justify-center">+2</div>
               </div>
               <p className="text-primaryTexttext-lg font-medium">Client satisfaction that speaks volumes</p>
             </div>

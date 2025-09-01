@@ -77,12 +77,12 @@
 //         <div className="max-w-7xl mx-auto">
 //           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 //             <ServiceSidebar />
-//             <div className="lg:col-span-8">
+//             <div className="lg:col-span-8  order-1 lg:order-2">
 //               <div className="rounded-3xl overflow-hidden mb-8">
 //                 <img
 //                   src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
 //                   alt="UI/UX Design Process"
-//                   className="w-full h-[400px] object-cover"
+//                className="w-full h-56 md:h-96 object-cover"
 //                 />
 //               </div>
 
@@ -148,7 +148,7 @@
 //                     <img
 //                       src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
 //                       alt="UI/UX Workshop Session"
-//                       className="w-full h-auto object-cover"
+//                    className="w-full h-56 md:h-96 object-cover"
 //                     />
 //                   </div>
 //                 </div>
@@ -236,7 +236,9 @@ import ReusableAccordion from "../../reusable-accordion";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../Footer";
 import ServiceSidebar from "./Service-Sidebar";
+import uiUxImage from '../../../assets/images/services/uiux-services.jpeg'
 
+import uiUxIllustration from '../../../assets/images/illustration/UI UX DESIGN.jpg'
 export default function UIUXDesign() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [openQuestion, setOpenQuestion] = useState(-1);
@@ -305,16 +307,16 @@ export default function UIUXDesign() {
   return (
     <>
       <Navbar />
-      <div className=" py-40 px-4">
+      <div className="pt-40 md:pb-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <ServiceSidebar />
-            <div className="lg:col-span-8">
+      
+            <div className="lg:col-span-8  order-1 lg:order-2">
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
-                  src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
+                  src={uiUxIllustration}
                   alt="UI/UX Design Process"
-                  className="w-full h-[400px] object-cover"
+               className="w-full h-56 md:h-96 object-cover"
                 />
               </div>
 
@@ -328,9 +330,9 @@ export default function UIUXDesign() {
                 </p>
               </div>
 
-              <section className="text-primaryText pt-16 px-4">
-                <div className="mb-16">
-                  <h2 className="text-2xl lg:text-[40px] font-bold text-primaryText leading-tight mb-6">
+              <section className="text-primaryText pt-16">
+             
+                  <h2 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-4">
                     Step-by-step UI/UX solutions built for{" "}
                     <span className="text-accent">
                       seamless experiences
@@ -339,7 +341,7 @@ export default function UIUXDesign() {
                   <p className="text-secondaryText text-lg leading-relaxed max-w-4xl mx-auto">
                     Our process ensures users have an engaging journey from start to finish. Through research, wireframes, prototypes, and visual polish—we deliver experiences that users remember.
                   </p>
-                </div>
+             
 
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                   {steps.map((step, index) => (
@@ -363,9 +365,9 @@ export default function UIUXDesign() {
                 </div>
               </section>
 
-              <section className="text-primaryText py-16 px-4">
-                <div className="space-y-10">
-                  <h2 className="text-2xl lg:text-4xl font-bold leading-tight">
+              <section className="text-primaryText py-16">
+                <div className="space-y-4">
+                  <h2 className="text-xl lg:text-4xl font-bold leading-tight">
                     Experienced designers focused on<br />
                     <span className="text-accent">
                       elevating user experience
@@ -378,18 +380,18 @@ export default function UIUXDesign() {
 
                   <div className="rounded-3xl overflow-hidden shadow-lg max-w-4xl">
                     <img
-                      src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
+                      src={uiUxImage}
                       alt="UI/UX Workshop Session"
-                      className="w-full h-auto object-cover"
+                   className="w-full h-56 md:h-96 object-cover"
                     />
                   </div>
                 </div>
               </section>
 
-              <div className="py-16 px-4">
+         
                 <div className="max-w-4xl mx-auto">
-                  <div className="mb-12">
-                    <h1 className="text-4xl lg:text-5xl font-bold text-primaryText leading-tight mb-6">
+                  <div className="mb-6">
+                    <h1 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-6 ">
                       Frequently Asked Questions About <br />
                       <span className="text-accent">
                         UI/UX Design
@@ -404,7 +406,7 @@ export default function UIUXDesign() {
                     {faqs.map((faq) => (
                       <div
                         key={faq.id}
-                        className="border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 hover:bg-amber-100"
+                        className="border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 "
                       >
                         <button
                           onClick={() => toggleQuestion(faq.id)}
@@ -449,10 +451,14 @@ export default function UIUXDesign() {
                       </div>
                     ))}
                   </div>
-                </div>
+                
               </div>
 
             </div>
+
+              <div className="lg:col-span-4 order-2 lg:order-1">
+    <ServiceSidebar />
+  </div>
           </div>
         </div>
       </div>

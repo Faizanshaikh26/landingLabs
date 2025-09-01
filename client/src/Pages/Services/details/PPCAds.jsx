@@ -84,12 +84,12 @@
 //         <div className="max-w-7xl mx-auto">
 //           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 //             <ServiceSidebar />
-//             <div className="lg:col-span-8">
+//             <div className="lg:col-span-8  order-1 lg:order-2">
 //               <div className="rounded-3xl overflow-hidden mb-8">
 //                 <img
 //                   src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
 //                   alt="PPC Strategy Discussion"
-//                   className="w-full h-[400px] object-cover"
+//                className="w-full h-56 md:h-96 object-cover"
 //                 />
 //               </div>
 
@@ -155,7 +155,7 @@
 //                     <img
 //                       src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
 //                       alt="PPC Team at Work"
-//                       className="w-full h-auto object-cover"
+//                    className="w-full h-56 md:h-96 object-cover"
 //                     />
 //                   </div>
 //                 </div>
@@ -250,6 +250,10 @@ import ReusableAccordion from "../../reusable-accordion";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../Footer";
 import ServiceSidebar from "./Service-Sidebar";
+import ppcAdsImage from '../../../assets/images/services/ppc-adds-servies.jpeg'
+
+import ppcAdsIllustration from '../../../assets/images/illustration/PPC ADS.jpg'
+
 
 export default function PPCAds() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -319,16 +323,16 @@ export default function PPCAds() {
   return (
     <>
       <Navbar />
-      <div className="py-40 px-4">
+      <div className="pt-40 md:pb-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <ServiceSidebar />
-            <div className="lg:col-span-8">
+           
+            <div className="lg:col-span-8  order-1 lg:order-2">
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
-                  src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
+                  src={ppcAdsIllustration}
                   alt="PPC Strategy Discussion"
-                  className="w-full h-[400px] object-cover"
+               className="w-full h-56 md:h-96 object-cover"
                 />
               </div>
 
@@ -342,9 +346,9 @@ export default function PPCAds() {
                 </p>
               </div>
 
-              <section className="text-primaryText pt-16 px-4">
-                <div className="mb-16">
-                  <h2 className="text-2xl lg:text-[40px] font-bold text-primaryText leading-tight mb-6">
+              <section className="text-primaryText pt-16">
+               
+                  <h2 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-6">
                     Step-by-step PPC strategies tailored to{" "}
                     <span className="text-accent">
                       your goals
@@ -353,7 +357,7 @@ export default function PPCAds() {
                   <p className="text-secondaryText text-lg leading-relaxed max-w-4xl mx-auto">
                     Our PPC strategies are customized to match your marketing goals. From research and targeting to continuous optimization, we deliver measurable growth through paid campaigns.
                   </p>
-                </div>
+               
 
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                   {steps.map((step, index) => (
@@ -377,9 +381,9 @@ export default function PPCAds() {
                 </div>
               </section>
 
-              <section className="text-primaryText py-16 px-4">
-                <div className="space-y-10">
-                  <h2 className="text-2xl lg:text-4xl font-bold leading-tight">
+              <section className="text-primaryText py-16 ">
+               
+                  <h2 className="text-xl lg:text-4xl font-bold leading-tight mb-4">
                     Skilled PPC experts focused on<br />
                     <span className="text-accent">
                       maximizing your ROI
@@ -392,18 +396,18 @@ export default function PPCAds() {
 
                   <div className="rounded-3xl overflow-hidden shadow-lg max-w-4xl">
                     <img
-                      src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
+                      src={ppcAdsImage}
                       alt="PPC Team at Work"
-                      className="w-full h-auto object-cover"
+                   className="w-full h-56 md:h-96 object-cover"
                     />
                   </div>
-                </div>
+               
               </section>
 
-              <div className="py-16 px-4">
+             
                 <div className="max-w-4xl mx-auto">
-                  <div className="mb-12">
-                    <h1 className="text-4xl lg:text-5xl font-bold text-primaryText leading-tight mb-6">
+                  <div className="mb-6">
+                    <h1 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-6">
                       Frequently Asked Questions About <br />
                       <span className="text-accent">
                         PPC Advertising
@@ -418,7 +422,7 @@ export default function PPCAds() {
                     {faqs.map((faq) => (
                       <div
                         key={faq.id}
-                        className="border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 hover:bg-amber-100"
+                        className="border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 "
                       >
                         <button
                           onClick={() => toggleQuestion(faq.id)}
@@ -464,9 +468,13 @@ export default function PPCAds() {
                     ))}
                   </div>
                 </div>
-              </div>
+              
 
             </div>
+
+              <div className="lg:col-span-4 order-2 lg:order-1">
+    <ServiceSidebar />
+  </div>
           </div>
         </div>
       </div>

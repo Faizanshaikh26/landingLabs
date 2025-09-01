@@ -190,9 +190,156 @@
 // }
 
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
+// import { motion } from "framer-motion";
+// import ServiceCard from "./service-card";
+
+// import smmBack from "../assets/images/services/smm-back.png"
+// import seoBack from "../assets/images/services/seo-back.png"
+// import smmFront from "../assets/images/services/smm-front.png"
+// import seoFront from "../assets/images/services/seo-front.png"
+// import appDevFront from "../assets/images/services/appdev-front.png"
+// import appDevBack from "../assets/images/services/appdev-back.png"
+// import UIUXFront from "../assets/images/services/uiux-1.png"
+// import UIUXBack from "../assets/images/services/uiux-2.png"
+// import cMarketingBack from "../assets/images/services/cMarketing-back.png"
+// import cMarketingFront from "../assets/images/services/cMarketing-front.png"
+// import graphicDesignBack from "../assets/images/services/graphicDesign-back.png"
+// import graphicDesignFront from "../assets/images/services/graphicDesign-front.png"
+// import ppcBack from "../assets/images/services/ppc-back.png"
+// import ppcFront from "../assets/images/services/ppc-front.png"
+// import webDevBack from "../assets/images/services/webDev-back.png"
+// import webDevFront from "../assets/images/services/webDev-front.png"
+// import influMaketingFront from "../assets/images/services/influMaketing-front.png"
+// import influMaketingBack from "../assets/images/services/influMaketing-back.png"
+
+// const servicesData = [
+//   {
+//     id: 1,
+//     title: "Search Engine Optimization(SEO)",
+//     image: seoFront,
+//     hoverImage:
+//       seoBack
+//   },
+//   {
+//     id: 2,
+//     title: "Web Development",
+//     image: webDevFront,
+//     hoverImage: webDevBack,
+//   },
+//   {
+//     id: 3,
+//     title: "Social Media Marketing",
+//     image: smmFront,
+//     hoverImage:
+//       smmBack
+//   },
+//   {
+//     id: 4,
+//     title: "PPC / Ads",
+//     image: ppcFront,
+//     hoverImage: ppcBack,
+//   },
+//   {
+//     id: 5,
+//     title: "App Development",
+//     image: appDevFront,
+//     hoverImage: appDevBack
+//   },
+//   {
+//     id: 6,
+//     title: "UI/UX Design",
+//     image: UIUXFront,
+//     hoverImage: UIUXBack,
+//   },
+//   {
+//     id: 7,
+//     title: "Graphic Design",
+//     image: graphicDesignFront,
+//     hoverImage: graphicDesignBack,
+//   },
+//   {
+//     id: 8,
+//     title: "Influencer Marketing",
+//     image: influMaketingFront,
+//     hoverImage: influMaketingBack,
+//   },
+//   {
+//     id: 9,
+//     title: "Content Marketing",
+//     image: cMarketingFront,
+//     hoverImage: cMarketingBack,
+//   },
+// ];
+
+// const containerVariants = {
+//   hidden: {},
+//   show: {
+//     transition: {
+//       staggerChildren: 0.15,
+//       delayChildren: 0.1
+//     }
+//   }
+// };
+
+// const cardVariants = {
+//   hidden: { opacity: 0, y: 40 },
+//   show: {
+//     opacity: 1,
+//     y: 0,
+//     transition: { duration: 0.6, ease: "easeOut" }
+//   }
+// };
+
+// export default function ServicesSnapshot() {
+
+
+//   return (
+//     <div className="bg-black w-full text-white min-h-screen lg:p-8 rounded-t-[40px] md:rounded-t-[80px] py-10 bg-red">
+//       {/* Header */}
+//       <section className="text-center mx-auto mb-10">
+//         <h2 className="text-2xl md:text-4xl font-semibold text-[#EAEAEA]">
+//           Our <span className="text-orange-500">Core Services</span>
+//         </h2>
+//         <p className="mt-4 md:text-4xl text-2xl text-[#CFFFE2]">
+//           Choose a vertical to explore what we build
+//         </p>
+//       </section>
+
+//       {/* Grid Layout with animation */}
+//       <div className="w-full px-[20%] sm:px-8 md:px-20">
+//         <motion.div
+//           className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-12"
+//           variants={containerVariants}
+//           initial="hidden"
+//           whileInView="show"
+//           viewport={{ once: false, amount: 0.15 }}
+//         >
+//           {servicesData.map((service, index) => {
+//             const isDown = index % 2 === 1;
+//             return (
+//               <motion.div
+//                 key={service.id}
+//                 variants={cardVariants}
+//                 className={isDown ? "xl:translate-y-24" : "xl:translate-y-0"}
+//               >
+//                 <ServiceCard
+//                   number={`/${String(index + 1).padStart(2, "0")}`}
+//                   title={service.title}
+//                   iconSrc={service.image}
+//                   hoverIconSrc={service.hoverImage}
+//                 />
+//               </motion.div>
+//             );
+//           })}
+//         </motion.div>
+//       </div>
+//     </div>
+//   );
+// }
+
 import { motion } from "framer-motion";
-import ServiceCard from "./service-card";
+import { useState } from "react";
 
 import smmBack from "../assets/images/services/smm-back.png"
 import seoBack from "../assets/images/services/seo-back.png"
@@ -214,62 +361,15 @@ import influMaketingFront from "../assets/images/services/influMaketing-front.pn
 import influMaketingBack from "../assets/images/services/influMaketing-back.png"
 
 const servicesData = [
-  {
-    id: 1,
-    title: "Search Engine Optimization(SEO)",
-    image: seoFront,
-    hoverImage:
-      seoBack
-  },
-  {
-    id: 2,
-    title: "Web Development",
-    image: webDevFront,
-    hoverImage: webDevBack,
-  },
-  {
-    id: 3,
-    title: "Social Media Marketing",
-    image: smmFront,
-    hoverImage:
-      smmBack
-  },
-  {
-    id: 4,
-    title: "PPC / Ads",
-    image: ppcFront,
-    hoverImage: ppcBack,
-  },
-  {
-    id: 5,
-    title: "App Development",
-    image: appDevFront,
-    hoverImage: appDevBack
-  },
-  {
-    id: 6,
-    title: "UI/UX Design",
-    image: UIUXFront,
-    hoverImage: UIUXBack,
-  },
-  {
-    id: 7,
-    title: "Graphic Design",
-    image: graphicDesignFront,
-    hoverImage: graphicDesignBack,
-  },
-  {
-    id: 8,
-    title: "Influencer Marketing",
-    image: influMaketingFront,
-    hoverImage: influMaketingBack,
-  },
-  {
-    id: 9,
-    title: "Content Marketing",
-    image: cMarketingFront,
-    hoverImage: cMarketingBack,
-  },
+  { id: 1, title: "Search Engine Optimization(SEO)", image: seoFront, hoverImage: seoBack },
+  { id: 2, title: "Web Development", image: webDevFront, hoverImage: webDevBack },
+  { id: 3, title: "Social Media Marketing", image: smmFront, hoverImage: smmBack },
+  { id: 4, title: "PPC / Ads", image: ppcFront, hoverImage: ppcBack },
+  { id: 5, title: "App Development", image: appDevFront, hoverImage: appDevBack },
+  { id: 6, title: "UI/UX Design", image: UIUXFront, hoverImage: UIUXBack },
+  { id: 7, title: "Graphic Design", image: graphicDesignFront, hoverImage: graphicDesignBack },
+  { id: 8, title: "Influencer Marketing", image: influMaketingFront, hoverImage: influMaketingBack },
+  { id: 9, title: "Content Marketing", image: cMarketingFront, hoverImage: cMarketingBack },
 ];
 
 const containerVariants = {
@@ -277,9 +377,9 @@ const containerVariants = {
   show: {
     transition: {
       staggerChildren: 0.15,
-      delayChildren: 0.1
-    }
-  }
+      delayChildren: 0.1,
+    },
+  },
 };
 
 const cardVariants = {
@@ -287,15 +387,15 @@ const cardVariants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
 };
 
 export default function ServicesSnapshot() {
-
+  const [hovered, setHovered] = useState(null);
 
   return (
-    <div className="bg-black w-full text-white min-h-screen lg:p-8 rounded-t-[40px] md:rounded-t-[80px] py-10 bg-red">
+    <div className="bg-black w-full text-white min-h-screen lg:p-8 rounded-t-[40px] md:rounded-t-[80px] py-10">
       {/* Header */}
       <section className="text-center mx-auto mb-10">
         <h2 className="text-2xl md:text-4xl font-semibold text-[#EAEAEA]">
@@ -317,18 +417,55 @@ export default function ServicesSnapshot() {
         >
           {servicesData.map((service, index) => {
             const isDown = index % 2 === 1;
+            const isHovered = hovered === service.id;
+
             return (
               <motion.div
                 key={service.id}
                 variants={cardVariants}
-                className={isDown ? "xl:translate-y-24" : "xl:translate-y-0"}
+                className={`relative shadow-xl flex flex-col justify-between p-6 w-[250px] h-[300px] rounded-2xl cursor-pointer overflow-hidden transition-colors duration-500 ease-in-out ${
+                  isHovered ? "bg-primaryCardBg" : "bg-white"
+                } ${isDown ? "xl:translate-y-24" : "xl:translate-y-0"}`}
+                onMouseEnter={() => setHovered(service.id)}
+                onMouseLeave={() => setHovered(null)}
               >
-                <ServiceCard
-                  number={`/${String(index + 1).padStart(2, "0")}`}
-                  title={service.title}
-                  iconSrc={service.image}
-                  hoverIconSrc={service.hoverImage}
-                />
+                {/* Image Section */}
+                <div className="relative w-full h-36 flex justify-center mb-6">
+                  {/* Default Image */}
+                  <img
+                    src={service.image}
+                    alt="icon"
+                    className={`absolute w-full h-full object-contain transition-all duration-500 ease-in-out ${
+                      isHovered ? "opacity-0 scale-95" : "opacity-100 scale-100"
+                    }`}
+                  />
+                  {/* Hover Image */}
+                  <img
+                    src={service.hoverImage}
+                    alt="hover-icon"
+                    className={`absolute w-full h-full object-contain transition-all duration-500 ease-in-out ${
+                      isHovered ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                    }`}
+                  />
+                </div>
+
+                {/* Text Content */}
+                <div>
+                  <div
+                    className={`text-sm font-semibold mb-1 transition-colors duration-300 ${
+                      isHovered ? "text-primaryCardText" : "text-gray-500"
+                    }`}
+                  >
+                    /{String(index + 1).padStart(2, "0")}
+                  </div>
+                  <div
+                    className={`text-2xl font-medium leading-snug transition-colors duration-300 ${
+                      isHovered ? "text-primaryCardText" : "text-gray-500"
+                    }`}
+                  >
+                    {service.title}
+                  </div>
+                </div>
               </motion.div>
             );
           })}

@@ -83,12 +83,12 @@
 //         <div className="max-w-7xl mx-auto">
 //           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 //             <ServiceSidebar />
-//             <div className="lg:col-span-8">
+//             <div className="lg:col-span-8  order-1 lg:order-2">
 //               <div className="rounded-3xl overflow-hidden mb-8">
 //                 <img
 //                   src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
 //                   alt="Influencer Marketing Collaboration"
-//                   className="w-full h-[400px] object-cover"
+//            className="w-full h-56 md:h-96 object-cover"
 //                 />
 //               </div>
 
@@ -154,7 +154,7 @@
 //                     <img
 //                       src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
 //                       alt="Influencer Collaboration Session"
-//                       className="w-full h-auto object-cover"
+//                className="w-full h-56 md:h-96 object-cover"
 //                     />
 //                   </div>
 //                 </div>
@@ -249,6 +249,8 @@ import {
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../Footer";
 import ServiceSidebar from "./Service-Sidebar";
+import influenceMaketingImage from '../../../assets/images/services/influence-marketing-services.jpeg'
+import influencerMaketingIllustration from '../../../assets/images/illustration/Influencer MARKETINF.jpg'
 
 export default function InfluencerMarketing() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -318,16 +320,16 @@ export default function InfluencerMarketing() {
   return (
     <>
       <Navbar />
-      <div className="py-40 px-4">
+      <div className="pt-40 md:pb-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <ServiceSidebar />
-            <div className="lg:col-span-8">
+       
+            <div className="lg:col-span-8  order-1 lg:order-2">
               <div className="rounded-3xl overflow-hidden mb-8">
                 <img
-                  src="https://html.awaikenthemes.com/firevall/images/service-single-img.jpg"
+                  src={influencerMaketingIllustration}
                   alt="Influencer Marketing Collaboration"
-                  className="w-full h-[400px] object-cover"
+           className="w-full h-56 md:h-96 object-cover"
                 />
               </div>
 
@@ -341,9 +343,9 @@ export default function InfluencerMarketing() {
                 </p>
               </div>
 
-              <section className="text-primaryText pt-16 px-4">
-                <div className="mb-16">
-                  <h2 className="text-2xl lg:text-[40px] font-bold text-primaryText leading-tight mb-6">
+              <section className="text-primaryText pt-16 ">
+                <div className="mb-6">
+                  <h2 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-6">
                     End-to-end influencer campaigns that{" "}
                     <span className="text-accent">
                       move your brand forward
@@ -376,9 +378,9 @@ export default function InfluencerMarketing() {
                 </div>
               </section>
 
-              <section className="text-primaryText py-16 px-4">
-                <div className="space-y-10">
-                  <h2 className="text-2xl lg:text-4xl font-bold leading-tight">
+              <section className="text-primaryText py-16 ">
+                <div className="space-y-6">
+                  <h2 className="text-xl lg:text-4xl font-bold leading-tight">
                     Build authentic partnerships for <br />
                     <span className="text-accent">
                       maximum influence
@@ -391,18 +393,18 @@ export default function InfluencerMarketing() {
 
                   <div className="rounded-3xl overflow-hidden shadow-lg max-w-4xl">
                     <img
-                      src="https://html.awaikenthemes.com/firevall/images/case-study-image-6.jpg"
+                      src={influenceMaketingImage}
                       alt="Influencer Collaboration Session"
-                      className="w-full h-auto object-cover"
+               className="w-full h-56 md:h-96 object-cover"
                     />
                   </div>
                 </div>
               </section>
 
-              <div className="py-16 px-4">
-                <div className="max-w-4xl mx-auto">
-                  <div className="mb-12">
-                    <h1 className="text-4xl lg:text-5xl font-bold text-primaryText leading-tight mb-6">
+             
+                  <div className="max-w-4xl mx-auto space-y-8">
+                  <div className="mb-6">
+                    <h1 className="text-xl lg:text-4xl font-bold text-primaryText leading-tight mb-6">
                       Frequently Asked Questions About <br />
                       <span className="text-accent">
                         Influencer Marketing
@@ -417,7 +419,7 @@ export default function InfluencerMarketing() {
                     {faqs.map((faq) => (
                       <div
                         key={faq.id}
-                        className="border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 hover:bg-amber-100"
+                        className="border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 "
                       >
                         <button
                           onClick={() => toggleQuestion(faq.id)}
@@ -463,9 +465,13 @@ export default function InfluencerMarketing() {
                     ))}
                   </div>
                 </div>
-              </div>
+             
 
             </div>
+
+              <div className="lg:col-span-4 order-2 lg:order-1">
+    <ServiceSidebar />
+  </div>
           </div>
         </div>
       </div>

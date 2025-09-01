@@ -507,15 +507,17 @@ import { Link } from "react-router-dom";
         "Social Media Marketing",
         "Performance Marketing",
         "Email Marketing",
-        "Brand Management",
+        "Influencer Marketing",
+        "Content Marketing",
       ],
     },
     {
-      title: "WEB DEVELOPMENT",
+      title: "DEVELOPMENT",
       items: [
         "Website Development",
-        "Ecommerce Development",
+        "App Development",
         "UI/UX Designing",
+        "Graphic Designing",
       ],
     },
     {
@@ -529,9 +531,9 @@ import { Link } from "react-router-dom";
   };
 
   return (
-    <footer className="bg-white text-primaryText pt-10 px-6 md:px-12 lg:px-20 pb-6">
+    <footer className="bg-white text-primaryText  px-6 md:px-12 lg:px-20 pb-6">
       {/* Top Section */}
-      <div className="flex flex-col lg:flex-row gap-10 border-b border-gray-600 pb-10">
+      <div className="flex flex-col lg:flex-row gap-10 border-b border-gray-600 pb-5">
         {/* Our Core */}
         <div className="flex-1 border-r  border-gray-600 pr-6">
           <h3 className="text-accent font-bold text-lg mb-4">OUR CORE</h3>
@@ -562,24 +564,24 @@ import { Link } from "react-router-dom";
         {/* Quick Links + Ventures + Social */}
         <div className="flex-1 border-r  border-gray-600 pr-6">
           <h3 className="text-accent font-bold text-lg mb-4">QUICK LINKS</h3>
-          <ul className="mb-6 space-y-1 text-sm">
+<ul className="mb-6 grid grid-cols-3 sm:grid-cols-4   lg:mr-0 gap-y-2 text-sm">
+  <li><Link to="/" className="hover:underline">Home</Link></li>
+  <li><Link to="/portfolio" className="hover:underline">Portfolio</Link></li>
+  <li><Link to="/about-us" className="hover:underline">About Us</Link></li>
+  <li><Link to="/contact-us" className="hover:underline">Contact Us</Link></li>
+  <li><Link to="/career" className="hover:underline">Career</Link></li>
+  <li><Link to="/pricing" className="hover:underline">Pricing</Link></li>
+  <li><Link to="#" className="hover:underline">Blog</Link></li>
+</ul>
 
-           
-            <li><Link to="/" className="hover:underline">Home</Link></li>
-            <li><Link to="/portfolio" className="hover:underline">Portfolio</Link></li>
-            <li><Link to="/about-us" className="hover:underline">About Us</Link></li>
-            <li><Link to="/contact-us" className="hover:underline">Contact Us</Link></li>
-            <li><Link to="/career" className="hover:underline">Career</Link></li>
-            <li><Link to="pricing" className="hover:underline">Pricing</Link></li>
-            <li><Link to="#" className="hover:underline">Blog</Link></li>
-          </ul>
+         
 
           <h3 className="text-accent font-bold text-lg mb-4">OUR VENTURES</h3>
           <ul className="mb-6 space-y-1 text-sm">
-            <li>Influencer Marketing</li>
+            {/* <li>Influencer Marketing</li>
             <li>YaadRakho</li>
             <li>DI Infotech Courses</li>
-            <li>Pratibhashali Initiative</li>
+            <li>Pratibhashali Initiative</li> */}
           </ul>
 
           <h3 className="text-accent font-bold text-lg mb-4">SOCIALIZE WITH US</h3>
@@ -639,9 +641,9 @@ import { Link } from "react-router-dom";
 
         {/* Address */}
         <div className="flex items-start gap-4 max-w-sm">
-          <MapPin className="text-accent mt-1 w-18 h-10" />
+          <MapPin className="text-accent mt-1 w-14 h-10" />
           <p>
-           Office 610, Suratwala Mark Plazzo, Hinjewadi, 411057
+           Office 610, Suratwala Mark Plazzo, Hinjewadi, 411057P
           </p>
         </div>
       </div>

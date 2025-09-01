@@ -164,7 +164,7 @@ export default function Process() {
               viewport={{ once: false,amount:0.5 }}
             >
               {/* Step Number */}
-              <div className="absolute left-5 z-10 bg-primaryCardBg rounded-full w-8 h-8 flex items-center justify-center shadow-lg border-2 border-orange-500">
+              <div className="absolute left-4 z-10 bg-primaryCardBg rounded-full w-8 h-8 flex items-center justify-center shadow-lg border-2 border-orange-500">
                 <span className="text-sm font-bold text-primaryText">{step.id}</span>
               </div>
 
@@ -202,8 +202,6 @@ export default function Process() {
               Let's implement this proven process to drive real results for your brand
             </p>
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
               className="bg-orange-500 hover:bg-orange-600 text-black px-8 py-3 rounded-lg font-bold transition-all duration-300 text-lg shadow-lg"
             >
               Get Started Today

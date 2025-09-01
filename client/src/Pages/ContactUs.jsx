@@ -236,10 +236,10 @@
 //     required
 //   >
 //     <option value="" disabled>Select a Service</option>
-//     <option value="web-design" className="text-black">Web Design</option>
-//     <option value="seo" className="text-black">SEO</option>
-//     <option value="digital-marketing" className="text-black">Digital Marketing</option>
-//     <option value="app-development" className="text-black">App Development</option>
+//     <option value="web-design" className="text-primaryText">Web Design</option>
+//     <option value="seo" className="text-primaryText">SEO</option>
+//     <option value="digital-marketing" className="text-primaryText">Digital Marketing</option>
+//     <option value="app-development" className="text-primaryText">App Development</option>
 //   </select>
 
 //   <textarea
@@ -313,7 +313,7 @@ import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { BASE_URL } from "../constant";
+
 
 // ✅ Validation schema
 const schema = yup.object().shape({
@@ -339,10 +339,12 @@ export default function ContactPage() {
     resolver: yupResolver(schema),
   });
 
+
+  
   // ✅ Submit handler
   const onSubmit = async (data) => {
     try {
-      const res = await axios.post(`${BASE_URL}/api/contacts`, data);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/contacts`, data);
       if (res.data.success) {
         toast.success("Message sent successfully!");
         reset();
@@ -390,7 +392,7 @@ export default function ContactPage() {
       <div className="min-h-screen text-white">
         {/* Hero Section */}
         <motion.section
-          className="pt-44 pb-20 text-center relative"
+                 className="pt-30 md:pt-44 md:pb-20 text-center relative"
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -401,7 +403,7 @@ export default function ContactPage() {
               Get In Touch
             </span>
             <motion.h1
-              className="text-4xl md:text-6xl font-bold my-6 text-black"
+              className="text-4xl md:text-6xl font-bold my-6 text-primaryText"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.6 }}
@@ -413,7 +415,7 @@ export default function ContactPage() {
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="grid grid-cols-3   md:gap-8 mt-12">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
@@ -426,8 +428,8 @@ export default function ContactPage() {
                   <div className="w-12 h-12 mx-auto bg-orange-500 rounded-full flex items-center justify-center mb-3 animate-bounce">
                     <stat.icon className="w-6 h-6" />
                   </div>
-                  <div className="text-2xl font-bold text-primaryText">{stat.value}</div>
-                  <div className="text-secondaryText text-sm">{stat.label}</div>
+                  <div className="text-xl md:text-2xl font-bold text-primaryText">{stat.value}</div>
+                  <div className="text-secondaryText text-[12px] md:text-sm">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -440,7 +442,7 @@ export default function ContactPage() {
             {cards.map((card, index) => (
               <motion.div
                 key={index}
-                className="bg-white border border-gray-800 rounded-lg shadow p-6 flex-1 max-w-md"
+                className=" border border-gray-800 rounded-lg shadow p-6 flex-1 max-w-md"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: index * 0.2, duration: 0.6 }}
@@ -497,7 +499,7 @@ export default function ContactPage() {
                   type="text"
                   placeholder="Enter your full name"
                   {...register("fullName")}
-                  className="w-full p-3 border border-gray-600 rounded text-black focus:outline-none focus:border-orange-500"
+                  className="w-full p-3 border border-gray-600 rounded text-primaryText focus:outline-none focus:border-orange-500"
                 />
                 {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName.message}</p>}
 
@@ -506,7 +508,7 @@ export default function ContactPage() {
                   type="text"
                   placeholder="Phone number"
                   {...register("phoneNumber")}
-                  className="w-full p-3 border border-gray-600 rounded text-black focus:outline-none focus:border-orange-500"
+                  className="w-full p-3 border border-gray-600 rounded text-primaryText focus:outline-none focus:border-orange-500"
                 />
                 {errors.phoneNumber && <p className="text-red-500 text-sm">{errors.phoneNumber.message}</p>}
 
@@ -515,7 +517,7 @@ export default function ContactPage() {
                   type="email"
                   placeholder="Your email"
                   {...register("email")}
-                  className="w-full p-3 border border-gray-600 rounded text-black focus:outline-none focus:border-orange-500"
+                  className="w-full p-3 border border-gray-600 rounded text-primaryText focus:outline-none focus:border-orange-500"
                 />
                 {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
 
@@ -524,13 +526,13 @@ export default function ContactPage() {
                   type="text"
                   placeholder="Service Description"
                   {...register("serviceDescription")}
-                  className="w-full p-3 border border-gray-600 rounded text-black focus:outline-none focus:border-orange-500"
+                  className="w-full p-3 border border-gray-600 rounded text-primaryText focus:outline-none focus:border-orange-500"
                 />
 
                 {/* Service Dropdown */}
                 <select
                   {...register("service")}
-                  className="w-full p-3 border border-gray-600 rounded text-black focus:outline-none focus:border-orange-500"
+                  className="w-full p-3 border border-gray-600 rounded text-primaryText focus:outline-none focus:border-orange-500"
                 >
                   <option value="">Select a Service</option>
                   <option value="web-design">Web Design</option>
@@ -545,15 +547,14 @@ export default function ContactPage() {
                   placeholder="Message"
                   rows={4}
                   {...register("message")}
-                  className="w-full p-3 border border-gray-600 rounded text-black focus:outline-none focus:border-orange-500"
+                  className="w-full p-3 border border-gray-600 rounded text-primaryText focus:outline-none focus:border-orange-500"
                 ></textarea>
                 {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
 
                 {/* Submit */}
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+              
                   disabled={isSubmitting}
                   className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded transition duration-200 disabled:opacity-50"
                 >
@@ -565,7 +566,7 @@ export default function ContactPage() {
         </motion.section>
 
         {/* Google Map */}
-        <section className="bg-white text-black py-16 px-6">
+        <section className="bg-white text-primaryText pt-6 py-20 md:py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6 text-center text-orange-500">Our Location</h2>
             <div className="w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
