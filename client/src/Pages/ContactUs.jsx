@@ -313,7 +313,7 @@ import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { BASE_URL } from "../constant";
+
 
 // ✅ Validation schema
 const schema = yup.object().shape({
@@ -339,10 +339,12 @@ export default function ContactPage() {
     resolver: yupResolver(schema),
   });
 
+
+  
   // ✅ Submit handler
   const onSubmit = async (data) => {
     try {
-      const res = await axios.post(`${BASE_URL}/api/contacts`, data);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/contacts`, data);
       if (res.data.success) {
         toast.success("Message sent successfully!");
         reset();

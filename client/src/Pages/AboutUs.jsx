@@ -676,7 +676,7 @@
 //                     whileInView={{ x: 0, opacity: 1 }}
 //                     transition={{ duration: 0.6 }}
 //                     viewport={{ once: true }}
-                    
+
 //                   />
 //                 </div>
 
@@ -732,6 +732,7 @@ import {
   LucideUserRoundPlus,
   MoveRight,
   PanelsTopLeftIcon
+  , Lightbulb, Rocket, Target, FlaskRound, Code2, PenTool
 } from 'lucide-react';
 import StateSection from '../components/State-section';
 import { useAnimation, motion } from 'framer-motion';
@@ -741,7 +742,7 @@ import { Link } from 'react-router-dom';
 
 export default function AboutUs() {
 
- const ScrollFadeIn = ({ children, delay = 0 }) => (
+  const ScrollFadeIn = ({ children, delay = 0 }) => (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -765,7 +766,7 @@ export default function AboutUs() {
 
   const ScrollSlideInFromRight = ({ children, delay = 0 }) => (
     <motion.div
-      initial={{ opacity: 0, x: 10  }}
+      initial={{ opacity: 0, x: 10 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay, ease: 'easeOut' }}
       viewport={{ once: false, amount: 0.2 }}
@@ -774,7 +775,7 @@ export default function AboutUs() {
     </motion.div>
   );
 
-  
+
 
   // Fade up variant for reuse
   const fadeUpVariant = {
@@ -834,11 +835,217 @@ export default function AboutUs() {
 
   const duplicatedMembers = [...teamMembers, ...teamMembers, ...teamMembers, ...teamMembers];
   return (
-   <>
+    <>
       <Navbar />
 
 
       <div className="py-14 md:pt-32 md:py-20 text-[#EAEAEA]">
+
+
+
+
+
+
+
+
+       <div className="text-primaryText pt-16 px-6 md:px-12">
+
+  {/* --- OUR STORY --- */}
+  <section className="max-w-7xl mx-auto py-20">
+    <div className="grid md:grid-cols-2 gap-10 items-center">
+      
+      {/* TEXT */}
+      <div>
+        <p className="text-orange-500 font-semibold mb-2">Our Story</p>
+        <h1 className="text-5xl font-light leading-tight">
+          Smarter Growth — <br /> Engineered for You
+        </h1>
+        <p className="mt-6 text-gray-600 max-w-md">
+          At Landing Labs, we transform ideas into growth engines — designing,
+          developing, and launching digital ecosystems for creators, startups,
+          and businesses.
+        </p>
+      </div>
+
+      {/* IMAGE */}
+      <div>
+        <img
+          src="https://cdn.wallpapersafari.com/8/35/WEGgt5.jpeg"
+          alt="Landing Labs"
+          className="rounded-xl shadow-md"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* --- WHAT WE DO --- */}
+  <section className=" py-20">
+    <div className="max-w-7xl mx-auto text-center">
+      <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        What <span className="text-orange-500">We Do</span>
+      </h2>
+      <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
+        At Landing Labs, we connect creativity, technology, and growth to build digital solutions that actually work.
+      </p>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          { title: "Custom Landing Pages & Websites", desc: "Sleek, lightning-fast, built to convert.", icon: Rocket },
+          { title: "App & Software Development", desc: "Scalable products for tomorrow’s world.", icon: Code2 },
+          { title: "Digital Marketing & Branding", desc: "From SEO to social, we put you on the map.", icon: Target },
+          { title: "Business Growth Strategies", desc: "Data + insight = your growth blueprint.", icon: Lightbulb },
+          { title: "Creative Design & Content", desc: "Stories and visuals that click (literally).", icon: PenTool },
+        ].map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="bg-primaryCardBg shadow-md rounded-xl p-6 hover:shadow-xl transition"
+            >
+              <Icon className="w-10 h-10 text-orange-500 mb-4" />
+              <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+              <p className="text-gray-600 text-sm">{item.desc}</p>
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  {/* --- WHY LABS --- */}
+  <section className="max-w-6xl mx-auto py-20 text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        Why <span className="text-orange-500">“Labs”?</span>
+      </h2>
+      <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+        Because we experiment, innovate, and iterate until we crack the code for your growth.
+        Think of us as your digital R&D department, where concepts become prototypes, and prototypes become success stories.
+      </p>
+    </motion.div>
+  </section>
+
+  {/* --- MISSION & VISION --- */}
+  <section className=" py-20">
+    <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="bg-white rounded-xl shadow-md p-8 border-l-4 border-orange-500"
+      >
+        <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
+        <p className="text-gray-700">
+          To empower businesses of all sizes with development, design, and marketing solutions that create visibility, build trust, and spark measurable growth.
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="bg-primaryCardBg rounded-xl shadow-md p-8 border-l-4 border-orange-500"
+      >
+        <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
+        <p className="text-gray-700">
+          A future where every brand, startup, or creator can leverage technology and creativity to scale, without limits.
+        </p>
+      </motion.div>
+    </div>
+  </section>
+
+  {/* --- FROM US TO YOU --- */}
+<section className="max-w-6xl mx-auto py-20 px-6 md:px-12">
+  <div className="grid md:grid-cols-2 gap-12 items-center">
+    
+    {/* Left Side - Image */}
+    <motion.div
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <img
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+        alt="From Us To You"
+        className="rounded-2xl shadow-lg"
+      />
+    </motion.div>
+
+    {/* Right Side - Text */}
+    <motion.div
+      initial={{ opacity: 0, x: 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        From <span className="text-orange-500">Us</span>, To{" "}
+        <span className="text-orange-500">You</span>
+      </h2>
+      <p className="text-lg text-gray-700 leading-relaxed mb-8">
+        We don’t just deliver services. We deliver platforms, experiences,
+        and growth journeys. Your vision is our blueprint. Your growth is our
+        goal.
+      </p>
+
+      {/* Highlight Points */}
+      <div className="space-y-6">
+        <div className="flex items-start gap-4">
+          <div className="h-10 w-10 flex items-center justify-center rounded-full bg-orange-100 text-orange-500 font-bold">
+            1
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">Strategy First</h3>
+            <p className="text-gray-600 text-sm">
+              Every solution begins with a roadmap designed around your
+              business goals.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-4">
+          <div className="h-10 w-10 flex items-center justify-center rounded-full bg-orange-100 text-orange-500 font-bold">
+            2
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">Seamless Execution</h3>
+            <p className="text-gray-600 text-sm">
+              From design to launch, we ensure smooth collaboration and delivery.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-start gap-4">
+          <div className="h-10 w-10 flex items-center justify-center rounded-full bg-orange-100 text-orange-500 font-bold">
+            3
+          </div>
+          <div>
+            <h3 className="font-semibold text-lg">Growth that Lasts</h3>
+            <p className="text-gray-600 text-sm">
+              Beyond launch, we scale and optimize for long-term impact.
+            </p>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+
+</div>
+
 
         <div className=" text-primaryText pt-16 px-6 md:px-12">
 
@@ -1027,7 +1234,7 @@ export default function AboutUs() {
             <div className="relative max-w-7xl mx-auto px-6 py-8 sm:py-16 rounded-md border border-gray-200 shadow-sm overflow-hidden">
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-sm scale-105"
-              style={{ backgroundImage: `url(${AboutBanner})`, zIndex: 0 }}
+                style={{ backgroundImage: `url(${AboutBanner})`, zIndex: 0 }}
 
               ></div>
               <div className="absolute inset-0 bg-black/70 z-[1]"></div>
@@ -1071,67 +1278,67 @@ export default function AboutUs() {
               </p>
             </motion.section>
 
-             <motion.div
-      className="bg-[#100604] text-primaryText max-w-7xl mx-auto px-6 py-16 rounded-md"
-      variants={fadeUpVariant}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true}}
-    >
-      <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
-        {/* Images */}
-        <motion.img
-          src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.png.webp"
-          alt="Creative Agency"
-          className="w-full max-w-[260px] object-contain"
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: false, amount: 0.2 }}
-        />
-        <motion.img
-          src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.-1.png.webp"
-          alt="Landing Labs"
-          className="w-full max-w-[260px] object-contain"
-          initial={{ x: 60, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: false, amount: 0.2 }}
-        />
+            <motion.div
+              className="bg-[#100604] text-primaryText max-w-7xl mx-auto px-6 py-16 rounded-md"
+              variants={fadeUpVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+                {/* Images */}
+                <motion.img
+                  src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.png.webp"
+                  alt="Creative Agency"
+                  className="w-full max-w-[260px] object-contain"
+                  initial={{ x: -100, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                />
+                <motion.img
+                  src="https://landinglabs.in/wp-content/uploads/2025/06/We-Build.-You-Grow.-1.png.webp"
+                  alt="Landing Labs"
+                  className="w-full max-w-[260px] object-contain"
+                  initial={{ x: 60, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                />
 
-        {/* Text */}
-        <motion.div
-          className="w-full"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: false, amount: 0.2 }}
-        >
-          <p className="text-orange-500 font-semibold text-lg mb-2">2023 – 2025</p>
-          <h2 className="text-white text-2xl md:text-3xl font-bold mb-6">
-            We collaborate with:
-          </h2>
-          <ul className="space-y-3 text-[#DDD] text-base leading-relaxed">
-            <li>Ambitious startups ready to launch.</li>
-            <li>SMEs looking to scale operations.</li>
-            <li>Corporates seeking transformation.</li>
-            <li>
-              Politicians, public figures, and influencers building digital authority.
-            </li>
-          </ul>
+                {/* Text */}
+                <motion.div
+                  className="w-full"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                >
+                  <p className="text-orange-500 font-semibold text-lg mb-2">2023 – 2025</p>
+                  <h2 className="text-white text-2xl md:text-3xl font-bold mb-6">
+                    We collaborate with:
+                  </h2>
+                  <ul className="space-y-3 text-[#DDD] text-base leading-relaxed">
+                    <li>Ambitious startups ready to launch.</li>
+                    <li>SMEs looking to scale operations.</li>
+                    <li>Corporates seeking transformation.</li>
+                    <li>
+                      Politicians, public figures, and influencers building digital authority.
+                    </li>
+                  </ul>
 
-          <Link to="/contact-us"> 
-             <motion.button
-            className="mt-8 bg-orange-500 hover:bg-orange-600 text-primaryText px-6 py-3 rounded-md font-semibold transition"
-            
-          >
-            CONTACT US
-          </motion.button>
-          </Link>
-       
-        </motion.div>
-      </div>
-    </motion.div>
+                  <Link to="/contact-us">
+                    <motion.button
+                      className="mt-8 bg-orange-500 hover:bg-orange-600 text-primaryText px-6 py-3 rounded-md font-semibold transition"
+
+                    >
+                      CONTACT US
+                    </motion.button>
+                  </Link>
+
+                </motion.div>
+              </div>
+            </motion.div>
           </div>
         </div>
 
@@ -1140,7 +1347,7 @@ export default function AboutUs() {
 
       </div>
 
-      <Footer />
-    </>
+      <Footer />
+    </>
   );
 }

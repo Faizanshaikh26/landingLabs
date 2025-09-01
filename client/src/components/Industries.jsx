@@ -113,7 +113,7 @@ export function Industries() {
             <motion.div key={currentIndustry.id + "-text"} variants={textContainer} initial="hidden" animate="show" exit={{ opacity: 0, x: -40, transition: { duration: 0.4 } }}>
               <motion.h3 variants={textItem} className="text-4xl md:text-5xl font-bold mb-4">{currentIndustry.title}</motion.h3>
               <motion.p variants={textItem} className="text-secondaryText text-lg leading-relaxed mb-6">{currentIndustry.description}</motion.p>
-              <motion.button variants={textItem} whileHover={{ scale: 1.07, boxShadow: "0px 5px 20px rgba(255,165,0,0.5)" }} whileTap={{ scale: 0.95 }} className="px-6 py-3 border border-orange-500 text-primaryText rounded-full hover:bg-orange-500 hover:text-white transition-colors duration-200">Read More</motion.button>
+              <motion.button variants={textItem} className="px-6 py-3 border border-orange-500 text-primaryText rounded-full hover:bg-orange-500 hover:text-white transition-colors duration-200">Read More</motion.button>
             </motion.div>
           </AnimatePresence>
 

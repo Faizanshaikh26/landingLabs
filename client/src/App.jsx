@@ -38,12 +38,17 @@ const Pricing = lazy(() => import("./Pages/Pricing.jsx"))
 function App() {
   const location = useLocation()
 
+
+  
   return (
     <div className="min-h-screen font-poppins   bg-white text-primaryText">
+
+    
       <ScrollToTop />
       <Toaster position="bottom-center" reverseOrder={false} />
       <CustomCursor />
       <AutoPopupDialog />
+     
 
       {/* Lazy loading fallback and animation wrapper */}
       <Suspense fallback={<div className="text-primaryText text-center py-20"><Loading /></div>}>
