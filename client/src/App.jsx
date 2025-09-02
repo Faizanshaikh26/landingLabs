@@ -19,6 +19,8 @@ import NewTrailPage5 from "./components/New/page.jsx";
 import NewTrailPage4 from "./components/New/page2.jsx";
 import NewTrailPage3 from "./components/New/page3.jsx";
 import NewTrailPage2 from "./components/New/page4.jsx";
+import EcomerceDetails from "./Pages/Portfolio/details/ecomerce.jsx";
+import SkincareDetails from "./Pages/Portfolio/details/skincare.jsx";
 
 // Lazy-loaded pages
 const Home = lazy(() => import("./Home"))
@@ -75,6 +77,9 @@ function App() {
             {/* <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} /> */}
             <Route path="/portfolio" element={<PageWrapper><Portfolio /></PageWrapper>} />
             <Route path="/portfolio/details" element={<PageWrapper><PortfolioDetails /></PageWrapper>} />
+            <Route path="/portfolio/ecomerce" element={<PageWrapper><EcomerceDetails /></PageWrapper>} />
+             <Route path="/portfolio/skincare" element={<PageWrapper><SkincareDetails/></PageWrapper>} />
+            
 
 
             {/* Service Detail Pages */}

@@ -3,6 +3,7 @@
 import { Star } from 'lucide-react'
 import React from 'react'
 import Navbar from '../components/Navbar';
+import Footer from '../Footer';
 
 export default function PortfolioDetails() {
 
@@ -77,6 +78,7 @@ export default function PortfolioDetails() {
               muted
               loop
               autoPlay
+
               className="w-full h-[500px] object-cover"
             />
           </div>
@@ -199,6 +201,7 @@ export default function PortfolioDetails() {
       {/* Divider */}
      
 
+<Footer/>
 
 
     </div>
