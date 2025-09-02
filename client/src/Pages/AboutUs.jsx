@@ -89,30 +89,59 @@ export default function AboutUs() {
   ];
 
   const teamMembers = [
+
     {
-      name: "John Miller",
-      role: "",
-      image: image1
+      role: "Founder",
+      name: "Janak Sonare",
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQGaEkCUSaLV0g/profile-displayphoto-shrink_200_200/B4DZccJ_h7GUAY-/0/1748524073302?e=1759968000&v=beta&t=YJ9bHla0rRTcaAhb5mpqA44GJdZHKOLQyWU12EESd-Q"
     },
     {
-      name: "Olivia Bennett",
-      role: "Co-Founder",
-      image: image2
+      name: "Abhishek Satpute",
+      role: "Hr Manager",
+      image: "https://media.licdn.com/dms/image/v2/D5603AQEgaTjS4TX_FA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1725477947354?e=1759968000&v=beta&t=PNvzGOEIlOKSwPHRzAiOrT_xvjkE4SRGgCFBTKR103I"
     },
     {
-      name: "Roman Carter",
-      role: "Founder's Office",
-      image: image3
+      name: "Gayatri Madake",
+      role: "Project Manager ",
+      image: "https://media.licdn.com/dms/image/v2/D5603AQHTh_Oa5jrHrQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1678967188646?e=1759968000&v=beta&t=RJc2sLrW5IYNFBzH4ppCwe_j_oQbdpqVK5x5JG35Tu8"
     },
-    {
-      name: "Liam Thompson",
+     {
+      name: "Faizan Shaikh",
       role: "Full Stack Developer",
-      image: image4
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQH0qwGSeu5UYA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726295165578?e=1759968000&v=beta&t=_3QMM1UrC-Fa0UB6_bawLQk94bvyHaNntYPU_ZdxlIw"
     },
     {
-      name: "Noah Anderson",
-      role: "Full Stack Developer",
+      name: "Sumedha Surwade",
+      role: "Digital Marketing Intern",
       image: image5
+    },
+    {
+      name: "Shweta Gawhane",
+      role: "Graphic Designer",
+      image: image5
+    },
+
+  
+    {
+      name: "Saurabh Satpute",
+      role: "Frontend Developer",
+      image: "https://media.licdn.com/dms/image/v2/D4D03AQFIcluvpjXmIA/profile-displayphoto-scale_400_400/B4DZhLPWs2HsAg-/0/1753608974829?e=1759968000&v=beta&t=oNDvNd7ePwA7TtA5zW_h1SjgaSJJ55CAF3qDl9Ocjdo"
+    },
+ 
+    {
+      name: "Sushant Jagtap",
+      role: "Video Editor & Content Writer",
+      image: "https://media.licdn.com/dms/image/v2/D4D35AQEvgI2cYW5AzQ/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1734694063553?e=1757422800&v=beta&t=r1Hp9sF73r7WDiEx7uX9Ep8YbelYX5jvRZFpiwY7oTU"
+    },
+       {
+      name: "Ram Khatal",
+      role: "Frontend Developer",
+      image: "https://media.licdn.com/dms/image/v2/D4E03AQE61BPTPIe0dQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718168484946?e=1759968000&v=beta&t=qFCWhuTHbiakq8aIs53ks5FTrlDnDOcmtrRw9HZAw-g"
+    },
+       {
+      name: "Ganesh Tambale",
+      role: "Java Developer",
+      image: "https://media.licdn.com/dms/image/v2/D5635AQHRCZ_Jyv_cFA/profile-framedphoto-shrink_400_400/B56Zf2b1TbG0Ac-/0/1752186181236?e=1757422800&v=beta&t=s8nTiznG2oWmZVlRZdwHmaTa8u7q7wtsqgTnCUPBHqs"
     },
   ];
 
@@ -186,7 +215,7 @@ export default function AboutUs() {
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.2 }}
-                      viewport={{ once: false ,amount:0.3 }}
+                      viewport={{ once: false, amount: 0.3 }}
                       className="bg-primaryCardBg shadow-md rounded-xl p-6 hover:shadow-xl transition"
                     >
                       <Icon className="w-10 h-10 text-accent mb-4" />
@@ -205,7 +234,7 @@ export default function AboutUs() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: false ,amount:0.3 }}
+              viewport={{ once: false, amount: 0.3 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Why <span className="text-accent">“Labs”?</span>
@@ -218,115 +247,115 @@ export default function AboutUs() {
           </section>
 
           {/* --- MISSION & VISION --- */}
-         {/* --- MISSION & VISION --- */}
-<section className="py-10">
-  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9, y: 30 }}
-      whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: false ,amount:0.3 }}
-      className="bg-primaryCardBg rounded-xl shadow-md p-8 border-l-4 border-orange-500"
-    >
-      <h3 className="text-xl sm:text-2xl font-bold mb-4">Our Mission</h3>
-      <p className="text-gray-700 text-sm">
-        To empower businesses of all sizes with development, design, and marketing solutions that create visibility, build trust, and spark measurable growth.
-      </p>
-    </motion.div>
+          {/* --- MISSION & VISION --- */}
+          <section className="py-10">
+            <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="bg-primaryCardBg rounded-xl shadow-md p-8 border-l-4 border-orange-500"
+              >
+                <h3 className="text-xl sm:text-2xl font-bold mb-4">Our Mission</h3>
+                <p className="text-gray-700 text-sm">
+                  To empower businesses of all sizes with development, design, and marketing solutions that create visibility, build trust, and spark measurable growth.
+                </p>
+              </motion.div>
 
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9, y: 30 }}
-      whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      viewport={{ once: false ,amount:0.3 }}
-      className="bg-primaryCardBg rounded-xl shadow-md p-8 border-l-4 border-orange-500"
-    >
-      <h3 className="text-xl sm:text-2xl font-bold mb-4">Our Vision</h3>
-      <p className="text-gray-700 text-sm">
-        A future where every brand, startup, or creator can leverage technology and creativity to scale, without limits.
-      </p>
-    </motion.div>
-  </div>
-</section>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="bg-primaryCardBg rounded-xl shadow-md p-8 border-l-4 border-orange-500"
+              >
+                <h3 className="text-xl sm:text-2xl font-bold mb-4">Our Vision</h3>
+                <p className="text-gray-700 text-sm">
+                  A future where every brand, startup, or creator can leverage technology and creativity to scale, without limits.
+                </p>
+              </motion.div>
+            </div>
+          </section>
 
-{/* --- FROM US TO YOU --- */}
-<section className="max-w-7xl mx-auto py-20">
-  <div className="grid md:grid-cols-2 gap-20 items-center">
+          {/* --- FROM US TO YOU --- */}
+          <section className="max-w-7xl mx-auto py-20">
+            <div className="grid md:grid-cols-2 gap-20 items-center">
 
-    {/* Left Side - Image */}
-    <motion.div
-      initial={{ opacity: 0, scale: 0.85 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.7 }}
-      viewport={{ once: false ,amount:0.3 }}
-    >
-      <img
-        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
-        alt="From Us To You"
-        className="rounded shadow-lg"
-      />
-    </motion.div>
+              {/* Left Side - Image */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.85 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: false, amount: 0.3 }}
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+                  alt="From Us To You"
+                  className="rounded shadow-lg"
+                />
+              </motion.div>
 
-    {/* Right Side - Text */}
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: false ,amount:0.3 }}
-    >
-      <h2 className="text-3xl md:text-4xl font-bold mb-6">
-        From <span className="text-accent">Us</span>, To{" "}
-        <span className="text-accent">You</span>
-      </h2>
-      <p className="text-lg text-gray-700 leading-relaxed mb-8">
-        We don’t just deliver services. We deliver platforms, experiences,
-        and growth journeys. Your vision is our blueprint. Your growth is our
-        goal.
-      </p>
+              {/* Right Side - Text */}
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: false, amount: 0.3 }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  From <span className="text-accent">Us</span>, To{" "}
+                  <span className="text-accent">You</span>
+                </h2>
+                <p className="text-lg text-gray-700 leading-relaxed mb-8">
+                  We don’t just deliver services. We deliver platforms, experiences,
+                  and growth journeys. Your vision is our blueprint. Your growth is our
+                  goal.
+                </p>
 
-      {/* Timeline (unchanged) */}
-      <div className="relative max-w-3xl mx-auto px-4">
-        <div className="absolute left-[35px] top-0 bottom-0 w-0.5 bg-orange-300"></div>
-        {/* Point 1 */}
-        <div className="flex items-start gap-4 mb-10 relative">
-          <div className="relative z-10 flex items-center justify-center h-10 w-10 rounded-full bg-orange-500 text-white font-bold">
-            1
-          </div>
-          <div className="flex-1">
-            <h3 className="font-semibold text-lg sm:text-xl">Strategy First</h3>
-            <p className="text-gray-600 text-sm sm:text-base">
-              Every solution begins with a roadmap designed around your business goals.
-            </p>
-          </div>
-        </div>
-        {/* Point 2 */}
-        <div className="flex items-start gap-4 mb-10 relative">
-          <div className="relative z-10 flex items-center justify-center h-10 w-10 rounded-full bg-orange-500 text-white font-bold">
-            2
-          </div>
-          <div className="flex-1">
-            <h3 className="font-semibold text-lg sm:text-xl">Seamless Execution</h3>
-            <p className="text-gray-600 text-sm sm:text-base">
-              From design to launch, we ensure smooth collaboration and delivery.
-            </p>
-          </div>
-        </div>
-        {/* Point 3 */}
-        <div className="flex items-start gap-4 relative">
-          <div className="relative z-10 flex items-center justify-center h-10 w-10 rounded-full bg-orange-500 text-white font-bold">
-            3
-          </div>
-          <div className="flex-1">
-            <h3 className="font-semibold text-lg sm:text-xl">Growth that Lasts</h3>
-            <p className="text-gray-600 text-sm sm:text-base">
-              Beyond launch, we scale and optimize for long-term impact.
-            </p>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  </div>
-</section>
+                {/* Timeline (unchanged) */}
+                <div className="relative max-w-3xl mx-auto px-4">
+                  <div className="absolute left-[35px] top-0 bottom-0 w-0.5 bg-orange-300"></div>
+                  {/* Point 1 */}
+                  <div className="flex items-start gap-4 mb-10 relative">
+                    <div className="relative z-10 flex items-center justify-center h-10 w-10 rounded-full bg-orange-500 text-white font-bold">
+                      1
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg sm:text-xl">Strategy First</h3>
+                      <p className="text-gray-600 text-sm sm:text-base">
+                        Every solution begins with a roadmap designed around your business goals.
+                      </p>
+                    </div>
+                  </div>
+                  {/* Point 2 */}
+                  <div className="flex items-start gap-4 mb-10 relative">
+                    <div className="relative z-10 flex items-center justify-center h-10 w-10 rounded-full bg-orange-500 text-white font-bold">
+                      2
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg sm:text-xl">Seamless Execution</h3>
+                      <p className="text-gray-600 text-sm sm:text-base">
+                        From design to launch, we ensure smooth collaboration and delivery.
+                      </p>
+                    </div>
+                  </div>
+                  {/* Point 3 */}
+                  <div className="flex items-start gap-4 relative">
+                    <div className="relative z-10 flex items-center justify-center h-10 w-10 rounded-full bg-orange-500 text-white font-bold">
+                      3
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg sm:text-xl">Growth that Lasts</h3>
+                      <p className="text-gray-600 text-sm sm:text-base">
+                        Beyond launch, we scale and optimize for long-term impact.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </section>
 
 
 
@@ -451,7 +480,7 @@ export default function AboutUs() {
         }
 
         .animate-marquee {
-    animation: marquee 20s linear infinite;
+    animation: marquee 30s linear infinite;
     display: flex;
     width: fit-content;
   }
