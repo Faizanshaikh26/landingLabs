@@ -12,6 +12,8 @@ import Portfolio from "./components/Portfolio.jsx"
 import Loading from "./components/Loading.jsx"
 import { Toaster } from "react-hot-toast"
 import PortfolioDetails from "./Pages/Portfolio-Details.jsx"
+import PortfolioFood from "./Pages/Portfolio/details/Food.jsx"
+import PortfolioHealth from "./Pages/Portfolio/details/Health.jsx"
 import FreeTrail from "./Pages/FreeTrial/main.jsx"
 import FreeTrialLanding from "./Pages/FreeTrial/main.jsx"
 
@@ -68,7 +70,9 @@ function App() {
 
             {/* <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} /> */}
             <Route path="/portfolio" element={<PageWrapper><Portfolio /></PageWrapper>} />
-            <Route path="/portfolio/details" element={<PageWrapper><PortfolioDetails /></PageWrapper>} />
+            <Route path="/portfolio-details" element={<PageWrapper><PortfolioDetails /></PageWrapper>} />
+            <Route path="/portfolio-Health" element={<PageWrapper><PortfolioHealth /></PageWrapper>} />
+            <Route path="/portfolio-Food" element={<PageWrapper><PortfolioFood /></PageWrapper>} />
 
 
             {/* Service Detail Pages */}
