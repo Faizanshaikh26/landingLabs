@@ -14,7 +14,7 @@ import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 
-import Banner from "../assets/images/about/Banner.jpg"
+import Banner from "../assets/images/about/banner.jpg"
 import image1 from '../assets/images/about/WhatsApp Image 2025-09-01 at 14.13.21_b456fa9b.jpg'
 import image2 from '../assets/images/about/WhatsApp Image 2025-09-01 at 14.51.18_72ca8445.jpg'
 import image3 from '../assets/images/about/WhatsApp Image 2025-09-01 at 14.51.19_0a513ed5.jpg'
