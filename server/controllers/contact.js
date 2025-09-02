@@ -54,7 +54,7 @@ export const addContact = async (req, res) => {
 
     // 5. Send the Excel file via email
     await mailSender({
-      email: 'team@landinglabs.in',
+      email: 'info@landinglabs.in',
       title: 'New Contact Submission - Full List',
       body: `<p>A new contact was added: <strong>${fullName}</strong></p><p>Full contact list is attached.</p>`,
       attachments: [

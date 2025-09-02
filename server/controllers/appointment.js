@@ -53,7 +53,7 @@ export const addAppointment = async (req, res) => {
 
     // Send email with Excel attachment
     await mailSender({
-      email: 'faizancreation25@gmail.com',
+      email: 'info@landinglabs.in',
       title: 'New Appointment Booked',
       body: `<p>A new appointment was booked by <strong>${email}</strong>.</p>`,
       attachments: [
