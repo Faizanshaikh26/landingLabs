@@ -41,7 +41,7 @@ export default function EcomerceDetails() {
 
 
 <Navbar/>
-     <div className="bg-white text-black px-6 md:px-20 py-20 sm:py-52">
+     <div className="bg-white text-black px-6 md:px-20 py-28 sm:py-52">
 
 
 

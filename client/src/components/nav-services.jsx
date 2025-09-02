@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 
 import digitalMarketing from '../assets/images/marketing-illustration.jpg'
-import webDevelopment from   '../assets/images/webDevelopment-illustration.png' 
-import seoIllustration from   '../assets/images/seo-illustration.jpg' 
+import webDevelopment from '../assets/images/webDevelopment-illustration.png'
+import seoIllustration from '../assets/images/seo-illustration.jpg'
 
 const tabData = [
   {
@@ -53,7 +53,7 @@ const tabData = [
       { name: "Tech Products", description: "We build and scale SaaS products and marketplaces across multiple industries." },
     ],
   },
- 
+
 ];
 
 export default function NavbarServices() {
@@ -68,11 +68,10 @@ export default function NavbarServices() {
         {tabData.map((tab) => (
           <button
             key={tab.tab}
-            className={`px-4 py-1.5 rounded-full text-xs md:text-sm font-medium transition-colors duration-200 ${
-              activeTab === tab.tab
+            className={`px-4 py-1.5 rounded-full text-xs md:text-sm font-medium transition-colors duration-200 ${activeTab === tab.tab
                 ? "bg-accent text-black"
                 : "bg-gray-100 text-black hover:bg-yellow-100"
-            }`}
+              }`}
             onClick={() => {
               setActiveTab(tab.tab);
               setActiveService(0);
@@ -85,7 +84,7 @@ export default function NavbarServices() {
 
       {/* Content Area */}
       <div className="bg-white border rounded-lg p-4 lg:p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
-        
+
         {/* Left Section */}
         <div className="space-y-2">
           <img src={currentTab.icon} alt="icon" className="w-12 h-12 object-contain rounded-full" />
@@ -99,11 +98,10 @@ export default function NavbarServices() {
             <button
               key={index}
               onClick={() => setActiveService(index)}
-              className={`w-full flex items-center justify-between px-3 py-2 border rounded-md transition ${
-                index === activeService
+              className={`w-full flex items-center justify-between px-3 py-2 border rounded-md transition ${index === activeService
                   ? "bg-yellow-50 border-yellow-300"
                   : "hover:bg-gray-50"
-              }`}
+                }`}
             >
               <span className="text-xs text-primaryText md:text-sm font-medium text-left">{service.name}</span>
               <span className="bg-accent p-1 rounded-full">
