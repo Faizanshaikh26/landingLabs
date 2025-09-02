@@ -531,7 +531,7 @@ import { Link } from "react-router-dom";
   };
 
   return (
-    <footer className="bg-white text-primaryText  px-6 md:px-12 lg:px-20 pb-6">
+    <footer className="bg-white text-primaryText sm:py-10 px-6 md:px-12 lg:px-20 pb-6">
       {/* Top Section */}
       <div className="flex flex-col lg:flex-row gap-10 border-b border-gray-600 pb-5">
         {/* Our Core */}
@@ -643,7 +643,7 @@ import { Link } from "react-router-dom";
         <div className="flex items-start gap-4 max-w-sm">
           <MapPin className="text-accent mt-1 w-14 h-10" />
           <p>
-           Office 610, Suratwala Mark Plazzo, Hinjewadi, 411057P
+           Office 610, Suratwala Mark Plazzo, Hinjewadi, 411057
           </p>
         </div>
       </div>

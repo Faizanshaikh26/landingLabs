@@ -14,6 +14,11 @@ import { Toaster } from "react-hot-toast"
 import PortfolioDetails from "./Pages/Portfolio-Details.jsx"
 import FreeTrail from "./Pages/FreeTrial/main.jsx"
 import FreeTrialLanding from "./Pages/FreeTrial/main.jsx"
+import RealEstateDetails from "./Pages/Portfolio/details/real-estate.jsx"
+import EcomerceDetails from "./Pages/Portfolio/details/ecomerce.jsx"
+import SkincareDetails from "./Pages/Portfolio/details/skin-care.jsx"
+import HealthCareDetails from "./Pages/Portfolio/details/health-care.jsx"
+import FoodDetails from "./Pages/Portfolio/details/food.jsx"
 
 // Lazy-loaded pages
 const Home = lazy(() => import("./Home"))
@@ -65,6 +70,11 @@ function App() {
             {/* <Route path="/appointment" element={<PageWrapper><Appointment /></PageWrapper>} /> */}
             <Route path="/portfolio" element={<PageWrapper><Portfolio /></PageWrapper>} />
             <Route path="/portfolio/details" element={<PageWrapper><PortfolioDetails /></PageWrapper>} />
+            <Route path="/portfolio/real-estate" element={<PageWrapper><RealEstateDetails /></PageWrapper>} />
+            <Route path="/portfolio/ecomerce" element={<PageWrapper><EcomerceDetails /></PageWrapper>} />
+            <Route path="/portfolio/food" element={<PageWrapper><FoodDetails /></PageWrapper>} />
+            <Route path="/portfolio/skin-care" element={<PageWrapper><SkincareDetails /></PageWrapper>} />
+            <Route path="/portfolio/health-care" element={<PageWrapper><HealthCareDetails /></PageWrapper>} />
 
 
             {/* Service Detail Pages */}

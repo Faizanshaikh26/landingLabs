@@ -173,6 +173,12 @@ import Navbar from "../components/Navbar";
 import Footer from "../Footer";
 import { Link } from "react-router-dom";
 
+import realEstateCover from '../assets/images/portfolio/real-estate/cover.png'
+import SkinCareCover from '../assets/images/portfolio/ecomerce/cover.jpeg'
+import HealthCareCover from '../assets/images/portfolio/health-care/cover.jpeg'
+import FoodCover from '../assets/images/portfolio/food/cover.jpeg'
+import EcomerceCover from '../assets/images/portfolio/skin-care/cover.jpeg'
+
 export default function Portfolio() {
   const appear = {
     off: { opacity: 0, y: 40 },
@@ -197,72 +203,77 @@ export default function Portfolio() {
   };
 
   // 🔹 NOTE: all spans/positions are now md:*
- const items = [
-  {
-    title: "Immersive VR Experience",
-    year: "2024",
-    name: "Meta Labs",
-    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-3.png.webp",
-    className: "md:row-span-6",
-    mobileHeight: "h-[400px]",   // big
-  },
-  {
-    title: "AI Tech Platform",
-    year: "2023",
-    name: "TechNova",
-    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-2.png.webp",
-    className: "md:row-span-3",
-    mobileHeight: "h-[220px]",   // small
-  },
-  {
-    title: "Developer Tools",
-    year: "2022",
-    name: "CodeFlow",
-    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1.png.webp",
-    className: "md:row-span-3 md:col-start-2 md:row-start-4",
-    mobileHeight: "h-[400px]",   // big
-  },
-  {
-    title: "Retro Branding",
-    year: "2024",
-    name: "Pixel Studio",
-    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1024x1024.png.webp",
-    className: "md:col-span-2 md:row-span-6 md:col-start-3 md:row-start-1",
-    mobileHeight: "h-[220px]",   // small
-  },
-  {
-    title: "Creative Design System",
-    year: "2023",
-    name: "Designify",
-    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-2.png.webp",
-    className: "md:col-span-2 md:row-span-6 md:row-start-7",
-    mobileHeight: "h-[400px]",   // big
-  },
-  {
-    title: "Modern UI Kit",
-    year: "2022",
-    name: "UIX",
-    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-3.png.webp",
-    className: "md:col-span-2 md:row-span-3 md:col-start-3 md:row-start-7",
-    mobileHeight: "h-[220px]",   // small
-  },
-  {
-    title: "Brand Identity",
-    year: "2024",
-    name: "Brandify",
-    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1.png.webp",
-    className: "md:row-span-3 md:col-start-3 md:row-start-10",
-    mobileHeight: "h-[220px]",   // small
-  },
-  {
-    title: "Creative Strategy",
-    year: "2025",
-    name: "ThinkLab",
-    image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1024x1024.png.webp",
-    className: "md:row-span-3 md:col-start-4 md:row-start-10",
-    mobileHeight: "h-[220px]",   // small
-  },
-];
+  const items = [
+    {
+      title: "Real Estate",
+      year: "2024",
+      name: "Landing Labs",
+      image: realEstateCover,
+      className: "md:row-span-6",
+      mobileHeight: "h-[400px]",
+      link: "/portfolio/real-estate"
+    },
+    {
+      title: "Food",
+      year: "2023",
+      name: "Landing Labs",
+      image: FoodCover,
+      className: "md:row-span-3",
+      mobileHeight: "h-[220px]",
+      link: "/portfolio/food"  // small
+    },
+    {
+      title: "HealthCare",
+      year: "2022",
+      name: "Landing Labs",
+      image: HealthCareCover,
+      className: "md:row-span-3 md:col-start-2 md:row-start-4",
+      mobileHeight: "h-[400px]",
+      link: "/portfolio/health-care"   // big
+    },
+    {
+      title: "SkinCare",
+      year: "2024",
+      name: "Landing Labs",
+      image: SkinCareCover,
+      className: "md:col-span-2 md:row-span-6 md:col-start-3 md:row-start-1",
+      mobileHeight: "h-[220px]",   // small
+      link: "/portfolio/skin-care"
+    },
+    {
+      title: "Ecomerce",
+      year: "2023",
+      name: "Landing Labs",
+      image: EcomerceCover,
+      className: "md:col-span-2 md:row-span-6 md:row-start-7",
+      mobileHeight: "h-[400px]",
+      link: "/portfolio/ecomerce"   // big
+    },
+    {
+      title: "Modern UI Kit",
+      year: "2022",
+      name: "UIX",
+      image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-3.png.webp",
+      className: "md:col-span-2 md:row-span-3 md:col-start-3 md:row-start-7",
+      mobileHeight: "h-[220px]",   // small
+    },
+    {
+      title: "Brand Identity",
+      year: "2024",
+      name: "Brandify",
+      image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1.png.webp",
+      className: "md:row-span-3 md:col-start-3 md:row-start-10",
+      mobileHeight: "h-[220px]",   // small
+    },
+    {
+      title: "Creative Strategy",
+      year: "2025",
+      name: "ThinkLab",
+      image: "https://landinglabs.in/wp-content/uploads/2025/07/@EMILEONA_ROTTE-1024x1024.png.webp",
+      className: "md:row-span-3 md:col-start-4 md:row-start-10",
+      mobileHeight: "h-[220px]",   // small
+    },
+  ];
 
 
   return (
@@ -293,7 +304,6 @@ export default function Portfolio() {
 
           {/* 🔹 Mobile: 1 col + auto height. md+/lg: unchanged grid */}
 
-<Link to="/portfolio/details">
 
 
           <div
@@ -306,57 +316,67 @@ export default function Portfolio() {
             "
           >
             {items.map((item, i) => (
-             <motion.div
-  key={i}
-  className={`${item.className}`}
-  variants={appear}
-  initial="off"
-  whileInView="on"
-  custom={i}
-  viewport={{ once: false, amount: 0.2 }}
->
-  <motion.div
-    className={`relative group w-full ${item.mobileHeight} md:h-full overflow-hidden`}
-    initial="rest"
-    whileHover="hover"
-  >
-    <img
-      src={item.image}
-      alt={item.title}
-      className="w-full h-full object-cover"
-      loading="lazy"
-    />
 
 
-                  {/* Overlay */}
+
+              <motion.div
+                key={i}
+                className={`${item.className}`}
+                variants={appear}
+                initial="off"
+                whileInView="on"
+                custom={i}
+                viewport={{ once: false, amount: 0.2 }}
+              >
+
+
+                <Link to={item.link}>
+
                   <motion.div
-                    className="absolute inset-0 pointer-events-none bg-black/30 backdrop-blur-md flex flex-col items-center justify-center px-4"
-                    variants={overlayV}
+                    className={`relative group w-full ${item.mobileHeight} md:h-full overflow-hidden`}
+                    initial="rest"
+                    whileHover="hover"
                   >
-                    <motion.h3
-                      className="text-white text-lg md:text-2xl font-semibold text-center"
-                      variants={titleV}
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full sm:object-cover object-contain "
+                      loading="lazy"
+                    />
+
+
+                    {/* Overlay */}
+                    <motion.div
+                      className="absolute inset-0 pointer-events-none bg-black/30 backdrop-blur-md flex flex-col items-center justify-center px-4"
+                      variants={overlayV}
                     >
-                      {item.title}
-                    </motion.h3>
-                    <motion.p
-                      className="text-gray-200 text-xs md:text-sm mt-1 text-center"
-                      variants={metaV}
-                    >
-                      {item.year} • {item.name}
-                    </motion.p>
+                      <motion.h3
+                        className="text-white text-lg md:text-2xl font-semibold text-center"
+                        variants={titleV}
+                      >
+                        {item.title}
+                      </motion.h3>
+                      <motion.p
+                        className="text-gray-200 text-xs md:text-sm mt-1 text-center"
+                        variants={metaV}
+                      >
+                        {item.year} • {item.name}
+                      </motion.p>
+                    </motion.div>
                   </motion.div>
-                </motion.div>
+                </Link>
+
+
               </motion.div>
             ))}
           </div>
 
-          </Link>
+
 
         </div>
       </div>
 
-      <Footer/>
+      <Footer />
     </>
   );
 }

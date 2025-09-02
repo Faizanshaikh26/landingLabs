@@ -133,16 +133,20 @@ export default function AppointmentDialog({ isOpen, onClose }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
               <div>
                 <label className="block text-xs sm:text-sm mb-1">Type</label>
-                <select
-                  {...register("appointmentType")}
-                  className="w-full p-1.5 sm:p-2 text-xs sm:text-sm bg-gray-800 border border-gray-700 rounded-md"
-                >
-                  <option value="">Choose</option>
-                  <option value="consultation">Consultation</option>
-                  <option value="checkup">Check-up</option>
-                  <option value="follow-up">Follow-up</option>
-                  <option value="emergency">Emergency</option>
-                </select>
+             <select
+  {...register("appointmentType")}
+  className="w-full p-1.5 sm:p-2 text-xs sm:text-sm bg-gray-800 border border-gray-700 rounded-md"
+>
+  <option value="">Choose</option>
+  <option value="consultation">Digital Marketing Consultation</option>
+  <option value="smm-strategy">Social Media Marketing Strategy Call</option>
+  <option value="web-dev">Website / App Development Discussion</option>
+  <option value="branding">Branding & Creative Consultation</option>
+  <option value="seo-audit">SEO & Growth Marketing Audit</option>
+  <option value="general-inquiry">General Inquiry / Partnership Support</option>
+  <option value="partnership">Business Partnership / Collaboration / After-Sales</option>
+</select>
+
               </div>
               <div>
                 <label className="block text-xs sm:text-sm mb-1">Phone</label>
