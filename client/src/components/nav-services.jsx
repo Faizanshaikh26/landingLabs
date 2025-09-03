@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import digitalMarketing from '../assets/images/marketing-illustration.jpg'
 import webDevelopment from '../assets/images/webDevelopment-illustration.png'
 import seoIllustration from '../assets/images/seo-illustration.jpg'
+import { Link } from "react-router-dom";
 
 const tabData = [
   {
@@ -42,17 +43,17 @@ const tabData = [
       { name: "Ecommerce SEO", description: "Boost product visibility and conversions with tailored eCommerce SEO." },
     ],
   },
-  {
-    tab: "Our Ventures",
-    icon: "https://cdn-icons-png.flaticon.com/512/4140/4140048.png",
-    title: "Our Ventures",
-    intro:
-      "We ideate, build, and scale innovative products that create a lasting impact.",
-    services: [
-      { name: "Startup Incubation", description: "We support startups with ideation, prototyping, branding, and market strategies." },
-      { name: "Tech Products", description: "We build and scale SaaS products and marketplaces across multiple industries." },
-    ],
-  },
+  // {
+  //   tab: "Our Ventures",
+  //   icon: "https://cdn-icons-png.flaticon.com/512/4140/4140048.png",
+  //   title: "Our Ventures",
+  //   intro:
+  //     "We ideate, build, and scale innovative products that create a lasting impact.",
+  //   services: [
+  //     { name: "Startup Incubation", description: "We support startups with ideation, prototyping, branding, and market strategies." },
+  //     { name: "Tech Products", description: "We build and scale SaaS products and marketplaces across multiple industries." },
+  //   ],
+  // },
 
 ];
 
@@ -80,6 +81,13 @@ export default function NavbarServices() {
             {tab.tab}
           </button>
         ))}
+
+        <Link to="/free-trial">
+  <button   className={"px-4 py-1.5 rounded-full text-xs md:text-sm font-medium transition-colors duration-200 bg-accent text-black"
+               }>Free Trial</button>
+        </Link>
+
+    
       </div>
 
       {/* Content Area */}

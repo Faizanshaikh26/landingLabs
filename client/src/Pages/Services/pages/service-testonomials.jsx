@@ -3,6 +3,10 @@
 import { useState } from "react"
 import { Transition } from "@headlessui/react"
 
+import Benne from "../../../assets/images/testonomials/3.png"
+import Priya from "../../../assets/images/testonomials/1.png"
+import Ankit from "../../../assets/images/testonomials/2.png"
+
 export default function Testimonials() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
 
@@ -15,7 +19,7 @@ const testimonials = [
     company: "Clinic",
     content:
       "Landing Labs helped us scale our digital presence with clear strategies and measurable results. Within 3 months, we saw a 40% increase in qualified leads. They truly understand what Indian startups need.",
-    avatar: "https://i.pravatar.cc/150?img=12",
+    avatar: Benne,
   },
   {
     id: 2,
@@ -24,7 +28,7 @@ const testimonials = [
     company: "Raunak Sarees",
     content:
       "As a small business, marketing felt overwhelming. Landing Labs gave us the right tools and support to grow online. Our sales doubled during the festive season thanks to their campaigns.",
-    avatar: "https://i.pravatar.cc/150?img=13",
+    avatar: Priya
   },
   {
     id: 3,
@@ -33,7 +37,7 @@ const testimonials = [
     company: "Zelc Consultancy",
     content:
       "The Landing Labs team brings fresh ideas, quick execution, and strong technical expertise. Their CRM integration and automation saved us hours of manual work every week.",
-    avatar: "https://i.pravatar.cc/150?img=14",
+    avatar: Ankit
   },
 ];
 
@@ -101,9 +105,9 @@ const testimonials = [
               </div>
               <div className="text-secondaryText mb-8">(40+ Reviews)</div>
               <div className="flex -space-x-2 mb-6">
-                <img className="w-10 h-10 rounded-full border-2 border-slate-800" src="https://html.awaikenthemes.com/firevall/images/author-4.jpg" />
-                <img className="w-10 h-10 rounded-full border-2 border-slate-800" src="https://html.awaikenthemes.com/firevall/images/author-5.jpg" />
-                <img className="w-10 h-10 rounded-full border-2 border-slate-800" src="https://html.awaikenthemes.com/firevall/images/author-6.jpg" />
+                <img className="w-10 h-10 rounded-full border-2 border-slate-800" src={Benne} />
+                <img className="w-10 h-10 rounded-full border-2 border-slate-800" src={Priya} />
+                <img className="w-10 h-10 rounded-full border-2 border-slate-800" src={Ankit} />
                 <div className="w-10 h-10 rounded-full border-2 border-slate-800 bg-slate-700 text-white text-xs flex items-center justify-center">+2</div>
               </div>
               <p className="text-primaryTexttext-lg font-medium">Client satisfaction that speaks volumes</p>

@@ -233,10 +233,10 @@ export default function FoodDetails() {
                 {/* Divider */}
 
 
-                <Footer />
 
 
             </div>
+                <Footer />
         </>
     )
 }
