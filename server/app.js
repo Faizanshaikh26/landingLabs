@@ -22,15 +22,17 @@ cloudinary.config({
 
 
 app.use('/api', contactRoutes);
-app.use('/api/career',  careerRoutes);
-app.use('/api',  appointmentRoutes);
-app.use('/api/client',  ClientRoutes);
+app.use('/api/career', careerRoutes);
+app.use('/api', appointmentRoutes);
+app.use('/api/client', ClientRoutes);
 // app.use('/api/admin',  AdminRoutes);
 app.get('/', (req, res) => {
   res.send('Landing Labs');
 });
 
-connectDb(process.env.MONGODB_URI)
+// connectDb(process.env.MONGODB_URI)
+await connectDb();
+
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
