@@ -13,12 +13,24 @@ import Process from './components/Process'
 import NavbarServices from './components/nav-services'
 import Loading from './components/Loading'
 
+import { Helmet } from "react-helmet-async";
 
 
 
 export default function Home() {
   return (
     <div className='space-y-10  w-full'>
+
+      
+      <Helmet>
+<title>Landing Labs | Digital Marketing & IT Solutions</title>
+<meta name="description" content="Landing Labs helps businesses grow smarter with digital marketing, IT solutions, and high-converting web experiences." />
+<meta name="keywords" content="React, SEO, Web Development, Digital Marketing, IT Solutions, Landing Labs, Marketing Agency" />
+<link rel="canonical" href="https://landinglabs.in/" />
+
+    
+        
+      </Helmet>
 
       <Navbar />
 

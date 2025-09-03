@@ -10,36 +10,36 @@ import Ankit from "../../../assets/images/testonomials/2.png"
 export default function Testimonials() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
 
- 
-const testimonials = [
-  {
-    id: 1,
-    name: "Dr. Benne",
-    position: "Founder",
-    company: "Clinic",
-    content:
-      "Landing Labs helped us scale our digital presence with clear strategies and measurable results. Within 3 months, we saw a 40% increase in qualified leads. They truly understand what Indian startups need.",
-    avatar: Benne,
-  },
-  {
-    id: 2,
-    name: "Priya Sharma",
-    position: "Owner",
-    company: "Raunak Sarees",
-    content:
-      "As a small business, marketing felt overwhelming. Landing Labs gave us the right tools and support to grow online. Our sales doubled during the festive season thanks to their campaigns.",
-    avatar: Priya
-  },
-  {
-    id: 3,
-    name: "Ankit Agarwal",
-    position: "Operations Head",
-    company: "Zelc Consultancy",
-    content:
-      "The Landing Labs team brings fresh ideas, quick execution, and strong technical expertise. Their CRM integration and automation saved us hours of manual work every week.",
-    avatar: Ankit
-  },
-];
+
+  const testimonials = [
+    {
+      id: 1,
+      name: "Dr. Benne",
+      position: "Founder",
+      company: "Clinic",
+      content:
+        "Landing Labs helped us scale our digital presence with clear strategies and measurable results. Within 3 months, we saw a 40% increase in qualified leads. They truly understand what Indian startups need.",
+      avatar: Benne,
+    },
+    {
+      id: 2,
+      name: "Priya Sharma",
+      position: "Owner",
+      company: "Raunak Sarees",
+      content:
+        "As a small business, marketing felt overwhelming. Landing Labs gave us the right tools and support to grow online. Our sales doubled during the festive season thanks to their campaigns.",
+      avatar: Priya
+    },
+    {
+      id: 3,
+      name: "Ankit Agarwal",
+      position: "Operations Head",
+      company: "Zelc Consultancy",
+      content:
+        "The Landing Labs team brings fresh ideas, quick execution, and strong technical expertise. Their CRM integration and automation saved us hours of manual work every week.",
+      avatar: Ankit
+    },
+  ];
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
@@ -50,7 +50,7 @@ const testimonials = [
   }
 
   return (
-  <div className="py-8 sm:py-12 lg:py-16 px-4  sm:px-6 lg:px-8">
+    <div className="py-8 sm:py-12 lg:py-16 px-4  sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16">

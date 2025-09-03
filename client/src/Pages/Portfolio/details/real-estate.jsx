@@ -52,7 +52,8 @@ export default function RealEstateDetails() {
 
 
 
-      <div className="bg-white text-black px-6 md:px-20 py-28 sm:py-52">
+                 <div className="bg-white text-black px-6 md:px-20 pt-28 sm:pt-52 py-10">
+
 
 
 

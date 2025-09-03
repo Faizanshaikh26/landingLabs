@@ -23,6 +23,7 @@ import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { Helmet } from "react-helmet-async";
 
 
 // ✅ Validation schema
@@ -98,6 +99,19 @@ export default function ContactPage() {
     <>
       <Navbar />
      
+
+       <Helmet>
+        <title>Contact Us | Landing Labs - Digital Marketing & IT Solutions</title>
+        <meta
+          name="description"
+          content="Get in touch with Landing Labs for digital marketing, SEO, IT solutions, and web development services. Let's grow your business together."
+        />
+        <meta
+          name="keywords"
+          content="Contact Landing Labs, Digital Marketing, SEO, IT Solutions, Web Development, Marketing Agency, Business Growth"
+        />
+        <link rel="canonical" href="https://landinglabs.in/contact-us" />
+      </Helmet>
 
       <div className="min-h-screen text-white">
         {/* Hero Section */}

@@ -44,7 +44,7 @@ export default function SkincareDetails() {
         <>
             <Navbar />
 
-            <div className="bg-white text-black px-6 md:px-20 py-28 sm:py-52">
+            <div className="bg-white text-black px-6 md:px-20 pt-28 sm:pt-52 py-10">
                 {/* Brand Info Section */}
                 <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
                     {/* Left Info */}
