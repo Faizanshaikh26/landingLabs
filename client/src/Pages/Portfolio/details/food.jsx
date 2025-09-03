@@ -9,7 +9,7 @@ import Bottom4 from '../../../assets/images/portfolio/food/republic-day/4.png'
 import img1 from '../../../assets/images/portfolio/food/kiara-cocktails/1.png'
 import img2 from '../../../assets/images/portfolio/food/kiara-cocktails/2.png'
 import img3 from '../../../assets/images/portfolio/food/kiara-cocktails/3.png'
-import img4 from '../../../assets/images/portfolio/food/kiara-cocktails/4.png'
+import img4 from '../../../assets/images/portfolio/food/kiara-cocktails/3 (2).png'
 import img5 from '../../../assets/images/portfolio/food/kiara-cocktails/5.png'
 import showcase1 from '../../../assets/images/portfolio/food/123-456-7890 (1).png'
 import showcase2 from '../../../assets/images/portfolio/food/Chicken (1).png'
@@ -39,8 +39,7 @@ export default function FoodDetails() {
 
 
             <Navbar />
-            <div className="bg-white text-black px-6 md:px-20 py-8 sm:py-52">
-
+     <div className="bg-white text-black px-6 md:px-20 py-28 sm:py-52">
 
 
 
@@ -186,7 +185,7 @@ export default function FoodDetails() {
                 <Devider />
 
                 <div className="mx-auto max-w-7xl py-10">
-                    <img src={img3} className="rounded-xl shadow-md mx-auto w-full h-[90vh]" />
+                    <img src={img4} className="rounded-xl shadow-md mx-auto w-full h-[80vh] object-contain" />
                 </div>
                 <Devider />
 

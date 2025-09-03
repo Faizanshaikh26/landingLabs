@@ -105,10 +105,11 @@ export default function RealEstateDetails() {
           >
             <video
               src={src}
-              controls
+              
               muted
               loop
               autoPlay
+              
 
               className="w-full h-[500px] object-cover"
             />

@@ -15,13 +15,9 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 
 import Banner from "../assets/images/about/banner.jpg"
-import image1 from '../assets/images/about/WhatsApp Image 2025-09-01 at 14.13.21_b456fa9b.jpg'
-import image2 from '../assets/images/about/WhatsApp Image 2025-09-01 at 14.51.18_72ca8445.jpg'
-import image3 from '../assets/images/about/WhatsApp Image 2025-09-01 at 14.51.19_0a513ed5.jpg'
-import image4 from '../assets/images/about/WhatsApp Image 2025-09-01 at 14.51.19_6a1c83df.jpg'
-import image5 from '../assets/images/about/WhatsApp Image 2025-09-01 at 14.51.19_9c85ce15.jpg'
-import image6 from '../assets/images/about/WhatsApp Image 2025-09-01 at 14.51.19_46d6c8e1.jpg'
 
+
+import image5 from '../assets/images/about/WhatsApp Image 2025-09-01 at 14.51.19_9c85ce15.jpg'
 
 export default function AboutUs() {
 

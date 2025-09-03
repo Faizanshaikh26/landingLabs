@@ -6,35 +6,36 @@ import { Transition } from "@headlessui/react"
 export default function Testimonials() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
 
-  const testimonials = [
-    {
-      id: 1,
-      name: "Ronald Richards",
-      position: "Founder",
-      company: "StartupBoost",
-      content:
-        "Partnering with this agency was the best decision for our launch. Their SEO and content strategies drove high-quality traffic from day one. We were ranking on Google in just weeks!",
-      avatar: "https://html.awaikenthemes.com/firevall/images/author-1.jpg",
-    },
-    {
-      id: 2,
-      name: "Sarah Johnson",
-      position: "CMO",
-      company: "FashionLane",
-      content:
-        "From stunning UI/UX to social media ads, this team delivered a full-stack marketing experience. Our brand visibility skyrocketed, and engagement grew 300% in just two months!",
-      avatar: "https://html.awaikenthemes.com/firevall/images/author-2.jpg",
-    },
-    {
-      id: 3,
-      name: "Michael Chen",
-      position: "Tech Lead",
-      company: "Appify",
-      content:
-        "Their app development and design capabilities are top-notch. The final product was pixel-perfect, fast, and scalable. We’ve already crossed 50K downloads within 3 months!",
-      avatar: "https://html.awaikenthemes.com/firevall/images/author-3.jpg",
-    },
-  ]
+ 
+const testimonials = [
+  {
+    id: 1,
+    name: "Dr. Benne",
+    position: "Founder",
+    company: "Clinic",
+    content:
+      "Landing Labs helped us scale our digital presence with clear strategies and measurable results. Within 3 months, we saw a 40% increase in qualified leads. They truly understand what Indian startups need.",
+    avatar: "https://i.pravatar.cc/150?img=12",
+  },
+  {
+    id: 2,
+    name: "Priya Sharma",
+    position: "Owner",
+    company: "Raunak Sarees",
+    content:
+      "As a small business, marketing felt overwhelming. Landing Labs gave us the right tools and support to grow online. Our sales doubled during the festive season thanks to their campaigns.",
+    avatar: "https://i.pravatar.cc/150?img=13",
+  },
+  {
+    id: 3,
+    name: "Ankit Agarwal",
+    position: "Operations Head",
+    company: "Zelc Consultancy",
+    content:
+      "The Landing Labs team brings fresh ideas, quick execution, and strong technical expertise. Their CRM integration and automation saved us hours of manual work every week.",
+    avatar: "https://i.pravatar.cc/150?img=14",
+  },
+];
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
@@ -45,7 +46,7 @@ export default function Testimonials() {
   }
 
   return (
-  <div className="py-8 sm:py-12 lg:py-16 px-3 sm:px-6 lg:px-8">
+  <div className="py-8 sm:py-12 lg:py-16 px-4  sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16">
