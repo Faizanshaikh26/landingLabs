@@ -1,4 +1,5 @@
 
+import { Helmet } from 'react-helmet-async'
 import Navbar from '../../components/Navbar'
 import Footer from '../../Footer'
 import ServiceBanner from './pages/service-banner'
@@ -19,6 +20,18 @@ export default function Service() {
 
     <Navbar/>
 
+   <Helmet>
+        <title>Services | Landing Labs - Digital Marketing & IT Solutions</title>
+        <meta
+          name="description"
+          content="Discover Landing Labs' services in digital marketing, SEO, IT solutions, and web development. We help businesses grow smarter with impactful strategies."
+        />
+        <meta
+          name="keywords"
+          content="Landing Labs Services, Digital Marketing, SEO, IT Solutions, Web Development, Social Media Marketing, Branding, Online Advertising"
+        />
+        <link rel="canonical" href="https://landinglabs.in/services" />
+      </Helmet>
 
 
 <div className=' py-20 md:py-30'>  

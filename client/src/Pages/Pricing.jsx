@@ -16,6 +16,7 @@ import {
   ChevronUp,
 } from "lucide-react"
 import { Link } from "react-router-dom"
+import { Helmet } from "react-helmet-async"
 
 export default function Pricing() {
   const [openIndex, setOpenIndex] = useState(-1)
@@ -220,6 +221,19 @@ export default function Pricing() {
   return (
     <>
       <Navbar />
+
+      <Helmet>
+        <title>Pricing | Landing Labs - Digital Marketing & IT Solutions</title>
+        <meta
+          name="description"
+          content="Check out Landing Labs' pricing plans for digital marketing, SEO, web development, and IT solutions. Affordable packages tailored to your business needs."
+        />
+        <meta
+          name="keywords"
+          content="Landing Labs Pricing, Digital Marketing Packages, SEO Pricing, Web Development Costs, IT Solutions Plans"
+        />
+        <link rel="canonical" href="https://landinglabs.in/pricing" />
+      </Helmet>
 
       {/* Pricing Section */}
       <section className="pt-40 pb-10 px-4 text-black bg-white">

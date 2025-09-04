@@ -2,20 +2,20 @@ import { Star } from 'lucide-react'
 import React from 'react'
 import Navbar from '../../../components/Navbar';
 import Footer from '../../../Footer';
-import Bottom1 from '../../../assets/images/portfolio/health-care/insta-post/1.png'
-import Bottom2 from '../../../assets/images/portfolio/health-care/insta-post/2.png'
-import Bottom3 from '../../../assets/images/portfolio/health-care/insta-post/3.png'
-import Bottom4 from '../../../assets/images/portfolio/health-care/insta-post/4.png'
-import Bottom5 from '../../../assets/images/portfolio/health-care/insta-post/5.png'
-import img1 from '../../../assets/images/portfolio/health-care/insta-post1/1.png'
-import img2 from '../../../assets/images/portfolio/health-care/insta-post1/2.png'
-import img3 from '../../../assets/images/portfolio/health-care/insta-post1/3.png'
-import img4 from '../../../assets/images/portfolio/health-care/insta-post1/4.png'
-import showcase1 from '../../../assets/images/portfolio/health-care/1.png'
-import showcase2 from '../../../assets/images/portfolio/health-care/2.png'
-import showcase3 from '../../../assets/images/portfolio/health-care/3.png'
-import showcase4 from '../../../assets/images/portfolio/health-care/4.png'
-import showcase5 from '../../../assets/images/portfolio/health-care/Swarali Dental Clinic Poster -1 .png'
+import Bottom1 from '../../../assets/images/portfolio/health-care/insta-post/1.webp'
+import Bottom2 from '../../../assets/images/portfolio/health-care/insta-post/2.webp'
+import Bottom3 from '../../../assets/images/portfolio/health-care/insta-post/3.webp'
+import Bottom4 from '../../../assets/images/portfolio/health-care/insta-post/4.webp'
+import Bottom5 from '../../../assets/images/portfolio/health-care/insta-post/5.webp'
+import img1 from '../../../assets/images/portfolio/health-care/insta-post1/1.webp'
+import img2 from '../../../assets/images/portfolio/health-care/insta-post1/2.webp'
+import img3 from '../../../assets/images/portfolio/health-care/insta-post1/3.webp'
+import img4 from '../../../assets/images/portfolio/health-care/insta-post1/4.webp'
+import showcase1 from '../../../assets/images/portfolio/health-care/1.webp'
+import showcase2 from '../../../assets/images/portfolio/health-care/2.webp'
+import showcase3 from '../../../assets/images/portfolio/health-care/3.webp'
+import showcase4 from '../../../assets/images/portfolio/health-care/4.webp'
+import showcase5 from '../../../assets/images/portfolio/health-care/Swarali Dental Clinic Poster -1 .webp'
 
 
 export default function HealthCareDetails() {
@@ -35,7 +35,8 @@ export default function HealthCareDetails() {
 
 
       <Navbar />
-      <div className="bg-white text-black px-6 md:px-20 py-28 sm:py-52">
+            <div className="bg-white text-black px-6 md:px-20 pt-28 sm:pt-52 py-10">
+
 
 
 
@@ -216,10 +217,10 @@ export default function HealthCareDetails() {
         {/* Divider */}
 
 
-        <Footer />
 
 
       </div>
+        <Footer />
     </>
   )
 }

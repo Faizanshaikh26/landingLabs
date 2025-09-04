@@ -4,26 +4,26 @@ import React from 'react'
 import Navbar from '../../../components/Navbar';
 import Footer from '../../../Footer';
 
-import image1 from "../../../assets/images/portfolio/real-estate/_Real Estate Agency Logos (1).png"
-import image2 from "../../../assets/images/portfolio/real-estate/_Real Estate Agency Logos (2).png"
-import image3 from "../../../assets/images/portfolio/real-estate/_Real Estate Agency Logos (3).png"
-import image4 from "../../../assets/images/portfolio/real-estate/_Real Estate Agency Logos (4).png"
-import image5 from "../../../assets/images/portfolio/real-estate/_Real Estate Agency Logos.png"
+import image1 from "../../../assets/images/portfolio/real-estate/_Real Estate Agency Logos (1).webp"
+import image2 from "../../../assets/images/portfolio/real-estate/_Real Estate Agency Logos (2).webp"
+import image3 from "../../../assets/images/portfolio/real-estate/_Real Estate Agency Logos (3).webp"
+import image4 from "../../../assets/images/portfolio/real-estate/_Real Estate Agency Logos (4).webp"
+import image5 from "../../../assets/images/portfolio/real-estate/_Real Estate Agency Logos.webp"
 
 
-import poster1 from "../../../assets/images/portfolio/real-estate/Real Estate - P1.png"
-import poster2 from "../../../assets/images/portfolio/real-estate/Real Estate - P2.png"
-import poster3 from "../../../assets/images/portfolio/real-estate/Real Estate - P3.png"
-import poster4 from "../../../assets/images/portfolio/real-estate/Real Estate - P4.png"
-import poster5 from "../../../assets/images/portfolio/real-estate/Real Estate - P5.png"
+import poster1 from "../../../assets/images/portfolio/real-estate/Real Estate - P1.webp"
+import poster2 from "../../../assets/images/portfolio/real-estate/Real Estate - P2.webp"
+import poster3 from "../../../assets/images/portfolio/real-estate/Real Estate - P3.webp"
+import poster4 from "../../../assets/images/portfolio/real-estate/Real Estate - P4.webp"
+import poster5 from "../../../assets/images/portfolio/real-estate/Real Estate - P5.webp"
 
-import Banner1 from "../../../assets/images/portfolio/real-estate/Screenshot 2025-08-29 182853.png"
-import Banner2 from "../../../assets/images/portfolio/real-estate/Screenshot 2025-08-29 182741.png"
-import Banner3 from "../../../assets/images/portfolio/real-estate/Screenshot 2025-08-29 182822.png"
-import Banner4 from "../../../assets/images/portfolio/real-estate/Screenshot 2025-08-29 182928.png"
-import Banner5 from "../../../assets/images/portfolio/real-estate/Screenshot 2025-08-29 182955.png"
-import Banner6 from "../../../assets/images/portfolio/real-estate/Screenshot 2025-08-29 183020.png"
-import Banner7 from "../../../assets/images/portfolio/real-estate/Screenshot 2025-08-29 183048.png"
+import Banner1 from "../../../assets/images/portfolio/real-estate/Screenshot 2025-08-29 182853.webp"
+import Banner2 from "../../../assets/images/portfolio/real-estate/Screenshot 2025-08-29 182741.webp"
+import Banner3 from "../../../assets/images/portfolio/real-estate/Screenshot 2025-08-29 182822.webp"
+import Banner4 from "../../../assets/images/portfolio/real-estate/Screenshot 2025-08-29 182928.webp"
+import Banner5 from "../../../assets/images/portfolio/real-estate/Screenshot 2025-08-29 182955.webp"
+import Banner6 from "../../../assets/images/portfolio/real-estate/Screenshot 2025-08-29 183020.webp"
+import Banner7 from "../../../assets/images/portfolio/real-estate/Screenshot 2025-08-29 183048.webp"
 
 
 
@@ -52,7 +52,8 @@ export default function RealEstateDetails() {
 
 
 
-      <div className="bg-white text-black px-6 md:px-20 py-28 sm:py-52">
+                 <div className="bg-white text-black px-6 md:px-20 pt-28 sm:pt-52 py-10">
+
 
 
 

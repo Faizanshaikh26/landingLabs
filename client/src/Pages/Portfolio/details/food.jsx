@@ -2,24 +2,24 @@ import { Star } from 'lucide-react'
 
 import Navbar from '../../../components/Navbar';
 import Footer from '../../../Footer';
-import Bottom1 from '../../../assets/images/portfolio/food/republic-day/1.png'
-import Bottom2 from '../../../assets/images/portfolio/food/republic-day/2.png'
-import Bottom3 from '../../../assets/images/portfolio/food/republic-day/3.png'
-import Bottom4 from '../../../assets/images/portfolio/food/republic-day/4.png'
-import img1 from '../../../assets/images/portfolio/food/kiara-cocktails/1.png'
-import img2 from '../../../assets/images/portfolio/food/kiara-cocktails/2.png'
-import img3 from '../../../assets/images/portfolio/food/kiara-cocktails/3.png'
-import img4 from '../../../assets/images/portfolio/food/kiara-cocktails/3 (2).png'
-import img5 from '../../../assets/images/portfolio/food/kiara-cocktails/5.png'
-import showcase1 from '../../../assets/images/portfolio/food/123-456-7890 (1).png'
-import showcase2 from '../../../assets/images/portfolio/food/Chicken (1).png'
-import showcase3 from '../../../assets/images/portfolio/food/drinks on mrp.png'
-import showcase4 from '../../../assets/images/portfolio/food/ORDER TODAY!.png'
-import showcase5 from '../../../assets/images/portfolio/food/panipuri.png'
-import showcase6 from '../../../assets/images/portfolio/food/papdichat.png'
-import showcase7 from '../../../assets/images/portfolio/food/PIZZZA AND BEER (1).png'
-import showcase8 from '../../../assets/images/portfolio/food/poha (2).png'
-import showcase9 from '../../../assets/images/portfolio/food/samosa.png'
+import Bottom1 from '../../../assets/images/portfolio/food/republic-day/1.webp'
+import Bottom2 from '../../../assets/images/portfolio/food/republic-day/2.webp'
+import Bottom3 from '../../../assets/images/portfolio/food/republic-day/3.webp'
+import Bottom4 from '../../../assets/images/portfolio/food/republic-day/4.webp'
+import img1 from '../../../assets/images/portfolio/food/kiara-cocktails/1.webp'
+import img2 from '../../../assets/images/portfolio/food/kiara-cocktails/2.webp'
+import img3 from '../../../assets/images/portfolio/food/kiara-cocktails/3.webp'
+import img4 from '../../../assets/images/portfolio/food/kiara-cocktails/3 (2).webp'
+import img5 from '../../../assets/images/portfolio/food/kiara-cocktails/5.webp'
+import showcase1 from '../../../assets/images/portfolio/food/123-456-7890 (1).webp'
+import showcase2 from '../../../assets/images/portfolio/food/Chicken (1).webp'
+import showcase3 from '../../../assets/images/portfolio/food/drinks on mrp.webp'
+import showcase4 from '../../../assets/images/portfolio/food/ORDER TODAY!.webp'
+import showcase5 from '../../../assets/images/portfolio/food/panipuri.webp'
+import showcase6 from '../../../assets/images/portfolio/food/papdichat.webp'
+import showcase7 from '../../../assets/images/portfolio/food/PIZZZA AND BEER (1).webp'
+import showcase8 from '../../../assets/images/portfolio/food/poha (2).webp'
+import showcase9 from '../../../assets/images/portfolio/food/samosa.webp'
 
 
 export default function FoodDetails() {
@@ -39,7 +39,8 @@ export default function FoodDetails() {
 
 
             <Navbar />
-     <div className="bg-white text-black px-6 md:px-20 py-28 sm:py-52">
+              <div className="bg-white text-black px-6 md:px-20 pt-28 sm:pt-52 py-10">
+
 
 
 

@@ -178,6 +178,7 @@ import SkinCareCover from '../assets/images/portfolio/ecomerce/cover.jpeg'
 import HealthCareCover from '../assets/images/portfolio/health-care/cover.jpeg'
 import FoodCover from '../assets/images/portfolio/food/cover.jpeg'
 import EcomerceCover from '../assets/images/portfolio/skin-care/cover.jpeg'
+import { Helmet } from "react-helmet-async";
 
 export default function Portfolio() {
   const appear = {
@@ -279,6 +280,20 @@ export default function Portfolio() {
   return (
     <>
       <Navbar />
+
+
+      <Helmet>
+        <title>Portfolio | Landing Labs - Our Digital Marketing & IT Projects</title>
+        <meta
+          name="description"
+          content="Explore the Landing Labs portfolio showcasing our work in digital marketing, SEO, web development, and IT solutions. See how we help brands grow smarter."
+        />
+        <meta
+          name="keywords"
+          content="Landing Labs Portfolio, Digital Marketing Projects, SEO Case Studies, Web Development Work, IT Solutions Portfolio, Client Projects"
+        />
+        <link rel="canonical" href="https://landinglabs.in/portfolio" />
+      </Helmet>
 
       <div className="min-h-[70vh] md:min-h-screen py-30 lg:py-44">
         <div className="max-w-screen-xl mx-auto px-4 md:px-8">

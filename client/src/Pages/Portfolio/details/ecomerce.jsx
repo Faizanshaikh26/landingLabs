@@ -6,20 +6,20 @@ import React from 'react'
 
 import Navbar from '../../../components/Navbar';
 import Footer from '../../../Footer';
-import image1 from  '../../../assets/images/portfolio/ecomerce/1.png'
-import image2 from  '../../../assets/images/portfolio/ecomerce/2.png'
-import image3 from  '../../../assets/images/portfolio/ecomerce/3.png'
-import image4 from  '../../../assets/images/portfolio/ecomerce/4.png'
-import image5 from  '../../../assets/images/portfolio/ecomerce/5.png'
-import image6 from  '../../../assets/images/portfolio/ecomerce/6.png'
-import image7 from  '../../../assets/images/portfolio/ecomerce/gayatri/1.png'
-import image8 from  '../../../assets/images/portfolio/ecomerce/gayatri/2.png'
-import image9 from  '../../../assets/images/portfolio/ecomerce/gayatri/3.png'
-import image10 from  '../../../assets/images/portfolio/ecomerce/gayatri/4.png'
-import image11 from  '../../../assets/images/portfolio/ecomerce/gayatri/5.png'
-import image12 from  '../../../assets/images/portfolio/ecomerce/threadlino/1.png'
-import image13 from  '../../../assets/images/portfolio/ecomerce/threadlino/2.png'
-import image14 from  '../../../assets/images/portfolio/ecomerce/SOOTHING.png'
+import image1 from  '../../../assets/images/portfolio/ecomerce/1.webp'
+import image2 from  '../../../assets/images/portfolio/ecomerce/2.webp'
+import image3 from  '../../../assets/images/portfolio/ecomerce/3.webp'
+import image4 from  '../../../assets/images/portfolio/ecomerce/4.webp'
+import image5 from  '../../../assets/images/portfolio/ecomerce/5.webp'
+import image6 from  '../../../assets/images/portfolio/ecomerce/6.webp'
+import image7 from  '../../../assets/images/portfolio/ecomerce/gayatri/1.webp'
+import image8 from  '../../../assets/images/portfolio/ecomerce/gayatri/2.webp'
+import image9 from  '../../../assets/images/portfolio/ecomerce/gayatri/3.webp'
+import image10 from  '../../../assets/images/portfolio/ecomerce/gayatri/4.webp'
+import image11 from  '../../../assets/images/portfolio/ecomerce/gayatri/5.webp'
+import image12 from  '../../../assets/images/portfolio/ecomerce/threadlino/1.webp'
+import image13 from  '../../../assets/images/portfolio/ecomerce/threadlino/2.webp'
+import image14 from  '../../../assets/images/portfolio/ecomerce/SOOTHING.webp'
 
 
 export default function EcomerceDetails() {
@@ -41,7 +41,8 @@ export default function EcomerceDetails() {
 
 
 <Navbar/>
-     <div className="bg-white text-black px-6 md:px-20 py-28 sm:py-52">
+                <div className="bg-white text-black px-6 md:px-20 pt-28 sm:pt-52 py-10">
+
 
 
 

@@ -8,6 +8,7 @@ import Footer from "../Footer";
 import { CustomAccordion } from "../components/custome-acordion";
 
 import carrerHero from "../assets/images/career-hero.png"
+import { Helmet } from "react-helmet-async";
 
 export default function Career() {
   const jobListings = [
@@ -37,6 +38,19 @@ export default function Career() {
   return (
     <>
       <Navbar />
+
+       <Helmet>
+        <title>Career | Landing Labs - Join Our Digital Marketing & IT Team</title>
+        <meta
+          name="description"
+          content="Explore career opportunities at Landing Labs. Join our team of experts in digital marketing, SEO, IT solutions, and web development. Build your future with us."
+        />
+        <meta
+          name="keywords"
+          content="Careers at Landing Labs, Digital Marketing Jobs, IT Solutions Careers, SEO Jobs, Web Development Careers, Work with Landing Labs"
+        />
+        <link rel="canonical" href="https://landinglabs.in/career" />
+      </Helmet>
       <div className="min-h-screen text-primaryText pb-10">
         {/* Hero Section */}
         <div className="flex flex-col lg:flex-row min-h-screen">

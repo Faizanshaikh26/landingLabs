@@ -18,6 +18,7 @@ import Banner from "../assets/images/about/banner.jpg"
 
 
 import image5 from '../assets/images/about/WhatsApp Image 2025-09-01 at 14.51.19_9c85ce15.jpg'
+import { Helmet } from 'react-helmet-async';
 
 export default function AboutUs() {
 
@@ -144,6 +145,20 @@ export default function AboutUs() {
   const duplicatedMembers = [...teamMembers, ...teamMembers, ...teamMembers, ...teamMembers];
   return (
     <>
+
+
+    <Helmet>
+        <title>About Us | Landing Labs - Digital Marketing & IT Solutions</title>
+        <meta
+          name="description"
+          content="Discover the story of Landing Labs. We are a digital marketing and IT solutions agency helping businesses grow smarter, faster, and easier with innovative strategies."
+        />
+        <meta
+          name="keywords"
+          content="About Landing Labs, Digital Marketing Agency, IT Solutions, Web Development, SEO, Marketing Experts"
+        />
+        <link rel="canonical" href="https://landinglabs.in/about" />
+      </Helmet>
       <Navbar />
 
 

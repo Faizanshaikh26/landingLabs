@@ -11,14 +11,14 @@ import NotFound from "./components/NotFound.jsx"
 import Portfolio from "./components/Portfolio.jsx"
 import Loading from "./components/Loading.jsx"
 import { Toaster } from "react-hot-toast"
-// import PortfolioDetails from "./Pages/Portfolio-Details.jsx"
+
 import FreeTrail from "./Pages/FreeTrial/main.jsx"
-import FreeTrialLanding from "./Pages/FreeTrial/main.jsx"
-import RealEstateDetails from "./Pages/Portfolio/details/real-estate.jsx"
-import EcomerceDetails from "./Pages/Portfolio/details/ecomerce.jsx"
-import SkincareDetails from "./Pages/Portfolio/details/skin-care.jsx"
-import HealthCareDetails from "./Pages/Portfolio/details/health-care.jsx"
-import FoodDetails from "./Pages/Portfolio/details/food.jsx"
+const FreeTrialLanding = lazy(() => import("./Pages/FreeTrial/main.jsx"));
+const RealEstateDetails = lazy(() => import("./Pages/Portfolio/details/real-estate.jsx"));
+const EcomerceDetails = lazy(() => import("./Pages/Portfolio/details/ecomerce.jsx"));
+const SkincareDetails = lazy(() => import("./Pages/Portfolio/details/skin-care.jsx"));
+const HealthCareDetails = lazy(() => import("./Pages/Portfolio/details/health-care.jsx"));
+const FoodDetails = lazy(() => import("./Pages/Portfolio/details/food.jsx"));
 
 // Lazy-loaded pages
 const Home = lazy(() => import("./Home"))
@@ -44,16 +44,16 @@ function App() {
   const location = useLocation()
 
 
-  
+
   return (
     <div className="min-h-screen font-poppins   bg-white text-primaryText">
 
-    
+
       <ScrollToTop />
       <Toaster position="bottom-center" reverseOrder={false} />
       <CustomCursor />
       <AutoPopupDialog />
-     
+
 
       {/* Lazy loading fallback and animation wrapper */}
       <Suspense fallback={<div className="text-primaryText text-center py-20"><Loading /></div>}>

@@ -1,8 +1,27 @@
 import React from "react";
 import logoWhite from "../../assets/images/Og-Logo.png";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 export default function FreeTrialLanding() {
   return (
+
+<>
+
+ <Helmet>
+        <title>Free Trial | Landing Labs - Try Our Digital Marketing & IT Solutions</title>
+        <meta
+          name="description"
+          content="Start your free trial with Landing Labs today. Experience our digital marketing, SEO, web development, and IT solutions before committing."
+        />
+        <meta
+          name="keywords"
+          content="Landing Labs Free Trial, Digital Marketing Free Demo, SEO Free Trial, Web Development Trial, IT Solutions Free Plan"
+        />
+        <link rel="canonical" href="https://landinglabs.in/free-trial" />
+      </Helmet>
+
+
+    
     <div className="min-h-screen w-full bg-gray-950 text-white selection:bg-white/10">
       {/* NAV */}
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-gray-950/60 border-b border-white/10">
@@ -10,7 +29,11 @@ export default function FreeTrialLanding() {
           <div className="flex items-center gap-2 w-[150px]">
 
 
-            <img src={logoWhite} alt="logo" className="w-full" />
+<Link to='/'>
+ <img src={logoWhite} alt="logo" className="w-full" />
+</Link>
+
+       
 
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm text-white/80">
@@ -395,5 +418,7 @@ export default function FreeTrialLanding() {
         © {new Date().getFullYear()} Landing Labs • @landinglabs_
       </footer>
     </div>
+
+    </>
   );
 }

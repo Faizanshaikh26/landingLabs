@@ -4,26 +4,26 @@ import React from "react";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../Footer";
 
-import image1 from "../../../assets/images/portfolio/skin-care/insta-post/1.png";
-import image2 from "../../../assets/images/portfolio/skin-care/insta-post/2.png";
-import image3 from "../../../assets/images/portfolio/skin-care/insta-post/3.png";
-import image4 from "../../../assets/images/portfolio/skin-care/insta-post/4.png";
-import image5 from "../../../assets/images/portfolio/skin-care/insta-post/5.png";
+import image1 from "../../../assets/images/portfolio/skin-care/insta-post/1.webp";
+import image2 from "../../../assets/images/portfolio/skin-care/insta-post/2.webp";
+import image3 from "../../../assets/images/portfolio/skin-care/insta-post/3.webp";
+import image4 from "../../../assets/images/portfolio/skin-care/insta-post/4.webp";
+import image5 from "../../../assets/images/portfolio/skin-care/insta-post/5.webp";
 
-import image6 from "../../../assets/images/portfolio/skin-care/no8.png";
-import image7 from "../../../assets/images/portfolio/skin-care/no9.png";
+import image6 from "../../../assets/images/portfolio/skin-care/no8.webp";
+import image7 from "../../../assets/images/portfolio/skin-care/no9.webp";
 
-import image8 from "../../../assets/images/portfolio/skin-care/no10.png";
-import image9 from "../../../assets/images/portfolio/skin-care/no1.png";
-import image10 from "../../../assets/images/portfolio/skin-care/no2.png";
-import image11 from "../../../assets/images/portfolio/skin-care/no3.png";
-import image12 from "../../../assets/images/portfolio/skin-care/no4.png";
-import image13 from "../../../assets/images/portfolio/skin-care/no5.png";
-import image14 from "../../../assets/images/portfolio/skin-care/no6.png";
-import image15 from "../../../assets/images/portfolio/skin-care/no7.png";
+import image8 from "../../../assets/images/portfolio/skin-care/no10.webp";
+import image9 from "../../../assets/images/portfolio/skin-care/no1.webp";
+import image10 from "../../../assets/images/portfolio/skin-care/no2.webp";
+import image11 from "../../../assets/images/portfolio/skin-care/no3.webp";
+import image12 from "../../../assets/images/portfolio/skin-care/no4.webp";
+import image13 from "../../../assets/images/portfolio/skin-care/no5.webp";
+import image14 from "../../../assets/images/portfolio/skin-care/no6.webp";
+import image15 from "../../../assets/images/portfolio/skin-care/no7.webp";
 
-import image16 from "../../../assets/images/portfolio/skin-care/insta-post/6.png";
-import image17 from "../../../assets/images/portfolio/skin-care/insta-post/7.png";
+import image16 from "../../../assets/images/portfolio/skin-care/insta-post/6.webp";
+import image17 from "../../../assets/images/portfolio/skin-care/insta-post/7.webp";
 
 
 
@@ -44,7 +44,7 @@ export default function SkincareDetails() {
         <>
             <Navbar />
 
-            <div className="bg-white text-black px-6 md:px-20 py-28 sm:py-52">
+            <div className="bg-white text-black px-6 md:px-20 pt-28 sm:pt-52 py-10">
                 {/* Brand Info Section */}
                 <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
                     {/* Left Info */}
