@@ -17,9 +17,47 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import axios from "axios";
+import toast from "react-hot-toast";
+
  const  Footer = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
+
+  const schema = yup.object().shape({
+  name: yup.string().required("Name is required"),
+  phone: yup.string().required("Phone is required"),
+  email: yup.string().email("Invalid email").required("Email is required"),
+  requirement: yup.string().required("Requirement is required"),
+});
+
+const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+
+   const onSubmit = async (data) => {
+    try {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/leads`, data);
+      if (res.data.success) {
+        toast.success("Lead submitted successfully!");
+        reset();
+      } else {
+        toast.error(res.data.message);
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("Server error, try again later");
+    }
+  };
   const coreItems = [
     {
       title: "DIGITAL MARKETING",
@@ -122,20 +160,55 @@ import { Link } from "react-router-dom";
         </div>
 
         {/* Contact Form */}
-<div className="flex-1 p-6 border border-gray-600 rounded-md">
-  <h3 className="font-semibold text-secondaryText mb-4 text-lg">
-    Ready to Skyrocket Your Sales and Boost ROI? <span className="text-accent">Let's Talk!</span>
-  </h3>
-  <form className="space-y-4">
-    <input name="name" required type="text" placeholder="Name*" className="w-full border-b border-gray-600 text-secondaryText placeholder-gray-400 focus:outline-none pb-2" />
-    <input name="phone" required type="tel" placeholder="Contact No.*" className="w-full  border-b border-gray-600 text-secondaryText placeholder-gray-400 focus:outline-none pb-2" />
-    <input name="email" required type="email" placeholder="Email*" className="w-full  border-b border-gray-600 text-secondaryText placeholder-gray-400 focus:outline-none pb-2" />
-    <input name="requirement" required type="text" placeholder="Requirement*" className="w-full  border-b border-gray-600 text-secondaryText  placeholder-gray-400 focus:outline-none pb-2" />
-    <button type="submit" className="bg-accent text-white font-semibold py-2 px-4 rounded mt-2 hover:bg-accentHover transition">
-      Yes! I Want to Boost My Sales
-    </button>
-  </form>
-</div>
+ <div className="flex-1 p-6 border border-gray-600 rounded-md">
+    
+      <h3 className="font-semibold text-secondaryText mb-4 text-lg">
+        Ready to Skyrocket Your Sales and Boost ROI?{" "}
+        <span className="text-accent">Let's Talk!</span>
+      </h3>
+
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <input
+          {...register("name")}
+          placeholder="Name*"
+          className="w-full border-b border-gray-600 text-secondaryText placeholder-gray-400 focus:outline-none pb-2"
+        />
+        {errors.name && <p className="text-red-500 text-xs">{errors.name.message}</p>}
+
+        <input
+          {...register("phone")}
+          placeholder="Contact No.*"
+          type="tel"
+          className="w-full border-b border-gray-600 text-secondaryText placeholder-gray-400 focus:outline-none pb-2"
+        />
+        {errors.phone && <p className="text-red-500 text-xs">{errors.phone.message}</p>}
+
+        <input
+          {...register("email")}
+          placeholder="Email*"
+          type="email"
+          className="w-full border-b border-gray-600 text-secondaryText placeholder-gray-400 focus:outline-none pb-2"
+        />
+        {errors.email && <p className="text-red-500 text-xs">{errors.email.message}</p>}
+
+        <input
+          {...register("requirement")}
+          placeholder="Requirement*"
+          className="w-full border-b border-gray-600 text-secondaryText placeholder-gray-400 focus:outline-none pb-2"
+        />
+        {errors.requirement && (
+          <p className="text-red-500 text-xs">{errors.requirement.message}</p>
+        )}
+
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="bg-accent text-white font-semibold py-2 px-4 rounded mt-2 hover:bg-accentHover transition disabled:opacity-50"
+        >
+          {isSubmitting ? "Submitting..." : "Yes! I Want to Boost My Sales"}
+        </button>
+      </form>
+    </div>
 
       </div>
 

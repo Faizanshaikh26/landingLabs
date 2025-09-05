@@ -342,11 +342,11 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 import smmBack from "../assets/images/services/smm-back.png"
-import seoBack from "../assets/images/services/seo-back.png"
+import seoBack from "../assets/images/services/SEO back.png"
 import smmFront from "../assets/images/services/smm-front.png"
-import seoFront from "../assets/images/services/seo-front.png"
-import appDevFront from "../assets/images/services/appdev-front.png"
-import appDevBack from "../assets/images/services/appdev-back.png"
+import seoFront from "../assets/images/services/SEO front.png"
+import appDevFront from "../assets/images/services/appdev front.png"
+import appDevBack from "../assets/images/services/appdev back.png"
 import UIUXFront from "../assets/images/services/uiux-1.png"
 import UIUXBack from "../assets/images/services/uiux-2.png"
 import cMarketingBack from "../assets/images/services/cMarketing-back.png"
@@ -357,8 +357,8 @@ import ppcBack from "../assets/images/services/ppc-back.png"
 import ppcFront from "../assets/images/services/ppc-front.png"
 import webDevBack from "../assets/images/services/webDev-back.png"
 import webDevFront from "../assets/images/services/webDev-front.png"
-import influMaketingFront from "../assets/images/services/influMaketing-front.png"
-import influMaketingBack from "../assets/images/services/influMaketing-back.png"
+import influMaketingFront from "../assets/images/services/influMaketing-front1.png"
+import influMaketingBack from "../assets/images/services/influMaketing-back1.png"
 
 const servicesData = [
   { id: 1, title: "Search Engine Optimization(SEO)", image: seoFront, hoverImage: seoBack },
