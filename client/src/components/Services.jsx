@@ -341,7 +341,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-import smmBack from "../assets/images/services/smm-back.png"
+import smmBack from "../assets/images/services/smm-back1.png"
 import seoBack from "../assets/images/services/SEO back.png"
 import smmFront from "../assets/images/services/smm-front.png"
 import seoFront from "../assets/images/services/SEO front.png"
