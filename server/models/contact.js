@@ -45,6 +45,18 @@ const quickContactSchema = new mongoose.Schema({
   timestamps: true
 });
 
+const leadSchema = new mongoose.Schema(
+  {
+    name: { type: String, required: true, trim: true },
+    phone: { type: String, required: true, trim: true },
+    email: { type: String, required: true, lowercase: true, trim: true },
+    requirement: { type: String, required: true, trim: true },
+  },
+  { timestamps: true }
+);
+
+export const Lead= mongoose.model("Lead", leadSchema);
+
 
 export const Contact = mongoose.model("Contact", contactSchema);
 export const QuickContact = mongoose.model("QuickContact", quickContactSchema);

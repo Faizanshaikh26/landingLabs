@@ -2,7 +2,7 @@ import ExcelJS from 'exceljs';
 import fs from 'fs';
 import path from 'path';
 import mailSender from '../utils/mailSender.js';
-import { Contact, QuickContact } from "../models/contact.js";
+import { Contact, Lead, QuickContact } from "../models/contact.js";
 
 
 
@@ -144,6 +144,74 @@ export const addQuickContact = async (req, res) => {
 
 
 
+export const addLead = async (req, res) => {
+  try {
+    const { name, phone, email, requirement } = req.body;
+
+    if (!name || !phone || !email || !requirement) {
+      return res.status(400).json({ success: false, message: "All fields are required" });
+    }
+
+    // Save new lead
+    const lead = new Lead({ name, phone, email, requirement });
+    await lead.save();
+
+    // Get all leads
+    const allLeads = await Lead.find().sort({ createdAt: -1 });
+
+    // Create Excel file in memory
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet('Contacts');
+
+    worksheet.columns = [
+      { header: 'Full Name', key: 'name' },
+      { header: 'Phone Number', key: 'phone' },
+      { header: 'Email', key: 'email' },
+      { header: 'Requirement', key: 'requirement' },
+      { header: 'Date', key: 'createdAt' },
+    ];
+
+    // Add rows
+    allLeads.forEach(contact => {
+      worksheet.addRow({
+        name: contact.name,
+        phone: contact.phone,
+        email: contact.email,
+        requirement: contact.requirement,
+        createdAt: new Date(contact.createdAt).toLocaleString(),
+      });
+    });
+
+    const buffer = await workbook.xlsx.writeBuffer();
+
+    // Send mail with Excel attachment
+    await mailSender({
+      email: 'info@landinglabs.in',
+      title: 'New Contact Submission - Full List',
+      body: `<p>A new contact was added: <strong>${name}</strong></p><p>Full contact list is attached.</p>`,
+      attachments: [
+        {
+          filename: 'all-contacts.xlsx',
+          content: buffer,
+          contentType:
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        },
+      ],
+    });
+
+    res
+      .status(201)
+      .json({ success: true, message: 'Contact added and email sent.', data: allLeads });
+  } catch (error) {
+    console.error('Error adding lead:', error);
+    res.status(500).json({ success: false, message: 'Server error' });
+  }
+};
+
+
+
+
+
 export const getContacts = async (req, res) => {
   try {
     const contacts = await Contact.find().sort({ createdAt: -1 });
@@ -167,3 +235,14 @@ export const getQuickContacts = async (req, res) => {
     res.status(500).json({ success: false, message: "Server Error" });
   }
 };
+
+export const getAllLeads = async (req, res) => {
+  try {
+    const leads = await Lead.find().sort({ createdAt: -1 });
+    res.status(200).json({ success: true, data: leads });
+  } catch (error) {
+    console.error('Error fetching leads:', error);
+    res.status(500).json({ success: false, message: 'Server Error' });
+  }
+};
+
